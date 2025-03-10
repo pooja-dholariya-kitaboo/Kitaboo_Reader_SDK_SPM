@@ -1,0 +1,11 @@
+var mobileKeyboardData = {
+	math : {
+		0 : [
+			{
+				id : 1,
+				displayText : x,
+				accText : ex
+			}
+		]
+	}
+}

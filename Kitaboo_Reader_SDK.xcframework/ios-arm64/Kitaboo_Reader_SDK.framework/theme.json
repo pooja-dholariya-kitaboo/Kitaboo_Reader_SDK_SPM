@@ -1,0 +1,246 @@
+{
+    "bookshelf": {
+        "header": {
+            "background": "#ffffff",
+            "color": "#2073b9"
+        },
+        "carousel": {
+            "background": "#f8f8f8",
+            "collection_background": "#c7c7c7",
+            "color": "#333333",
+            "collection_color": "#000000",
+            "font_size": "18",
+            "header_font_size": "25",
+            "font_face": ""
+        },
+        "download_all": {
+            "color": "#04709d",
+            "font_size": "20"
+        },
+        "selected_book": {
+            "background": "#FFFFFf",
+            "color": "#2073b9",
+            "inner_selected_background" : "#FFFFFF",
+            "inner_unselected_background" : "#FFFFFF"
+        },
+        "book_details": {
+            "background": "#f2f2f2",
+            "color": "#252525"
+        },
+        "footer": {
+            "background": "#ffffff",
+            "color": "#8d8d8d"
+        },
+        "side_menu_item": {
+            "background": "#F5F5F5",
+            "dotted_line": "#DCDCDC",
+            "header_title": {
+                "background": "#F5F5F5",
+                "color": "#000000",
+                "font_size": "25",
+                "font_face": ""
+            },
+            "category_item": {
+                "background": "#F5F5F5",
+                "selected_background": "#EBEBEB",
+                "icon_color": "#2073b9",
+                "color": "#6f6f6f",
+                "font_size": "18",
+                "font_face": ""
+            },
+            "profile_setting": {
+                "background": "#F5F5F5",
+                "icon_color": "#2073b9",
+                "color": "#2073b9",
+                "font_size": "18",
+                "font_face": ""
+            },
+            "sign_out": {
+                "background": "#EB774B",
+                "icon_color": "#2073b9",
+                "color": "#FFFFFF",
+                "font_size": "18",
+                "font_face": ""
+            }
+        },
+        "buttons": {
+            "launch": {
+                "background": "#2073b9",
+                "color": "#ffffff"
+            },
+            "archive": {
+                "background": "#fefefe",
+                "color": "#2d2d2d"
+            },
+            "statistics": {
+                "background": "#fefefe",
+                "color": "#2d2d2d"
+            }
+        }
+    },
+    "reader": {
+        "header": "#f2f2f2",
+        "footer": "#f2f2f2",
+        "icon": {
+            "background": "#f2f2f2",
+            "color": "#2073b9"
+        },
+        "icon_selected": {
+            "background": "#2073b9",
+            "color": "#f2f2f2"
+        },
+        "read_aloud_menu": {
+            "background": {
+                "background": "#FFFFFF",
+                "border_color": "#2073b9"
+            },
+            "header_title": {
+                "background": "#FFFFFF",
+                "color": "#000000",
+                "font_size": "23",
+                "font_face": ""
+            },
+            "close_icon": {
+                "background": "#FFFFFF",
+                "color": "#FF0000",
+                "font_size": "25",
+                "font_face": ""
+            },
+            "option_text": {
+                "background": "#FFFFFF",
+                "color": "#494949",
+                "font_size": "11",
+                "font_face": ""
+            },
+            "buttons": {
+                "let_me_read": {
+                    "background": "#FFFFFF",
+                    "border_color": "#2073b9",
+                    "icon_color" : "#797979",
+                    "icon_border_color": "#FFFFFF",
+                    "color": "#000000",
+                    "font_size": "16",
+                    "font_face": ""
+                },
+                "auto_play": {
+                    "background": "#FFFFFF",
+                    "border_color": "#2073b9",
+                    "icon_color" : "#797979",
+                    "icon_border_color": "#FFFFFF",
+                    "color": "#000000",
+                    "font_size": "16",
+                    "font_face": ""
+                },
+                "read_to_me": {
+                    "background": "#FFFFFF",
+                    "border_color": "#2073b9",
+                    "icon_color" : "#797979",
+                    "icon_border_color": "#FFFFFF",
+                    "color": "#000000",
+                    "font_size": "16",
+                    "font_face": ""
+                }
+            }
+        },
+        "default_panel": {
+            "background": "#ffffff",
+            "color": "#b0b0b0",
+            "divider": "#676767",
+            "metadata": "#2695b9",
+            "highlight_data": "#333333",
+            "actions": "#909090",
+            "header_font_size": "23",
+            "chapter_font_size": "16",
+            "page_font_size": "16",
+            "font_face": ""
+        },
+        "tab": {
+            "background": "#f2f2f2",
+            "color": "#2073b9"
+        },
+        "bookmark": {
+            "color": "#a9a9a9",
+            "selected":"#2073b9"
+        },
+        "thumbnail_panel": {
+            "background": "#959595",
+            "color": "#2073b9",
+            "selection": "#2073b9",
+            "font_size": "18",
+            "font_face": ""
+        },
+        "image_caption": {
+            "image_background": "#d2d2d2",
+            "background": "#ffffff",
+            "color": "#171717"
+        }
+    },
+    "login": {
+        "background": "#F5F5F5",
+        "color":"#ffff00",
+        "header": {
+            "background": "#F5F5F5",
+            "color": "#000000",
+            "font_size": "30",
+            "font_face": ""
+        },
+        "toggle_icon":{
+            "color" :"#2073b9"
+        },
+        "input_box": {
+            "border_color": "#2073b9",
+            "color": "#FFFFFF",
+            "font_size": "18",
+            "font_face": ""
+        },
+        "forgot_password_link": {
+            "background": "#F5F5F5",
+            "color": "#fb6161",
+            "font_size": "18",
+            "font_face": ""
+        },
+        "other_link": {
+            "background": "#F5F5F5",
+            "color": "#000000",
+            "font_size": "18",
+            "font_face": ""
+        },
+        "buttons": {
+            "background": "#2073b9",
+            "color": "#FFFFFF",
+            "font_size": "18",
+            "font_face": ""
+        }
+    },
+    "profile_setting": {
+        "background": "#F5F5F5",
+        "header": {
+            "background": "#FFFFFF",
+            "color": "#000000",
+            "font_size": "25",
+            "font_face": ""
+        },
+        "user_name": {
+            "background": "#F5F5F5",
+            "color": "#000000",
+            "font_size": "25",
+            "font_face": ""
+        },
+        "email_link": {
+            "background": "#F5F5F5",
+            "color": "#2073b9",
+            "font_size": "20",
+            "font_face": ""
+        },
+        "buttons": {
+            "background": "#2073b9",
+            "color": "#FFFFFF",
+            "font_size": "18",
+            "font_face": ""
+        }
+    },
+    "kitaboo_logo" : {
+        "logo_color":"#2073b9",
+        "text_color":"#aaaaaa"
+    }
+}

@@ -1,0 +1,360 @@
+
+
+/* Table */
+/*table {*/
+/*    border-collapse: collapse;*/
+/*    border-spacing: 0;*/
+/*}*/
+/*tbody, tfoot, thead {*/
+/*    vertical-align: middle !important;*/
+/*}*/
+/*td, th, tr {*/
+/*    vertical-align: inherit !important;*/
+/*}*/
+
+/* List */
+/*dd, dir, menu, ol, ul { margin-left: 30px !important; }*/
+/*ol { list-style-type: decimal !important; }*/
+/*li { display: list-item !important; }*/
+/*ol ol, ol ul, ul ol, ul ul {*/
+/*    margin-bottom: 0 !important;*/
+/*    margin-top: 0 !important;*/
+/*}*/
+
+/* Links */
+a, html { -webkit-touch-callout: none; } /* Disable link callback */
+
+/* Uncomment this to stop all selection */ 
+/** {*/
+/*    -webkit-touch-callout: none;*/
+/*    -webkit-user-select: none; /* Disable selection/copy in WkWebView */*/
+/*}*/
+
+* { -webkit-user-select: text; }
+
+img {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+html.disableScrollClass
+{
+    overflow: hidden;
+}
+
+/*p {*/
+/*    margin: 1.3em 0 1.5em 0;*/
+/*  /*    line-height: 1.40em !important;*/*/
+/*    text-indent: 1.25em;*/
+/*}*/
+
+/*b, strong, th {font-weight: bolder !important;}*/
+
+/* Forced font overrides */
+/*code, kbd, pre, samp, tt {*/
+/*    font-family: monospace, monospace !important;*/
+/*    font-size: 1em;*/
+/*}*/
+/*button, input, select, textarea { display: inline-block; }*/
+/**/
+/*del, s, strike { text-decoration: line-through!important; }*/
+/*hr {*/
+/*    background-color: rgba(0,0,0,.1) !important;*/
+/*    border: none !important;*/
+/*    height: 1px !important;*/
+/*}*/
+
+
+/* Sub and Super */
+/*big { font-size: 1.15em !important; }*/
+/*small, sub, sup { font-size: .65em !important; }*/
+/*sub { vertical-align: sub !important; }*/
+/*sup {*/
+/*    font-family: monospace !important;*/
+/*    vertical-align: super !important;*/
+/*}*/
+
+
+/* iBooks like */
+a { text-decoration: none; }
+pre { white-space: pre-wrap; }
+@page { margin: 0 0 !important; }
+table, ol, il { text-align: -webkit-auto; }
+/*table { table-layout:fixed; width:100%; }/*To make table size fixed and not to crop when font size is incresed.*/*/
+/*commented above line as it was causing issue in showing table tag*/
+table {width:100%; }/*To make table size fixed and not to crop when font size is incresed.*/
+
+
+
+body {
+    overflow-wrap:break-word !important;
+    -webkit-hyphens: auto !important;
+    hyphens: auto !important;
+}
+
+
+h1 ,h2 ,h3 ,h4 ,h5 ,h6 {
+    /*    text-align: -webkit-auto;*/
+    text-rendering: optimizelegibility;
+}
+
+/* allow breaking of words on headers and anchors as they tend to be larger font size or contain longer words */
+a, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap:break-word !important;
+    -webkit-hyphens: none !important;
+    hyphens: none !important;
+}
+
+
+
+
+
+/* Divs are also used to size images so make sure the authors get what they intended */
+/* which is for the images boxed in them to be completely visible on screen */
+/*div { max-width: 100%; }*/ 
+aside[epub|type~="footnote"] { display: none !important; }
+ruby > rt, ruby > rp { -webkit-user-select: none; }
+* { -webkit-font-smoothing: subpixel-antialiased }
+
+/* Kitaboo Author */
+div.table-wrap.panel {
+    width: 100%;
+    overflow-x: scroll;
+}
+
+div.table-wrap.panel table {
+    word-break: normal;
+}
+
+td,tr,th{ overflow:hidden; }/*If table cell data get overflow when font incresed made it hidden so that it do not appear in next cell. */
+/*
+ *
+ * Font classes
+ *
+ */
+
+html.mediumFont { font-size: medium }
+html.smallFont { font-size: small }
+html.xSmallFont { font-size: x-small }
+html.xxSmallFont { font-size: xx-small }
+html.largeFont { font-size: large }
+html.xLargeFont { font-size: x-large }
+html.xxLargeFont { font-size: xx-large }
+
+/*
+ *
+ * Reader mode
+ *
+ */
+
+/* Sepia mode */
+html.sepiaMode:not(.ignore-activity-classes) {
+    background-color: #FAF3E8 !important;
+}
+
+.sepiaMode body:not(.ignore-activity-classes) {
+    background-color: #FAF3E8 !important;
+}
+
+.sepiaMode td:not(.ignore-activity-classes), .sepiaMode tr:not(.ignore-activity-classes), .sepiaMode th:not(.ignore-activity-classes) {
+    background-color: transparent !important;
+}/*To give table view cell background color same as sepia mode color.*/
+
+.sepiaMode div:not(.ignore-activity-classes)
+{
+    background-color: transparent !important;
+}
+
+.sepiaMode a:not(.ignore-activity-classes), .sepiaMode a span:not(.ignore-activity-classes), .sepiaMode a div:not(.ignore-activity-classes), .sepiaMode a span i:not(.ignore-activity-classes), .sepiaMode a span b:not(.ignore-activity-classes)
+{
+/*    text-decoration: none !important;*/
+}
+
+.sepiaMode mark.yellowColor:not(.ignore-activity-classes), .sepiaMode mark.redColor:not(.ignore-activity-classes){
+    color: #603E22 !important;
+}
+
+/*.sepiaMode td, .sepiaMode tr{*/
+/*    background-color: transparent !important;*/
+/*}*/
+
+
+/* Night mode */
+html.nightMode:not(.ignore-activity-classes) {
+    background-color: #1a1a1a !important;
+/*    background: transparent no-repeat;*/
+}
+
+.nightMode body:not(.ignore-activity-classes) {
+    color: #eaeaea !important;
+/*    background-color: #1a1a1a !important;*/
+    background: transparent no-repeat;
+}
+
+.nightMode p:not(.ignore-activity-classes), .nightMode div:not(.ignore-activity-classes), .nightMode ul:not(.ignore-activity-classes), .nightMode li:not(.ignore-activity-classes), .nightMode span:not(.searchelement):not(.ignore-activity-classes),
+.nightMode h1:not(.ignore-activity-classes), .nightMode h2:not(.ignore-activity-classes), .nightMode h3:not(.ignore-activity-classes), .nightMode h4:not(.ignore-activity-classes), .nightMode h5:not(.ignore-activity-classes), .nightMode h6:not(.ignore-activity-classes),
+.nightMode i:not(.ignore-activity-classes), .nightMode cite:not(.ignore-activity-classes), .nightMode em:not(.ignore-activity-classes), .nightMode font:not(.ignore-activity-classes), .nightMode section:not(.ignore-activity-classes), .nightMode aside:not(.ignore-activity-classes){
+    color: #eaeaea !important;
+/*    background-color: transparent !important;*/
+}
+
+.nightMode a:not(.ignore-activity-classes), .nightMode a span:not(.ignore-activity-classes), .nightMode a div:not(.ignore-activity-classes), .nightMode a span i:not(.ignore-activity-classes), .nightMode a span b:not(.ignore-activity-classes)
+{
+    color: #0001E9 !important;
+/*    background-color: transparent !important;*/
+/*    text-decoration: none !important;*/
+}
+
+.nightMode mark.yellowColor:not(.ignore-activity-classes), .nightMode mark.redColor:not(.ignore-activity-classes){
+    color: black !important;
+}
+
+.nightMode td:not(.ignore-activity-classes), .nightMode tr:not(.ignore-activity-classes), .nightMode th:not(.ignore-activity-classes), .nightMode table:not(.ignore-activity-classes){
+    background-color: transparent !important;
+    border-color: #636466 !important;
+
+}
+
+.nightMode table:not(.ignore-activity-classes){
+    border-color: #636466 !important;
+    border-width: 1px !important;
+    color:  #eaeaea !important;         /*color for table cell data.*/
+}
+
+/* Remove tap highlight */
+input, textarea, button, highlight, select, a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Text-alignment CSS */
+
+.leftAlign a:not(.ignore-activity-classes), .leftAlign h1:not(.ignore-activity-classes), .leftAlign h2:not(.ignore-activity-classes), .leftAlign h3:not(.ignore-activity-classes), .leftAlign h4:not(.ignore-activity-classes), .leftAlign h5:not(.ignore-activity-classes), .leftAlign h6:not(.ignore-activity-classes),
+.leftAlign p:not(.ignore-activity-classes), .leftAlign div:not(.ignore-activity-classes), .leftAlign li:not(.ignore-activity-classes), .leftAlign span:not(.epub-media-overlay-playing):not(.ignore-activity-classes),
+.leftAlign i:not(.ignore-activity-classes), .leftAlign cite:not(.ignore-activity-classes), .leftAlign em:not(.ignore-activity-classes), .leftAlign font:not(.ignore-activity-classes),
+.leftAlign td:not(.ignore-activity-classes), .leftAlign tr:not(.ignore-activity-classes), .leftAlign table:not(.ignore-activity-classes), .leftAlign body:not(.ignore-activity-classes), .leftAlign kitabooHighlight:not(.ignore-activity-classes){
+    text-align: left !important;
+}
+
+.rightAlign a:not(.ignore-activity-classes), .rightAlign h1:not(.ignore-activity-classes), .rightAlign h2:not(.ignore-activity-classes), .rightAlign h3:not(.ignore-activity-classes), .rightAlign h4:not(.ignore-activity-classes), .rightAlign h5:not(.ignore-activity-classes), .rightAlign h6:not(.ignore-activity-classes),
+.rightAlign p:not(.ignore-activity-classes), .rightAlign div:not(.ignore-activity-classes), .rightAlign li:not(.ignore-activity-classes), .rightAlign span:not(.epub-media-overlay-playing):not(.ignore-activity-classes),
+.rightAlign i:not(.ignore-activity-classes), .rightAlign cite:not(.ignore-activity-classes), .rightAlign em:not(.ignore-activity-classes), .rightAlign font:not(.ignore-activity-classes),
+.rightAlign td:not(.ignore-activity-classes), .rightAlign tr:not(.ignore-activity-classes), .rightAlign table:not(.ignore-activity-classes), .rightAlign body:not(.ignore-activity-classes), .leftAlign kitabooHighlight:not(.ignore-activity-classes) {
+    text-align: right !important;
+}
+
+.centerAlign a:not(.ignore-activity-classes), .centerAlign h1:not(.ignore-activity-classes), .centerAlign h2:not(.ignore-activity-classes), .centerAlign h3:not(.ignore-activity-classes), .centerAlign h4:not(.ignore-activity-classes), .centerAlign h5:not(.ignore-activity-classes), .centerAlign h6:not(.ignore-activity-classes),
+.centerAlign p:not(.ignore-activity-classes), .centerAlign div:not(.ignore-activity-classes), .centerAlign li:not(.ignore-activity-classes), .centerAlign span:not(.epub-media-overlay-playing):not(.ignore-activity-classes),
+.centerAlign i:not(.ignore-activity-classes), .centerAlign cite:not(.ignore-activity-classes), .centerAlign em:not(.ignore-activity-classes), .centerAlign font:not(.ignore-activity-classes),
+.centerAlign td:not(.ignore-activity-classes), .centerAlign tr:not(.ignore-activity-classes), .centerAlign table:not(.ignore-activity-classes), .centerAlign body:not(.ignore-activity-classes), .centerAlign kitabooHighlight:not(.ignore-activity-classes) {
+    text-align: center !important;
+}
+
+.justifyAlign a:not(.ignore-activity-classes), .justifyAlign h1:not(.ignore-activity-classes), .justifyAlign h2:not(.ignore-activity-classes), .justifyAlign h3:not(.ignore-activity-classes), .justifyAlign h4:not(.ignore-activity-classes), .justifyAlign h5:not(.ignore-activity-classes), .justifyAlign h6:not(.ignore-activity-classes),
+.justifyAlign p:not(.ignore-activity-classes), .justifyAlign div:not(.ignore-activity-classes), .justifyAlign li:not(.ignore-activity-classes), .justifyAlign span:not(.epub-media-overlay-playing):not(.ignore-activity-classes),
+.justifyAlign i:not(.ignore-activity-classes), .justifyAlign cite:not(.ignore-activity-classes), .justifyAlign em:not(.ignore-activity-classes), .justifyAlign font:not(.ignore-activity-classes),
+.justifyAlign td:not(.ignore-activity-classes), .justifyAlign tr:not(.ignore-activity-classes), .justifyAlign table:not(.ignore-activity-classes), .justifyAlign body:not(.ignore-activity-classes), .justifyAlign kitabooHighlight:not(.ignore-activity-classes) {
+    text-align: justify !important;
+}
+
+.smallLineSpacing a:not(.ignore-activity-classes), .smallLineSpacing h1:not(.ignore-activity-classes), .smallLineSpacing h2:not(.ignore-activity-classes), .smallLineSpacing h3:not(.ignore-activity-classes), .smallLineSpacing h4:not(.ignore-activity-classes), .smallLineSpacing h5:not(.ignore-activity-classes), .smallLineSpacing h6:not(.ignore-activity-classes),
+.smallLineSpacing p:not(.ignore-activity-classes), .smallLineSpacing div:not(.ignore-activity-classes), .smallLineSpacing li:not(.ignore-activity-classes), .smallLineSpacing span:not(.epub-media-overlay-playing):not(.modalCloseSpan):not(.ignore-activity-classes),
+.smallLineSpacing i:not(.ignore-activity-classes), .smallLineSpacing cite:not(.ignore-activity-classes), .smallLineSpacing em:not(.ignore-activity-classes), .smallLineSpacing font:not(.ignore-activity-classes),
+.smallLineSpacing td:not(.ignore-activity-classes), .smallLineSpacing tr:not(.ignore-activity-classes), .smallLineSpacing table:not(.ignore-activity-classes), .smallLineSpacing body:not(.ignore-activity-classes), .smallLineSpacing kitabooHighlight:not(.ignore-activity-classes){
+    line-height:1.4 !important;
+}
+
+.mediumLineSpacing a:not(.ignore-activity-classes), .mediumLineSpacing h1:not(.ignore-activity-classes), .mediumLineSpacing h2:not(.ignore-activity-classes), .mediumLineSpacing h3:not(.ignore-activity-classes), .mediumLineSpacing h4:not(.ignore-activity-classes), .mediumLineSpacing h5:not(.ignore-activity-classes), .mediumLineSpacing h6:not(.ignore-activity-classes),
+.mediumLineSpacing p:not(.ignore-activity-classes), .mediumLineSpacing div:not(.ignore-activity-classes), .mediumLineSpacing li:not(.ignore-activity-classes), .mediumLineSpacing span:not(.epub-media-overlay-playing):not(.modalCloseSpan):not(.ignore-activity-classes),
+.mediumLineSpacing i:not(.ignore-activity-classes), .mediumLineSpacing cite:not(.ignore-activity-classes), .mediumLineSpacing em:not(.ignore-activity-classes), .mediumLineSpacing font:not(.ignore-activity-classes),
+.mediumLineSpacing td:not(.ignore-activity-classes), .mediumLineSpacing tr:not(.ignore-activity-classes), .mediumLineSpacing table:not(.ignore-activity-classes), .mediumLineSpacing body:not(.ignore-activity-classes), .mediumLineSpacing kitabooHighlight:not(.ignore-activity-classes){
+    line-height:1.6 !important;
+}
+
+.largeLineSpacing a:not(.ignore-activity-classes), .largeLineSpacing h1:not(.ignore-activity-classes), .largeLineSpacing h2:not(.ignore-activity-classes), .largeLineSpacing h3:not(.ignore-activity-classes), .largeLineSpacing h4:not(.ignore-activity-classes), .largeLineSpacing h5:not(.ignore-activity-classes), .largeLineSpacing h6:not(.ignore-activity-classes),
+.largeLineSpacing p:not(.ignore-activity-classes), .largeLineSpacing div:not(.ignore-activity-classes), .largeLineSpacing li:not(.ignore-activity-classes), .largeLineSpacing span:not(.epub-media-overlay-playing):not(.modalCloseSpan):not(.ignore-activity-classes),
+.largeLineSpacing i:not(.ignore-activity-classes), .largeLineSpacing cite:not(.ignore-activity-classes), .largeLineSpacing em:not(.ignore-activity-classes), .largeLineSpacing font:not(.ignore-activity-classes),
+.largeLineSpacing td:not(.ignore-activity-classes), .largeLineSpacing tr:not(.ignore-activity-classes), .largeLineSpacing table:not(.ignore-activity-classes), .largeLineSpacing body:not(.ignore-activity-classes), .largeLineSpacing kitabooHighlight:not(.ignore-activity-classes){
+    line-height:1.8 !important;
+}
+
+.modalPopup {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  height: -webkit-fill-available; /* Full height */
+  -webkit-user-select: none;
+  -webkit-box-sizing:content-box !important;
+  padding:1%;
+  display: block;
+  width: -webkit-fill-available;
+}
+
+.modalChild{
+  width: 100%;
+  height:100%;
+  overflow:hidden;
+}
+
+.modalElementDiv{
+  width: 100%;
+  height:97%;
+  overflow: auto;
+}
+
+.modalElementDivWithCaption{
+  width: 100%;
+  height:85%;
+  overflow: auto;
+}
+
+.modalCloseSpan {
+  position: -webkit-sticky;
+  width:40px;
+  font-size: 30px;
+  transition: 0.3s;
+  font-family: Kitaboo_6_0;
+  float:right;
+  line-height:1 !important;
+  text-align:right;
+}
+
+.modalCaptionClass {
+  height:Auto;
+  font-size: 20px;
+  text-align:center;
+  
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+kitaboowatermark{
+    position: absolute;
+    color:grey;
+    font-size:20px;
+    -webkit-transform:rotate(330deg);
+    font-family:Arial !important;
+    -webkit-line-clamp:4;
+    display:-webkit-box;
+    text-overflow:ellipsis;
+    -webkit-box-orient:vertical;
+    overflow:hidden;
+}
+
+kitaboowatermarkImage{
+    position: fixed;
+    color:grey;
+    opacity:1.0;
+    background:lightgreen;
+    background-image:url(https://i.pinimg.com/originals/bb/8a/bf/bb8abf1a043b398b3);
+    top:0px;
+    left:0px;
+    background-size:500px;
+    background-position:center;
+    background-repeat:no-repeat;
+    width:100%;
+    height:100%;
+}

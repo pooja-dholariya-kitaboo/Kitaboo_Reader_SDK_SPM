@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1">
+        <!-- Bootstrap -->
+        <link href="vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+        <link href="vendors/jquery-ui/jquery-ui.css" rel="stylesheet">
+
+        <link href="css/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!-- Jquery Files -->
+        <script src="vendors/jquery/jquery.js"></script>
+        <script src="vendors/jquery-ui/jquery-ui.js"></script>  
+        <script src="vendors/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+
+        <script src="vendors/bootstrap/tether.min.js"></script>
+        <script src="vendors/bootstrap/bootstrap.js"></script>
+
+        <script src="vendors/resizable-rotation.patch.js"></script>
+        
+        <script type="text/javascript" src="scripts/protractor.js"></script>
+    </head>
+
+    <body>
+        <div class='btnSave roundSave'></div>
+        <div class="withSaveDelete">
+            <div class='btnClosed combClose'></div>
+            <div class='separator'>
+                <div></div>
+            </div>
+            <div class='btnSave combSave'></div>
+        </div>
+        <div id='resizable' class="ui-widget-content"></div>
+        <div class="move-protractor"></div>
+        <div class="rotate-protractor"></div>
+        <div class="fir-top line-rotate"></div>
+        <div class="sec-top line-rotate"></div>
+        <!-- <iframe class='iAmIframe' src=""></iframe> -->
+
+
+        <div class="modal fade modal-drag modal-answer" id="delete-popup" tabindex="-1" role="dialog" aria-labelledby="wolly-mammoth-modal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <div class="label-holder">
+                            <div class="enter-book-label">Are you sure you want to delete?</div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary yesClick" >Yes</button>
+                        <button type="button" data-dismiss="modal" class="btn btn-primary" >No</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

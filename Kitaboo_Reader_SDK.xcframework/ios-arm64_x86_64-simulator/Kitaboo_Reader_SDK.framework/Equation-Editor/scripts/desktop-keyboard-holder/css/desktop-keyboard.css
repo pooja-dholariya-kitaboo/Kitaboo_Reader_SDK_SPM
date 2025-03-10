@@ -1,0 +1,600 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+  	url('../fonts/OpenSans-Semibold.ttf');
+}
+
+html {
+	background-color: transparent;
+}
+
+body {
+	font-family: 'OpenSans';
+	width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.desktop-keyboard {
+	position: fixed;
+    width: 100%;
+    bottom: 0;
+    background-color: #EBEFF4;
+    box-shadow: -2px -2px 14px 3px rgba(0,0,0,.3);
+    padding: 0% 7% 0% 15%;
+}
+
+.desktop-keyboard .math-rows , .desktop-keyboard .number-rows {
+	width: 100%;
+	float: left;
+	margin-top: 2%;
+}
+.desktop-keyboard .math-rows{
+	width:30%;
+}
+
+/* .desktop-keyboard .firstKey { */
+	/*margin-left: 2%;*/
+/* } */
+
+.desktop-keyboard .keys.lastKey {
+	margin-right: 2%;
+	width: 96% !important;
+}
+
+.desktop-keyboard .keys {
+	float: left;
+	width: 10%;
+	margin-right: 4%;
+	min-height: 34px;
+	background-color: #ADB5BE;
+	text-align: center;
+	line-height: 35px;
+	font-size: 1vw;
+	box-shadow: 2px 2px 3px 0px #888888;
+	cursor: pointer;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+	-moz-user-select: none;     /* Firefox all */
+	-ms-user-select: none;      /* IE 10+ */
+	user-select: none;          /* Likely future */
+}
+
+.desktop-keyboard .math-rows .keys {
+	width: 16%;
+	margin-bottom: 3%;
+}
+.desktop-keyboard .math-rows .keys:active{
+	transform: translateY(2px);
+} 
+
+.desktop-keyboard .four-row {
+	margin-bottom: 1%;
+}
+
+.desktop-keyboard .four-row .keys{
+	background-color: #ADB5BE;
+	margin-bottom: 5%;
+}
+
+.desktop-keyboard .four-row .lastKey{
+	/*background-color: #2C5382;
+	color:white;*/
+	width: 20% !important;
+}
+
+.desktop-keyboard .four-row .noNav{
+	background-color: #ADB5BE;
+}
+
+.desktop-keyboard .math-rows .fourColspan {
+	width: 41%; /* 10% for every key and 1% margin between three keys */
+}
+
+.desktop-keyboard .math-rows .twoColspan {
+	width: 19%; /* 10% for every key and 1% margin between two keys */
+}
+
+.desktop-keyboard .numberPanel {
+	display: inline-block;
+	width: 19%;
+	margin-top: 6%;
+	margin-left: 2%;
+}
+
+.desktop-keyboard .number-rows .keys {	
+	width: 26.8%;
+    margin-bottom: 4%;
+}
+.desktop-keyboard .number-rows .keys:active {	
+	transform: translateY(2px);
+}
+
+.desktop-keyboard .emptyData {
+	opacity: 0;
+}
+
+.desktop-keyboard .number-rows .fourColspan {
+	width: 38.6%; 
+}
+
+.desktop-keyboard .number-rows .fiveColspan {
+	width: 46%; 
+}
+
+.desktop-keyboard .number-rows .twoColspan {
+	width: 16.6%; 
+}
+
+.desktop-keyboard .nav-rows {
+	float: left;
+	width: 100%;
+}
+
+.desktop-keyboard .navPanel {
+	position: absolute;
+    width: 27%;
+    background-color: #F7F7F7;
+    left: 59%;
+    top: 23%;
+}
+
+.desktop-keyboard .navPanel .keys{
+	width: 26.5%;
+    margin-top: 4%;
+    margin-left: 4%;
+    margin-right: 2% !important;
+}
+
+.desktop-keyboard .navPanel .second-row .keys {
+	margin-bottom: 4%;
+}
+
+.desktop-keyboard .overlay-modal {
+	width: 100%;
+    height: 100%;
+    background-color: black;
+    position: absolute;
+    opacity: 0.4;    
+    top: 0px;
+    left: 0px;
+}
+
+.desktop-keyboard .overlay-modal {
+	display: none;
+}
+
+.desktop-keyboard .navPanel {
+	display: none;
+}
+
+.desktop-keyboard .relativeDiv {
+	z-index: 5;
+}
+
+.desktop-keyboard .choosePanel  {
+	position: absolute;
+    width: 35%;
+    background-color: #F7F7F7;
+    left: 30%;
+    top: 0%;
+    height:75%;
+}
+
+.desktop-keyboard .second-row.choose-rows {
+	width: 100%;
+}
+
+.desktop-keyboard .choosePanel .keys {
+	background-color: #FFFFFF;
+	width: 9.5%;
+	margin-top: 3%;
+	margin-left: 2%;
+	min-height: 20px;
+	line-height: 33px;
+	margin-right: 2%;
+}
+.desktop-keyboard .choosePanel .keys:active {
+    transform: translateY(2px);
+}
+
+.desktop-keyboard .choosePanel .third-row .keys {
+	margin-bottom: 3%;
+}
+
+.desktop-keyboard .choosePanel {
+	display: none;
+}
+
+.desktop-keyboard .chooseDiv {
+	z-index: 5;
+}
+
+.desktop-keyboard .choosePanel .third-row .firstKey {
+	margin-left: 10%;
+}
+
+/* .desktop-keyboard .fontFile { */
+	/* font-size : 35px; */
+/* } */
+
+.desktop-keyboard .abc-holder {
+	right: 0;
+    position: absolute;
+    top: -87px;
+    background-color: #EBEFF4;
+    width: 8%;
+    min-height: 23%;
+}
+
+.desktop-keyboard .txt-abc {
+	background-color: #F7F7F7;
+    text-align: center;
+    position: absolute;
+    width: 75%;
+    min-height: 61%;
+    top: 18%;
+    margin-left: 13%;
+    line-height: 43px;
+    font-size: 2vw;
+    cursor: pointer;
+
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */    
+}
+
+/*@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (orientation: portrait) { 
+		
+	   .desktop-keyboard {
+        	padding: 0% 3% 0% 6%; 
+     	}   
+
+     	.desktop-keyboard .second-row {
+  			width: 7%;
+  			margin-left: 1%;
+		}
+		
+       .desktop-keyboard .third-row {
+			width: 13% !important;
+			margin-right: 3% !important;
+			margin-left: 2%;
+		}
+
+		.desktop-keyboard .four-row {
+			width: 22% !important;
+		}
+		
+		.desktop-keyboard .math-rows{
+			width:31% !;
+		}
+
+		.desktop-keyboard .numberPanel {
+			margin-top: 7.5%;
+		}
+
+		.desktop-keyboard .third-row .math-third-row.lastKey {
+			width:90% !important;
+		}
+
+		.desktop-keyboard .third-row .math-third-row.lastKey {
+   			 line-height: 100% !important;
+   			 font-size: 70% !important;
+   			 padding-top: 10%;
+
+    	}
+
+ }*/
+
+/* @media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (orientation: landscape) { 
+		
+	   .desktop-keyboard {
+        	padding: 0% 3% 0% 6%; 
+     	}   
+
+     	.desktop-keyboard .second-row {
+  			  width: 7%;
+  			  margin-left: 1%;
+		}
+		
+       .desktop-keyboard .third-row {
+			width: 13% !important;
+			margin-right: 3% !important;
+			margin-left: 2%;
+		}
+
+		.desktop-keyboard .four-row {
+			width: 22% !important;
+		}
+		
+		.desktop-keyboard .math-rows{
+			width:31% !;
+		}
+
+		.desktop-keyboard .numberPanel {
+			margin-top: 7.5%;
+		}
+
+		.desktop-keyboard .third-row .math-third-row.lastKey {
+			width:90% !important;
+		}
+
+		.desktop-keyboard .third-row .math-third-row.lastKey {
+   			 line-height: 100% !important;
+   			 font-size: 70% !important;
+   			 padding-top: 10%;
+
+    	}
+
+ }*/
+
+
+
+/*@media only screen 
+and (min-device-width : 600px) 
+and (max-device-width : 960px)
+and (orientation: portrait) {
+
+	    .desktop-keyboard {
+        	padding: 0% 3% 0% 6%; 
+     	}   
+        .desktop-keyboard .four-row {
+    		width: 20% !important;
+		}
+		.desktop-keyboard .third-row {
+		    width: 13% !important;
+		    margin-right: 4% !important;
+		    margin-left: 4% !important;
+		}
+		.desktop-keyboard .choosePanel {
+		    position: absolute;
+		    width: 38%;
+		    background-color: #F7F7F7;
+		    left: 29%;
+		    top: 5%;
+		    padding-left: 1%;
+		    height: 70%;
+		}
+		.desktop-keyboard .choosePanel .third-row {
+   			 width: 85%!important;
+		}
+  	   .desktop-keyboard .math-rows .math-second-row {
+   		   width: 41px !important;
+   		   line-height: 10px !important;
+		}
+        .desktop-keyboard .third-row .math-third-row.lastKey {
+    		line-height: 16px !important;
+   			font-size: 7px !important;
+   			padding-top: 15%;
+   		}
+   		.math-second-row .fontFile {
+   			font-size: 31px;
+		}
+		.desktop-keyboard .keys{
+		    font-size: 1.2vw;
+		}
+		.desktop-keyboard .math-second-row .fontFile {
+    		font-size: 31px !important;
+		}
+		.desktop-keyboard .numberPanel {
+		    display: inline-block;
+		    width: 19%;
+		    margin-top: 9%;
+		    margin-left: 2%;
+		}
+}
+*/
+@media only screen 
+and (min-device-width : 600px) 
+and (max-device-width : 960px)
+and (orientation: landscape) {
+
+	    .desktop-keyboard {
+        	padding: 0% 3% 0% 6%; 
+     	}   
+        .desktop-keyboard .four-row {
+    		width: 22% !important;
+		}
+		.desktop-keyboard .third-row {
+		    width: 13% !important;
+		    margin-right: 4% !important;
+		    margin-left: 2% !important;
+		}
+  	    .desktop-keyboard .math-rows .math-second-row {
+   		    width: 41px !important;
+   		    line-height: 10px !important;
+		}
+    	.desktop-keyboard .third-row .math-third-row.lastKey {
+    		line-height: 16px !important;
+   		    font-size: 10px !important;
+   			/* padding-top: 15%; */
+   		}
+   		.math-second-row .fontFile {
+   			 font-size: 31px;
+		}
+		.desktop-keyboard .keys{
+		     font-size: 1.2vw;
+		}
+		.desktop-keyboard .math-second-row .fontFile {
+    		font-size: 31px !important;
+		}
+}
+
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (orientation: portrait) { 
+		
+	   .desktop-keyboard {
+        	padding: 0% 3% 0% 6%; 
+     	}   
+     	.desktop-keyboard .second-row {
+  			  width: 7%;
+  			  margin-left: 1%;
+		}
+		.desktop-keyboard .third-row {
+			width: 13% !important;
+			margin-right: 3% !important;
+			margin-left: 2%;
+		}
+		.desktop-keyboard .choosePanel .third-row {
+			width: 90% !important;
+		}
+		.desktop-keyboard .four-row {
+			width: 21% !important;
+		}
+		.desktop-keyboard .math-rows{
+			width:31% !;
+		}
+		.desktop-keyboard .numberPanel {
+			margin-top: 7.5%;
+		}
+		.desktop-keyboard .third-row .math-third-row.lastKey {
+			width:90% !important;
+		}
+		.desktop-keyboard .third-row .math-third-row.lastKey {
+   			line-height: 100% !important;
+   			font-size: 70% !important;
+   			padding-top: 14%;
+    	}
+ }
+
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px)
+and (orientation: landscape) { 
+		
+	   .desktop-keyboard {
+        	padding: 0% 3% 0% 6%; 
+     	}   
+     	.desktop-keyboard .second-row {
+  			  width: 7%;
+  			  margin-left: 1%;
+		}
+       .desktop-keyboard .third-row {
+			width: 13% !important;
+			margin-right: 3% !important;
+			margin-left: 2%;
+		}
+		.desktop-keyboard .choosePanel .third-row {
+			width: 90% !important;
+		}
+		.desktop-keyboard .four-row {
+			width: 22% !important;
+		}
+		
+		.desktop-keyboard .math-rows{
+			width:31% !;
+		}
+
+		.desktop-keyboard .numberPanel {
+			margin-top: 7.5%;
+		}
+		.desktop-keyboard .third-row .math-third-row.lastKey {
+			width:90% !important;
+		}
+		.desktop-keyboard .third-row .math-third-row.lastKey {
+   			 line-height: 100% !important;
+   			 font-size: 70% !important;
+   			 padding-top: 10%;
+    	}
+ }
+
+@media only screen 	and (min-device-width: 320px) 
+					and (max-device-width : 480px) 
+					and (orientation: portrait) {
+
+		.desktop-keyboard .keys {
+			min-height: 40px;
+    		line-height: 40px;
+		}
+		.desktop-keyboard .choosePanel {
+
+			position: absolute;
+		    width: 100%;
+		    background-color: #F7F7F7;
+		    left: 0%;
+		    top: 0%;
+		}
+		.desktop-keyboard .choosePanel .keys {
+			min-height: 29px;
+    		line-height: 29px;
+		}
+		.desktop-keyboard .math-rows, .desktop-keyboard .number-rows {
+			margin-top: 3%;
+		}
+}
+
+.desktop-keyboard .math-rows .math-second-row {
+	line-height: 11px;
+    width: 51px !important;
+}
+.desktop-keyboard .math-rows .math-second-row :active{
+	transform: translateY(2px);
+}
+
+.desktop-keyboard .math-second-row .fontFile {
+	font-size: 35px;
+}
+.desktop-keyboard .second-row{
+	width: 7%;
+}
+.desktop-keyboard .third-row{
+	width: 11%;
+	margin-right: 4%;
+}
+.desktop-keyboard .third-row .math-third-row{
+	margin-right: 10%;
+}
+.desktop-keyboard .third-row .math-third-row{
+	width: 40%;
+	margin-bottom: 8%;
+}
+.desktop-keyboard .third-row .math-third-row.lastKey {
+	line-height: 33px;
+    font-size: 12px;
+    font-style: italic;
+    background-color: #F7F7F7;
+}
+.desktop-keyboard .four-row{
+	width: 16%;
+}
+.desktop-keyboard .math-four-row{
+	width: 20% !important;
+}
+.desktop-keyboard .number-rows .lastKey {    
+    width: 89% !important;
+    background: #27224c !important;
+    color:white;
+}
+.desktop-keyboard .choosePanel .third-row{
+	width: 80%;
+	margin-left: 7%;
+}
+.desktop-keyboard .choosePanel .third-row .math-third-row{
+	background-color: #FFFFFF;
+	width: 12.5%;
+	margin-top: 3%;
+	margin-left: 2%;
+	min-height: 20px;
+	line-height: 33px;
+	margin-right: 2%;
+}
+div[data-latex-val=navPanel-first-1]{
+	 opacity: 0;
+	 pointer-events: none;
+}
+div[data-latex-val=navPanel-first-3]{
+	 opacity: 0;
+	 pointer-events: none;
+
+	 
+}

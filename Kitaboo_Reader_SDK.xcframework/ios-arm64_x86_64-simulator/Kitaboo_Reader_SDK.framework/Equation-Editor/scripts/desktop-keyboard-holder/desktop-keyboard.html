@@ -1,0 +1,67 @@
+<div class='desktop-keyboard' ng-hide="hideKeyBoard">
+	<!-- <div class='abc-holder'>
+		<div class='txt-abc'>ABC</div>
+	</div> -->
+
+	<div class='math'>	
+		<div class="first-row math-rows">
+			<div ng-repeat="mathFirstRow in desktopKeyboardData.math.first" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-first-row keys' data-latex-val="math-first-{{$index+1}}" ng-class="{'firstKey' : $first , 'lastKey' : $last}">
+				
+			</div>
+		</div>
+
+		<div class="second-row math-rows">
+			<div ng-repeat="mathSecondRow in desktopKeyboardData.math.second" ng-bind-html="mathSecondRow.displayText | to_trusted" class='math-second-row keys' data-latex-val="math-second-{{$index+1}}" ng-class="">
+				
+			</div>
+		</div>
+
+		<div class="third-row math-rows">
+			<div ng-repeat="mathThirdRow in desktopKeyboardData.math.third" ng-bind-html="mathThirdRow.displayText | to_trusted" class='math-third-row keys' ng-class="{'firstKey' : $first , 'fourColspan' : mathThirdRow.colspan == 4, 'chooseDiv' : $index == 6, 'lastKey' : $last}" data-latex-val="math-third-{{$index+1}}">
+				
+			</div>
+		</div>
+
+		<div class="four-row math-rows">
+			<div ng-repeat="mathFourRow in desktopKeyboardData.math.four" ng-bind-html="mathFourRow.displayText | to_trusted" class='math-four-row keys {{mathFourRow.addClass}}' ng-class="{'firstKey' : $first , 'fourColspan' : mathFourRow.colspan == 4 , 'twoColspan' : mathFourRow.colspan == 1 , 'lastKey' : $index == 3, 'relativeDiv' : $index == 2, 'lastKey' : $last}" data-latex-val="math-four-{{$index+1}}">
+				
+			</div>
+		</div>
+
+		<div class='numberPanel'>		
+			<div class="first-row number-rows">
+				<div ng-repeat="mathFirstRow in desktopKeyboardData.navPanel.first" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-first-row keys' ng-class="{'firstKey' : $first, 'lastKey done-btn' : $last}" data-latex-val="navPanel-first-{{$index+1}}">					
+				</div>
+			</div>
+		</div>
+
+	</div>
+	
+
+
+
+	<div class="overlay-modal"></div>
+
+	
+
+	<div class="choosePanel">
+		<div class="first-row choose-rows">
+			<div ng-repeat="mathFirstRow in desktopKeyboardData.choosePanel.first" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-first-row keys' ng-class="{'firstKey' : $first}" data-latex-val="choosePanel-first-{{$index+1}}">
+				
+			</div>
+		</div>
+
+		<div class="second-row choose-rows">
+			<div ng-repeat="mathFirstRow in desktopKeyboardData.choosePanel.second" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-second-row keys' ng-class="{'firstKey' : $first}" data-latex-val="choosePanel-second-{{$index+1}}">
+				
+			</div>
+		</div>
+
+		<div class="third-row choose-rows">
+			<div ng-repeat="mathFirstRow in desktopKeyboardData.choosePanel.third" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-third-row keys' ng-class="{'firstKey' : $first}" data-latex-val="choosePanel-third-{{$index+1}}">
+				
+			</div>
+		</div>
+	</div>
+
+</div>

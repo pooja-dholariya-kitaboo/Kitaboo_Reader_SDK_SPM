@@ -1,0 +1,475 @@
+{
+    "responseCode": 200,
+    "bookClassList": [
+                      {
+                      "book": {
+                      "id": 22551
+                      },
+                      "classInfo": [
+                                    {
+                                    "instructors": [
+                                                    {
+                                                    "user": {
+                                                    "firstName": "Sales",
+                                                    "lastName": "Instructor 1",
+                                                    "roles": [
+                                                              {
+                                                              "name": "INSTRUCTOR",
+                                                              "id": "1"
+                                                              }
+                                                              ],
+                                                    "id": 254082,
+                                                    "profilePicURL": "https:  /  /create.kitaboo.com  /distribution  /Controller  /  /users  /254082.jpg",
+                                                    "userName": "sales.t1@hurix.com"
+                                                    }
+                                                    },
+                                                    {
+                                                    "user": {
+                                                    "firstName": "Sales",
+                                                    "lastName": "Instructor 2",
+                                                    "roles": [
+                                                              {
+                                                              "name": "INSTRUCTOR",
+                                                              "id": "1"
+                                                              }
+                                                              ],
+                                                    "id": 254083,
+                                                    "profilePicURL": "https:  /  /create.kitaboo.com  /distribution  /Controller  /  /users  /254083.jpg",
+                                                    "userName": "sales.t2@hurix.com"
+                                                    }
+                                                    },
+                                                    {
+                                                    "user": {
+                                                    "firstName": "Sales",
+                                                    "lastName": "Instructor 3",
+                                                    "roles": [
+                                                              {
+                                                              "name": "INSTRUCTOR",
+                                                              "id": "1"
+                                                              }
+                                                              ],
+                                                    "id": 254078,
+                                                    "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /254078.jpg?timestamp=1512672459131",
+                                                    "userName": "sales.t3@hurix.com"
+                                                    }
+                                                    },
+                                                    {
+                                                    "user": {
+                                                    "firstName": "sales",
+                                                    "lastName": "t",
+                                                    "roles": [
+                                                              {
+                                                              "name": "INSTRUCTOR",
+                                                              "id": "1"
+                                                              }
+                                                              ],
+                                                    "id": 59832,
+                                                    "profilePicURL": "https:  /  /create.kitaboo.com  /distribution  /Controller  /  /users  /59832.jpg",
+                                                    "userName": "sales.t@hurix.com"
+                                                    }
+                                                    }
+                                                    ],
+                                    "learners": [
+                                                 {
+                                                 "user": {
+                                                 "firstName": "Sales",
+                                                 "lastName": "Learner 5",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 254079,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /254079.jpg?timestamp=1518158746738",
+                                                 "userName": "sales.s5@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "Sales",
+                                                 "lastName": "Learner 9",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 254080,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /254080.jpg?timestamp=1512459978460",
+                                                 "userName": "sales.s9@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales",
+                                                 "lastName": "s1",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 59833,
+                                                 "profilePicURL": "?timestamp=1517224675846",
+                                                 "userName": "sales.s1@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales",
+                                                 "lastName": "s2",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 59834,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /59834.jpg?timestamp=1513082525488",
+                                                 "userName": "sales.s2@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "shareList": [
+                                                               59834,
+                                                               254082,
+                                                               254083,
+                                                               254078,
+                                                               59832,
+                                                               59840
+                                                               ],
+                                                 "recieveList": [
+                                                                 59834,
+                                                                 254082,
+                                                                 254083,
+                                                                 254078,
+                                                                 59832,
+                                                                 59840
+                                                                 ],
+                                                 "user": {
+                                                 "firstName": "sales",
+                                                 "lastName": "s3",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 59835,
+                                                 "profilePicURL": "?timestamp=1517469153650",
+                                                 "userName": "sales.s3@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales",
+                                                 "lastName": "s4",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 59836,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /59836.jpg",
+                                                 "userName": "sales.s4@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales",
+                                                 "lastName": "s6",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 59838,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /59838.jpg?timestamp=1517304366574",
+                                                 "userName": "sales.s6@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales",
+                                                 "lastName": "s7",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 59839,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /59839.jpg",
+                                                 "userName": "sales.s7@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales",
+                                                 "lastName": "s8",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "2"
+                                                           }
+                                                           ],
+                                                 "id": 59840,
+                                                 "profilePicURL": "?timestamp=1515069825711",
+                                                 "userName": "sales.s8@hurix.com"
+                                                 }
+                                                 }
+                                                 ],
+                                    "id": 146,
+                                    "name": "K Sales",
+                                    "sharingSetting": {
+                                    "NOTES-Learner-Instructor Sharing": "true",
+                                    "HIGHLIGHT-Instructor-Learner Sharing": "false",
+                                    "NOTES-Instructor-Learner Sharing": "false",
+                                    "NOTES-Learner-Learner Sharing": "true",
+                                    "HIGHLIGHT-Learner-Learner Sharing": "true",
+                                    "HIGHLIGHT-Learner-Instructor Sharing": "true"
+                                    }
+                                    }
+                                    ]
+                      },
+                      {
+                      "book": {
+                      "id": 22551
+                      },
+                      "classInfo": [
+                                    {
+                                    "instructors": [
+                                                    {
+                                                    "user": {
+                                                    "firstName": "Sales",
+                                                    "lastName": "Instructor 1",
+                                                    "roles": [
+                                                              {
+                                                              "name": "INSTRUCTOR",
+                                                              "id": "1"
+                                                              }
+                                                              ],
+                                                    "id": 254082,
+                                                    "profilePicURL": "https:  /  /create.kitaboo.com  /distribution  /Controller  /  /users  /254082.jpg",
+                                                    "userName": "sales.t1@hurix.com"
+                                                    }
+                                                    },
+                                                    {
+                                                    "user": {
+                                                    "firstName": "Sales",
+                                                    "lastName": "Instructor 2",
+                                                    "roles": [
+                                                              {
+                                                              "name": "INSTRUCTOR",
+                                                              "id": "1"
+                                                              }
+                                                              ],
+                                                    "id": 254083,
+                                                    "profilePicURL": "https:  /  /create.kitaboo.com  /distribution  /Controller  /  /users  /254083.jpg",
+                                                    "userName": "sales.t2@hurix.com"
+                                                    }
+                                                    },
+                                                    {
+                                                    "user": {
+                                                    "firstName": "Sales",
+                                                    "lastName": "Instructor 3",
+                                                    "roles": [
+                                                              {
+                                                              "name": "INSTRUCTOR",
+                                                              "id": "1"
+                                                              }
+                                                              ],
+                                                    "id": 254078,
+                                                    "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /254078.jpg?timestamp=1512672459131",
+                                                    "userName": "sales.t3@hurix.com"
+                                                    }
+                                                    },
+                                                    {
+                                                    "user": {
+                                                    "firstName": "sales325",
+                                                    "lastName": "t",
+                                                    "roles": [
+                                                              {
+                                                              "name": "INSTRUCTOR",
+                                                              "id": "1"
+                                                              }
+                                                              ],
+                                                    "id": 59832,
+                                                    "profilePicURL": "https:  /  /create.kitaboo.com  /distribution  /Controller  /  /users  /59832.jpg",
+                                                    "userName": "sales.t@hurix.com"
+                                                    }
+                                                    }
+                                                    ],
+                                    "learners": [
+                                                 {
+                                                 "user": {
+                                                 "firstName": "Sales121",
+                                                 "lastName": "Learner 5",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "90"
+                                                           }
+                                                           ],
+                                                 "id": 254079,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /254079.jpg?timestamp=1518158746738",
+                                                 "userName": "sales.s5@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "Sales111",
+                                                 "lastName": "Learner 9",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "80"
+                                                           }
+                                                           ],
+                                                 "id": 254080,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /254080.jpg?timestamp=1512459978460",
+                                                 "userName": "sales.s9@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales890",
+                                                 "lastName": "s1",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "70"
+                                                           }
+                                                           ],
+                                                 "id": 59833,
+                                                 "profilePicURL": "?timestamp=1517224675846",
+                                                 "userName": "sales.s1@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales789",
+                                                 "lastName": "s2",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "60"
+                                                           }
+                                                           ],
+                                                 "id": 59834,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /59834.jpg?timestamp=1513082525488",
+                                                 "userName": "sales.s2@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "shareList": [
+                                                               59834,
+                                                               254082,
+                                                               254083,
+                                                               254078,
+                                                               59832,
+                                                               59840
+                                                               ],
+                                                 "recieveList": [
+                                                                 59834,
+                                                                 254082,
+                                                                 254083,
+                                                                 254078,
+                                                                 59832,
+                                                                 59840
+                                                                 ],
+                                                 "user": {
+                                                 "firstName": "sales5637",
+                                                 "lastName": "s3",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "50"
+                                                           }
+                                                           ],
+                                                 "id": 59835,
+                                                 "profilePicURL": "?timestamp=1517469153650",
+                                                 "userName": "sales.s3@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales456",
+                                                 "lastName": "s4",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "40"
+                                                           }
+                                                           ],
+                                                 "id": 59836,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /59836.jpg",
+                                                 "userName": "sales.s4@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales345",
+                                                 "lastName": "s6",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "30"
+                                                           }
+                                                           ],
+                                                 "id": 59838,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /59838.jpg?timestamp=1517304366574",
+                                                 "userName": "sales.s6@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales234",
+                                                 "lastName": "s7",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "20"
+                                                           }
+                                                           ],
+                                                 "id": 59839,
+                                                 "profilePicURL": "https:  /  /create.kitaboo.com  /Controller  /users  /59839.jpg",
+                                                 "userName": "sales.s7@hurix.com"
+                                                 }
+                                                 },
+                                                 {
+                                                 "user": {
+                                                 "firstName": "sales123",
+                                                 "lastName": "s8",
+                                                 "roles": [
+                                                           {
+                                                           "name": "LEARNER",
+                                                           "id": "10"
+                                                           }
+                                                           ],
+                                                 "id": 59840,
+                                                 "profilePicURL": "?timestamp=1515069825711",
+                                                 "userName": "sales.s8@hurix.com"
+                                                 }
+                                                 }
+                                                 ],
+                                    "id": 147,
+                                    "name": "Amol",
+                                    "sharingSetting": {
+                                    "NOTES-Learner-Instructor Sharing": "true",
+                                    "HIGHLIGHT-Instructor-Learner Sharing": "false",
+                                    "NOTES-Instructor-Learner Sharing": "false",
+                                    "NOTES-Learner-Learner Sharing": "true",
+                                    "HIGHLIGHT-Learner-Learner Sharing": "true",
+                                    "HIGHLIGHT-Learner-Instructor Sharing": "true"
+                                    }
+                                    }
+                                    ]
+                      }
+                      ],
+    "timestamp": "2018-02-12 09:41:55.184",
+    "responseMsg": "OK"
+}

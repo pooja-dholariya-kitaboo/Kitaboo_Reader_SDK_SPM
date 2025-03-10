@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html id="mainhtml">
+
+<head>
+	<meta charset="utf-8" />
+	<meta name = "viewport" content = "user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+		body {
+		margin: 0px;
+		}
+
+		iframe {
+		border: none;
+		}
+
+		#playerview {
+		}
+	</style>
+	<title>kitaboo scorm 1.1</title>
+	<script type="text/javascript">
+	bodyOnloadHandler = function(e) {
+
+		parseScorm();
+	}
+
+	var querymap;
+	var QueryString = function() {
+		// This function is anonymous, is executed immediately and
+		// the return value is assigned to QueryString!
+		var query_string = {};
+		var query = window.location.search.substring(1);
+		var vars = query.split("&");
+		for (var i = 0; i < vars.length; i++) {
+            
+            var index = vars[i].indexOf("=");
+            var pair = [vars[i].substr(0, index),vars[i].substr(index + 1)];
+            
+			// If first entry with this name
+			if (typeof query_string[pair[0]] === "undefined") {
+				query_string[pair[0]] = decodeURIComponent(pair[1]);
+				// If second entry with this name
+			} else if (typeof query_string[pair[0]] === "string") {
+				var arr = [ query_string[pair[0]], decodeURIComponent(pair[1]) ];
+				query_string[pair[0]] = arr;
+				// If third or later entry with this name
+			} else {
+				query_string[pair[0]].push(decodeURIComponent(pair[1]));
+			}
+		}
+		return query_string;
+	}();
+
+	querymap = QueryString;
+
+	var devicetype;
+	var jsondata;
+
+	var injson;
+	update = function(jsonobj) {
+		injson = jsonobj;
+		for ( var inkey in jsonobj) {
+			var val = jsonobj[inkey];
+			scormdatamodels[inkey] = val;
+		}
+	}
+
+	function parseScorm() {
+		if (querymap.data != "") {
+            update(JSON.parse(window.atob(querymap.data)));
+		}
+
+		loadPage(querymap.path);
+	}
+
+	function loadPage(pagepathhref) {
+		var divparent = document.createElement('div');
+		divparent.setAttribute('id', "playerparent");
+		divparent.setAttribute('class', 'pageholder');
+		var page = document.createElement('iframe');
+		page.setAttribute("src", pagepathhref);
+		page.setAttribute("class", "page");
+		page.setAttribute("id", "player");
+		page.setAttribute("scrolling", "no");
+		divparent.appendChild(page);
+
+		document.getElementById("playerview").appendChild(divparent);
+
+		page.onload = function() {
+			iResize(page);
+		};
+	}
+
+	function iResize(id) {
+	//console.log("normalHighlight" + querymap.path)
+		var height = getDocHeight(id.contentDocument);
+		var cheight = document.body.clientHeight;
+		var width = getDocWidth(id.contentDocument);
+		console.log("normalHighlight_height: " + window.innerHeight);
+		id.style.height = (window.innerHeight) + 'px';
+
+		id.style.width = '100%';
+		id.style.margin = " 0 auto;";
+	}
+
+	function getDocHeight(doc) {
+		doc = doc || document;
+		// stackoverflow.com/questions/1145850/
+		var body = doc.body, html = doc.documentElement;
+		var height = body.scrollHeight;
+
+		return height;
+	}
+
+	function setheight(height) {
+		var iframe = document.getElementById('player');
+
+	 	iframe.style.height = (height) + 'px';
+	 	//var bodyofchild = iframe.contentDocument.body;
+	 	//bodyofchild.style.height = (height-50) + 'px';
+	 	console.log("Height: " + height);
+	 	//iResize(iframe);
+	}
+
+
+
+	window.onresize = function(){
+        
+        setTimeout(function(){ setheight(window.innerHeight); }, 300);
+	}
+
+
+	function getDocWidth(doc) {
+		doc = doc || document;
+		var body = doc.body, html = doc.documentElement;
+		var width = Math.max(body.scrollWidth, body.offsetWidth,
+				html.clientWidth, html.scrollWidth, html.offsetWidth);
+		return width;
+	}
+
+	window.onunload = function() {
+
+		//console.log(kitabooSCODatamodel.length);
+	}
+
+	function closeplayer() {
+		//document.getElementById("player").remove();
+        close();
+	}
+
+	function close() {
+		debugger;
+		if (querymap.devicetype == "android"
+				|| querymap.devicetype == "Android") {
+			window.android.close(JSON.stringify(scormdatamodels));
+		} else if (querymap.devicetype == "iOS" || querymap.devicetype == "IOS") {
+			window.location = "close:" + JSON.stringify(scormdatamodels);
+		} else if (querymap.devicetype == "Windows"
+				|| querymap.devicetype == "win") {
+			window.external.notify('close:' + JSON.stringify(scormdatamodels));
+		} else if (querymap.devicetype == "online"
+				|| querymap.devicetype == "Online") {
+			debugger;
+			window.top.$('html').scope().$broadcast('ActivityCtrl:close', {
+				url : scormdatamodels
+			});
+		}
+		console.log(JSON.stringify(scormdatamodels));
+	}
+    
+    function getScromDataOnClose()
+    {
+        console.log(JSON.stringify(scormdatamodels));
+        return JSON.stringify(scormdatamodels);
+    }
+    
+</script>
+</head>
+
+<body onload="bodyOnloadHandler()">
+<div id="playerview"></div>
+<script type="text/javascript">
+		var API = {};
+		var scormdatamodels = {
+
+		};
+
+		API.LMSInitialize = function () {
+            return true;
+        }
+
+        API.Initialize = function () {
+            return true;
+        }
+
+        API.LMSGetValue = function (inkey) {
+            if (scormdatamodels.hasOwnProperty(inkey)) {
+                return scormdatamodels[inkey];
+            }
+            return "";
+        }
+
+        API.GetValue = function (inkey) {
+            if (scormdatamodels.hasOwnProperty(inkey)) {
+                return scormdatamodels[inkey];
+            }
+            return "";
+        }
+
+        API.LMSSetValue = function (inkey, invalue) {
+            console.log("LMSSetValue :" + inkey + " : " + invalue);
+
+            if (scormdatamodels.hasOwnProperty(inkey)) {
+                scormdatamodels[inkey] = invalue;
+            } else {
+                scormdatamodels[inkey] = invalue;
+            }
+            return "true";
+        }
+
+        API.SetValue = function (inkey, invalue) {
+            // console.log("LMSSetValue :" + inkey + " : " + invalue);
+
+            if (scormdatamodels.hasOwnProperty(inkey)) {
+                scormdatamodels[inkey] = invalue;
+            } else {
+                scormdatamodels[inkey] = invalue;
+            }
+            return "true";
+        }
+
+        API.LMSCommit = function (values) {
+            //console.log("LMSCommit" + values);
+            return true;
+        }
+
+        API.Commit = function (values) {
+            //console.log("Commit" + values);
+            return true;
+        }
+
+        API.LMSGetLastError = function () {
+            //console.log("LMSGetLastError");
+            return 0;
+        }
+
+        API.GetLastError = function () {
+            //console.log("LMSGetLastError");
+            return 0;
+        }
+
+        API.LMSGetErrorString = function (errorCode) {
+            //console.log("LMSGetErrorString :" + errorCode);
+            return errorCode;
+        }
+
+        API.GetErrorString = function (errorCode) {
+            //console.log("LMSGetErrorString :" + errorCode);
+            return errorCode;
+        }
+
+        API.LMSGetDiagnostic = function (errorCode) {
+            //console.log("LMSGetDiagnostic :" + errorCode);
+            return errorCode;
+        }
+
+        API.GetDiagnostic = function (errorCode) {
+            //console.log("LMSGetDiagnostic :" + errorCode);
+            return errorCode;
+        }
+
+        API.LMSFinish = function (result) {
+            // console.log("LMSFinish");
+            close();
+            return "";
+        }
+
+        API.Finish = function (result) {
+            // console.log("LMSFinish");
+            close();
+            return "";
+        }
+    //Scorm 2004 Object
+          window.API_1484_11 = {}
+         // called after setting scorm data
+          window.API_1484_11.Initialize = function () {
+              return true;
+          }
+
+          // called after initialtization to set values
+          window.API_1484_11.GetValue = function (inkey) {
+
+              if (scormdatamodels.hasOwnProperty(inkey)) {
+                  return scormdatamodels[inkey];
+              }
+
+              return "";
+          }
+
+          // called after every activity implicitly to set scrom data
+          window.API_1484_11.SetValue = function (inkey, invalue) {
+              if (scormdatamodels.hasOwnProperty(inkey)) {
+                  scormdatamodels[inkey] = invalue;
+              } else {
+                  scormdatamodels[inkey] = invalue;
+              }
+              return "true";
+          }
+
+          // called on back to bookshelf click or scorm close and calls close() to submit data to server
+          window.API_1484_11.Terminate = function (result) {
+              return "";
+          }
+
+          window.API_1484_11.Commit = function (values) {
+              return true;
+          }
+
+          window.API_1484_11.GetLastError = function () {
+              return 0;
+          }
+
+          window.API_1484_11.GetErrorString = function (errorCode) {
+              return errorCode;
+          }
+
+          window.API_1484_11.GetDiagnostic = function (errorCode) {
+              return errorCode;
+          }
+	</script>
+</body>
+
+</html>

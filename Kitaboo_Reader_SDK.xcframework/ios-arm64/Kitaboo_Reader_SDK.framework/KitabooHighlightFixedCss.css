@@ -1,0 +1,100 @@
+
+img {
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    -webkit-touch-callout: none !important;
+}
+
+mark.yellowColor, mark.redColor, mark.blueColor{
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+html{
+    -webkit-touch-callout: none !important;
+}
+html, body {margin: 0; overflow: hidden}
+.searchhighlight {
+    background-color: #fff34d;
+    -moz-border-radius: 5px;
+    /* -webkit-border-radius: 5px; */
+    /* border-radius: 5px; */
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+    /* -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+.searchhighlight {
+    padding:1px 4px;
+    margin:0 -4px;
+}
+
+.searchelement
+{
+    background-color: #bba3d0;
+}
+
+/*
+ *
+ * Highlight classes
+ *
+ */
+
+mark {
+    display: inline !important;
+}
+
+
+.yellowColor {
+    background-color: #8fd5e2 !important;
+}
+
+.nightMode .yellowColor {
+    background-color: #8fd5e1 !important;
+}
+
+.redColor {
+    background-color: #ffb7b0 !important;
+}
+
+.nightMode .redColor {
+    background-color: #ffb7b0 !important;
+}
+
+.blueColor{
+    background-color: #92cadc !important;
+}
+
+.nightMode .blueColor{
+    background-color: #92cadc !important;
+}
+
+.nightMode .searchelement{
+    background-color: #bba3d0 !important;
+}
+
+.audiosyncHighlightClass {
+
+}
+html .highlight-yellow, html .highlight-green, html .highlight-blue, html .highlight-pink, span.epub-media-overlay-playing {
+    border-radius: 3px;
+    padding: 0 2px;
+    margin: 0 -2px;
+    background: var(--bgcolor);
+}
+
+/* default media overlay style */
+.mediaOverlayStyle0 span.epub-media-overlay-playing>span  {
+    background: var(--bgcolor);
+}
+
+.mediaOverlayStyle1 .epub-media-overlay-playing {
+    border-bottom: dotted 2px transparent;
+    border-radius: 0;
+    background: var(--bgcolor);
+
+}
+:root {
+  --bgcolor: #E8BD7F;
+}
+

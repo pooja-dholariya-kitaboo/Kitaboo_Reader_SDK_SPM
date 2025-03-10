@@ -1,0 +1,249 @@
+:root {
+  --bgcolor: #1e90ff;
+}
+
+/* CSS Reset */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, tt, var,
+b, u, i, center,
+dl, dt, dd, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, kitabooNote {
+    vertical-align: baseline;
+}
+
+p {
+    break-after:auto !important;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+/* ePUB */
+html {
+    -webkit-text-size-adjust: none; /* Never autoresize text */
+    padding: 0 0 !important;
+/*    overflow-x: hidden;*/
+}
+
+body {
+/*    overflow-x: hidden !important;*/
+    position:unset !important;
+    -webkit-overflow-scrolling:unset !important;
+}
+
+@media only screen and (min-device-width: 600px) {
+    div {
+        /*        font-size: 1em;*/
+        /*        line-height: 1.438em !important;*/
+    }
+    
+    body {
+        -webkit-hyphens: none !important;
+        hyphens: none !important;
+    }
+}
+
+
+/* Begin Ted */
+
+img, svg, audio, video {
+    max-height: 95% !important;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    object-fit: contain;
+    page-break-inside: avoid;
+/*    display: block;*/         /*As image has set this property we cannot change image alignment as of text alignment, this property makes it as center align only.*/
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-user-drag: none;
+}
+
+/* End Ted */
+
+
+.reflowSingleScrollView{
+    width: 100%;
+    float: left;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin: 0;
+    display: flex !important;
+    justify-content: end;
+    align-items: center;
+    background: #dad6d6 !important;
+    direction: ltr;
+}
+
+.reflowSingleScrollView>p {
+    color: #232121 !important;
+    width: 30px;
+    height: 30px;
+    max-width: 50px;
+    max-height: 50px;
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    text-indent: 0px !important;
+    font-size: 14px !important;
+    background: #dad6d6 !important;
+    font-family: 'Open Sans' !important;
+    font-weight: bold !important;
+    border-radius: 15px !important;
+    position: absolute;
+    left: 10px;
+    direction: ltr;
+}
+
+
+.reflowSingleScrollViewAR{
+    width: 100%;
+    float: right;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin: 0;
+    display: flex !important;
+    justify-content: end;
+    align-items: center;
+    background: #dad6d6 !important;
+    direction: rtl;
+}
+
+.reflowSingleScrollViewAR>p {
+    color: #232121 !important;
+    width: 30px;
+    height: 30px;
+    max-width: 50px;
+    max-height: 50px;
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    text-indent: 0px !important;
+    font-size: 14px !important;
+    background: #dad6d6 !important;
+    font-family: 'Open Sans' !important;
+    font-weight: bold !important;
+    border-radius: 15px !important;
+    position: absolute;
+    right: 10px;
+    direction: rtl;
+}
+
+
+reflowScrollView{
+    width: 100%;
+    float: left;
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    margin: 0;
+    display: flex !important;
+    align-items: center;
+    direction: ltr;
+}
+
+.reflowScrollView>p {
+    color: #232121 !important;
+    width: 30px;
+    height: 30px;
+    max-width: 50px;
+    max-height: 50px;
+    display: flex !important;
+    justify-content: space-around;
+    align-items: center;
+    text-indent: 0px !important;
+    font-size: 14px !important;
+    background: #dad6d6 !important;
+    font-family: 'Open Sans' !important;
+    font-weight: bold !important;
+    border-radius: 15px !important;
+    left: 10px;
+    direction: ltr;
+}
+
+.reflowScrollViewAR{
+    width: 100%;
+        float: right;
+        padding-top: 0px !important;
+        padding-bottom: 0px !important;
+        margin:  0;
+        display: flex !important;
+
+        align-items: center;
+         direction: rtl;
+}
+
+.reflowScrollViewAR>p {
+   color: #232121 !important;
+       font-family: 'Open Sans' !important;
+       font-size: 14px !important;
+       background: #dad6d6 !important;
+       font-weight: bold !important;
+       border-radius: 15px !important;
+       width: 30px;
+       height: 30px;
+       max-width: 50px;
+       max-height: 50px;
+       display: flex !important;
+       justify-content: space-around;
+       align-items: center;
+       text-indent: 0px !important;
+       right: 10px;
+      direction: rtl;
+}
+/*
+ *
+ * Highlight classes
+ *
+ */
+
+highlight {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+}
+
+/* Remove tap highlight */
+input, textarea, button, highlight, select, a {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* Highlight styles */
+html .highlight-yellow {background:rgb(255, 235, 107)}
+html .highlight-green {background:#C0ED72}
+html .highlight-blue {background:#ADD8FF}
+html .highlight-pink {background:#FFB0CA}
+html .highlight-underline {
+    text-decoration: none;
+    border-bottom: 2px solid #F02814;
+}
+
+html .highlight-yellow, html .highlight-green, html .highlight-blue, html .highlight-pink, span.epub-media-overlay-playing {
+    border-radius: 3px;
+    padding: 0 2px;
+    margin: 0 -2px;
+    background: var(--bgcolor);
+}
+
+/* default media overlay style */
+.mediaOverlayStyle0 span.epub-media-overlay-playing>span  {
+    background: var(--bgcolor);
+}
+
+.mediaOverlayStyle1 .epub-media-overlay-playing {
+    border-bottom: dotted 2px transparent;
+    border-radius: 0;
+    background: var(--bgcolor);
+
+}
+:root {
+  --bgcolor: #E8BD7F;
+}

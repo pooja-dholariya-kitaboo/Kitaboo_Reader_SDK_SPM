@@ -1,0 +1,1284 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'), url('../fonts/OpenSans-Semibold.ttf');
+}
+
+.body {
+    background-color: transparent;
+    /*user-select : none;*/
+}
+
+.math-holder {
+    text-align: center;
+    /*margin-top: 2%;*/
+}
+
+#math-equation-holder {
+    border: none;
+    min-height: 71px;
+    margin-bottom: -5px;
+    overflow: auto;
+    outline: none;
+    width: 100%;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    font-size: 30pt;
+    overflow-y: hidden;
+}
+
+.mq-textcolor .mq-text-mode {
+    display: block;
+}
+
+
+/*.mq-root-block, .mq-math-mode .mq-root-block {
+  overflow: auto !important;
+}*/
+
+.icon-move {
+    font-size: 50px;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.errormsgtext {
+    position: absolute;
+   top: 57%;
+    left: 16%;
+    font-size: 12px;
+    color: red;
+    display: none;
+    font-family: "OpenSans Light";
+}
+
+.disabledEqn {
+    color: #333 !important;
+    font-size: 14px;
+    background-color: #f4f4f4 !important;
+    z-index: 10000;
+    /* pointer-events: none; */
+}
+
+.disabledEqn:focus {
+    outline: none;
+}
+
+.equation-holder {
+    overflow-y: auto;
+    border: 1px solid #a1a1a1;
+    /* width: 80vw; */
+    display: inline-block;
+    text-align: left;
+    direction: ltr;
+    background-color: white;
+    position: absolute;
+    width: 63%;
+    /* height: 73px; */
+    height: 45%;
+    left: 16% !important;
+    /* max-height: max-content; */
+    max-height: -moz-max-content;
+    top: 7% !important;
+}
+
+.movableicon {
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    font-size: 26px;
+    cursor: pointer;
+}
+
+.ans-movableicon {
+    /* position: fixed;
+                                                                                font-size: 12px;
+                                                                                cursor: pointer;
+                                                                                margin-left: 12px;
+                                                                                top: 10px; */
+    /* height: 50px; */
+    /* width: 50px; */
+    position: fixed;
+    cursor: pointer;
+    top: 20px;
+    width: 96px;
+    height: 29px;
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.32;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    left: 15px;
+}
+
+.ans-movableicon_ios {
+    /* position: fixed;
+                        font-size: 12px;
+                        cursor: pointer;
+                        margin-left: 12px;
+                        top: 10px; */
+    /* height: 50px; */
+    /* width: 50px; */
+    /* background: red; */
+    position: fixed;
+    cursor: pointer;
+    /* top: 20px; */
+    /* width: 96px; */
+    /* height: 29px; */
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.32;
+    letter-spacing: normal;
+    text-align: left;
+    color: #000;
+    left: 15px;
+    display: flex;
+    /* height: 100%; */
+    /* flex-direction: column; */
+    -ms-flex-direction: column;
+    /* background: red; */
+    width: 100%;
+    top: 0px;
+    /* margin: auto; */
+    left: 0px;
+    height: 45px;
+    box-shadow: 7.2px 5.4px 5.4px 0.6px rgb(142 142 142 / 50%);
+}
+
+.answer-main-container_ios {
+    border: solid 1px #707070;
+    background-color: #fff;
+    display: flex;
+    border-radius: 5px;
+    padding: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+}
+
+.forMobile {
+    display: none;
+}
+
+
+/*.mq-math-mode .mq-empty {
+  background : transparent !important;
+  border:1px solid black;
+}*/
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    .forMobile {
+        display: block;
+    }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .forMobile {
+        display: block;
+    }
+}
+
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+    .abcIcon {
+        float: right;
+        text-transform: none !important;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        /* color: #4aaf7c; */
+        font-size: 1.8em;
+        text-decoration: none !important;
+        text-align: center;
+        cursor: pointer;
+        color: #27224c;
+        font-size: 1em;
+        background: #e7e7e8;
+        border: 2px solid #b8b9bc;
+        border-radius: 5px;
+        box-shadow: 1px 1px 0px 1px #e6e6e6;
+        /* left: -399px; */
+        right: 30%;
+        padding: 7px;
+        position: relative;
+        top: 35px;
+    }
+}
+
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?dwse5v');
+    src: url('../fonts/icomoon.eot?dwse5v#iefix') format('embedded-opentype'), url('../fonts/icomoon.woff2?dwse5v') format('woff2'), url('../fonts/icomoon.ttf?dwse5v') format('truetype'), url('../fonts/icomoon.woff?dwse5v') format('woff'), url('../fonts/icomoon.svg?dwse5v#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-caps_off:before {
+    content: "\390";
+}
+
+.icon-caps_on:before {
+    content: "\38e";
+}
+
+.icon-space-bar:before {
+    content: "\3ad";
+}
+
+.icon-greater-than:before {
+    content: "\61";
+}
+
+.icon-Apostrophe:before {
+    content: "\62";
+}
+
+.icon-asterisk:before {
+    content: "\63";
+}
+
+.icon-back:before {
+    content: "\64";
+    color: black;
+}
+
+.icon-Caret:before {
+    content: "\65";
+}
+
+.icon-Close-bracket:before {
+    content: "\66";
+}
+
+.icon-math-keyboard-hide_client:before {
+    content: "\3cc";
+}
+
+.abc :before {
+    content: "\2c2";
+}
+
+
+/*.icon-Close-keyboard:before {
+  content: "\67";
+}*/
+
+.icon-symbol_Backslash:before {
+    content: "\1ecb";
+    color: #b9b9b9;
+}
+
+.icon-Direction-arrow:before {
+    content: "\100";
+}
+
+.icon-Open-keyboard:before {
+    content: "\5c";
+}
+
+.icon-move1:before {
+    content: "\3d1";
+}
+
+.icon-Close-keyboard:before {
+    content: "\67";
+    font-size: 1.1em;
+    line-height: 39px;
+    color: #000000;
+}
+
+.icon-division-slash:before {
+    content: "\68";
+}
+
+.icon-division:before {
+    content: "\69";
+}
+
+.icon-dollar:before {
+    content: "\6a";
+}
+
+.icon-Dot:before {
+    content: "\6b";
+}
+
+.icon-Down-Arrow:before {
+    content: "\6c";
+    /*font-size: 20px;*/
+}
+
+.icon-Enter:before {
+    content: "\6d";
+    color: black;
+}
+
+.icon-equals-sign:before {
+    content: "\6e";
+}
+
+.icon-Open-keyboard:before {
+    content: "\5c";
+}
+
+.icon-four-arrow:before {
+    content: "\6f";
+}
+
+.icon-greater-than-or-equal-to:before {
+    content: "\70";
+}
+
+.icon-Left-Arrow:before {
+    content: "\71";
+    /*font-size: 20px;*/
+}
+
+.icon-Left-Arrow_ios {
+    content: "\71";
+    color: #007bc3;
+    padding: 15px;
+}
+
+.icon-Left-Arrow_ios:before {
+    content: "\71";
+}
+
+.icon-less-than-or-equal-to:before {
+    content: "\72";
+}
+
+.icon-less-than:before {
+    content: "\73";
+}
+
+.icon-log-of-x:before {
+    content: "\74";
+}
+
+.icon-log-x-to-the-base-y:before {
+    content: "\77";
+}
+
+.icon-minus-sign:before {
+    content: "\78";
+}
+
+.icon-move:before {
+    content: "\79";
+}
+
+.icon-Open-bracket:before {
+    content: "\7a";
+}
+
+.icon-Open-keyboard:before {
+    content: "\5c";
+    position: absolute;
+    right: 50px;
+    font-size: 28px;
+    top: 7px;
+}
+
+.icon-percent:before {
+    content: "\3f";
+}
+
+.icon-Pi:before {
+    content: "\2f";
+}
+
+.icon-plus-sign:before {
+    content: "\2c";
+}
+
+.icon-Right-arrow:before {
+    content: "\3c";
+    /*font-size: 20px;*/
+}
+
+.icon-Dot:before {
+    content: "\6b";
+}
+
+.icon-Apostrophe:before {
+    content: "\e934";
+}
+
+.icon-Caret:before {
+    content: "\65";
+}
+
+.icon-Right-single-quote:before {
+    content: "\3e";
+}
+
+.icon-root-of-x-to-power-of-y:before {
+    content: "\3b";
+}
+
+.icon-semicolon:before {
+    content: "\3a";
+}
+
+.icon-single-vertical-bar:before {
+    content: "\7b";
+}
+
+
+/*.icon-Direction-arrow:before {
+  content: "\106";
+}*/
+
+.icon-square-root:before {
+    content: "\7d";
+}
+
+.icon-symbol_degree:before {
+    content: "\f5";
+}
+
+.icon-top-arrow:before {
+    content: "\5b";
+    /*font-size: 20px;*/
+}
+
+.icon-x-raise-to-y:before {
+    content: "\5d";
+}
+
+.icon-x-upon-y:before {
+    content: "\7c";
+    font-size: 1.3em;
+    line-height: 34px;
+    /*font-size: 20px;*/
+}
+
+.icon-X:before {
+    content: "\41";
+}
+
+.icon-y:before {
+    content: "\42";
+}
+
+.abcIcon {
+    float: right;
+    text-transform: none !important;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* color: #4aaf7c; */
+    /* font-size: 1.8em; */
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    color: #27224c;
+    font-size: 1em;
+    background: #e7e7e8;
+    border: 2px solid #b8b9bc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px 1px #e6e6e6;
+    /*  left: -495px ;*/
+    /* right: 9%; */
+    right: 5%;
+    padding: 11px;
+    position: relative;
+    /* top: 35px; */
+    top: 18px;
+}
+
+
+/*@media screen and (max-width: 640px) and (orientation: portrait) {
+  .abcIcon{
+    right: 30% !important;
+    top: 42px !important;
+  }
+}*/
+
+.cancelBtn {
+    display: inline-block;
+    width: 92px;
+    height: 42px;
+    background-color: #f4f4f4;
+    color: black;
+    /* outline: 1px solid #cccccc; */
+    /* font-size: 14px; */
+    font-size: 22px;
+    box-shadow: none;
+    border: 1px solid #cccccc;
+    position: absolute;
+    /* top: 142px;
+    left: 53%; */
+    top: 70%;
+    left: 53%;
+    cursor: pointer;
+}
+
+.gotItBtn {
+    display: inline-block;
+    width: 92px;
+    height: 25px;
+    background-color: #f4f4f4;
+    color: black;
+    font-size: 14px;
+    box-shadow: none;
+    border: 1px solid #cccccc;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    margin-right: -2px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #063855;
+    color: #fff;
+}
+
+.gotItBtn2 {
+    display: inline-block;
+    width: 92px;
+    height: 25px;
+    background-color: #f4f4f4;
+    color: black;
+    font-size: 14px;
+    box-shadow: none;
+    border: 1px solid #cccccc;
+    position: absolute;
+    cursor: pointer;
+    bottom: 0;
+    margin-right: -2px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    background-color: #063855;
+    color: #fff;
+}
+
+.addBtn {
+    display: inline-block;
+    width: 97px;
+    height: 42px;
+    /* background-color: #f4f4f4; */
+    /* outline: 1px solid #cccccc; */
+    /* font-size: 14px; */
+    font-size: 22px;
+    box-shadow: none;
+    border: 1px solid #cccccc;
+    position: absolute;
+    /* top: 142px;
+    left: 30%; */
+    top: 70%;
+    left: 23%;
+    cursor: pointer;
+    background-color: #27224c;
+    color: #ffffff;
+}
+
+
+/*}
+@media screen and (device-width: 640px) and (device-height: 360px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape) {
+.equation-holder {
+    border: 1px solid #cccccc;
+    width: 80vw;
+    display: inline-block;
+    text-align: left;
+    direction: ltr;
+    background-color: white;
+    position: absolute;
+    width: 55%;
+    left: 15% !important;
+    max-height: max-content;
+    max-height: -moz-max-content;
+    top: 10% !important;
+  }
+
+  .eqn-editor{
+    right: 65px;
+   }
+
+.abcIcon {
+  float: right;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4aaf7c;
+  font-size: 1.8em;
+  text-decoration: none !important;
+  text-align: center;
+  cursor: pointer;
+  color: #27224c;
+  font-size: 1em;
+  background: #e7e7e8;
+  border: 2px solid #b8b9bc;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0px 1px #e6e6e6;
+
+    right: 20%;
+  padding: 7px;
+  position: relative;
+  top: 38px;
+  }
+
+  .cancelBtn {
+      top: 108px;
+    }
+}*/
+
+
+/*@media only screen and (device-width: 768px) and (device-height: 1024px) and (orientation : landscape) {
+  .equation-holder {
+  border: 1px solid #cccccc;
+  width: 80vw;
+  display: inline-block;
+  text-align: left;
+
+  direction: ltr;
+  background-color: white;
+  position: absolute;
+  width: 47%;
+  left: 23% !important;
+  max-height: max-content;
+  max-height: -moz-max-content;
+  top: 3% !important;
+
+}
+
+.abcIcon {
+  float: right;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #4aaf7c;
+  font-size: 1.8em;
+  text-decoration: none !important;
+  text-align: center;
+  cursor: pointer;
+  color: #27224c;
+  font-size: 1em;
+  background: #e7e7e8;
+  border: 2px solid #b8b9bc;
+  border-radius: 5px;
+  box-shadow: 1px 1px 0px 1px #e6e6e6;
+  left: -243px;
+  right: 35%;
+  padding: 7px;
+  position: relative;
+  top: 23px;
+}
+}*/
+
+
+/*@media all and (device-width: 1024px) and (device-height: 768px) and (orientation:landscape) {
+  .equation-holder {
+    border: 1px solid #cccccc;
+    width: 80vw;
+    display: inline-block;
+    text-align: left;
+    direction: ltr;
+    background-color: white;
+    position: absolute;
+    width: 42%;
+    left: 28% !important;
+    max-height: max-content;
+    max-height: -moz-max-content;
+    top: 4% !important;
+  }
+  .abcIcon {
+    float: right;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #4aaf7c;
+    font-size: 1.8em;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    color: #27224c;
+    font-size: 1em;
+    background: #e7e7e8;
+    border: 2px solid #b8b9bc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px 1px #e6e6e6;
+    /* left: -399px; */
+
+
+/*right: 24%;
+    padding: 7px;
+    position: relative;
+    top: 36px;
+  }
+  .cancelBtn {
+    display: inline-block;
+    width: 92px;
+    height: 46px;
+    background-color: #f4f4f4;
+    color: black;
+    outline: 1px solid #cccccc;
+    font-size: 14px;
+    padding-top: 11px;
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    padding-left: 21px;
+    position: absolute;
+    top: 140px;
+    left: 45%;
+    cursor: pointer;
+  }
+}*/
+
+
+/*nexus 10*/
+
+
+/*@media all and (device-width: 800px) and (device-height: 1280px) and (orientation:portrait) {
+  .equation-holder {
+    border: 1px solid #cccccc;
+    width: 80vw;
+    display: inline-block;
+    text-align: left;
+    direction: ltr;
+    background-color: white;
+    position: absolute;
+    width: 47%;
+    left: 25% !important;
+    max-height: max-content;
+    max-height: -moz-max-content;
+    top: 3% !important;
+  }
+  .abcIcon {
+    float: right;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #4aaf7c;
+    font-size: 1.8em;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    color: #27224c;
+    font-size: 1em;
+    background: #e7e7e8;
+    border: 2px solid #b8b9bc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px 1px #e6e6e6;
+    left: -157px;
+    right: 27%;
+    padding: 7px;
+    position: relative;
+    top: 37px;;
+    /* margin-right: -2%; */
+
+
+/* margin-left: 28px; */
+
+
+/* left: -236px; */
+
+
+/*}
+  .cancelBtn {
+    display: inline-block;
+    width: 92px;
+    height: 40px;
+    background-color: #f4f4f4;
+    color: black;
+    outline: 1px solid #cccccc;
+    font-size: 14px;
+    padding-top: 11px;
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    padding-left: 24px;
+    position: absolute;
+    top: 143px;
+    left: 42%;
+    cursor: pointer;
+  }
+}*/
+
+
+/*@media all and (device-width: 1280px) and (device-height: 800px) and (orientation:landscape) {
+  .equation-holder {
+    border: 1px solid #cccccc;
+    width: 80vw;
+    display: inline-block;
+    text-align: left;
+    direction: ltr;
+    background-color: white;
+    position: absolute;
+    width: 37%;
+    left: 30% !important;
+    max-height: max-content;
+    max-height: -moz-max-content;
+    top: 4% !important;
+  }
+  .abcIcon {
+    float: right;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #4aaf7c;
+    font-size: 1.8em;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    color: #27224c;
+    font-size: 1em;
+    background: #e7e7e8;
+    border: 2px solid #b8b9bc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px 1px #e6e6e6;
+    left: -360px !important;
+    right: 29%;
+    padding: 7px;
+    position: relative;
+    top: 30px;
+    /* margin-right: -2%; */
+
+
+/* margin-left: 28px; */
+
+
+/* left: -236px; */
+
+
+/*}
+  .cancelBtn {
+    display: inline-block;
+    width: 92px;
+    height: 40px;
+    background-color: #f4f4f4;
+    color: black;
+    outline: 1px solid #cccccc;
+    font-size: 14px;
+    padding-top: 11px;
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    padding-left: 24px;
+    position: absolute;
+    top: 140px;
+    left: 45%;
+    cursor: pointer;
+  }
+}*/
+
+
+/*nexus7*/
+
+
+/*@media all and (device-width: 600px) and (device-height: 960px) and (orientation:portrait) {
+  .equation-holder {
+    border: 1px solid #cccccc;
+    width: 80vw;
+    display: inline-block;
+    text-align: left;
+    direction: ltr;
+    background-color: white;
+    position: absolute;
+    width: 49%;
+    left: 24% !important;
+    max-height: max-content;
+    max-height: -moz-max-content;
+    top: 3% !important;
+  }
+  .abcIcon {
+    float: right;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #4aaf7c;
+    font-size: 1.8em;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    color: #27224c;
+    font-size: 1em;
+    background: #e7e7e8;
+    border: 2px solid #b8b9bc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px 1px #e6e6e6;
+    left: -91px !important;
+    right: -13%;
+    padding: 7px;
+    position: relative;
+    top: 29px;
+  }
+  .cancelBtn {
+    display: inline-block;
+    width: 92px;
+    height: 46px;
+    background-color: #f4f4f4;
+    color: black;
+    outline: 1px solid #cccccc;
+    font-size: 14px;
+    padding-top: 11px;
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    padding-left: 21px;
+    position: absolute;
+    top: 132px;
+    left: 42%;
+    cursor: pointer;
+  }
+}*/
+
+
+/*@media all and (device-width: 960px) and (device-height: 600px) and (orientation:landscape) {
+  .equation-holder {
+    border: 1px solid #cccccc;
+    width: 80vw;
+    display: inline-block;
+    text-align: left;
+    direction: ltr;
+    background-color: white;
+    position: absolute;
+    width: 49%;
+    left: 24% !important;
+    max-height: max-content;
+    max-height: -moz-max-content;
+    top: 5% !important;
+  }
+  .abcIcon {
+    float: right;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #4aaf7c;
+    font-size: 1.8em;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    color: #27224c;
+    font-size: 1em;
+    background: #e7e7e8;
+    border: 2px solid #b8b9bc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px 1px #e6e6e6;
+    left: -188px !important;
+    right: 21%;
+    padding: 7px;
+    position: relative;
+    top: 27px;
+  }
+  .cancelBtn {
+    display: inline-block;
+    width: 92px;
+    height: 46px;
+    background-color: #f4f4f4;
+    color: black;
+    outline: 1px solid #cccccc;
+    font-size: 14px;
+    padding-top: 11px;
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    padding-left: 21px;
+    position: absolute;
+    top: 135px;
+    left: 44%;
+    cursor: pointer;
+  }
+}*/
+
+
+/*@media all and (device-width: 1366px) and (device-height: 1024px) and (orientation:landscape) {
+  .abcIcon {
+    float: right;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #4aaf7c;
+    font-size: 1.8em;
+    text-decoration: none !important;
+    text-align: center;
+    cursor: pointer;
+    color: #27224c;
+    font-size: 1em;
+    background: #e7e7e8;
+    border: 2px solid #b8b9bc;
+    border-radius: 5px;
+    box-shadow: 1px 1px 0px 1px #e6e6e6;
+
+    right: 31%;
+    padding: 7px;
+    position: relative;
+    top: 34px;
+  }
+  .cancelBtn {
+    display: inline-block;
+    width: 92px;
+    height: 40px;
+    background-color: #f4f4f4;
+    color: black;
+    outline: 1px solid #cccccc;
+    font-size: 14px;
+    padding-top: 11px;
+    box-shadow: none !important;
+    border: 1px solid #cccccc !important;
+    padding-left: 21px;
+    position: absolute;
+    top: 149px;
+    left: 42%;
+    cursor: pointer;
+  }
+}
+*/
+
+.hidemathkeyboardtext {
+    font-family: sans-serif;
+    position: absolute;
+    /* top: 106px; */
+    top: 55%;
+    right: 107px;
+    color: #b0b0b0;
+	
+}
+
+#draggable-element {
+    top: 138px;
+    /* right: 34%; */
+    right: 18%;
+    position: absolute;
+    width: 600px;
+    background-color: #ffffff;
+    height: 200px;
+    box-shadow: 0px 1px 6px 3px #ababab;
+}
+
+.disabled {
+    opacity: 0.5 !important;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#answer-main-container {
+    border: solid 1px #707070;
+    background-color: #fff;
+    display: flex;
+    border-radius: 5px;
+    padding: 40px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    flex-direction: row;
+    width: 80%;
+}
+
+
+/* #answer-main-container2 {
+                                border: solid 1px #707070;
+                                background-color: #fff;
+                                display: flex;
+                                border-radius: 5px;
+                                padding: 40px;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%, -50%);
+                                position: absolute;
+                                flex-direction: row;
+                                width: 80%;
+                            } */
+
+.incorrect-ans-container {
+    background-color: #f4f4f4;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin-top: 10px;
+    /* width: 200px; */
+}
+
+.correct-ans-container {
+    background-color: #f4f4f4;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin-top: 10px;
+    /* width: 200px; */
+}
+
+.incorrect-ans-container_ios {
+    background-color: #f4f4f4;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin-top: 10px;
+    /* height: 5rem; */
+    /* width: 200px; */
+}
+
+.correct-ans-container_ios {
+    background-color: #f4f4f4;
+    overflow-x: auto;
+    overflow-y: auto;
+    margin-top: 10px;
+    /* height: 5rem; */
+    /* width: 200px; */
+}
+
+.correct-ans-containerPara_ios {
+    white-space: nowrap
+}
+
+.correct-ans-containerPara {
+    white-space: nowrap;
+    /* font-size: 9px; */
+    /* width: 341px;
+                                                        height: 27px;
+                                                        margin: 20px 214px 9px 20px;
+                                                        font-family: SegoeUI;
+                                                        font-size: 20px;
+                                                        font-weight: normal;
+                                                        font-stretch: normal;
+                                                        font-style: normal;
+                                                        line-height: 1.35;
+                                                        letter-spacing: normal;
+                                                        text-align: left;
+                                                        color: #000; */
+}
+
+
+/* .button-container {} */
+
+.incorrect-ans-containerPara {
+    white-space: nowrap;
+}
+
+.incorrect-ans-containerPara_ios {
+    white-space: nowrap;
+}
+
+span#incorrect-ans-holder,
+span#correct-ans-holder {
+    width: 100%;
+    border: none;
+    height: 183px;
+}
+
+span#incorrect-ans-holder .mq-root-block,
+.mq-math-mode .mq-root-block {
+    /*height: auto !important;*/
+	    height: 100% !important;
+   /* overflow-wrap: break-word;
+    word-break: break-all;
+    word-spacing: normal;
+    white-space: break-spaces;
+	overflow:auto;*/
+	
+	
+	
+}
+
+.fd {
+    flex-direction: row;
+    width: 50%;
+    float: left;
+}
+
+.incorrectfd {
+    flex-direction: row;
+    width: 50%;
+    float: left;
+    margin-top: 20px;
+}
+
+.correctfd {
+    flex-direction: row;
+    width: 50%;
+    float: left;
+    margin: 20px 0 20px 20px;
+}
+
+.btn-holder {
+    justify-content: flex-end;
+    display: flex;
+}
+
+.btn-holder_ios {
+    justify-content: flex-end;
+    display: flex;
+}
+
+@media (max-width: 800px) {
+    #answer-main-container {
+        flex-direction: column;
+        width: 80% !important;
+    }
+    .fd {
+        flex-direction: column;
+        width: 100%;
+        float: left;
+    }
+    
+}
+
+@media all and (device-width: 1024px) and (device-height: 1366px) {
+    #answer-main-container {
+        flex-direction: column;
+        width: 80%;
+    }
+    .fd {
+        flex-direction: column;
+        width: 100%;
+        float: left;
+    }
+    
+}
+
+@media only screen and (min-device-width :768px) and (max-device-width: 1366px) and (orientation: landscape) {
+    #draggable-element {
+        top: 90px;
+         right: 28%; 
+       /* right: 21%;*/
+        position: absolute;
+        width: 600px;
+        background-color: #ffffff;
+        height: 200px;
+        box-shadow: 0px 1px 6px 3px #ababab;
+    }
+}
+
+.Feedback_mob {
+    padding: 12px;
+    left: 38px;
+    position: fixed;
+}

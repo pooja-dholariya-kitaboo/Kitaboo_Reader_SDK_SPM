@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+
+<div class="mobile-keyboard" ng-hide="hideKeyBoard">
+
+	<div class="math">
+
+		<div class="first-row math-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.math.first"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-first-row keys"
+				data-latex-val="math-first-{{$index+1}}"
+				ng-class="{'firstKey' : $first ,'fourColspan' : mathThirdRow.colspan == 4, 'lastKey' : $last}">
+			</button>
+		</div>
+
+		<div class="second-row math-rows">
+			<button ng-repeat="mathSecondRow in mobileKeyboardData.math.second"
+				ng-bind-html="mathSecondRow.displayText | to_trusted" class="math-second-row keys"
+				data-latex-val="math-second-{{$index+1}}"
+				ng-class="{'firstKey' : $first, 'oneColspan' : mathSecondRow.colspan, 'lastKey' : $last}">
+			</button>
+		</div>
+
+		<div class="third-row math-rows">
+			<button ng-repeat="mathThirdRow in mobileKeyboardData.math.third"
+				ng-bind-html="mathThirdRow.displayText | to_trusted" class="math-third-row keys"
+				ng-class="{'firstKey' : $first , 'fourColspan' : mathThirdRow.colspan, 'enterclick': $index == 4 ,'lastKey' : $last}"
+				data-latex-val="math-third-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="four-row math-rows">
+			<button ng-repeat="mathFourRow in mobileKeyboardData.math.four"
+				ng-bind-html="mathFourRow.displayText | to_trusted" class="math-four-row keys {{mathFourRow.addClass}}"
+				ng-class="{'firstKey' : $first ,
+		    'numberPanelDiv' : $index == 0, 'sixColspan' : mathFourRow.colspan == 3, 'alfabetDiv' : $index == 1, 'symbolDiv' : $index == 2,'hideKeyBoardDiv' : $index == 4, 'lastKey' : $last}"
+				data-latex-val="math-four-{{$index+1}}">
+			</button>
+		</div>
+	</div>
+
+	<div class="numberPanel">
+
+		<div class="first-row number-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.numberPanel.first"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-first-row keys"
+				ng-class="{'firstKey' : $first, 'lastKey' : $last}" data-latex-val="numberPanel-first-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="second-row number-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.numberPanel.second"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-second-row keys"
+				ng-class="{'firstKey' : $first, 'lastKey' : $last}" data-latex-val="numberPanel-second-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="third-row number-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.numberPanel.third"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-third-row keys"
+				ng-class="{'firstKey' : $first , 'emptyData' : mathFirstRow.isEmpty, 'lastKey' : $last}"
+				data-latex-val="numberPanel-third-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="four-row number-rows">
+			<button ng-repeat="mathFourRow in mobileKeyboardData.numberPanel.four"
+				ng-bind-html="mathFourRow.displayText | to_trusted" class="math-four-row keys {{mathFourRow.addClass}}"
+				ng-class="{'firstKey' : $first , 'fiveColspan' : mathFourRow.colspan == 5 , 'twoColspan' : mathFourRow.colspan == 2 , 'lastKey' : $index == 3 , 'noNav' : $index == 1, 'relativeDiv' : $index == 2, 'lastKey' : $last}"
+				data-latex-val="numberPanel-four-{{$index+1}}">
+			</button>
+		</div>
+
+	</div>
+
+	<div class="overlay-modal"></div>
+
+	<div class="navPanel">
+		<div class="first-row nav-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.navPanel.first"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-first-row keys"
+				ng-class="{'firstKey' : $first ,'emptyData' : mathFirstRow.isEmpty}"
+				data-latex-val="navPanel-first-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="second-row nav-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.navPanel.second"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-second-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="navPanel-second-{{$index+1}}">
+			</button>
+		</div>
+
+	</div>
+
+	<div class="choosePanel">
+		<div class="first-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel.first"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-first-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="choosePanel-first-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="second-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel.second"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-second-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="choosePanel-second-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="third-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel.third"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-third-row keys"
+				ng-class="{'firstKey' : $first ,'chooseDiv3' : $index == 0}"
+				data-latex-val="choosePanel-third-{{$index+1}}">
+			</button>
+		</div>
+	</div>
+
+	<!-- <div class="choosePanelUpperCase">
+			<div class="first-row choose-rows">
+			<div ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel.first" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-first-row keys' ng-class="{'firstKey' : $first}" data-latex-val="choosePanelUpperCase-first-{{$index+1}}">
+				
+			</div>
+		</div>
+
+		<div class="second-row choose-rows">
+			<div ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel.second" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-second-row keys' ng-class="{'firstKey' : $first}" data-latex-val="choosePanelUpperCase-second-{{$index+1}}">
+				
+			</div>
+		</div>
+
+		<div class="third-row choose-rows">
+			<div ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel.third" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-third-row keys' ng-class="{'firstKey' : $first}" data-latex-val="choosePanelUpperCase-third-{{$index+1}}">
+				
+			</div>
+		</div>
+			
+		</div> -->
+
+	<div class="symbolPanel">
+		<div class="first-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.symbolPanel.first"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-first-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="symbolPanel-first-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="second-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.symbolPanel.second"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-second-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="symbolPanel-second-{{$index+1}}">
+			</button>
+		</div>
+
+		<!-- <div class="third-row choose-rows">
+			<div ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel.third" ng-bind-html="mathFirstRow.displayText | to_trusted" class='math-third-row keys' ng-class="{'firstKey' : $first}" data-latex-val="choosePanel-third-{{$index+1}}">
+				
+			</div>
+		</div> -->
+	</div>
+
+	<div class="choosePanel2">
+		<div class="first-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel2.first"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-first-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="choosePanel2-first-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="second-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel2.second"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-second-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="choosePanel2-second-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="third-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel2.third"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-third-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="choosePanel2-third-{{$index+1}}">
+			</button>
+		</div>
+	</div>
+
+	<div class="choosePanel3">
+		<div class="first-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel3.first"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-first-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="choosePanel3-first-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="second-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel3.second"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-second-row keys"
+				ng-class="{'firstKey' : $first}" data-latex-val="choosePanel3-second-{{$index+1}}">
+			</button>
+		</div>
+
+		<div class="third-row choose-rows">
+			<button ng-repeat="mathFirstRow in mobileKeyboardData.choosePanel3.third"
+				ng-bind-html="mathFirstRow.displayText | to_trusted" class="math-third-row keys"
+				ng-class="{'firstKey' : $first ,'chooseDiv4' : $index == 0}"
+				data-latex-val="choosePanel3-third-{{$index+1}}">
+			</button>
+		</div>
+	</div>
+</div>

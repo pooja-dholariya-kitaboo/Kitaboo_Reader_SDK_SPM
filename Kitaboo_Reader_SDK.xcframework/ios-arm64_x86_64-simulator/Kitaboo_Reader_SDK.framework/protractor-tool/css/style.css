@@ -1,0 +1,211 @@
+@font-face {
+  font-family: 'OpenSans';
+  src: url('../fonts/OpenSans-Semibold.eot?#iefix') format('embedded-opentype'),
+  	url('../fonts/OpenSans-Semibold.ttf');
+}
+
+canvas {
+	/*border: 1px solid;*/
+    /*height: 100vh;
+    width: 100%;*/
+    display: table;
+}
+body, canvas {
+    background-color: transparent;
+    overflow: hidden;
+}
+
+html {
+    overflow: hidden;
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+    font-family: OpenSans;
+    overflow: hidden;
+}
+
+#lineCanvas {
+	position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+#protractorCanvas, .line-rotate, .rotate-protractor, .move-protractor {
+	z-index: 2;
+}
+
+.line-rotate, .rotate-protractor, .move-protractor {
+	opacity: 0;
+}
+
+.line-rotate {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+}
+
+.fir-top {
+    border: 1px solid blue;
+}
+
+.sec-top{
+    border: 1px solid green;
+}
+
+.move-protractor {
+    position: absolute;
+    display: inline;
+    cursor: move;
+    border: 1px solid yellow; 
+    z-index: 3;
+    background-color: yellow;
+}
+
+.rotate-protractor {
+    position: absolute;
+    display: none;
+    cursor: move;
+    background-color: lightpink;
+    /*opacity: 0.4;*/
+    z-index: 2;
+}
+
+.roundSave {
+	border-radius: 25px;
+    position: absolute;
+    left: 1%;
+    top: 2%;
+    width: 50px;
+    height: 50px;
+    z-index: 4;
+    background-color: rgba(128,128,128,0.7);
+    line-height: 50px;
+    text-align: center;
+    box-shadow: 0 0 2px 5px #e2e2e2;
+    background-image: url(../images/Check.svg);
+    background-position: 11px 1px;
+    background-repeat: no-repeat;
+    background-size: 55% 100%;
+    cursor: pointer;
+}
+
+.withSaveDelete {
+	border-radius: 25px;
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    z-index: 4;
+    font-family: OpenSans;
+    background-color: rgba(128,128,128,0.7);
+    line-height: 50px;
+    text-align: center;
+    box-shadow: 0 0 2px 5px #e2e2e2;
+    
+}
+
+.combSave {
+	background-image: url(../images/Check.svg);
+	background-position: 11px 1px;
+    background-repeat: no-repeat;
+    background-size: 55% 100%;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    float: left;
+}
+
+.combClose {
+	background-image: url(../images/Close.svg);
+	background-position: 11px 1px;
+    background-repeat: no-repeat;
+    background-size: 55% 100%;
+    cursor: pointer;
+    width: 46px;
+    height: 50px;
+    float: left;
+}
+
+.separator {
+	float: left;
+    height: 50px;
+    position: relative;
+}
+
+.separator div {
+	border-left: 1px solid white;
+    height: 50%;
+    position: relative;
+    margin-top: 14px;
+}
+
+.btnDel {
+	/*border:1px solid black;
+	position: absolute;
+	right: 9%;
+    top: 5%;
+    z-index: 4;*/
+}
+
+#resizable {
+	height: 150px;
+	width: 279px;
+	position: absolute;
+	border: 0px solid black;
+	/*z-index: 1;*/
+	background:transparent;
+	z-index: 2;
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px) {
+    .withSaveDelete {
+        line-height: 70px;
+        border-radius: 50px;
+    }
+
+    .combSave {
+        width: 60px;
+        height: 70px;
+    }
+
+    .combClose {
+        width: 65px;
+        height: 70px;
+    }
+    .separator {
+        height: 70px;
+    }
+
+    .separator div {
+        margin-top: 18px;
+    }
+}
+
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) {
+    .withSaveDelete {
+        line-height: 70px;
+        border-radius: 50px;
+    }
+
+    .combSave {
+        width: 60px;
+        height: 70px;
+    }
+
+    .combClose {
+        width: 65px;
+        height: 70px;
+    }
+    .separator {
+        height: 70px;
+    }
+
+    .separator div {
+        margin-top: 18px;
+    }
+}

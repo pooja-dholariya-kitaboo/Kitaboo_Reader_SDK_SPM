@@ -1,0 +1,266 @@
+{
+    "ReaderScreenBookmarkTF":
+    {
+        "hint":"Enter your bookmark text here",
+        "label":"Bookmark",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderAddBookmarkButton":
+    {
+        "hint":"Tap this button to add bookmark",
+        "label":"Add Bookmark",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderUpdateBookmarkButton":
+    {
+        "hint":"Tap this button to update bookmark",
+        "label":"Update Bookmark",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderNoteOnPage": {
+        "hint":"",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontSettingsFontName": {
+        "hint":"",
+        "label":"Font name picker",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontSettingsFontSizeSlider": {
+        "hint":"Drag the slider left to decrease the font size or right to increase the font size",
+        "label":"Font size slider",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontSettingsAlignment": {
+        "hint":"Double tap to select",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontSettingsLineSpacing": {
+        "hint":"",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontSettingsMargin": {
+        "hint":"",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontSettingsMode": {
+        "hint":"",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontSettingsScrollMode": {
+        "hint":"",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "BackToBookShelfButton": {
+        "hint":"Double tap for back to bookshelf",
+        "label":"Back to Bookshelf",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBSleepButton": {
+        "hint":"Double tap to set sleep time",
+        "label":"Sleep",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBNextButton": {
+        "hint":"",
+        "label":"Next",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBPreviousButton": {
+        "hint":"",
+        "label":"Previous",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBPauseButton": {
+        "hint":"",
+        "label":"Pause",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBPlayButton": {
+        "hint":"",
+        "label":"Play",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBBookMarkButton": {
+        "hint":"Double tap to bookmark the page",
+        "label":"BookMark",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBNarrationSpeedButton": {
+        "hint":"Double tap to select",
+        "label":"Speed controller",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBNextChapterButton": {
+        "hint":"",
+        "label":"Go to next chapter",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBPreviousChapterButton": {
+        "hint":"",
+        "label":"Go to previous chapter",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBFullScreenButton": {
+        "hint":"",
+        "label":"Full Screen",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBForwardButton": {
+        "hint":"",
+        "label":"15 seconds forward",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBRewindButton": {
+        "hint":"",
+        "label":"15 seconds backward",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBSubtitleEnabledButton": {
+        "hint":"double tap to disable",
+        "label":"cc selection",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBSubtitleDisabledButton": {
+        "hint":"double tap to enable",
+        "label":"cc selection",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBMuteEnabledButton": {
+        "hint":"double tap to mute",
+        "label":"Mute",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBMuteDisabledButton": {
+        "hint":"double tap to audible",
+        "label":"Mute",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBMoreOptionButton": {
+        "hint":"",
+        "label":"More Option",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBChapterTabButton": {
+        "hint":"Double tap to go to chapter list",
+        "label":"Chapter Tab",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBBookMarkTabButton": {
+        "hint":"Double tap to go to bookmark list",
+        "label":"BookMark Tab",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBTranScriptTabButton": {
+        "hint":"Double tap to go to transcript list",
+        "label":"Transcript Tab",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBChapterButton": {
+        "hint":"",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBBookMarkDeleteButton": {
+        "hint":"",
+        "label":"Delete",
+        "isAccessiblityEnabled":true
+    },
+    "MediaBChapterDDButton": {
+        "hint":"",
+        "label":"DropDown",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupCloseButton": {
+        "hint":"",
+        "label":"Close",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupAudioPlayPauseButton": {
+        "hint":"",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupAudioTimeRemainingLabel": {
+        "hint":"",
+        "label":"Time Remaining, %@",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupAudioCurrentTimeLabel": {
+        "hint":"",
+        "label":"Time Elapsed, %@",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupAudioDragButton": {
+        "hint":"",
+        "label":"Drag",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupHTMLZoomInButton": {
+        "hint":"",
+        "label":"Zoom in",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupHTMLZoomOutButton": {
+        "hint":"",
+        "label":"Zoom out",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupDocumentPrintButton": {
+        "hint":"",
+        "label":"Print",
+        "isAccessiblityEnabled":true
+    },
+    "MarkupImageSlideShow": {
+        "hint":"",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "CorrectReviewButton": {
+        "hint":"",
+        "label":"Correct Review",
+        "isAccessiblityEnabled":true
+    },
+    "InCorrectReviewButton": {
+        "hint":"",
+        "label":"Incorrect Review",
+        "isAccessiblityEnabled":true
+    },
+    "TeacherCommentButton": {
+        "hint":"Double tap to add comment",
+        "label":"Teacher Comment",
+        "isAccessiblityEnabled":true
+    },
+    "InstantFeedbackButton": {
+        "hint":"Double tap to show correct answer",
+        "label":"Instant Feedback",
+        "isAccessiblityEnabled":true
+    },
+    "TeacherCommentNote": {
+        "hint":"",
+        "label":"Teacher Comment Note",
+        "isAccessiblityEnabled":true
+    },
+    "GenerateReportBack": {
+        "hint":"",
+        "label":"Generate Report Back",
+        "isAccessiblityEnabled":true
+    },
+    "DismissReaderFontSetting": {
+        "hint":"",
+        "label":"Dismiss popup",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontSettingsFontButton": {
+            "hint":"Double tap to select font ",
+            "label":"Font name picker",
+            "isAccessiblityEnabled":true
+        }
+}
+

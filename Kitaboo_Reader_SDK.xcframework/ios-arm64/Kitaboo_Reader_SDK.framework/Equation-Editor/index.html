@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html ng-app="virtual-keyboard" ng-controller="EquationMainController">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Equation-Editor</title>
+
+    <!-- Bootstrap -->
+    <link href="vendors/bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="vendors/jquery-ui/jquery-ui.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="vendors/mathquill/mathquill.css">
+    <link rel="stylesheet" type="text/css" href="scripts/mobile-keyboard-holder/css/mobile-keyboard.css">
+    <!-- <link rel="stylesheet" type="text/css" href="scripts/desktop-keyboard-holder/css/desktop-keyboard.css"> -->
+    <!-- Jquery Files -->
+    <script src="vendors/jquery/jquery.js"></script>
+    <script src="vendors/jquery-ui/jquery-ui.js"></script>
+    <script src="vendors/jquery-ui/jquery.ui.touch-punch.min.js"></script>
+    <script src="vendors/bootstrap/tether.min.js"></script>
+    <script src="vendors/bootstrap/bootstrap.js"></script>
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="vendors/angular/angular-ui-router.min.js"></script>
+    <script src="vendors/angular/angular-animate.min.js"></script>
+    <script src="vendors/angular/angular-aria.min.js"></script>
+    <script src="vendors/angular/angular-messages.min.js"></script>
+    <!-- <script src="vendors/angular/angular-material.min.js"></script> -->
+    <script type="text/javascript" src="vendors/mathquill/mathquill.js"></script>
+    <script type="text/javascript" src="scripts/app.js"></script>
+    <!-- <script type="text/javascript" src="scripts/desktop-keyboard-holder/data/desktopKeyboardData.js"></script> -->
+    <!-- <script type="text/javascript" src="scripts/desktop-keyboard-holder/config/desktop-keyboard.js"></script> -->
+    <!-- <script type="text/javascript" src="scripts/desktop-keyboard-holder/controllers/desktop-keyboard-controller.js"></script> -->
+    <script type="text/javascript" src="scripts/mobile-keyboard-holder/data/mobileKeyboardData.js"></script>
+    <script type="text/javascript" src="scripts/mobile-keyboard-holder/config/mobile-keyboard.js"></script>
+    <script type="text/javascript" src="scripts/mobile-keyboard-holder/controllers/mobile-keyboard-controller.js"></script>
+</head>
+
+<body>
+  <div id="mainView">
+    <form name="projectForm">
+        <div id="cboxOverlay" style="opacity:0.5; position: fixed;width: 100%;height: 100%;background-color: black;">
+        </div>
+        <div id="draggable-element">
+            <!-- <div class='icon-move drag-this'></div> -->
+            <!-- <div id="draggable-element" style="height: 100% ;width: 100%;"></div> -->
+            <div class="movableicon drag-this"><span class="icon-move1 drag-this"></span></div>
+
+            <div class="math-holder">
+                <div class="equation-holder">
+                    <span id="math-equation-holder"></span>
+                </div>
+            </div>
+
+            <button class="abcIcon" ng-hide="hideKeyBoard">
+                <span class="icon-math-keyboard-hide_client"></span>
+            </button>
+
+            <span class="errormsgtext">Please enter an answer to continue.</span>
+
+            <span class="hidemathkeyboardtext" ng-hide="hideKeyBoard">Close Math Keyboard <span
+                    class="icon-Direction-arrow"></span>
+            </span>
+
+            <button class="addBtn" id="disableclick" ng-hide="hideKeyBoard">Save</button>
+            <button class="cancelBtn">Cancel</button>
+        </div>
+
+        <div ui-view="desktop-holder" ng-cloak></div>
+        <div ui-view="mobile-holder" ng-cloak></div>
+        <div class="data"></div>
+        <div class="forMobile"></div>
+    </form>
+
+    <button class="showkeyboard" style="display: none;">
+        <span class="icon-Open-keyboard fontFile"></span>
+    </button>
+  </div>
+    
+     <div name="projectForm" id="ans_projectForm" style="display: none;">
+        <div id="cboxOverlay" style="opacity:0.5; position: fixed;width: 100%;height: 100%;background-color: black;">
+        </div>
+    
+    
+    
+    
+
+        
+        
+  <div id="answer-main-container">
+
+    <div class="ans-movableicon drag-this"><span class="icon-move1 drag-this"></span> <span>Feedback</span>
+    </div>
+    <div class="incorrectfd">
+        <span class="incorrect-ans-containerPara">This is incorrect answer</span>
+        <div class="incorrect-ans-container">
+            <span id="incorrect-ans-holder" class="flex-item"></span>
+        </div>
+    </div>
+    <div id="correctAnsView" class="correctfd" >
+        <span class="correct-ans-containerPara">This is correct answer</span>
+        <div class="correct-ans-container">
+            <span id="correct-ans-holder"></span>
+        </div>
+    </div>
+
+            <div class="btn-holder">
+                <button class="gotItBtn">OK, I got it</button>
+            </div>
+
+</div>
+
+</div>
+</body>
+
+</html>

@@ -1,0 +1,11 @@
+framework module Kitaboo_Reader_SDK {
+  umbrella header "Kitaboo_Reader_SDK.h"
+  export *
+
+  module * { export * }
+}
+
+module Kitaboo_Reader_SDK.Swift {
+  header "Kitaboo_Reader_SDK-Swift.h"
+  requires objc
+}
