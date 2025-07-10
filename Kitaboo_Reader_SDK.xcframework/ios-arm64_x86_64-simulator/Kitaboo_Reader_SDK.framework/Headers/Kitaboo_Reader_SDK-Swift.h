@@ -338,30 +338,30 @@ typedef SWIFT_ENUM(NSInteger, AUDIO_SYNC_TYPE, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14AboutThis_V6_0")
 @interface AboutThis_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable header;
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable readProgressBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterNumber;
-@property (nonatomic, readonly, copy) NSString * _Nullable collectionSingleSelect;
-@property (nonatomic, readonly, copy) NSString * _Nullable favouriteNonselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable favouriteSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable favouriteBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable readNowBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable readNowText;
-@property (nonatomic, readonly, copy) NSString * _Nullable analytics;
-@property (nonatomic, readonly, copy) NSString * _Nullable analyticsOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable analyticsText;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable format;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabDeselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionV6;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoryLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable downloadingButtonProgress;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_Tab_Text;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_collection_background;
+@property (nonatomic, copy) NSString * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable readProgressBar;
+@property (nonatomic, copy) NSString * _Nullable chapterNumber;
+@property (nonatomic, copy) NSString * _Nullable collectionSingleSelect;
+@property (nonatomic, copy) NSString * _Nullable favouriteNonselected;
+@property (nonatomic, copy) NSString * _Nullable favouriteSelected;
+@property (nonatomic, copy) NSString * _Nullable favouriteBackground;
+@property (nonatomic, copy) NSString * _Nullable readNowBackground;
+@property (nonatomic, copy) NSString * _Nullable readNowText;
+@property (nonatomic, copy) NSString * _Nullable analytics;
+@property (nonatomic, copy) NSString * _Nullable analyticsOutline;
+@property (nonatomic, copy) NSString * _Nullable analyticsText;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable tabSelected;
+@property (nonatomic, copy) NSString * _Nullable tabDeselected;
+@property (nonatomic, copy) NSString * _Nullable descriptionV6;
+@property (nonatomic, copy) NSString * _Nullable categoryLabel;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable downloadingButtonProgress;
+@property (nonatomic, copy) NSString * _Nullable Selected_Tab_Text;
+@property (nonatomic, copy) NSString * _Nullable Selected_collection_background;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -371,14 +371,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14AboutThis_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12AboutUs_V6_0")
 @interface AboutUs_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundImage;
-@property (nonatomic, readonly, copy) NSString * _Nullable closeIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, strong) GradientColor_V6_0 * _Nullable gradientColor;
-@property (nonatomic, readonly, strong) SVG_V6_0 * _Nullable svg;
+@property (nonatomic, copy) NSString * _Nullable backgroundColor;
+@property (nonatomic, copy) NSString * _Nullable backgroundImage;
+@property (nonatomic, copy) NSString * _Nullable closeIconColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionTextColor;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, strong) GradientColor_V6_0 * _Nullable gradientColor;
+@property (nonatomic, strong) SVG_V6_0 * _Nullable svg;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -407,8 +407,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable lan
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20ActionButton_V6_V6_0")
 @interface ActionButton_V6_V6_0 : NSObject
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable main;
-@property (nonatomic, readonly, strong) Cancel_V6_0 * _Nullable cancel;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable main;
+@property (nonatomic, strong) Cancel_V6_0 * _Nullable cancel;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -416,9 +416,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20ActionButton_V6_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15AlignPopup_V6_0")
 @interface AlignPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBorderColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedBorderColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -426,21 +426,21 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15AlignPopup_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19AllPopupsPopup_V6_0")
 @interface AllPopupsPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable border;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable lineColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedLineColour;
-@property (nonatomic, readonly, copy) NSString * _Nullable timeTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable speedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedSpeedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedSleepTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkIconColor;
-@property (nonatomic, readonly, strong) ActionButton_V6_V6_0 * _Nullable actionButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable deleteButton;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable border;
+@property (nonatomic, copy) NSString * _Nullable titleTextColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable inputTextColor;
+@property (nonatomic, copy) NSString * _Nullable lineColor;
+@property (nonatomic, copy) NSString * _Nullable selectedLineColour;
+@property (nonatomic, copy) NSString * _Nullable timeTextColor;
+@property (nonatomic, copy) NSString * _Nullable speedTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedSpeedTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedSleepTextColor;
+@property (nonatomic, copy) NSString * _Nullable checkIconColor;
+@property (nonatomic, strong) ActionButton_V6_V6_0 * _Nullable actionButton;
+@property (nonatomic, copy) NSString * _Nullable descriptionTextColor;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable deleteButton;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -449,8 +449,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19AllPopupsPopup_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14AllPopups_V6_0")
 @interface AllPopups_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, strong) AllPopupsPopup_V6_0 * _Nullable popup;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, strong) AllPopupsPopup_V6_0 * _Nullable popup;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -471,29 +471,29 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16AnalyticsManager")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Analytics_V6_V6_0")
 @interface Analytics_V6_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable headerBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable backArrowHeader;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable format;
-@property (nonatomic, readonly, copy) NSString * _Nullable icons;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionNonselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardText;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable dropdownIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable classLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardProgressbarFillBgcolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardProgressbarFillBuffercolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable back_arrow;
-@property (nonatomic, readonly, copy) NSString * _Nullable header;
-@property (nonatomic, readonly, copy) NSString * _Nullable selected_Tab_Background;
-@property (nonatomic, readonly, copy) NSString * _Nullable selected_Tab_Left_Border;
-@property (nonatomic, readonly, copy) NSString * _Nullable selected_Tab_Icon;
+@property (nonatomic, copy) NSString * _Nullable headerBackground;
+@property (nonatomic, copy) NSString * _Nullable backArrowHeader;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable icons;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable sectionBackground;
+@property (nonatomic, copy) NSString * _Nullable sectionSelected;
+@property (nonatomic, copy) NSString * _Nullable sectionNonselected;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable cardText;
+@property (nonatomic, copy) NSString * _Nullable tabSelected;
+@property (nonatomic, copy) NSString * _Nullable dropdownIconColor;
+@property (nonatomic, copy) NSString * _Nullable classLabel;
+@property (nonatomic, copy) NSString * _Nullable cardProgressbarFillBgcolor;
+@property (nonatomic, copy) NSString * _Nullable cardProgressbarFillBuffercolor;
+@property (nonatomic, copy) NSString * _Nullable back_arrow;
+@property (nonatomic, copy) NSString * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable selected_Tab_Background;
+@property (nonatomic, copy) NSString * _Nullable selected_Tab_Left_Border;
+@property (nonatomic, copy) NSString * _Nullable selected_Tab_Icon;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -501,13 +501,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Analytics_V6_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13AudioBar_V6_0")
 @interface AudioBar_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable audioDragIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable audioDragBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable playPauseIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable muteIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable currentTime;
-@property (nonatomic, readonly, copy) NSString * _Nullable closeAudio;
+@property (nonatomic, copy) NSString * _Nullable backgroundColor;
+@property (nonatomic, copy) NSString * _Nullable audioDragIcon;
+@property (nonatomic, copy) NSString * _Nullable audioDragBackgroundColor;
+@property (nonatomic, copy) NSString * _Nullable playPauseIcon;
+@property (nonatomic, copy) NSString * _Nullable muteIcon;
+@property (nonatomic, copy) NSString * _Nullable currentTime;
+@property (nonatomic, copy) NSString * _Nullable closeAudio;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -515,11 +515,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13AudioBar_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19AudioBookCover_V6_0")
 @interface AudioBookCover_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable shadowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable rgba;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundColor;
+@property (nonatomic, copy) NSString * _Nullable shadowColor;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable rgba;
+@property (nonatomic, copy) NSString * _Nullable backgroundColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -539,10 +539,10 @@ typedef SWIFT_ENUM(NSInteger, AudioBookPlayerViewStateUpdate_V6, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16AudioMarkup_V6_0")
 @interface AudioMarkup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable audioContainerBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable iconBackgroundColor;
+@property (nonatomic, copy) NSString * _Nullable audioContainerBorderColor;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -581,20 +581,20 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK27AudioSyncControllerDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21AudioVideoSlider_V6_0")
 @interface AudioVideoSlider_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderFilledColor;
-@property (nonatomic, readonly, strong) SlideController_V6_0 * _Nullable slideController;
-@property (nonatomic, readonly, copy) NSString * _Nullable defaultTimetextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable currentTimetextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterCountTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable navigationArrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable disabledNavigationArrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterThumbnailProgressBarColor;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable chapterIconColor;
+@property (nonatomic, copy) NSString * _Nullable sliderFilledColor;
+@property (nonatomic, strong) SlideController_V6_0 * _Nullable slideController;
+@property (nonatomic, copy) NSString * _Nullable defaultTimetextColor;
+@property (nonatomic, copy) NSString * _Nullable currentTimetextColor;
+@property (nonatomic, copy) NSString * _Nullable chapterTitleColor;
+@property (nonatomic, copy) NSString * _Nullable chapterCountTextColor;
+@property (nonatomic, copy) NSString * _Nullable navigationArrowColor;
+@property (nonatomic, copy) NSString * _Nullable disabledNavigationArrowColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable chapterThumbnailProgressBarColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -845,15 +845,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @class WelcomeReader_V6_0;
 @class WelcomeAudioVideoBookPlayer_V6_0;
 @class DarkMode_V6_0;
+@class KAI_V6_0;
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22BookShelfThemeFor_V6_0")
 @interface BookShelfThemeFor_V6_0 : NSObject
-@property (nonatomic, readonly, strong) Kitaboo6_0_V6_0 * _Nullable kitaboo6_0;
-@property (nonatomic, readonly, strong) Signin_V6_0 * _Nullable signin;
-@property (nonatomic, readonly, strong) WelcomeBookshelf_V6_0 * _Nullable bookshelf;
-@property (nonatomic, readonly, strong) WelcomeReader_V6_0 * _Nullable reader;
-@property (nonatomic, readonly, strong) WelcomeAudioVideoBookPlayer_V6_0 * _Nullable audioVideoBookPlayer;
-@property (nonatomic, readonly, strong) DarkMode_V6_0 * _Nullable darkMode;
+@property (nonatomic, strong) Kitaboo6_0_V6_0 * _Nullable kitaboo6_0;
+@property (nonatomic, strong) Signin_V6_0 * _Nullable signin;
+@property (nonatomic, strong) WelcomeBookshelf_V6_0 * _Nullable bookshelf;
+@property (nonatomic, strong) WelcomeReader_V6_0 * _Nullable reader;
+@property (nonatomic, strong) WelcomeAudioVideoBookPlayer_V6_0 * _Nullable audioVideoBookPlayer;
+@property (nonatomic, strong) DarkMode_V6_0 * _Nullable darkMode;
+@property (nonatomic, strong) KAI_V6_0 * _Nullable kai;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -888,16 +890,16 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK26BookmarkControllerDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13Bookmark_V6_0")
 @interface Bookmark_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputPanelBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable buttonBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable buttonTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable crossIconColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable inputPanelBg;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable buttonBackground;
+@property (nonatomic, copy) NSString * _Nullable buttonTextColor;
+@property (nonatomic, copy) NSString * _Nullable crossIconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -905,11 +907,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13Bookmark_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23BookshelfInfoPopup_V6_0")
 @interface BookshelfInfoPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable optionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable optionIcon;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable contentTitle;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable optionText;
+@property (nonatomic, copy) NSString * _Nullable optionIcon;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -919,43 +921,43 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23BookshelfInfoPopup_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21BookshelfProfile_V6_0")
 @interface BookshelfProfile_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable leftBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable label;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedSectionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionHeaderPersonalinfoGeneralLegal;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionCardBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable profilerightBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputText;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputTextLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable editProfile;
-@property (nonatomic, readonly, copy) NSString * _Nullable editIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable profileOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable saveDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable saveEnabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable saveText;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelOutlineText;
-@property (nonatomic, readonly, copy) NSString * _Nullable Cancel_Outline;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable errorMessage;
-@property (nonatomic, readonly, copy) NSString * _Nullable signOut;
-@property (nonatomic, readonly, copy) NSString * _Nullable aboutusCard;
-@property (nonatomic, readonly, copy) NSString * _Nullable emailidColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedLanguage;
-@property (nonatomic, readonly, copy) NSString * _Nullable Cancel_Text;
-@property (nonatomic, readonly, copy) NSString * _Nullable langaugeArrow;
-@property (nonatomic, readonly, copy) NSString * _Nullable topbar_background;
-@property (nonatomic, readonly, copy) NSString * _Nullable back_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_tab_icon;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_tab_left_border;
-@property (nonatomic, readonly, strong) ShareFeedback_V6_0 * _Nullable shareFeedback;
-@property (nonatomic, readonly, strong) SignoutButton_V6_0 * _Nullable signoutButton;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable leftBackground;
+@property (nonatomic, copy) NSString * _Nullable label;
+@property (nonatomic, copy) NSString * _Nullable sectionBackground;
+@property (nonatomic, copy) NSString * _Nullable selectedSectionText;
+@property (nonatomic, copy) NSString * _Nullable sectionHeaderPersonalinfoGeneralLegal;
+@property (nonatomic, copy) NSString * _Nullable sectionCardBackground;
+@property (nonatomic, copy) NSString * _Nullable profilerightBackground;
+@property (nonatomic, copy) NSString * _Nullable contentTitle;
+@property (nonatomic, copy) NSString * _Nullable inputOutline;
+@property (nonatomic, copy) NSString * _Nullable inputText;
+@property (nonatomic, copy) NSString * _Nullable inputTextLabel;
+@property (nonatomic, copy) NSString * _Nullable editProfile;
+@property (nonatomic, copy) NSString * _Nullable editIcon;
+@property (nonatomic, copy) NSString * _Nullable profileOutline;
+@property (nonatomic, copy) NSString * _Nullable saveDisabled;
+@property (nonatomic, copy) NSString * _Nullable saveEnabled;
+@property (nonatomic, copy) NSString * _Nullable saveText;
+@property (nonatomic, copy) NSString * _Nullable cancelDisabled;
+@property (nonatomic, copy) NSString * _Nullable cancelOutlineText;
+@property (nonatomic, copy) NSString * _Nullable Cancel_Outline;
+@property (nonatomic, copy) NSString * _Nullable cancelBackground;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
+@property (nonatomic, copy) NSString * _Nullable signOut;
+@property (nonatomic, copy) NSString * _Nullable aboutusCard;
+@property (nonatomic, copy) NSString * _Nullable emailidColor;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedLanguage;
+@property (nonatomic, copy) NSString * _Nullable Cancel_Text;
+@property (nonatomic, copy) NSString * _Nullable langaugeArrow;
+@property (nonatomic, copy) NSString * _Nullable topbar_background;
+@property (nonatomic, copy) NSString * _Nullable back_icon_color;
+@property (nonatomic, copy) NSString * _Nullable Selected_tab_icon;
+@property (nonatomic, copy) NSString * _Nullable Selected_tab_left_border;
+@property (nonatomic, strong) ShareFeedback_V6_0 * _Nullable shareFeedback;
+@property (nonatomic, strong) SignoutButton_V6_0 * _Nullable signoutButton;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -963,33 +965,33 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21BookshelfProfile_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23BookshelfSearch_V6_V6_0")
 @interface BookshelfSearch_V6_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable headerBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchHintTextLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchTextLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchIconColour;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchResult;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable elasticSearchIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable thumbnailSelectionBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionV6;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchedWord;
-@property (nonatomic, readonly, copy) NSString * _Nullable downloadShowButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable buttonText;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelButtonTextOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabDeselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkboxbackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTypeFormat;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectCategoryText;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_mobile_bgColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_mobile_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Sortby_mobile_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_Tab_Text;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_history_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_history_text_color;
+@property (nonatomic, copy) NSString * _Nullable headerBackground;
+@property (nonatomic, copy) NSString * _Nullable searchOutline;
+@property (nonatomic, copy) NSString * _Nullable searchHintTextLabel;
+@property (nonatomic, copy) NSString * _Nullable searchTextLabel;
+@property (nonatomic, copy) NSString * _Nullable searchIconColour;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable searchResult;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable elasticSearchIcon;
+@property (nonatomic, copy) NSString * _Nullable thumbnailSelectionBackground;
+@property (nonatomic, copy) NSString * _Nullable descriptionV6;
+@property (nonatomic, copy) NSString * _Nullable searchedWord;
+@property (nonatomic, copy) NSString * _Nullable downloadShowButton;
+@property (nonatomic, copy) NSString * _Nullable buttonText;
+@property (nonatomic, copy) NSString * _Nullable cancelButtonTextOutline;
+@property (nonatomic, copy) NSString * _Nullable tabSelected;
+@property (nonatomic, copy) NSString * _Nullable tabDeselected;
+@property (nonatomic, copy) NSString * _Nullable checkboxbackground;
+@property (nonatomic, copy) NSString * _Nullable contentTypeFormat;
+@property (nonatomic, copy) NSString * _Nullable selectCategoryText;
+@property (nonatomic, copy) NSString * _Nullable Search_mobile_bgColor;
+@property (nonatomic, copy) NSString * _Nullable Search_mobile_border;
+@property (nonatomic, copy) NSString * _Nullable Sortby_mobile_icon_color;
+@property (nonatomic, copy) NSString * _Nullable Selected_Tab_Text;
+@property (nonatomic, copy) NSString * _Nullable Search_history_icon_color;
+@property (nonatomic, copy) NSString * _Nullable Search_history_text_color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -997,14 +999,15 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23BookshelfSearch_V6_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20BookshelfSortby_V6_0")
 @interface BookshelfSortby_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable titleText;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionHeader;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionOptionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColour;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectTextTick;
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable mouseHover;
+@property (nonatomic, copy) NSString * _Nullable titleText;
+@property (nonatomic, copy) NSString * _Nullable sectionHeader;
+@property (nonatomic, copy) NSString * _Nullable sectionBackground;
+@property (nonatomic, copy) NSString * _Nullable sectionOptionText;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColour;
+@property (nonatomic, copy) NSString * _Nullable selectTextTick;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable mouseHover;
+@property (nonatomic, copy) NSString * _Nullable panelBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1012,12 +1015,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20BookshelfSortby_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14BottomBar_V6_0")
 @interface BottomBar_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable recentIconColour;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedRecentIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedRecentButtonBg;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable recentIconColour;
+@property (nonatomic, copy) NSString * _Nullable selectedRecentIcon;
+@property (nonatomic, copy) NSString * _Nullable selectedRecentButtonBg;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1025,12 +1028,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14BottomBar_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16BottomPanel_V6_0")
 @interface BottomPanel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable borderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColorDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable iconColorDisabled;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1038,10 +1041,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16BottomPanel_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15Brightness_V6_0")
 @interface Brightness_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderSelectedColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconFaded;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconBright;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable sliderSelectedColor;
+@property (nonatomic, copy) NSString * _Nullable iconFaded;
+@property (nonatomic, copy) NSString * _Nullable iconBright;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1049,8 +1052,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15Brightness_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Cancel_V6_0")
 @interface Cancel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable borderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1058,18 +1061,18 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Cancel_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22CategoryLeftPanel_V6_0")
 @interface CategoryLeftPanel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable verticalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextSelectedColorLine;
-@property (nonatomic, readonly, copy) NSString * _Nullable Categories_text_selected_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Categories_selected_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_Categories_input_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_Categories_input_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_Categories_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextSelectedBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable close;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable verticalDivider;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextColor;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextSelectedColorLine;
+@property (nonatomic, copy) NSString * _Nullable Categories_text_selected_color;
+@property (nonatomic, copy) NSString * _Nullable Categories_selected_icon_color;
+@property (nonatomic, copy) NSString * _Nullable Search_Categories_input_border;
+@property (nonatomic, copy) NSString * _Nullable Search_Categories_input_color;
+@property (nonatomic, copy) NSString * _Nullable Search_Categories_icon_color;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextSelectedBar;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable close;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1077,19 +1080,19 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22CategoryLeftPanel_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23CategoryRightShelf_V6_0")
 @interface CategoryRightShelf_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable hamburgerMenu;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable viewAll;
-@property (nonatomic, readonly, copy) NSString * _Nullable readProgressBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable coverEmptyBackgroound;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable format;
-@property (nonatomic, readonly, copy) NSString * _Nullable moreIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable tooltipBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable tooltipText;
-@property (nonatomic, readonly, copy) NSString * _Nullable arrowColorDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable arrowColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable hamburgerMenu;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextColor;
+@property (nonatomic, copy) NSString * _Nullable viewAll;
+@property (nonatomic, copy) NSString * _Nullable readProgressBar;
+@property (nonatomic, copy) NSString * _Nullable coverEmptyBackgroound;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable moreIcon;
+@property (nonatomic, copy) NSString * _Nullable tooltipBackground;
+@property (nonatomic, copy) NSString * _Nullable tooltipText;
+@property (nonatomic, copy) NSString * _Nullable arrowColorDisabled;
+@property (nonatomic, copy) NSString * _Nullable arrowColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1195,6 +1198,7 @@ SWIFT_CLASS_NAMED("KitabooRequest")
 - (NSURLRequest * _Nonnull)getPrintDataWithUserToken:(NSString * _Nonnull)userToken bookId:(NSString * _Nonnull)bookId SWIFT_WARN_UNUSED_RESULT;
 - (NSURLRequest * _Nonnull)savePrintDataWithUserToken:(NSString * _Nonnull)userToken lastPageData:(NSDictionary<NSString *, id> * _Nonnull)lastPageData bookID:(NSString * _Nonnull)bookID SWIFT_WARN_UNUSED_RESULT;
 - (NSURLRequest * _Nonnull)getCustomePDFPagesWithUserToken:(NSString * _Nonnull)userToken lastPageData:(NSDictionary<NSString *, id> * _Nonnull)lastPageData bookID:(NSString * _Nonnull)bookID SWIFT_WARN_UNUSED_RESULT;
+- (NSURLRequest * _Nonnull)getKAIStatusWithUserToken:(NSString * _Nonnull)userToken SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1207,8 +1211,8 @@ SWIFT_CLASS_NAMED("ClientRequest")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16CloseSlider_V6_0")
 @interface CloseSlider_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1216,12 +1220,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16CloseSlider_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14ColorHTML_V6_0")
 @interface ColorHTML_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable yellow;
-@property (nonatomic, readonly, copy) NSString * _Nullable red;
-@property (nonatomic, readonly, copy) NSString * _Nullable purple;
-@property (nonatomic, readonly, copy) NSString * _Nullable green;
-@property (nonatomic, readonly, copy) NSString * _Nullable blue;
-@property (nonatomic, readonly, copy) NSString * _Nullable black;
+@property (nonatomic, copy) NSString * _Nullable yellow;
+@property (nonatomic, copy) NSString * _Nullable red;
+@property (nonatomic, copy) NSString * _Nullable purple;
+@property (nonatomic, copy) NSString * _Nullable green;
+@property (nonatomic, copy) NSString * _Nullable blue;
+@property (nonatomic, copy) NSString * _Nullable black;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1229,18 +1233,18 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14ColorHTML_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15ColorPopup_V6_0")
 @interface ColorPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBorderColor;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color1;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color2;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color3;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color4;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color5;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color6;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color7;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color8;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color9;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color10;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable selectedBorderColor;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color1;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color2;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color3;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color4;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color5;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color6;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color7;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color8;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color9;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color10;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1249,12 +1253,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15ColorPopup_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13Comments_V6_0")
 @interface Comments_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable backIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerColor;
-@property (nonatomic, readonly, strong) Message_V6_0 * _Nullable otherMessage;
-@property (nonatomic, readonly, strong) Message_V6_0 * _Nullable myMessage;
-@property (nonatomic, readonly, strong) BottomPanel_V6_0 * _Nullable bottomPanel;
+@property (nonatomic, copy) NSString * _Nullable backIconColor;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable dividerColor;
+@property (nonatomic, strong) Message_V6_0 * _Nullable otherMessage;
+@property (nonatomic, strong) Message_V6_0 * _Nullable myMessage;
+@property (nonatomic, strong) BottomPanel_V6_0 * _Nullable bottomPanel;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1433,12 +1437,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK33DarkModeAudioVideoBookPlayer_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22DarkModeBookshelf_V6_0")
 @interface DarkModeBookshelf_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable mainBgcolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable passwordStrengthCheckColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable editprofile;
-@property (nonatomic, readonly, copy) NSString * _Nullable devicename;
+@property (nonatomic, copy) NSString * _Nullable mainBgcolor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable passwordStrengthCheckColor;
+@property (nonatomic, copy) NSString * _Nullable editprofile;
+@property (nonatomic, copy) NSString * _Nullable devicename;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1446,8 +1450,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22DarkModeBookshelf_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19DarkModeReader_V6_0")
 @interface DarkModeReader_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable mainBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable navigationBtn;
+@property (nonatomic, copy) NSString * _Nullable mainBackgroundColor;
+@property (nonatomic, copy) NSString * _Nullable navigationBtn;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1456,10 +1460,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19DarkModeReader_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13DarkMode_V6_0")
 @interface DarkMode_V6_0 : NSObject
-@property (nonatomic, readonly, strong) SignIn_V6_0 * _Nullable signIn;
-@property (nonatomic, readonly, strong) DarkModeBookshelf_V6_0 * _Nullable bookshelf;
-@property (nonatomic, readonly, strong) DarkModeReader_V6_0 * _Nullable reader;
-@property (nonatomic, readonly, strong) DarkModeAudioVideoBookPlayer_V6_0 * _Nullable audioVideoBookPlayer;
+@property (nonatomic, strong) SignIn_V6_0 * _Nullable signIn;
+@property (nonatomic, strong) DarkModeBookshelf_V6_0 * _Nullable bookshelf;
+@property (nonatomic, strong) DarkModeReader_V6_0 * _Nullable reader;
+@property (nonatomic, strong) DarkModeAudioVideoBookPlayer_V6_0 * _Nullable audioVideoBookPlayer;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1467,8 +1471,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13DarkMode_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17DayModeClass_V6_0")
 @interface DayModeClass_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable canvasBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable defaultTextColor;
+@property (nonatomic, copy) NSString * _Nullable canvasBackground;
+@property (nonatomic, copy) NSString * _Nullable defaultTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1476,8 +1480,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17DayModeClass_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Day_V6_0")
 @interface Day_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable textColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1485,8 +1489,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Day_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21DeSelectedButton_V6_0")
 @interface DeSelectedButton_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable textColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1500,9 +1504,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10DeviceType")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17DisabledIcon_V6_0")
 @interface DisabledIcon_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundHTML;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable backgroundHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1790,14 +1794,14 @@ typedef SWIFT_ENUM(NSInteger, FONT_SIZE, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16FilterPopup_V6_0")
 @interface FilterPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable borderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable allBoxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable arrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable actionTextColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable allBoxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable checkColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable arrowColor;
+@property (nonatomic, copy) NSString * _Nullable actionTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1822,6 +1826,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22FolioReaderAudioPlayer")
 - (void)pause;
 - (void)togglePlay;
 - (void)resume;
+- (void)clearHighlights;
 - (void)play;
 - (void)playNextSentenceInTTS;
 - (void)playPreviousSentenceInTTS;
@@ -1829,6 +1834,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22FolioReaderAudioPlayer")
 - (void)setTTSSpeedWithRate:(float)rate;
 - (BOOL)isPlaying SWIFT_WARN_UNUSED_RESULT;
 - (void)setPageWithSentences:(NSArray<NSArray<PdfWordExtractVO *> *> * _Nonnull)sentences;
+- (void)setCurrentTTSIndex;
 - (void)resetCurrentIndex;
 - (BOOL)checkForWordInSentencesWithWordRect:(CGRect)wordRect withWordText:(NSString * _Nonnull)withWordText pageSentences:(NSArray<NSArray<PdfWordExtractVO *> *> * _Nonnull)pageSentences SWIFT_WARN_UNUSED_RESULT;
 - (void)playPDFTTSFromPointWithWordRect:(CGRect)wordRect withWordText:(NSString * _Nonnull)withWordText withPageNumber:(NSInteger)withPageNumber;
@@ -1854,16 +1860,16 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22FolioReaderAudioPlayer")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17FontSettings_V6_0")
 @interface FontSettings_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable resetColor;
-@property (nonatomic, readonly, strong) Font_V6_0 * _Nullable font;
-@property (nonatomic, readonly, strong) Other_V6_0 * _Nullable other;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, copy) NSString * _Nullable resetColor;
+@property (nonatomic, strong) Font_V6_0 * _Nullable font;
+@property (nonatomic, strong) Other_V6_0 * _Nullable other;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1871,16 +1877,16 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17FontSettings_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Font_V6_0")
 @interface Font_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pointerBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable dropdownBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable dropdownTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable moreIconColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable dividerColor;
+@property (nonatomic, copy) NSString * _Nullable pointerBg;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBorder;
+@property (nonatomic, copy) NSString * _Nullable dropdownBg;
+@property (nonatomic, copy) NSString * _Nullable dropdownTextColor;
+@property (nonatomic, copy) NSString * _Nullable moreIconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1888,12 +1894,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Font_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Footer_V6_0")
 @interface Footer_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable boarder;
-@property (nonatomic, readonly, copy) NSString * _Nullable text;
-@property (nonatomic, readonly, copy) NSString * _Nullable icon;
-@property (nonatomic, readonly, copy) NSString * _Nullable active;
-@property (nonatomic, readonly, copy) NSString * _Nullable color;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable boarder;
+@property (nonatomic, copy) NSString * _Nullable text;
+@property (nonatomic, copy) NSString * _Nullable icon;
+@property (nonatomic, copy) NSString * _Nullable active;
+@property (nonatomic, copy) NSString * _Nullable color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1901,15 +1907,15 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Footer_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19ForgotPassword_V6_0")
 @interface ForgotPassword_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable leftBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinEnabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable errorMessage;
-@property (nonatomic, readonly, copy) NSString * _Nullable Invalid_email_input_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Cancel_Text;
+@property (nonatomic, copy) NSString * _Nullable leftBackground;
+@property (nonatomic, copy) NSString * _Nullable signinBackground;
+@property (nonatomic, copy) NSString * _Nullable signinDisabled;
+@property (nonatomic, copy) NSString * _Nullable signinEnabled;
+@property (nonatomic, copy) NSString * _Nullable cancelDisabled;
+@property (nonatomic, copy) NSString * _Nullable cancelOutline;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
+@property (nonatomic, copy) NSString * _Nullable Invalid_email_input_border;
+@property (nonatomic, copy) NSString * _Nullable Cancel_Text;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2099,8 +2105,8 @@ SWIFT_PROTOCOL_NAMED("GlossaryViewControllerDelegate")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18GradientColor_V6_0")
 @interface GradientColor_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable color;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable color;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable opacity;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2997,10 +3003,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK31HDKitabooMediaPopOverController")
 @end
 
 
-
 @interface HDKitabooMediaPopOverController (SWIFT_EXTENSION(Kitaboo_Reader_SDK))
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 @end
+
 
 @class UITouch;
 
@@ -4252,11 +4258,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) HDThemeManag
 @property (nonatomic, strong) BookShelfThemeFor_V6_0 * _Nullable mediaTheme;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)updateTheme;
 @end
 
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14HDThemeReferer")
 @interface HDThemeReferer : NSObject
+- (NSString * _Nonnull)getMediaThemeNameForReader SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getInverseThemeNameforReader SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isDarkModeOn SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -4659,6 +4669,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11HDWKWebView")
 @interface HDWKWebView : WKWebView
 @property (nonatomic) BOOL isFixedLayout;
 @property (nonatomic, strong) EPUBChapter * _Nullable chapter;
+@property (nonatomic, copy) NSString * _Nonnull localPath;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration OBJC_DESIGNATED_INITIALIZER;
@@ -4896,12 +4907,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16HSXHTMLTOCParser")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Help_V6_0")
 @interface Help_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable lineColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pointerColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionTextColor;
+@property (nonatomic, copy) NSString * _Nullable lineColor;
+@property (nonatomic, copy) NSString * _Nullable pointerColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -4951,11 +4962,11 @@ typedef SWIFT_ENUM(NSInteger, HighlightColor, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23HighlightColorHTML_V6_0")
 @interface HighlightColorHTML_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable orange;
-@property (nonatomic, readonly, copy) NSString * _Nullable pink;
-@property (nonatomic, readonly, copy) NSString * _Nullable purple;
-@property (nonatomic, readonly, copy) NSString * _Nullable green;
-@property (nonatomic, readonly, copy) NSString * _Nullable blue;
+@property (nonatomic, copy) NSString * _Nullable orange;
+@property (nonatomic, copy) NSString * _Nullable pink;
+@property (nonatomic, copy) NSString * _Nullable purple;
+@property (nonatomic, copy) NSString * _Nullable green;
+@property (nonatomic, copy) NSString * _Nullable blue;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -4980,8 +4991,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13HighlightItem")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22HighlightOnScreen_V6_0")
 @interface HighlightOnScreen_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable highlightColor;
-@property (nonatomic, readonly, strong) ColorHTML_V6_0 * _Nullable highlightColorHTML;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable highlightColor;
+@property (nonatomic, strong) ColorHTML_V6_0 * _Nullable highlightColorHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -4989,8 +5000,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22HighlightOnScreen_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19HighlightPopup_V6_0")
 @interface HighlightPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable border;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable border;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -5076,11 +5087,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13HighlightTool")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Highlight_V6_V6_0")
 @interface Highlight_V6_V6_0 : NSObject
-@property (nonatomic, readonly, strong) HighlightPopup_V6_0 * _Nullable popup;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBorderColor;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable highlightColor;
-@property (nonatomic, readonly, strong) HighlightColorHTML_V6_0 * _Nullable highlightColorHTML;
+@property (nonatomic, strong) HighlightPopup_V6_0 * _Nullable popup;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedBorderColor;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable highlightColor;
+@property (nonatomic, strong) HighlightColorHTML_V6_0 * _Nullable highlightColorHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -5128,7 +5139,7 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK25ImageDownloadTaskDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16ImageMarkup_V6_0")
 @interface ImageMarkup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable topBarBackground;
+@property (nonatomic, copy) NSString * _Nullable topBarBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -5176,6 +5187,142 @@ SWIFT_CLASS_NAMED("InfomationPopOverContentViewController")
 - (void)setLinkVo:(KFLinkVO * _Nonnull)link;
 /// This is used to get linkvo related to information popup
 - (KFLinkVO * _Nullable)getLinkVo SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK24KAIActionButtonMain_V6_0")
+@interface KAIActionButtonMain_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK29KAIActionButtonSecondary_V6_0")
+@interface KAIActionButtonSecondary_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20KAIActionButton_V6_0")
+@interface KAIActionButton_V6_0 : NSObject
+@property (nonatomic, strong) KAIActionButtonMain_V6_0 * _Nullable main;
+@property (nonatomic, strong) KAIActionButtonSecondary_V6_0 * _Nullable secondary;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11KAIFIB_V6_0")
+@interface KAIFIB_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable blankOutline;
+@property (nonatomic, copy) NSString * _Nullable correctAnswer;
+@property (nonatomic, copy) NSString * _Nullable incorrectAnswer;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17KAIFlashCard_V6_0")
+@interface KAIFlashCard_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable cardBackground;
+@property (nonatomic, copy) NSString * _Nullable cardOutline;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable navigationIcon;
+@property (nonatomic, copy) NSString * _Nullable navigationIconDisable;
+@property (nonatomic, copy) NSString * _Nullable navigationText;
+@property (nonatomic, copy) NSString * _Nullable bottomFlipBG;
+@property (nonatomic, copy) NSString * _Nullable bottomFlipText;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14KAIHeader_V6_0")
+@interface KAIHeader_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21KAIInputDropdown_V6_0")
+@interface KAIInputDropdown_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable outline;
+@property (nonatomic, copy) NSString * _Nullable icon;
+@property (nonatomic, copy) NSString * _Nullable text;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK32KAILearningObjectiveSummary_V6_0")
+@interface KAILearningObjectiveSummary_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable cardOutline;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11KAIMCQ_V6_0")
+@interface KAIMCQ_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable defaultIcon;
+@property (nonatomic, copy) NSString * _Nullable selectedIcon;
+@property (nonatomic, copy) NSString * _Nullable correctAnswer;
+@property (nonatomic, copy) NSString * _Nullable incorrectAnswer;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK26KAIQuestionComplexity_V6_0")
+@interface KAIQuestionComplexity_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable defaultButtonOutline;
+@property (nonatomic, copy) NSString * _Nullable defaultButtonText;
+@property (nonatomic, copy) NSString * _Nullable selectedButtonBG;
+@property (nonatomic, copy) NSString * _Nullable selectedButtonTextOutline;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8KAI_V6_0")
+@interface KAI_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable floatingIconBackground;
+@property (nonatomic, copy) NSString * _Nullable kaiIcon;
+@property (nonatomic, copy) NSString * _Nullable canvasBackground;
+@property (nonatomic, copy) NSString * _Nullable panelBackground;
+@property (nonatomic, strong) KAIHeader_V6_0 * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable headingText;
+@property (nonatomic, copy) NSString * _Nullable subtext;
+@property (nonatomic, copy) NSString * _Nullable checkboxDefault;
+@property (nonatomic, copy) NSString * _Nullable checkboxSelected;
+@property (nonatomic, copy) NSString * _Nullable activityIcon;
+@property (nonatomic, copy) NSString * _Nullable activityTitleText;
+@property (nonatomic, copy) NSString * _Nullable activityTypeText;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, strong) KAIInputDropdown_V6_0 * _Nullable inputDropdown;
+@property (nonatomic, strong) KAIQuestionComplexity_V6_0 * _Nullable questionComplexity;
+@property (nonatomic, strong) KAIActionButton_V6_0 * _Nullable actionButton;
+@property (nonatomic, copy) NSString * _Nullable loadingHeadingText;
+@property (nonatomic, copy) NSString * _Nullable loadingSubtext;
+@property (nonatomic, strong) KAIMCQ_V6_0 * _Nullable mcq;
+@property (nonatomic, strong) KAIFlashCard_V6_0 * _Nullable flashCard;
+@property (nonatomic, strong) KAIFIB_V6_0 * _Nullable fib;
+@property (nonatomic, strong) KAILearningObjectiveSummary_V6_0 * _Nullable learningObjectiveSummary;
+@property (nonatomic, copy) NSString * _Nullable disclaimer;
+@property (nonatomic, copy) NSString * _Nullable bookCoverBorder;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -5252,23 +5399,23 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK37Kitaboo3dPlayerViewControllerDelegate_
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15Kitaboo6_0_V6_0")
 @interface Kitaboo6_0_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable fontFace;
-@property (nonatomic, readonly, copy) NSString * _Nullable clientName;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookshelfFontfamily;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookshelfFontfamilySemiBold;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookshelf_fontfamily_italic;
-@property (nonatomic, readonly, copy) NSString * _Nullable font_face_Arabic;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookshelfFontfamilyMedium;
-@property (nonatomic, readonly, copy) NSString * _Nullable loginFontfamily;
-@property (nonatomic, readonly, copy) NSString * _Nullable loginFontfamilyBold;
-@property (nonatomic, readonly, copy) NSString * _Nullable readerFontfamily;
-@property (nonatomic, readonly, copy) NSString * _Nullable readerFontfamilyHeader;
-@property (nonatomic, readonly, copy) NSString * _Nullable readerFontfamilyMedium;
-@property (nonatomic, readonly, copy) NSString * _Nullable fontFaceIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable scrollbarShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable deselected_checkbox_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable selected_checkbox_background;
-@property (nonatomic, readonly, copy) NSString * _Nullable active_icon;
+@property (nonatomic, copy) NSString * _Nullable fontFace;
+@property (nonatomic, copy) NSString * _Nullable clientName;
+@property (nonatomic, copy) NSString * _Nullable bookshelfFontfamily;
+@property (nonatomic, copy) NSString * _Nullable bookshelfFontfamilySemiBold;
+@property (nonatomic, copy) NSString * _Nullable bookshelf_fontfamily_italic;
+@property (nonatomic, copy) NSString * _Nullable font_face_Arabic;
+@property (nonatomic, copy) NSString * _Nullable bookshelfFontfamilyMedium;
+@property (nonatomic, copy) NSString * _Nullable loginFontfamily;
+@property (nonatomic, copy) NSString * _Nullable loginFontfamilyBold;
+@property (nonatomic, copy) NSString * _Nullable readerFontfamily;
+@property (nonatomic, copy) NSString * _Nullable readerFontfamilyHeader;
+@property (nonatomic, copy) NSString * _Nullable readerFontfamilyMedium;
+@property (nonatomic, copy) NSString * _Nullable fontFaceIconColor;
+@property (nonatomic, copy) NSString * _Nullable scrollbarShadow;
+@property (nonatomic, copy) NSString * _Nullable deselected_checkbox_border;
+@property (nonatomic, copy) NSString * _Nullable selected_checkbox_background;
+@property (nonatomic, copy) NSString * _Nullable active_icon;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -7905,6 +8052,7 @@ SWIFT_CLASS_NAMED("KitabooServiceInterface")
 - (void)getUserPrintDataWithUserToken:(NSString * _Nonnull)userToken bookID:(NSString * _Nonnull)bookID successHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
 - (void)saveUserPrintData:(NSString * _Nonnull)userToken lastPageData:(NSMutableDictionary * _Nonnull)lastPageData bookID:(NSString * _Nonnull)bookID successHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
 - (void)getCustomePDFPages:(NSString * _Nonnull)userToken pagesData:(NSMutableDictionary * _Nonnull)pagesData bookID:(NSString * _Nonnull)bookID successHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
+- (void)getKAIStatusWithMicroServiceUrl:(NSString * _Nonnull)microServiceUrl userToken:(NSString * _Nonnull)userToken successHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8087,6 +8235,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18KitabooVideoPlayer")
 @end
 
 
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21KitabooVimeoExtractor")
+@interface KitabooVimeoExtractor : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 
 SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK24KitabooWebPlayerDelegate_")
 @protocol KitabooWebPlayerDelegate
@@ -8200,8 +8355,8 @@ typedef SWIFT_ENUM(NSInteger, MEDIA_PLAYER, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16MainToolbar_V6_0")
 @interface MainToolbar_V6_0 : NSObject
-@property (nonatomic, readonly, strong) Top_V6_0 * _Nullable top;
-@property (nonatomic, readonly, strong) SideBottom_V6_0 * _Nullable sideBottom;
+@property (nonatomic, strong) Top_V6_0 * _Nullable top;
+@property (nonatomic, strong) SideBottom_V6_0 * _Nullable sideBottom;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8209,9 +8364,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16MainToolbar_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Main_V6_0")
 @interface Main_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable canvasBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable navigationArrows;
-@property (nonatomic, readonly, strong) MainToolbar_V6_0 * _Nullable toolbar;
+@property (nonatomic, copy) NSString * _Nullable canvasBackground;
+@property (nonatomic, copy) NSString * _Nullable navigationArrows;
+@property (nonatomic, strong) MainToolbar_V6_0 * _Nullable toolbar;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8219,14 +8374,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Main_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19MarkupGlossary_V6_0")
 @interface MarkupGlossary_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable linkLineColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable languageTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable synonymTextColor;
+@property (nonatomic, copy) NSString * _Nullable linkLineColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable iconBorderColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable languageTextColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionTextColor;
+@property (nonatomic, copy) NSString * _Nullable synonymTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8279,8 +8434,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10MarkupView")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Markup_V6_0")
 @interface Markup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable markupIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookMarkupIconBorderColor;
+@property (nonatomic, copy) NSString * _Nullable markupIconColor;
+@property (nonatomic, copy) NSString * _Nullable bookMarkupIconBorderColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8302,11 +8457,11 @@ typedef SWIFT_ENUM(NSInteger, MediaBookTOCFilter_V6, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Message_V6_0")
 @interface Message_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable borderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable nameColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable timeTextColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable nameColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable timeTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8314,10 +8469,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Message_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Mode_V6_0")
 @interface Mode_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, strong) Day_V6_0 * _Nullable day;
-@property (nonatomic, readonly, strong) Day_V6_0 * _Nullable night;
-@property (nonatomic, readonly, strong) Day_V6_0 * _Nullable sepia;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, strong) Day_V6_0 * _Nullable day;
+@property (nonatomic, strong) Day_V6_0 * _Nullable night;
+@property (nonatomic, strong) Day_V6_0 * _Nullable sepia;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8367,26 +8522,26 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20MyDataViewController")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11MyData_V6_0")
 @interface MyData_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable selectedButton;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable deSelectedButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable metadataColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable contextualtextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, strong) SubButton_V6_0 * _Nullable subButton;
-@property (nonatomic, readonly, strong) FilterPopup_V6_0 * _Nullable filterPopup;
-@property (nonatomic, readonly, strong) SettingsV6_V6_0 * _Nullable settings;
-@property (nonatomic, readonly, copy) NSString * _Nullable notificationCircleColor;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable selectedButton;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable deSelectedButton;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable metadataColor;
+@property (nonatomic, copy) NSString * _Nullable contextualtextColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, strong) SubButton_V6_0 * _Nullable subButton;
+@property (nonatomic, strong) FilterPopup_V6_0 * _Nullable filterPopup;
+@property (nonatomic, strong) SettingsV6_V6_0 * _Nullable settings;
+@property (nonatomic, copy) NSString * _Nullable notificationCircleColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8463,17 +8618,17 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9NoteLabel")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Note_V6_0")
 @interface Note_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable backIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable contextualtextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable actionButtonColor;
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable actionButtonColorDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable metadataColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable backIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBorder;
+@property (nonatomic, copy) NSString * _Nullable contextualtextColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable actionButtonColor;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable actionButtonColorDisabled;
+@property (nonatomic, copy) NSString * _Nullable metadataColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8537,12 +8692,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull lang
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10Other_V6_0")
 @interface Other_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, strong) Brightness_V6_0 * _Nullable brightness;
-@property (nonatomic, readonly, strong) Mode_V6_0 * _Nullable mode;
-@property (nonatomic, readonly, strong) ScrollView_V6_0 * _Nullable scrollView;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, strong) Brightness_V6_0 * _Nullable brightness;
+@property (nonatomic, strong) Mode_V6_0 * _Nullable mode;
+@property (nonatomic, strong) ScrollView_V6_0 * _Nullable scrollView;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8550,9 +8705,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10Other_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20OverlayPanel_V6_V6_0")
 @interface OverlayPanel_V6_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundHTML;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable backgroundHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8785,10 +8940,10 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK25PenToolControllerDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Pen_V6_0")
 @interface Pen_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBorderColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable selectedBorderColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8796,11 +8951,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Pen_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19PentoolToolbar_V6_0")
 @interface PentoolToolbar_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBackground;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8809,11 +8964,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19PentoolToolbar_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Pentool_V6_0")
 @interface Pentool_V6_0 : NSObject
-@property (nonatomic, readonly, strong) PentoolToolbar_V6_0 * _Nullable toolbar;
-@property (nonatomic, readonly, strong) Pen_V6_0 * _Nullable pen;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable penColor;
-@property (nonatomic, readonly, strong) ColorHTML_V6_0 * _Nullable penColorHTML;
-@property (nonatomic, readonly, strong) Thickness_V6_0 * _Nullable thickness;
+@property (nonatomic, strong) PentoolToolbar_V6_0 * _Nullable toolbar;
+@property (nonatomic, strong) Pen_V6_0 * _Nullable pen;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable penColor;
+@property (nonatomic, strong) ColorHTML_V6_0 * _Nullable penColorHTML;
+@property (nonatomic, strong) Thickness_V6_0 * _Nullable thickness;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -8898,24 +9053,24 @@ SWIFT_PROTOCOL_NAMED("PlayerActionDelegate")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10Popup_V6_0")
 @interface Popup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable header;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable optionTextIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable outlineTextButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable fillButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable fillButtonTextIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteButtonTextIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectTextTick;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionClassHeader;
-@property (nonatomic, readonly, copy) NSString * _Nullable nonSelect;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookmarkPopupInstructionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable sortByBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleAuthorPublishedDate;
-@property (nonatomic, readonly, copy) NSString * _Nullable innerBackground;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable contentTitle;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable optionTextIcon;
+@property (nonatomic, copy) NSString * _Nullable outlineTextButton;
+@property (nonatomic, copy) NSString * _Nullable fillButton;
+@property (nonatomic, copy) NSString * _Nullable fillButtonTextIcon;
+@property (nonatomic, copy) NSString * _Nullable deleteButton;
+@property (nonatomic, copy) NSString * _Nullable deleteButtonTextIcon;
+@property (nonatomic, copy) NSString * _Nullable selectTextTick;
+@property (nonatomic, copy) NSString * _Nullable sectionClassHeader;
+@property (nonatomic, copy) NSString * _Nullable nonSelect;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable bookmarkPopupInstructionText;
+@property (nonatomic, copy) NSString * _Nullable sortByBackground;
+@property (nonatomic, copy) NSString * _Nullable titleAuthorPublishedDate;
+@property (nonatomic, copy) NSString * _Nullable innerBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -9094,7 +9249,7 @@ SWIFT_CLASS_NAMED("ReaderAnalytics")
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17ReaderFontSetting")
 @interface ReaderFontSetting : NSObject <NSCopying>
 @property (nonatomic, copy) NSString * _Nonnull fontFamily;
-@property (nonatomic) enum FONT_SIZE fontSize;
+@property (nonatomic) NSInteger fontSize;
 @property (nonatomic) enum TEXT_ALIGNMENT textAlignment;
 @property (nonatomic) enum READER_MARGIN margin;
 @property (nonatomic) enum TEXT_LINESPACING lineSpacing;
@@ -9108,13 +9263,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17ReaderFontSetting")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ReaderProfile_V6_0")
 @interface ReaderProfile_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable profileBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable actionTextColor;
-@property (nonatomic, readonly, strong) Signout_V6_0 * _Nullable signout;
-@property (nonatomic, readonly, copy) NSString * _Nullable linkColorSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable profileTextColor;
+@property (nonatomic, copy) NSString * _Nullable profileBorder;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable actionTextColor;
+@property (nonatomic, strong) Signout_V6_0 * _Nullable signout;
+@property (nonatomic, copy) NSString * _Nullable linkColorSelected;
+@property (nonatomic, copy) NSString * _Nullable profileTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -9122,21 +9277,21 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ReaderProfile_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17ReaderSearch_V6_0")
 @interface ReaderSearch_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputPanelBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable mainIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBgColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable seperationBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable crossIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable subtextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectionTextColorBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColorBg;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable inputPanelBg;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable mainIconColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedBgColor;
+@property (nonatomic, copy) NSString * _Nullable seperationBackground;
+@property (nonatomic, copy) NSString * _Nullable crossIconColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable subtextColor;
+@property (nonatomic, copy) NSString * _Nullable selectionTextColorBg;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColorBg;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -9152,13 +9307,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ReadingTimeManager")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16RecentShelf_V6_0")
 @interface RecentShelf_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable viewAll;
-@property (nonatomic, readonly, copy) NSString * _Nullable readProgressBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable format;
-@property (nonatomic, readonly, copy) NSString * _Nullable moreIcon;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextColor;
+@property (nonatomic, copy) NSString * _Nullable viewAll;
+@property (nonatomic, copy) NSString * _Nullable readProgressBar;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable moreIcon;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -9176,9 +9331,9 @@ SWIFT_CLASS_NAMED("ReflowableCustomSlider")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21ReflowableReader_V6_0")
 @interface ReflowableReader_V6_0 : NSObject
-@property (nonatomic, readonly, strong) DayModeClass_V6_0 * _Nullable dayMode;
-@property (nonatomic, readonly, strong) DayModeClass_V6_0 * _Nullable sepiaMode;
-@property (nonatomic, readonly, strong) DayModeClass_V6_0 * _Nullable nightMode;
+@property (nonatomic, strong) DayModeClass_V6_0 * _Nullable dayMode;
+@property (nonatomic, strong) DayModeClass_V6_0 * _Nullable sepiaMode;
+@property (nonatomic, strong) DayModeClass_V6_0 * _Nullable nightMode;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -9186,8 +9341,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21ReflowableReader_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Refresh_V6_0")
 @interface Refresh_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable buttonTextColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable buttonTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10552,6 +10707,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)ICON_RADIO_UNSELECTED SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ICON_MULTILEVEL_CHAPTER_DROP_DOWN;)
 + (NSString * _Nonnull)ICON_MULTILEVEL_CHAPTER_DROP_DOWN SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ICON_K_AI;)
++ (NSString * _Nonnull)ICON_K_AI SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -10604,9 +10761,9 @@ SWIFT_CLASS_NAMED("SDKUtility")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8SVG_V6_0")
 @interface SVG_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable color;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundHTML;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable color;
+@property (nonatomic, copy) NSString * _Nullable backgroundHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10638,10 +10795,10 @@ typedef SWIFT_ENUM(NSInteger, ScrollDirection, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15ScrollView_V6_0")
 @interface ScrollView_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBg;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10649,10 +10806,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15ScrollView_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SelectedChapter_V6_0")
 @interface SelectedChapter_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterTimeColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable chapterTimeColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10660,14 +10817,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SelectedChapter_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16SelectedToc_V6_0")
 @interface SelectedToc_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable arrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sideTabBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable levelBackground;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable arrowColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable sideTabBackground;
+@property (nonatomic, copy) NSString * _Nullable levelBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10675,14 +10832,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16SelectedToc_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15SettingsV6_V6_0")
 @interface SettingsV6_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkColor;
-@property (nonatomic, readonly, strong) ActionButton_V6_V6_0 * _Nullable actionButton;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable sectionTitleColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable checkColor;
+@property (nonatomic, strong) ActionButton_V6_V6_0 * _Nullable actionButton;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10690,22 +10847,22 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15SettingsV6_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ShareFeedback_V6_0")
 @interface ShareFeedback_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable emojiBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable feedbackRespBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable activeFeedbackBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable existingFeedbackBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable editFeedbackBtnColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteFeedbackBtnColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable topbarDECColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable topbarProfileColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable feedbackQtnColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable feedbackImproveColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable feedbackRespColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable submitBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable editFeedbackColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteCancelBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteOkBackground;
+@property (nonatomic, copy) NSString * _Nullable emojiBackground;
+@property (nonatomic, copy) NSString * _Nullable feedbackRespBorder;
+@property (nonatomic, copy) NSString * _Nullable activeFeedbackBackground;
+@property (nonatomic, copy) NSString * _Nullable existingFeedbackBackground;
+@property (nonatomic, copy) NSString * _Nullable editFeedbackBtnColor;
+@property (nonatomic, copy) NSString * _Nullable deleteFeedbackBtnColor;
+@property (nonatomic, copy) NSString * _Nullable topbarDECColor;
+@property (nonatomic, copy) NSString * _Nullable topbarProfileColor;
+@property (nonatomic, copy) NSString * _Nullable dividerBackground;
+@property (nonatomic, copy) NSString * _Nullable feedbackQtnColor;
+@property (nonatomic, copy) NSString * _Nullable feedbackImproveColor;
+@property (nonatomic, copy) NSString * _Nullable feedbackRespColor;
+@property (nonatomic, copy) NSString * _Nullable submitBackground;
+@property (nonatomic, copy) NSString * _Nullable editFeedbackColor;
+@property (nonatomic, copy) NSString * _Nullable deleteCancelBorder;
+@property (nonatomic, copy) NSString * _Nullable deleteOkBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10740,13 +10897,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23ShareSettingsController")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ShareSettings_V6_0")
 @interface ShareSettings_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable allBoxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable bottomBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable mainActionColor;
+@property (nonatomic, copy) NSString * _Nullable sectionTitleColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable allBoxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable checkColor;
+@property (nonatomic, copy) NSString * _Nullable bottomBackground;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable mainActionColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10754,9 +10911,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ShareSettings_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10Share_V6_0")
 @interface Share_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable sharePopupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, strong) ShareSettings_V6_0 * _Nullable shareSettings;
+@property (nonatomic, copy) NSString * _Nullable sharePopupBackground;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, strong) ShareSettings_V6_0 * _Nullable shareSettings;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10770,11 +10927,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14SharedUserInfo")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15SideBottom_V6_0")
 @interface SideBottom_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10782,19 +10939,19 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15SideBottom_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14Sidepanel_V6_0")
 @interface Sidepanel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, strong) SelectedChapter_V6_0 * _Nullable selectedChapter;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable timeColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, strong) SelectedChapter_V6_0 * _Nullable selectedChapter;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable timeColor;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable deleteIconColor;
+@property (nonatomic, copy) NSString * _Nullable dividerColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10802,7 +10959,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14Sidepanel_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11SignIn_V6_0")
 @interface SignIn_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable loginLeftBgcolor;
+@property (nonatomic, copy) NSString * _Nullable loginLeftBgcolor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10810,36 +10967,36 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11SignIn_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Signin_V6_0")
 @interface Signin_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable leftBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabDeselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputUsernamepassword;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinText;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinTextDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinEnabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable remebermeRecoverPassword;
-@property (nonatomic, readonly, copy) NSString * _Nullable errorMessage;
-@property (nonatomic, readonly, copy) NSString * _Nullable downloadappText;
-@property (nonatomic, readonly, copy) NSString * _Nullable autofillbackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable leftHeadingTextcolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable spinner;
-@property (nonatomic, readonly, copy) NSString * _Nullable termconditiontext;
-@property (nonatomic, readonly, copy) NSString * _Nullable linkText;
-@property (nonatomic, readonly, copy) NSString * _Nullable validationtext;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_Tab_Text;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signin_Remeberme;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signin_Remeberme_checkbox_bgColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signin_RecoverPassword;
-@property (nonatomic, readonly, copy) NSString * _Nullable freetrial_text;
-@property (nonatomic, readonly, copy) NSString * _Nullable freetrial_btn_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signup_Input_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signup_Input_Focus_border;
-@property (nonatomic, readonly, strong) ForgotPassword_V6_0 * _Nullable forgotPassword;
+@property (nonatomic, copy) NSString * _Nullable leftBackground;
+@property (nonatomic, copy) NSString * _Nullable signinBackground;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable tabSelected;
+@property (nonatomic, copy) NSString * _Nullable tabDeselected;
+@property (nonatomic, copy) NSString * _Nullable inputOutline;
+@property (nonatomic, copy) NSString * _Nullable inputLabel;
+@property (nonatomic, copy) NSString * _Nullable inputUsernamepassword;
+@property (nonatomic, copy) NSString * _Nullable signinText;
+@property (nonatomic, copy) NSString * _Nullable signinTextDisabled;
+@property (nonatomic, copy) NSString * _Nullable signinDisabled;
+@property (nonatomic, copy) NSString * _Nullable signinEnabled;
+@property (nonatomic, copy) NSString * _Nullable remebermeRecoverPassword;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
+@property (nonatomic, copy) NSString * _Nullable downloadappText;
+@property (nonatomic, copy) NSString * _Nullable autofillbackground;
+@property (nonatomic, copy) NSString * _Nullable leftHeadingTextcolor;
+@property (nonatomic, copy) NSString * _Nullable spinner;
+@property (nonatomic, copy) NSString * _Nullable termconditiontext;
+@property (nonatomic, copy) NSString * _Nullable linkText;
+@property (nonatomic, copy) NSString * _Nullable validationtext;
+@property (nonatomic, copy) NSString * _Nullable Selected_Tab_Text;
+@property (nonatomic, copy) NSString * _Nullable Signin_Remeberme;
+@property (nonatomic, copy) NSString * _Nullable Signin_Remeberme_checkbox_bgColor;
+@property (nonatomic, copy) NSString * _Nullable Signin_RecoverPassword;
+@property (nonatomic, copy) NSString * _Nullable freetrial_text;
+@property (nonatomic, copy) NSString * _Nullable freetrial_btn_border;
+@property (nonatomic, copy) NSString * _Nullable Signup_Input_border;
+@property (nonatomic, copy) NSString * _Nullable Signup_Input_Focus_border;
+@property (nonatomic, strong) ForgotPassword_V6_0 * _Nullable forgotPassword;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10847,9 +11004,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Signin_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18SignoutButton_V6_0")
 @interface SignoutButton_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable icons_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable text_color;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable icons_color;
+@property (nonatomic, copy) NSString * _Nullable text_color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10857,9 +11014,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18SignoutButton_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Signout_V6_0")
 @interface Signout_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10875,9 +11032,9 @@ typedef SWIFT_ENUM(NSInteger, SleepAction, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SlideController_V6_0")
 @interface SlideController_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable controllerColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundHTML;
+@property (nonatomic, copy) NSString * _Nullable controllerColor;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable backgroundHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10885,7 +11042,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SlideController_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SlideshowMarkup_V6_0")
 @interface SlideshowMarkup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -10945,8 +11102,8 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK28StickyNoteControllerDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14SubButton_V6_0")
 @interface SubButton_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable textIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable disabledTextIconColor;
+@property (nonatomic, copy) NSString * _Nullable textIconColor;
+@property (nonatomic, copy) NSString * _Nullable disabledTextIconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11054,24 +11211,24 @@ typedef SWIFT_ENUM(NSInteger, TOOL_TYPE, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20Tableofcontents_V6_0")
 @interface Tableofcontents_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorderWrapper;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chlabelFontweight;
-@property (nonatomic, readonly, strong) SelectedToc_V6_0 * _Nullable selectedToc;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pagenoColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable moreIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerColor;
-@property (nonatomic, readonly, strong) CloseSlider_V6_0 * _Nullable closeSlider;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabBorderWrapper;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, copy) NSString * _Nullable chlabelFontweight;
+@property (nonatomic, strong) SelectedToc_V6_0 * _Nullable selectedToc;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable pagenoColor;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable moreIconColor;
+@property (nonatomic, copy) NSString * _Nullable dividerColor;
+@property (nonatomic, strong) CloseSlider_V6_0 * _Nullable closeSlider;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11233,17 +11390,17 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20TeacherReviewFibView")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20TeacherSettings_V6_0")
 @interface TeacherSettings_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable mainIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable pen1Color;
-@property (nonatomic, readonly, copy) NSString * _Nullable pen2Color;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable mainIconColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable pen1Color;
+@property (nonatomic, copy) NSString * _Nullable pen2Color;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable checkColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11251,19 +11408,19 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20TeacherSettings_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23TeacherStudentlist_V6_0")
 @interface TeacherStudentlist_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelectedBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable nameColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dataAddedColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable nodataAddedColor;
-@property (nonatomic, readonly, strong) Refresh_V6_0 * _Nullable refresh;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabSelectedBar;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable nameColor;
+@property (nonatomic, copy) NSString * _Nullable dataAddedColor;
+@property (nonatomic, copy) NSString * _Nullable nodataAddedColor;
+@property (nonatomic, strong) Refresh_V6_0 * _Nullable refresh;
+@property (nonatomic, copy) NSString * _Nullable selectedColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11277,14 +11434,14 @@ typedef SWIFT_ENUM(NSInteger, TextAnnotationAlignment, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19TextAnnotation_V6_0")
 @interface TextAnnotation_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable lineColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, strong) AlignPopup_V6_0 * _Nullable alignPopup;
-@property (nonatomic, readonly, strong) ColorPopup_V6_0 * _Nullable colorPopup;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable lineColor;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, strong) AlignPopup_V6_0 * _Nullable alignPopup;
+@property (nonatomic, strong) ColorPopup_V6_0 * _Nullable colorPopup;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11378,11 +11535,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17TextSelectionView")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14Thickness_V6_0")
 @interface Thickness_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderFilledColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable sliderFilledColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11419,19 +11576,19 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK17ThumbnailDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20ThumbnailSlider_V6_0")
 @interface ThumbnailSlider_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderFilledColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable defaultThumbnailColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedThumbnailColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable thumbnailTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageSubmittedBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageNotSubmittedBorderColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable chapterIconColor;
+@property (nonatomic, copy) NSString * _Nullable sliderFilledColor;
+@property (nonatomic, copy) NSString * _Nullable defaultThumbnailColor;
+@property (nonatomic, copy) NSString * _Nullable selectedThumbnailColor;
+@property (nonatomic, copy) NSString * _Nullable thumbnailTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTitleColor;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable pageSubmittedBorderColor;
+@property (nonatomic, copy) NSString * _Nullable pageNotSubmittedBorderColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11461,8 +11618,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23ThumbnailViewController")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Toastmessage_V6_0")
 @interface Toastmessage_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable color;
+@property (nonatomic, copy) NSString * _Nullable backgroundColor;
+@property (nonatomic, copy) NSString * _Nullable color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11470,14 +11627,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Toastmessage_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Top_V6_0")
 @interface Top_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable navigationArrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable profileBorder;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable titleTextColor;
+@property (nonatomic, copy) NSString * _Nullable navigationArrowColor;
+@property (nonatomic, copy) NSString * _Nullable profileBorder;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11485,10 +11642,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Top_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13Toppanel_V6_0")
 @interface Toppanel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookTitleTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable bottomLine;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable bookTitleTextColor;
+@property (nonatomic, copy) NSString * _Nullable bottomLine;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11786,6 +11943,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 
+
+
 @interface UIView (SWIFT_EXTENSION(Kitaboo_Reader_SDK))
 - (void)setAccessibilityForElementID:(NSString * _Nonnull)elementID WithFile:(NSString * _Nonnull)file argument:(NSString * _Nonnull)text;
 - (void)setAccessibilityForElementID:(NSString * _Nonnull)elementID WithFile:(NSString * _Nonnull)file argument:(NSString * _Nonnull)text value:(NSString * _Nonnull)val altText:(NSString * _Nonnull)alttxt;
@@ -11793,7 +11952,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (void)setAccessibilityWithElementID:(NSString * _Nonnull)elementID WithFile:(NSString * _Nonnull)file withArgument:(NSString * _Nonnull)text withValue:(NSString * _Nonnull)desc altText:(NSString * _Nonnull)alttxt;
 - (void)disableAccessibilityOnView:(UIView * _Nonnull)view;
 @end
-
 
 
 @interface UIView (SWIFT_EXTENSION(Kitaboo_Reader_SDK))
@@ -11831,9 +11989,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21VerticalThumbnailCell")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18VideoControls_V6_0")
 @interface VideoControls_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable playPauseIconBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable playerBackground;
+@property (nonatomic, copy) NSString * _Nullable playPauseIconBackgroundColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable playerBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11841,7 +11999,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18VideoControls_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16VideoMarkup_V6_0")
 @interface VideoMarkup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable plyr;
+@property (nonatomic, copy) NSString * _Nullable plyr;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11863,7 +12021,7 @@ typedef SWIFT_ENUM(NSInteger, VideoPlayerViewStateUpdate_V6, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16VideoPlayer_V6_0")
 @interface VideoPlayer_V6_0 : NSObject
-@property (nonatomic, readonly, strong) VideoControls_V6_0 * _Nullable videoControls;
+@property (nonatomic, strong) VideoControls_V6_0 * _Nullable videoControls;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11920,13 +12078,13 @@ typedef SWIFT_ENUM(NSInteger, WatermarkPosition, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK32WelcomeAudioVideoBookPlayer_V6_0")
 @interface WelcomeAudioVideoBookPlayer_V6_0 : NSObject
-@property (nonatomic, readonly, strong) Toppanel_V6_0 * _Nullable toppanel;
-@property (nonatomic, readonly, strong) Sidepanel_V6_0 * _Nullable sidepanel;
-@property (nonatomic, readonly, strong) AudioBookCover_V6_0 * _Nullable audioBookCover;
-@property (nonatomic, readonly, strong) AudioVideoSlider_V6_0 * _Nullable audioVideoSlider;
-@property (nonatomic, readonly, strong) AllPopups_V6_0 * _Nullable allPopups;
-@property (nonatomic, readonly, strong) Toastmessage_V6_0 * _Nullable toastmessage;
-@property (nonatomic, readonly, strong) VideoPlayer_V6_0 * _Nullable videoPlayer;
+@property (nonatomic, strong) Toppanel_V6_0 * _Nullable toppanel;
+@property (nonatomic, strong) Sidepanel_V6_0 * _Nullable sidepanel;
+@property (nonatomic, strong) AudioBookCover_V6_0 * _Nullable audioBookCover;
+@property (nonatomic, strong) AudioVideoSlider_V6_0 * _Nullable audioVideoSlider;
+@property (nonatomic, strong) AllPopups_V6_0 * _Nullable allPopups;
+@property (nonatomic, strong) Toastmessage_V6_0 * _Nullable toastmessage;
+@property (nonatomic, strong) VideoPlayer_V6_0 * _Nullable videoPlayer;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11934,34 +12092,34 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK32WelcomeAudioVideoBookPlayer_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21WelcomeBookshelf_V6_0")
 @interface WelcomeBookshelf_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable header;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchText;
-@property (nonatomic, readonly, copy) NSString * _Nullable icons;
-@property (nonatomic, readonly, copy) NSString * _Nullable Header_icons;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleText;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable viewAllText;
-@property (nonatomic, readonly, copy) NSString * _Nullable type;
-@property (nonatomic, readonly, copy) NSString * _Nullable progressBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable progressBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardProgressbarFillBgcolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardProgressbarFillBuffercolor;
-@property (nonatomic, readonly, strong) BookshelfSortby_V6_0 * _Nullable bookshelfSortby;
-@property (nonatomic, readonly, strong) BookshelfInfoPopup_V6_0 * _Nullable bookshelfInfoPopup;
-@property (nonatomic, readonly, strong) BottomBar_V6_0 * _Nullable bottomBar;
-@property (nonatomic, readonly, strong) CategoryLeftPanel_V6_0 * _Nullable categoryLeftPanel;
-@property (nonatomic, readonly, strong) CategoryRightShelf_V6_0 * _Nullable categoryRightShelf;
-@property (nonatomic, readonly, strong) RecentShelf_V6_0 * _Nullable recentShelf;
-@property (nonatomic, readonly, strong) Popup_V6_0 * _Nullable popup;
-@property (nonatomic, readonly, strong) AboutThis_V6_0 * _Nullable aboutThis;
-@property (nonatomic, readonly, strong) BookshelfProfile_V6_0 * _Nullable profile;
-@property (nonatomic, readonly, strong) BookshelfSearch_V6_V6_0 * _Nullable search;
-@property (nonatomic, readonly, strong) AboutUs_V6_0 * _Nullable aboutUs;
-@property (nonatomic, readonly, strong) Analytics_V6_V6_0 * _Nullable analytics;
-@property (nonatomic, readonly, strong) Footer_V6_0 * _Nullable footer;
+@property (nonatomic, copy) NSString * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable searchOutline;
+@property (nonatomic, copy) NSString * _Nullable searchText;
+@property (nonatomic, copy) NSString * _Nullable icons;
+@property (nonatomic, copy) NSString * _Nullable Header_icons;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable titleText;
+@property (nonatomic, copy) NSString * _Nullable contentTitle;
+@property (nonatomic, copy) NSString * _Nullable viewAllText;
+@property (nonatomic, copy) NSString * _Nullable type;
+@property (nonatomic, copy) NSString * _Nullable progressBar;
+@property (nonatomic, copy) NSString * _Nullable progressBackground;
+@property (nonatomic, copy) NSString * _Nullable cardProgressbarFillBgcolor;
+@property (nonatomic, copy) NSString * _Nullable cardProgressbarFillBuffercolor;
+@property (nonatomic, strong) BookshelfSortby_V6_0 * _Nullable bookshelfSortby;
+@property (nonatomic, strong) BookshelfInfoPopup_V6_0 * _Nullable bookshelfInfoPopup;
+@property (nonatomic, strong) BottomBar_V6_0 * _Nullable bottomBar;
+@property (nonatomic, strong) CategoryLeftPanel_V6_0 * _Nullable categoryLeftPanel;
+@property (nonatomic, strong) CategoryRightShelf_V6_0 * _Nullable categoryRightShelf;
+@property (nonatomic, strong) RecentShelf_V6_0 * _Nullable recentShelf;
+@property (nonatomic, strong) Popup_V6_0 * _Nullable popup;
+@property (nonatomic, strong) AboutThis_V6_0 * _Nullable aboutThis;
+@property (nonatomic, strong) BookshelfProfile_V6_0 * _Nullable profile;
+@property (nonatomic, strong) BookshelfSearch_V6_V6_0 * _Nullable search;
+@property (nonatomic, strong) AboutUs_V6_0 * _Nullable aboutUs;
+@property (nonatomic, strong) Analytics_V6_V6_0 * _Nullable analytics;
+@property (nonatomic, strong) Footer_V6_0 * _Nullable footer;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -11970,45 +12128,54 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21WelcomeBookshelf_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18WelcomeReader_V6_0")
 @interface WelcomeReader_V6_0 : NSObject
-@property (nonatomic, readonly, strong) Main_V6_0 * _Nullable main;
-@property (nonatomic, readonly, strong) Tableofcontents_V6_0 * _Nullable tableofcontents;
-@property (nonatomic, readonly, strong) MyData_V6_0 * _Nullable myData;
-@property (nonatomic, readonly, strong) Bookmark_V6_0 * _Nullable bookmark;
-@property (nonatomic, readonly, strong) ReaderSearch_V6_0 * _Nullable search;
-@property (nonatomic, readonly, strong) Pentool_V6_0 * _Nullable pentool;
-@property (nonatomic, readonly, strong) ThumbnailSlider_V6_0 * _Nullable thumbnailSlider;
-@property (nonatomic, readonly, strong) AudioBar_V6_0 * _Nullable audioBar;
-@property (nonatomic, readonly, strong) Note_V6_0 * _Nullable note;
-@property (nonatomic, readonly, strong) Share_V6_0 * _Nullable share;
-@property (nonatomic, readonly, strong) Comments_V6_0 * _Nullable comments;
-@property (nonatomic, readonly, strong) Zoom_V6_0 * _Nullable zoom;
-@property (nonatomic, readonly, strong) FontSettings_V6_0 * _Nullable fontSettings;
-@property (nonatomic, readonly, strong) TeacherSettings_V6_0 * _Nullable teacherSettings;
-@property (nonatomic, readonly, strong) TeacherStudentlist_V6_0 * _Nullable teacherStudentlist;
-@property (nonatomic, readonly, strong) Highlight_V6_V6_0 * _Nullable highlight;
-@property (nonatomic, readonly, strong) HighlightOnScreen_V6_0 * _Nullable highlightOnScreen;
-@property (nonatomic, readonly, strong) ReaderProfile_V6_0 * _Nullable profile;
-@property (nonatomic, readonly, strong) ReflowableReader_V6_0 * _Nullable reflowableReader;
-@property (nonatomic, readonly, strong) TextAnnotation_V6_0 * _Nullable textAnnotation;
-@property (nonatomic, readonly, strong) Markup_V6_0 * _Nullable markup;
-@property (nonatomic, readonly, strong) MarkupGlossary_V6_0 * _Nullable markupGlossary;
-@property (nonatomic, readonly, strong) ImageMarkup_V6_0 * _Nullable imageMarkup;
-@property (nonatomic, readonly, strong) SlideshowMarkup_V6_0 * _Nullable slideshowMarkup;
-@property (nonatomic, readonly, strong) AudioMarkup_V6_0 * _Nullable audioMarkup;
-@property (nonatomic, readonly, strong) Help_V6_0 * _Nullable help;
-@property (nonatomic, readonly, strong) VideoMarkup_V6_0 * _Nullable videoMarkup;
-@property (nonatomic, readonly, strong) ShareFeedback_V6_0 * _Nullable shareFeedback;
+@property (nonatomic, strong) Main_V6_0 * _Nullable main;
+@property (nonatomic, strong) Tableofcontents_V6_0 * _Nullable tableofcontents;
+@property (nonatomic, strong) MyData_V6_0 * _Nullable myData;
+@property (nonatomic, strong) Bookmark_V6_0 * _Nullable bookmark;
+@property (nonatomic, strong) ReaderSearch_V6_0 * _Nullable search;
+@property (nonatomic, strong) Pentool_V6_0 * _Nullable pentool;
+@property (nonatomic, strong) ThumbnailSlider_V6_0 * _Nullable thumbnailSlider;
+@property (nonatomic, strong) AudioBar_V6_0 * _Nullable audioBar;
+@property (nonatomic, strong) Note_V6_0 * _Nullable note;
+@property (nonatomic, strong) Share_V6_0 * _Nullable share;
+@property (nonatomic, strong) Comments_V6_0 * _Nullable comments;
+@property (nonatomic, strong) Zoom_V6_0 * _Nullable zoom;
+@property (nonatomic, strong) FontSettings_V6_0 * _Nullable fontSettings;
+@property (nonatomic, strong) TeacherSettings_V6_0 * _Nullable teacherSettings;
+@property (nonatomic, strong) TeacherStudentlist_V6_0 * _Nullable teacherStudentlist;
+@property (nonatomic, strong) Highlight_V6_V6_0 * _Nullable highlight;
+@property (nonatomic, strong) HighlightOnScreen_V6_0 * _Nullable highlightOnScreen;
+@property (nonatomic, strong) ReaderProfile_V6_0 * _Nullable profile;
+@property (nonatomic, strong) ReflowableReader_V6_0 * _Nullable reflowableReader;
+@property (nonatomic, strong) TextAnnotation_V6_0 * _Nullable textAnnotation;
+@property (nonatomic, strong) Markup_V6_0 * _Nullable markup;
+@property (nonatomic, strong) MarkupGlossary_V6_0 * _Nullable markupGlossary;
+@property (nonatomic, strong) ImageMarkup_V6_0 * _Nullable imageMarkup;
+@property (nonatomic, strong) SlideshowMarkup_V6_0 * _Nullable slideshowMarkup;
+@property (nonatomic, strong) AudioMarkup_V6_0 * _Nullable audioMarkup;
+@property (nonatomic, strong) Help_V6_0 * _Nullable help;
+@property (nonatomic, strong) VideoMarkup_V6_0 * _Nullable videoMarkup;
+@property (nonatomic, strong) ShareFeedback_V6_0 * _Nullable shareFeedback;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21XMLToDictionaryParser")
+@interface XMLToDictionaryParser : NSObject <NSXMLParserDelegate>
+- (void)parser:(NSXMLParser * _Nonnull)parser didStartElement:(NSString * _Nonnull)elementName namespaceURI:(NSString * _Nullable)namespaceURI qualifiedName:(NSString * _Nullable)qName attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributeDict;
+- (void)parser:(NSXMLParser * _Nonnull)parser foundCharacters:(NSString * _Nonnull)string;
+- (void)parser:(NSXMLParser * _Nonnull)parser didEndElement:(NSString * _Nonnull)elementName namespaceURI:(NSString * _Nullable)namespaceURI qualifiedName:(NSString * _Nullable)qName;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Zoom_V6_0")
 @interface Zoom_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderFilledColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable sliderFilledColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12361,30 +12528,30 @@ typedef SWIFT_ENUM(NSInteger, AUDIO_SYNC_TYPE, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14AboutThis_V6_0")
 @interface AboutThis_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable header;
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable readProgressBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterNumber;
-@property (nonatomic, readonly, copy) NSString * _Nullable collectionSingleSelect;
-@property (nonatomic, readonly, copy) NSString * _Nullable favouriteNonselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable favouriteSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable favouriteBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable readNowBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable readNowText;
-@property (nonatomic, readonly, copy) NSString * _Nullable analytics;
-@property (nonatomic, readonly, copy) NSString * _Nullable analyticsOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable analyticsText;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable format;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabDeselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionV6;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoryLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable downloadingButtonProgress;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_Tab_Text;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_collection_background;
+@property (nonatomic, copy) NSString * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable readProgressBar;
+@property (nonatomic, copy) NSString * _Nullable chapterNumber;
+@property (nonatomic, copy) NSString * _Nullable collectionSingleSelect;
+@property (nonatomic, copy) NSString * _Nullable favouriteNonselected;
+@property (nonatomic, copy) NSString * _Nullable favouriteSelected;
+@property (nonatomic, copy) NSString * _Nullable favouriteBackground;
+@property (nonatomic, copy) NSString * _Nullable readNowBackground;
+@property (nonatomic, copy) NSString * _Nullable readNowText;
+@property (nonatomic, copy) NSString * _Nullable analytics;
+@property (nonatomic, copy) NSString * _Nullable analyticsOutline;
+@property (nonatomic, copy) NSString * _Nullable analyticsText;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable tabSelected;
+@property (nonatomic, copy) NSString * _Nullable tabDeselected;
+@property (nonatomic, copy) NSString * _Nullable descriptionV6;
+@property (nonatomic, copy) NSString * _Nullable categoryLabel;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable downloadingButtonProgress;
+@property (nonatomic, copy) NSString * _Nullable Selected_Tab_Text;
+@property (nonatomic, copy) NSString * _Nullable Selected_collection_background;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12394,14 +12561,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14AboutThis_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12AboutUs_V6_0")
 @interface AboutUs_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundImage;
-@property (nonatomic, readonly, copy) NSString * _Nullable closeIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, strong) GradientColor_V6_0 * _Nullable gradientColor;
-@property (nonatomic, readonly, strong) SVG_V6_0 * _Nullable svg;
+@property (nonatomic, copy) NSString * _Nullable backgroundColor;
+@property (nonatomic, copy) NSString * _Nullable backgroundImage;
+@property (nonatomic, copy) NSString * _Nullable closeIconColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionTextColor;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, strong) GradientColor_V6_0 * _Nullable gradientColor;
+@property (nonatomic, strong) SVG_V6_0 * _Nullable svg;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12430,8 +12597,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable lan
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20ActionButton_V6_V6_0")
 @interface ActionButton_V6_V6_0 : NSObject
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable main;
-@property (nonatomic, readonly, strong) Cancel_V6_0 * _Nullable cancel;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable main;
+@property (nonatomic, strong) Cancel_V6_0 * _Nullable cancel;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12439,9 +12606,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20ActionButton_V6_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15AlignPopup_V6_0")
 @interface AlignPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBorderColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedBorderColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12449,21 +12616,21 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15AlignPopup_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19AllPopupsPopup_V6_0")
 @interface AllPopupsPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable border;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable lineColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedLineColour;
-@property (nonatomic, readonly, copy) NSString * _Nullable timeTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable speedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedSpeedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedSleepTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkIconColor;
-@property (nonatomic, readonly, strong) ActionButton_V6_V6_0 * _Nullable actionButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable deleteButton;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable border;
+@property (nonatomic, copy) NSString * _Nullable titleTextColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable inputTextColor;
+@property (nonatomic, copy) NSString * _Nullable lineColor;
+@property (nonatomic, copy) NSString * _Nullable selectedLineColour;
+@property (nonatomic, copy) NSString * _Nullable timeTextColor;
+@property (nonatomic, copy) NSString * _Nullable speedTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedSpeedTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedSleepTextColor;
+@property (nonatomic, copy) NSString * _Nullable checkIconColor;
+@property (nonatomic, strong) ActionButton_V6_V6_0 * _Nullable actionButton;
+@property (nonatomic, copy) NSString * _Nullable descriptionTextColor;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable deleteButton;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12472,8 +12639,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19AllPopupsPopup_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14AllPopups_V6_0")
 @interface AllPopups_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, strong) AllPopupsPopup_V6_0 * _Nullable popup;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, strong) AllPopupsPopup_V6_0 * _Nullable popup;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12494,29 +12661,29 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16AnalyticsManager")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Analytics_V6_V6_0")
 @interface Analytics_V6_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable headerBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable backArrowHeader;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable format;
-@property (nonatomic, readonly, copy) NSString * _Nullable icons;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionNonselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardText;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable dropdownIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable classLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardProgressbarFillBgcolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardProgressbarFillBuffercolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable back_arrow;
-@property (nonatomic, readonly, copy) NSString * _Nullable header;
-@property (nonatomic, readonly, copy) NSString * _Nullable selected_Tab_Background;
-@property (nonatomic, readonly, copy) NSString * _Nullable selected_Tab_Left_Border;
-@property (nonatomic, readonly, copy) NSString * _Nullable selected_Tab_Icon;
+@property (nonatomic, copy) NSString * _Nullable headerBackground;
+@property (nonatomic, copy) NSString * _Nullable backArrowHeader;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable icons;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable sectionBackground;
+@property (nonatomic, copy) NSString * _Nullable sectionSelected;
+@property (nonatomic, copy) NSString * _Nullable sectionNonselected;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable cardText;
+@property (nonatomic, copy) NSString * _Nullable tabSelected;
+@property (nonatomic, copy) NSString * _Nullable dropdownIconColor;
+@property (nonatomic, copy) NSString * _Nullable classLabel;
+@property (nonatomic, copy) NSString * _Nullable cardProgressbarFillBgcolor;
+@property (nonatomic, copy) NSString * _Nullable cardProgressbarFillBuffercolor;
+@property (nonatomic, copy) NSString * _Nullable back_arrow;
+@property (nonatomic, copy) NSString * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable selected_Tab_Background;
+@property (nonatomic, copy) NSString * _Nullable selected_Tab_Left_Border;
+@property (nonatomic, copy) NSString * _Nullable selected_Tab_Icon;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12524,13 +12691,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Analytics_V6_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13AudioBar_V6_0")
 @interface AudioBar_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable audioDragIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable audioDragBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable playPauseIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable muteIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable currentTime;
-@property (nonatomic, readonly, copy) NSString * _Nullable closeAudio;
+@property (nonatomic, copy) NSString * _Nullable backgroundColor;
+@property (nonatomic, copy) NSString * _Nullable audioDragIcon;
+@property (nonatomic, copy) NSString * _Nullable audioDragBackgroundColor;
+@property (nonatomic, copy) NSString * _Nullable playPauseIcon;
+@property (nonatomic, copy) NSString * _Nullable muteIcon;
+@property (nonatomic, copy) NSString * _Nullable currentTime;
+@property (nonatomic, copy) NSString * _Nullable closeAudio;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12538,11 +12705,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13AudioBar_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19AudioBookCover_V6_0")
 @interface AudioBookCover_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable shadowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable rgba;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundColor;
+@property (nonatomic, copy) NSString * _Nullable shadowColor;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable rgba;
+@property (nonatomic, copy) NSString * _Nullable backgroundColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12562,10 +12729,10 @@ typedef SWIFT_ENUM(NSInteger, AudioBookPlayerViewStateUpdate_V6, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16AudioMarkup_V6_0")
 @interface AudioMarkup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable audioContainerBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable iconBackgroundColor;
+@property (nonatomic, copy) NSString * _Nullable audioContainerBorderColor;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12604,20 +12771,20 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK27AudioSyncControllerDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21AudioVideoSlider_V6_0")
 @interface AudioVideoSlider_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderFilledColor;
-@property (nonatomic, readonly, strong) SlideController_V6_0 * _Nullable slideController;
-@property (nonatomic, readonly, copy) NSString * _Nullable defaultTimetextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable currentTimetextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterCountTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable navigationArrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable disabledNavigationArrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterThumbnailProgressBarColor;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable chapterIconColor;
+@property (nonatomic, copy) NSString * _Nullable sliderFilledColor;
+@property (nonatomic, strong) SlideController_V6_0 * _Nullable slideController;
+@property (nonatomic, copy) NSString * _Nullable defaultTimetextColor;
+@property (nonatomic, copy) NSString * _Nullable currentTimetextColor;
+@property (nonatomic, copy) NSString * _Nullable chapterTitleColor;
+@property (nonatomic, copy) NSString * _Nullable chapterCountTextColor;
+@property (nonatomic, copy) NSString * _Nullable navigationArrowColor;
+@property (nonatomic, copy) NSString * _Nullable disabledNavigationArrowColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable chapterThumbnailProgressBarColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12868,15 +13035,17 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 @class WelcomeReader_V6_0;
 @class WelcomeAudioVideoBookPlayer_V6_0;
 @class DarkMode_V6_0;
+@class KAI_V6_0;
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22BookShelfThemeFor_V6_0")
 @interface BookShelfThemeFor_V6_0 : NSObject
-@property (nonatomic, readonly, strong) Kitaboo6_0_V6_0 * _Nullable kitaboo6_0;
-@property (nonatomic, readonly, strong) Signin_V6_0 * _Nullable signin;
-@property (nonatomic, readonly, strong) WelcomeBookshelf_V6_0 * _Nullable bookshelf;
-@property (nonatomic, readonly, strong) WelcomeReader_V6_0 * _Nullable reader;
-@property (nonatomic, readonly, strong) WelcomeAudioVideoBookPlayer_V6_0 * _Nullable audioVideoBookPlayer;
-@property (nonatomic, readonly, strong) DarkMode_V6_0 * _Nullable darkMode;
+@property (nonatomic, strong) Kitaboo6_0_V6_0 * _Nullable kitaboo6_0;
+@property (nonatomic, strong) Signin_V6_0 * _Nullable signin;
+@property (nonatomic, strong) WelcomeBookshelf_V6_0 * _Nullable bookshelf;
+@property (nonatomic, strong) WelcomeReader_V6_0 * _Nullable reader;
+@property (nonatomic, strong) WelcomeAudioVideoBookPlayer_V6_0 * _Nullable audioVideoBookPlayer;
+@property (nonatomic, strong) DarkMode_V6_0 * _Nullable darkMode;
+@property (nonatomic, strong) KAI_V6_0 * _Nullable kai;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12911,16 +13080,16 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK26BookmarkControllerDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13Bookmark_V6_0")
 @interface Bookmark_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputPanelBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable buttonBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable buttonTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable crossIconColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable inputPanelBg;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable buttonBackground;
+@property (nonatomic, copy) NSString * _Nullable buttonTextColor;
+@property (nonatomic, copy) NSString * _Nullable crossIconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12928,11 +13097,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13Bookmark_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23BookshelfInfoPopup_V6_0")
 @interface BookshelfInfoPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable optionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable optionIcon;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable contentTitle;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable optionText;
+@property (nonatomic, copy) NSString * _Nullable optionIcon;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12942,43 +13111,43 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23BookshelfInfoPopup_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21BookshelfProfile_V6_0")
 @interface BookshelfProfile_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable leftBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable label;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedSectionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionHeaderPersonalinfoGeneralLegal;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionCardBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable profilerightBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputText;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputTextLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable editProfile;
-@property (nonatomic, readonly, copy) NSString * _Nullable editIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable profileOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable saveDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable saveEnabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable saveText;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelOutlineText;
-@property (nonatomic, readonly, copy) NSString * _Nullable Cancel_Outline;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable errorMessage;
-@property (nonatomic, readonly, copy) NSString * _Nullable signOut;
-@property (nonatomic, readonly, copy) NSString * _Nullable aboutusCard;
-@property (nonatomic, readonly, copy) NSString * _Nullable emailidColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedLanguage;
-@property (nonatomic, readonly, copy) NSString * _Nullable Cancel_Text;
-@property (nonatomic, readonly, copy) NSString * _Nullable langaugeArrow;
-@property (nonatomic, readonly, copy) NSString * _Nullable topbar_background;
-@property (nonatomic, readonly, copy) NSString * _Nullable back_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_tab_icon;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_tab_left_border;
-@property (nonatomic, readonly, strong) ShareFeedback_V6_0 * _Nullable shareFeedback;
-@property (nonatomic, readonly, strong) SignoutButton_V6_0 * _Nullable signoutButton;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable leftBackground;
+@property (nonatomic, copy) NSString * _Nullable label;
+@property (nonatomic, copy) NSString * _Nullable sectionBackground;
+@property (nonatomic, copy) NSString * _Nullable selectedSectionText;
+@property (nonatomic, copy) NSString * _Nullable sectionHeaderPersonalinfoGeneralLegal;
+@property (nonatomic, copy) NSString * _Nullable sectionCardBackground;
+@property (nonatomic, copy) NSString * _Nullable profilerightBackground;
+@property (nonatomic, copy) NSString * _Nullable contentTitle;
+@property (nonatomic, copy) NSString * _Nullable inputOutline;
+@property (nonatomic, copy) NSString * _Nullable inputText;
+@property (nonatomic, copy) NSString * _Nullable inputTextLabel;
+@property (nonatomic, copy) NSString * _Nullable editProfile;
+@property (nonatomic, copy) NSString * _Nullable editIcon;
+@property (nonatomic, copy) NSString * _Nullable profileOutline;
+@property (nonatomic, copy) NSString * _Nullable saveDisabled;
+@property (nonatomic, copy) NSString * _Nullable saveEnabled;
+@property (nonatomic, copy) NSString * _Nullable saveText;
+@property (nonatomic, copy) NSString * _Nullable cancelDisabled;
+@property (nonatomic, copy) NSString * _Nullable cancelOutlineText;
+@property (nonatomic, copy) NSString * _Nullable Cancel_Outline;
+@property (nonatomic, copy) NSString * _Nullable cancelBackground;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
+@property (nonatomic, copy) NSString * _Nullable signOut;
+@property (nonatomic, copy) NSString * _Nullable aboutusCard;
+@property (nonatomic, copy) NSString * _Nullable emailidColor;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedLanguage;
+@property (nonatomic, copy) NSString * _Nullable Cancel_Text;
+@property (nonatomic, copy) NSString * _Nullable langaugeArrow;
+@property (nonatomic, copy) NSString * _Nullable topbar_background;
+@property (nonatomic, copy) NSString * _Nullable back_icon_color;
+@property (nonatomic, copy) NSString * _Nullable Selected_tab_icon;
+@property (nonatomic, copy) NSString * _Nullable Selected_tab_left_border;
+@property (nonatomic, strong) ShareFeedback_V6_0 * _Nullable shareFeedback;
+@property (nonatomic, strong) SignoutButton_V6_0 * _Nullable signoutButton;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -12986,33 +13155,33 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21BookshelfProfile_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23BookshelfSearch_V6_V6_0")
 @interface BookshelfSearch_V6_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable headerBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchHintTextLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchTextLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchIconColour;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchResult;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable elasticSearchIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable thumbnailSelectionBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionV6;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchedWord;
-@property (nonatomic, readonly, copy) NSString * _Nullable downloadShowButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable buttonText;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelButtonTextOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabDeselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkboxbackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTypeFormat;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectCategoryText;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_mobile_bgColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_mobile_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Sortby_mobile_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_Tab_Text;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_history_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_history_text_color;
+@property (nonatomic, copy) NSString * _Nullable headerBackground;
+@property (nonatomic, copy) NSString * _Nullable searchOutline;
+@property (nonatomic, copy) NSString * _Nullable searchHintTextLabel;
+@property (nonatomic, copy) NSString * _Nullable searchTextLabel;
+@property (nonatomic, copy) NSString * _Nullable searchIconColour;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable searchResult;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable elasticSearchIcon;
+@property (nonatomic, copy) NSString * _Nullable thumbnailSelectionBackground;
+@property (nonatomic, copy) NSString * _Nullable descriptionV6;
+@property (nonatomic, copy) NSString * _Nullable searchedWord;
+@property (nonatomic, copy) NSString * _Nullable downloadShowButton;
+@property (nonatomic, copy) NSString * _Nullable buttonText;
+@property (nonatomic, copy) NSString * _Nullable cancelButtonTextOutline;
+@property (nonatomic, copy) NSString * _Nullable tabSelected;
+@property (nonatomic, copy) NSString * _Nullable tabDeselected;
+@property (nonatomic, copy) NSString * _Nullable checkboxbackground;
+@property (nonatomic, copy) NSString * _Nullable contentTypeFormat;
+@property (nonatomic, copy) NSString * _Nullable selectCategoryText;
+@property (nonatomic, copy) NSString * _Nullable Search_mobile_bgColor;
+@property (nonatomic, copy) NSString * _Nullable Search_mobile_border;
+@property (nonatomic, copy) NSString * _Nullable Sortby_mobile_icon_color;
+@property (nonatomic, copy) NSString * _Nullable Selected_Tab_Text;
+@property (nonatomic, copy) NSString * _Nullable Search_history_icon_color;
+@property (nonatomic, copy) NSString * _Nullable Search_history_text_color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13020,14 +13189,15 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23BookshelfSearch_V6_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20BookshelfSortby_V6_0")
 @interface BookshelfSortby_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable titleText;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionHeader;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionOptionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColour;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectTextTick;
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable mouseHover;
+@property (nonatomic, copy) NSString * _Nullable titleText;
+@property (nonatomic, copy) NSString * _Nullable sectionHeader;
+@property (nonatomic, copy) NSString * _Nullable sectionBackground;
+@property (nonatomic, copy) NSString * _Nullable sectionOptionText;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColour;
+@property (nonatomic, copy) NSString * _Nullable selectTextTick;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable mouseHover;
+@property (nonatomic, copy) NSString * _Nullable panelBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13035,12 +13205,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20BookshelfSortby_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14BottomBar_V6_0")
 @interface BottomBar_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable recentIconColour;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedRecentIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedRecentButtonBg;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable recentIconColour;
+@property (nonatomic, copy) NSString * _Nullable selectedRecentIcon;
+@property (nonatomic, copy) NSString * _Nullable selectedRecentButtonBg;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13048,12 +13218,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14BottomBar_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16BottomPanel_V6_0")
 @interface BottomPanel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable borderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColorDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable iconColorDisabled;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13061,10 +13231,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16BottomPanel_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15Brightness_V6_0")
 @interface Brightness_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderSelectedColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconFaded;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconBright;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable sliderSelectedColor;
+@property (nonatomic, copy) NSString * _Nullable iconFaded;
+@property (nonatomic, copy) NSString * _Nullable iconBright;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13072,8 +13242,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15Brightness_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Cancel_V6_0")
 @interface Cancel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable borderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13081,18 +13251,18 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Cancel_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22CategoryLeftPanel_V6_0")
 @interface CategoryLeftPanel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable verticalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextSelectedColorLine;
-@property (nonatomic, readonly, copy) NSString * _Nullable Categories_text_selected_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Categories_selected_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_Categories_input_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_Categories_input_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable Search_Categories_icon_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextSelectedBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable close;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable verticalDivider;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextColor;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextSelectedColorLine;
+@property (nonatomic, copy) NSString * _Nullable Categories_text_selected_color;
+@property (nonatomic, copy) NSString * _Nullable Categories_selected_icon_color;
+@property (nonatomic, copy) NSString * _Nullable Search_Categories_input_border;
+@property (nonatomic, copy) NSString * _Nullable Search_Categories_input_color;
+@property (nonatomic, copy) NSString * _Nullable Search_Categories_icon_color;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextSelectedBar;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable close;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13100,19 +13270,19 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22CategoryLeftPanel_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23CategoryRightShelf_V6_0")
 @interface CategoryRightShelf_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable hamburgerMenu;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable viewAll;
-@property (nonatomic, readonly, copy) NSString * _Nullable readProgressBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable coverEmptyBackgroound;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable format;
-@property (nonatomic, readonly, copy) NSString * _Nullable moreIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable tooltipBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable tooltipText;
-@property (nonatomic, readonly, copy) NSString * _Nullable arrowColorDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable arrowColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable hamburgerMenu;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextColor;
+@property (nonatomic, copy) NSString * _Nullable viewAll;
+@property (nonatomic, copy) NSString * _Nullable readProgressBar;
+@property (nonatomic, copy) NSString * _Nullable coverEmptyBackgroound;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable moreIcon;
+@property (nonatomic, copy) NSString * _Nullable tooltipBackground;
+@property (nonatomic, copy) NSString * _Nullable tooltipText;
+@property (nonatomic, copy) NSString * _Nullable arrowColorDisabled;
+@property (nonatomic, copy) NSString * _Nullable arrowColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13218,6 +13388,7 @@ SWIFT_CLASS_NAMED("KitabooRequest")
 - (NSURLRequest * _Nonnull)getPrintDataWithUserToken:(NSString * _Nonnull)userToken bookId:(NSString * _Nonnull)bookId SWIFT_WARN_UNUSED_RESULT;
 - (NSURLRequest * _Nonnull)savePrintDataWithUserToken:(NSString * _Nonnull)userToken lastPageData:(NSDictionary<NSString *, id> * _Nonnull)lastPageData bookID:(NSString * _Nonnull)bookID SWIFT_WARN_UNUSED_RESULT;
 - (NSURLRequest * _Nonnull)getCustomePDFPagesWithUserToken:(NSString * _Nonnull)userToken lastPageData:(NSDictionary<NSString *, id> * _Nonnull)lastPageData bookID:(NSString * _Nonnull)bookID SWIFT_WARN_UNUSED_RESULT;
+- (NSURLRequest * _Nonnull)getKAIStatusWithUserToken:(NSString * _Nonnull)userToken SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13230,8 +13401,8 @@ SWIFT_CLASS_NAMED("ClientRequest")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16CloseSlider_V6_0")
 @interface CloseSlider_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13239,12 +13410,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16CloseSlider_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14ColorHTML_V6_0")
 @interface ColorHTML_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable yellow;
-@property (nonatomic, readonly, copy) NSString * _Nullable red;
-@property (nonatomic, readonly, copy) NSString * _Nullable purple;
-@property (nonatomic, readonly, copy) NSString * _Nullable green;
-@property (nonatomic, readonly, copy) NSString * _Nullable blue;
-@property (nonatomic, readonly, copy) NSString * _Nullable black;
+@property (nonatomic, copy) NSString * _Nullable yellow;
+@property (nonatomic, copy) NSString * _Nullable red;
+@property (nonatomic, copy) NSString * _Nullable purple;
+@property (nonatomic, copy) NSString * _Nullable green;
+@property (nonatomic, copy) NSString * _Nullable blue;
+@property (nonatomic, copy) NSString * _Nullable black;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13252,18 +13423,18 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14ColorHTML_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15ColorPopup_V6_0")
 @interface ColorPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBorderColor;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color1;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color2;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color3;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color4;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color5;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color6;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color7;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color8;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color9;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable color10;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable selectedBorderColor;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color1;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color2;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color3;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color4;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color5;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color6;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color7;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color8;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color9;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable color10;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13272,12 +13443,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15ColorPopup_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13Comments_V6_0")
 @interface Comments_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable backIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerColor;
-@property (nonatomic, readonly, strong) Message_V6_0 * _Nullable otherMessage;
-@property (nonatomic, readonly, strong) Message_V6_0 * _Nullable myMessage;
-@property (nonatomic, readonly, strong) BottomPanel_V6_0 * _Nullable bottomPanel;
+@property (nonatomic, copy) NSString * _Nullable backIconColor;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable dividerColor;
+@property (nonatomic, strong) Message_V6_0 * _Nullable otherMessage;
+@property (nonatomic, strong) Message_V6_0 * _Nullable myMessage;
+@property (nonatomic, strong) BottomPanel_V6_0 * _Nullable bottomPanel;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13456,12 +13627,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK33DarkModeAudioVideoBookPlayer_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22DarkModeBookshelf_V6_0")
 @interface DarkModeBookshelf_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable mainBgcolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable passwordStrengthCheckColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable editprofile;
-@property (nonatomic, readonly, copy) NSString * _Nullable devicename;
+@property (nonatomic, copy) NSString * _Nullable mainBgcolor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable passwordStrengthCheckColor;
+@property (nonatomic, copy) NSString * _Nullable editprofile;
+@property (nonatomic, copy) NSString * _Nullable devicename;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13469,8 +13640,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22DarkModeBookshelf_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19DarkModeReader_V6_0")
 @interface DarkModeReader_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable mainBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable navigationBtn;
+@property (nonatomic, copy) NSString * _Nullable mainBackgroundColor;
+@property (nonatomic, copy) NSString * _Nullable navigationBtn;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13479,10 +13650,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19DarkModeReader_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13DarkMode_V6_0")
 @interface DarkMode_V6_0 : NSObject
-@property (nonatomic, readonly, strong) SignIn_V6_0 * _Nullable signIn;
-@property (nonatomic, readonly, strong) DarkModeBookshelf_V6_0 * _Nullable bookshelf;
-@property (nonatomic, readonly, strong) DarkModeReader_V6_0 * _Nullable reader;
-@property (nonatomic, readonly, strong) DarkModeAudioVideoBookPlayer_V6_0 * _Nullable audioVideoBookPlayer;
+@property (nonatomic, strong) SignIn_V6_0 * _Nullable signIn;
+@property (nonatomic, strong) DarkModeBookshelf_V6_0 * _Nullable bookshelf;
+@property (nonatomic, strong) DarkModeReader_V6_0 * _Nullable reader;
+@property (nonatomic, strong) DarkModeAudioVideoBookPlayer_V6_0 * _Nullable audioVideoBookPlayer;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13490,8 +13661,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13DarkMode_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17DayModeClass_V6_0")
 @interface DayModeClass_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable canvasBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable defaultTextColor;
+@property (nonatomic, copy) NSString * _Nullable canvasBackground;
+@property (nonatomic, copy) NSString * _Nullable defaultTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13499,8 +13670,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17DayModeClass_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Day_V6_0")
 @interface Day_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable textColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13508,8 +13679,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Day_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21DeSelectedButton_V6_0")
 @interface DeSelectedButton_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable textColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13523,9 +13694,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10DeviceType")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17DisabledIcon_V6_0")
 @interface DisabledIcon_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundHTML;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable backgroundHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13813,14 +13984,14 @@ typedef SWIFT_ENUM(NSInteger, FONT_SIZE, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16FilterPopup_V6_0")
 @interface FilterPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable borderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable allBoxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable arrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable actionTextColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable allBoxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable checkColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable arrowColor;
+@property (nonatomic, copy) NSString * _Nullable actionTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13845,6 +14016,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22FolioReaderAudioPlayer")
 - (void)pause;
 - (void)togglePlay;
 - (void)resume;
+- (void)clearHighlights;
 - (void)play;
 - (void)playNextSentenceInTTS;
 - (void)playPreviousSentenceInTTS;
@@ -13852,6 +14024,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22FolioReaderAudioPlayer")
 - (void)setTTSSpeedWithRate:(float)rate;
 - (BOOL)isPlaying SWIFT_WARN_UNUSED_RESULT;
 - (void)setPageWithSentences:(NSArray<NSArray<PdfWordExtractVO *> *> * _Nonnull)sentences;
+- (void)setCurrentTTSIndex;
 - (void)resetCurrentIndex;
 - (BOOL)checkForWordInSentencesWithWordRect:(CGRect)wordRect withWordText:(NSString * _Nonnull)withWordText pageSentences:(NSArray<NSArray<PdfWordExtractVO *> *> * _Nonnull)pageSentences SWIFT_WARN_UNUSED_RESULT;
 - (void)playPDFTTSFromPointWithWordRect:(CGRect)wordRect withWordText:(NSString * _Nonnull)withWordText withPageNumber:(NSInteger)withPageNumber;
@@ -13877,16 +14050,16 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22FolioReaderAudioPlayer")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17FontSettings_V6_0")
 @interface FontSettings_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable resetColor;
-@property (nonatomic, readonly, strong) Font_V6_0 * _Nullable font;
-@property (nonatomic, readonly, strong) Other_V6_0 * _Nullable other;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, copy) NSString * _Nullable resetColor;
+@property (nonatomic, strong) Font_V6_0 * _Nullable font;
+@property (nonatomic, strong) Other_V6_0 * _Nullable other;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13894,16 +14067,16 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17FontSettings_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Font_V6_0")
 @interface Font_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pointerBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable dropdownBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable dropdownTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable moreIconColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable dividerColor;
+@property (nonatomic, copy) NSString * _Nullable pointerBg;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBorder;
+@property (nonatomic, copy) NSString * _Nullable dropdownBg;
+@property (nonatomic, copy) NSString * _Nullable dropdownTextColor;
+@property (nonatomic, copy) NSString * _Nullable moreIconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13911,12 +14084,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Font_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Footer_V6_0")
 @interface Footer_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable boarder;
-@property (nonatomic, readonly, copy) NSString * _Nullable text;
-@property (nonatomic, readonly, copy) NSString * _Nullable icon;
-@property (nonatomic, readonly, copy) NSString * _Nullable active;
-@property (nonatomic, readonly, copy) NSString * _Nullable color;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable boarder;
+@property (nonatomic, copy) NSString * _Nullable text;
+@property (nonatomic, copy) NSString * _Nullable icon;
+@property (nonatomic, copy) NSString * _Nullable active;
+@property (nonatomic, copy) NSString * _Nullable color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -13924,15 +14097,15 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Footer_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19ForgotPassword_V6_0")
 @interface ForgotPassword_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable leftBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinEnabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable cancelOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable errorMessage;
-@property (nonatomic, readonly, copy) NSString * _Nullable Invalid_email_input_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Cancel_Text;
+@property (nonatomic, copy) NSString * _Nullable leftBackground;
+@property (nonatomic, copy) NSString * _Nullable signinBackground;
+@property (nonatomic, copy) NSString * _Nullable signinDisabled;
+@property (nonatomic, copy) NSString * _Nullable signinEnabled;
+@property (nonatomic, copy) NSString * _Nullable cancelDisabled;
+@property (nonatomic, copy) NSString * _Nullable cancelOutline;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
+@property (nonatomic, copy) NSString * _Nullable Invalid_email_input_border;
+@property (nonatomic, copy) NSString * _Nullable Cancel_Text;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -14122,8 +14295,8 @@ SWIFT_PROTOCOL_NAMED("GlossaryViewControllerDelegate")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18GradientColor_V6_0")
 @interface GradientColor_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable color;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable color;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable opacity;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -15020,10 +15193,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK31HDKitabooMediaPopOverController")
 @end
 
 
-
 @interface HDKitabooMediaPopOverController (SWIFT_EXTENSION(Kitaboo_Reader_SDK))
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id <UIViewControllerTransitionCoordinator> _Nonnull)coordinator;
 @end
+
 
 @class UITouch;
 
@@ -16275,11 +16448,15 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, strong) HDThemeManag
 @property (nonatomic, strong) BookShelfThemeFor_V6_0 * _Nullable mediaTheme;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (void)updateTheme;
 @end
 
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14HDThemeReferer")
 @interface HDThemeReferer : NSObject
+- (NSString * _Nonnull)getMediaThemeNameForReader SWIFT_WARN_UNUSED_RESULT;
+- (NSString * _Nonnull)getInverseThemeNameforReader SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isDarkModeOn SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -16682,6 +16859,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11HDWKWebView")
 @interface HDWKWebView : WKWebView
 @property (nonatomic) BOOL isFixedLayout;
 @property (nonatomic, strong) EPUBChapter * _Nullable chapter;
+@property (nonatomic, copy) NSString * _Nonnull localPath;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder SWIFT_UNAVAILABLE;
 - (nonnull instancetype)initWithFrame:(CGRect)frame configuration:(WKWebViewConfiguration * _Nonnull)configuration OBJC_DESIGNATED_INITIALIZER;
@@ -16919,12 +17097,12 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16HSXHTMLTOCParser")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Help_V6_0")
 @interface Help_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable lineColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pointerColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionTextColor;
+@property (nonatomic, copy) NSString * _Nullable lineColor;
+@property (nonatomic, copy) NSString * _Nullable pointerColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -16974,11 +17152,11 @@ typedef SWIFT_ENUM(NSInteger, HighlightColor, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23HighlightColorHTML_V6_0")
 @interface HighlightColorHTML_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable orange;
-@property (nonatomic, readonly, copy) NSString * _Nullable pink;
-@property (nonatomic, readonly, copy) NSString * _Nullable purple;
-@property (nonatomic, readonly, copy) NSString * _Nullable green;
-@property (nonatomic, readonly, copy) NSString * _Nullable blue;
+@property (nonatomic, copy) NSString * _Nullable orange;
+@property (nonatomic, copy) NSString * _Nullable pink;
+@property (nonatomic, copy) NSString * _Nullable purple;
+@property (nonatomic, copy) NSString * _Nullable green;
+@property (nonatomic, copy) NSString * _Nullable blue;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -17003,8 +17181,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13HighlightItem")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22HighlightOnScreen_V6_0")
 @interface HighlightOnScreen_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable highlightColor;
-@property (nonatomic, readonly, strong) ColorHTML_V6_0 * _Nullable highlightColorHTML;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable highlightColor;
+@property (nonatomic, strong) ColorHTML_V6_0 * _Nullable highlightColorHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -17012,8 +17190,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK22HighlightOnScreen_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19HighlightPopup_V6_0")
 @interface HighlightPopup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable border;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable border;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -17099,11 +17277,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13HighlightTool")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Highlight_V6_V6_0")
 @interface Highlight_V6_V6_0 : NSObject
-@property (nonatomic, readonly, strong) HighlightPopup_V6_0 * _Nullable popup;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBorderColor;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable highlightColor;
-@property (nonatomic, readonly, strong) HighlightColorHTML_V6_0 * _Nullable highlightColorHTML;
+@property (nonatomic, strong) HighlightPopup_V6_0 * _Nullable popup;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedBorderColor;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable highlightColor;
+@property (nonatomic, strong) HighlightColorHTML_V6_0 * _Nullable highlightColorHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -17151,7 +17329,7 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK25ImageDownloadTaskDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16ImageMarkup_V6_0")
 @interface ImageMarkup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable topBarBackground;
+@property (nonatomic, copy) NSString * _Nullable topBarBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -17199,6 +17377,142 @@ SWIFT_CLASS_NAMED("InfomationPopOverContentViewController")
 - (void)setLinkVo:(KFLinkVO * _Nonnull)link;
 /// This is used to get linkvo related to information popup
 - (KFLinkVO * _Nullable)getLinkVo SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK24KAIActionButtonMain_V6_0")
+@interface KAIActionButtonMain_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK29KAIActionButtonSecondary_V6_0")
+@interface KAIActionButtonSecondary_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20KAIActionButton_V6_0")
+@interface KAIActionButton_V6_0 : NSObject
+@property (nonatomic, strong) KAIActionButtonMain_V6_0 * _Nullable main;
+@property (nonatomic, strong) KAIActionButtonSecondary_V6_0 * _Nullable secondary;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11KAIFIB_V6_0")
+@interface KAIFIB_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable blankOutline;
+@property (nonatomic, copy) NSString * _Nullable correctAnswer;
+@property (nonatomic, copy) NSString * _Nullable incorrectAnswer;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17KAIFlashCard_V6_0")
+@interface KAIFlashCard_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable cardBackground;
+@property (nonatomic, copy) NSString * _Nullable cardOutline;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable navigationIcon;
+@property (nonatomic, copy) NSString * _Nullable navigationIconDisable;
+@property (nonatomic, copy) NSString * _Nullable navigationText;
+@property (nonatomic, copy) NSString * _Nullable bottomFlipBG;
+@property (nonatomic, copy) NSString * _Nullable bottomFlipText;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14KAIHeader_V6_0")
+@interface KAIHeader_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21KAIInputDropdown_V6_0")
+@interface KAIInputDropdown_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable outline;
+@property (nonatomic, copy) NSString * _Nullable icon;
+@property (nonatomic, copy) NSString * _Nullable text;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK32KAILearningObjectiveSummary_V6_0")
+@interface KAILearningObjectiveSummary_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable cardOutline;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11KAIMCQ_V6_0")
+@interface KAIMCQ_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable defaultIcon;
+@property (nonatomic, copy) NSString * _Nullable selectedIcon;
+@property (nonatomic, copy) NSString * _Nullable correctAnswer;
+@property (nonatomic, copy) NSString * _Nullable incorrectAnswer;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK26KAIQuestionComplexity_V6_0")
+@interface KAIQuestionComplexity_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable defaultButtonOutline;
+@property (nonatomic, copy) NSString * _Nullable defaultButtonText;
+@property (nonatomic, copy) NSString * _Nullable selectedButtonBG;
+@property (nonatomic, copy) NSString * _Nullable selectedButtonTextOutline;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8KAI_V6_0")
+@interface KAI_V6_0 : NSObject
+@property (nonatomic, copy) NSString * _Nullable floatingIconBackground;
+@property (nonatomic, copy) NSString * _Nullable kaiIcon;
+@property (nonatomic, copy) NSString * _Nullable canvasBackground;
+@property (nonatomic, copy) NSString * _Nullable panelBackground;
+@property (nonatomic, strong) KAIHeader_V6_0 * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable headingText;
+@property (nonatomic, copy) NSString * _Nullable subtext;
+@property (nonatomic, copy) NSString * _Nullable checkboxDefault;
+@property (nonatomic, copy) NSString * _Nullable checkboxSelected;
+@property (nonatomic, copy) NSString * _Nullable activityIcon;
+@property (nonatomic, copy) NSString * _Nullable activityTitleText;
+@property (nonatomic, copy) NSString * _Nullable activityTypeText;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, strong) KAIInputDropdown_V6_0 * _Nullable inputDropdown;
+@property (nonatomic, strong) KAIQuestionComplexity_V6_0 * _Nullable questionComplexity;
+@property (nonatomic, strong) KAIActionButton_V6_0 * _Nullable actionButton;
+@property (nonatomic, copy) NSString * _Nullable loadingHeadingText;
+@property (nonatomic, copy) NSString * _Nullable loadingSubtext;
+@property (nonatomic, strong) KAIMCQ_V6_0 * _Nullable mcq;
+@property (nonatomic, strong) KAIFlashCard_V6_0 * _Nullable flashCard;
+@property (nonatomic, strong) KAIFIB_V6_0 * _Nullable fib;
+@property (nonatomic, strong) KAILearningObjectiveSummary_V6_0 * _Nullable learningObjectiveSummary;
+@property (nonatomic, copy) NSString * _Nullable disclaimer;
+@property (nonatomic, copy) NSString * _Nullable bookCoverBorder;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -17275,23 +17589,23 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK37Kitaboo3dPlayerViewControllerDelegate_
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15Kitaboo6_0_V6_0")
 @interface Kitaboo6_0_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable fontFace;
-@property (nonatomic, readonly, copy) NSString * _Nullable clientName;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookshelfFontfamily;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookshelfFontfamilySemiBold;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookshelf_fontfamily_italic;
-@property (nonatomic, readonly, copy) NSString * _Nullable font_face_Arabic;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookshelfFontfamilyMedium;
-@property (nonatomic, readonly, copy) NSString * _Nullable loginFontfamily;
-@property (nonatomic, readonly, copy) NSString * _Nullable loginFontfamilyBold;
-@property (nonatomic, readonly, copy) NSString * _Nullable readerFontfamily;
-@property (nonatomic, readonly, copy) NSString * _Nullable readerFontfamilyHeader;
-@property (nonatomic, readonly, copy) NSString * _Nullable readerFontfamilyMedium;
-@property (nonatomic, readonly, copy) NSString * _Nullable fontFaceIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable scrollbarShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable deselected_checkbox_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable selected_checkbox_background;
-@property (nonatomic, readonly, copy) NSString * _Nullable active_icon;
+@property (nonatomic, copy) NSString * _Nullable fontFace;
+@property (nonatomic, copy) NSString * _Nullable clientName;
+@property (nonatomic, copy) NSString * _Nullable bookshelfFontfamily;
+@property (nonatomic, copy) NSString * _Nullable bookshelfFontfamilySemiBold;
+@property (nonatomic, copy) NSString * _Nullable bookshelf_fontfamily_italic;
+@property (nonatomic, copy) NSString * _Nullable font_face_Arabic;
+@property (nonatomic, copy) NSString * _Nullable bookshelfFontfamilyMedium;
+@property (nonatomic, copy) NSString * _Nullable loginFontfamily;
+@property (nonatomic, copy) NSString * _Nullable loginFontfamilyBold;
+@property (nonatomic, copy) NSString * _Nullable readerFontfamily;
+@property (nonatomic, copy) NSString * _Nullable readerFontfamilyHeader;
+@property (nonatomic, copy) NSString * _Nullable readerFontfamilyMedium;
+@property (nonatomic, copy) NSString * _Nullable fontFaceIconColor;
+@property (nonatomic, copy) NSString * _Nullable scrollbarShadow;
+@property (nonatomic, copy) NSString * _Nullable deselected_checkbox_border;
+@property (nonatomic, copy) NSString * _Nullable selected_checkbox_background;
+@property (nonatomic, copy) NSString * _Nullable active_icon;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -19928,6 +20242,7 @@ SWIFT_CLASS_NAMED("KitabooServiceInterface")
 - (void)getUserPrintDataWithUserToken:(NSString * _Nonnull)userToken bookID:(NSString * _Nonnull)bookID successHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
 - (void)saveUserPrintData:(NSString * _Nonnull)userToken lastPageData:(NSMutableDictionary * _Nonnull)lastPageData bookID:(NSString * _Nonnull)bookID successHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
 - (void)getCustomePDFPages:(NSString * _Nonnull)userToken pagesData:(NSMutableDictionary * _Nonnull)pagesData bookID:(NSString * _Nonnull)bookID successHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
+- (void)getKAIStatusWithMicroServiceUrl:(NSString * _Nonnull)microServiceUrl userToken:(NSString * _Nonnull)userToken successHandler:(void (^ _Nonnull)(NSDictionary<NSString *, id> * _Nonnull))successHandler failureHandler:(void (^ _Nonnull)(NSError * _Nonnull))failureHandler;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20110,6 +20425,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18KitabooVideoPlayer")
 @end
 
 
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21KitabooVimeoExtractor")
+@interface KitabooVimeoExtractor : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 
 SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK24KitabooWebPlayerDelegate_")
 @protocol KitabooWebPlayerDelegate
@@ -20223,8 +20545,8 @@ typedef SWIFT_ENUM(NSInteger, MEDIA_PLAYER, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16MainToolbar_V6_0")
 @interface MainToolbar_V6_0 : NSObject
-@property (nonatomic, readonly, strong) Top_V6_0 * _Nullable top;
-@property (nonatomic, readonly, strong) SideBottom_V6_0 * _Nullable sideBottom;
+@property (nonatomic, strong) Top_V6_0 * _Nullable top;
+@property (nonatomic, strong) SideBottom_V6_0 * _Nullable sideBottom;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20232,9 +20554,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16MainToolbar_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Main_V6_0")
 @interface Main_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable canvasBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable navigationArrows;
-@property (nonatomic, readonly, strong) MainToolbar_V6_0 * _Nullable toolbar;
+@property (nonatomic, copy) NSString * _Nullable canvasBackground;
+@property (nonatomic, copy) NSString * _Nullable navigationArrows;
+@property (nonatomic, strong) MainToolbar_V6_0 * _Nullable toolbar;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20242,14 +20564,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Main_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19MarkupGlossary_V6_0")
 @interface MarkupGlossary_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable linkLineColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable languageTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable synonymTextColor;
+@property (nonatomic, copy) NSString * _Nullable linkLineColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable iconBorderColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable languageTextColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionTextColor;
+@property (nonatomic, copy) NSString * _Nullable synonymTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20302,8 +20624,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10MarkupView")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Markup_V6_0")
 @interface Markup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable markupIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookMarkupIconBorderColor;
+@property (nonatomic, copy) NSString * _Nullable markupIconColor;
+@property (nonatomic, copy) NSString * _Nullable bookMarkupIconBorderColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20325,11 +20647,11 @@ typedef SWIFT_ENUM(NSInteger, MediaBookTOCFilter_V6, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Message_V6_0")
 @interface Message_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable borderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable nameColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable timeTextColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable borderColor;
+@property (nonatomic, copy) NSString * _Nullable nameColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable timeTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20337,10 +20659,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Message_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Mode_V6_0")
 @interface Mode_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, strong) Day_V6_0 * _Nullable day;
-@property (nonatomic, readonly, strong) Day_V6_0 * _Nullable night;
-@property (nonatomic, readonly, strong) Day_V6_0 * _Nullable sepia;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, strong) Day_V6_0 * _Nullable day;
+@property (nonatomic, strong) Day_V6_0 * _Nullable night;
+@property (nonatomic, strong) Day_V6_0 * _Nullable sepia;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20390,26 +20712,26 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20MyDataViewController")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11MyData_V6_0")
 @interface MyData_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable selectedButton;
-@property (nonatomic, readonly, strong) DeSelectedButton_V6_0 * _Nullable deSelectedButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable metadataColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable contextualtextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, strong) SubButton_V6_0 * _Nullable subButton;
-@property (nonatomic, readonly, strong) FilterPopup_V6_0 * _Nullable filterPopup;
-@property (nonatomic, readonly, strong) SettingsV6_V6_0 * _Nullable settings;
-@property (nonatomic, readonly, copy) NSString * _Nullable notificationCircleColor;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable selectedButton;
+@property (nonatomic, strong) DeSelectedButton_V6_0 * _Nullable deSelectedButton;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable metadataColor;
+@property (nonatomic, copy) NSString * _Nullable contextualtextColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, strong) SubButton_V6_0 * _Nullable subButton;
+@property (nonatomic, strong) FilterPopup_V6_0 * _Nullable filterPopup;
+@property (nonatomic, strong) SettingsV6_V6_0 * _Nullable settings;
+@property (nonatomic, copy) NSString * _Nullable notificationCircleColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20486,17 +20808,17 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9NoteLabel")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Note_V6_0")
 @interface Note_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable backIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable contextualtextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable actionButtonColor;
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable actionButtonColorDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable metadataColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable backIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBorder;
+@property (nonatomic, copy) NSString * _Nullable contextualtextColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable actionButtonColor;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable actionButtonColorDisabled;
+@property (nonatomic, copy) NSString * _Nullable metadataColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20560,12 +20882,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull lang
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10Other_V6_0")
 @interface Other_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, strong) Brightness_V6_0 * _Nullable brightness;
-@property (nonatomic, readonly, strong) Mode_V6_0 * _Nullable mode;
-@property (nonatomic, readonly, strong) ScrollView_V6_0 * _Nullable scrollView;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, strong) Brightness_V6_0 * _Nullable brightness;
+@property (nonatomic, strong) Mode_V6_0 * _Nullable mode;
+@property (nonatomic, strong) ScrollView_V6_0 * _Nullable scrollView;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20573,9 +20895,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10Other_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20OverlayPanel_V6_V6_0")
 @interface OverlayPanel_V6_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundHTML;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable backgroundHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20808,10 +21130,10 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK25PenToolControllerDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Pen_V6_0")
 @interface Pen_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBorderColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable selectedBorderColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20819,11 +21141,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Pen_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19PentoolToolbar_V6_0")
 @interface PentoolToolbar_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBackground;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20832,11 +21154,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19PentoolToolbar_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Pentool_V6_0")
 @interface Pentool_V6_0 : NSObject
-@property (nonatomic, readonly, strong) PentoolToolbar_V6_0 * _Nullable toolbar;
-@property (nonatomic, readonly, strong) Pen_V6_0 * _Nullable pen;
-@property (nonatomic, readonly, copy) NSArray<NSString *> * _Nullable penColor;
-@property (nonatomic, readonly, strong) ColorHTML_V6_0 * _Nullable penColorHTML;
-@property (nonatomic, readonly, strong) Thickness_V6_0 * _Nullable thickness;
+@property (nonatomic, strong) PentoolToolbar_V6_0 * _Nullable toolbar;
+@property (nonatomic, strong) Pen_V6_0 * _Nullable pen;
+@property (nonatomic, copy) NSArray<NSString *> * _Nullable penColor;
+@property (nonatomic, strong) ColorHTML_V6_0 * _Nullable penColorHTML;
+@property (nonatomic, strong) Thickness_V6_0 * _Nullable thickness;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -20921,24 +21243,24 @@ SWIFT_PROTOCOL_NAMED("PlayerActionDelegate")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10Popup_V6_0")
 @interface Popup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable header;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable optionTextIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable outlineTextButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable fillButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable fillButtonTextIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteButton;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteButtonTextIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectTextTick;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionClassHeader;
-@property (nonatomic, readonly, copy) NSString * _Nullable nonSelect;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookmarkPopupInstructionText;
-@property (nonatomic, readonly, copy) NSString * _Nullable sortByBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleAuthorPublishedDate;
-@property (nonatomic, readonly, copy) NSString * _Nullable innerBackground;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable contentTitle;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable optionTextIcon;
+@property (nonatomic, copy) NSString * _Nullable outlineTextButton;
+@property (nonatomic, copy) NSString * _Nullable fillButton;
+@property (nonatomic, copy) NSString * _Nullable fillButtonTextIcon;
+@property (nonatomic, copy) NSString * _Nullable deleteButton;
+@property (nonatomic, copy) NSString * _Nullable deleteButtonTextIcon;
+@property (nonatomic, copy) NSString * _Nullable selectTextTick;
+@property (nonatomic, copy) NSString * _Nullable sectionClassHeader;
+@property (nonatomic, copy) NSString * _Nullable nonSelect;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable bookmarkPopupInstructionText;
+@property (nonatomic, copy) NSString * _Nullable sortByBackground;
+@property (nonatomic, copy) NSString * _Nullable titleAuthorPublishedDate;
+@property (nonatomic, copy) NSString * _Nullable innerBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -21117,7 +21439,7 @@ SWIFT_CLASS_NAMED("ReaderAnalytics")
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17ReaderFontSetting")
 @interface ReaderFontSetting : NSObject <NSCopying>
 @property (nonatomic, copy) NSString * _Nonnull fontFamily;
-@property (nonatomic) enum FONT_SIZE fontSize;
+@property (nonatomic) NSInteger fontSize;
 @property (nonatomic) enum TEXT_ALIGNMENT textAlignment;
 @property (nonatomic) enum READER_MARGIN margin;
 @property (nonatomic) enum TEXT_LINESPACING lineSpacing;
@@ -21131,13 +21453,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17ReaderFontSetting")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ReaderProfile_V6_0")
 @interface ReaderProfile_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable profileBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable actionTextColor;
-@property (nonatomic, readonly, strong) Signout_V6_0 * _Nullable signout;
-@property (nonatomic, readonly, copy) NSString * _Nullable linkColorSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable profileTextColor;
+@property (nonatomic, copy) NSString * _Nullable profileBorder;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable actionTextColor;
+@property (nonatomic, strong) Signout_V6_0 * _Nullable signout;
+@property (nonatomic, copy) NSString * _Nullable linkColorSelected;
+@property (nonatomic, copy) NSString * _Nullable profileTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -21145,21 +21467,21 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ReaderProfile_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17ReaderSearch_V6_0")
 @interface ReaderSearch_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputPanelBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable mainIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedBgColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable seperationBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable crossIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable subtextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectionTextColorBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColorBg;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable inputPanelBg;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable mainIconColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedBgColor;
+@property (nonatomic, copy) NSString * _Nullable seperationBackground;
+@property (nonatomic, copy) NSString * _Nullable crossIconColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable subtextColor;
+@property (nonatomic, copy) NSString * _Nullable selectionTextColorBg;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColorBg;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -21175,13 +21497,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ReadingTimeManager")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16RecentShelf_V6_0")
 @interface RecentShelf_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable categoriesTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable viewAll;
-@property (nonatomic, readonly, copy) NSString * _Nullable readProgressBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable title;
-@property (nonatomic, readonly, copy) NSString * _Nullable format;
-@property (nonatomic, readonly, copy) NSString * _Nullable moreIcon;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable categoriesTextColor;
+@property (nonatomic, copy) NSString * _Nullable viewAll;
+@property (nonatomic, copy) NSString * _Nullable readProgressBar;
+@property (nonatomic, copy) NSString * _Nullable title;
+@property (nonatomic, copy) NSString * _Nullable format;
+@property (nonatomic, copy) NSString * _Nullable moreIcon;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -21199,9 +21521,9 @@ SWIFT_CLASS_NAMED("ReflowableCustomSlider")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21ReflowableReader_V6_0")
 @interface ReflowableReader_V6_0 : NSObject
-@property (nonatomic, readonly, strong) DayModeClass_V6_0 * _Nullable dayMode;
-@property (nonatomic, readonly, strong) DayModeClass_V6_0 * _Nullable sepiaMode;
-@property (nonatomic, readonly, strong) DayModeClass_V6_0 * _Nullable nightMode;
+@property (nonatomic, strong) DayModeClass_V6_0 * _Nullable dayMode;
+@property (nonatomic, strong) DayModeClass_V6_0 * _Nullable sepiaMode;
+@property (nonatomic, strong) DayModeClass_V6_0 * _Nullable nightMode;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -21209,8 +21531,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21ReflowableReader_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Refresh_V6_0")
 @interface Refresh_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable buttonTextColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable buttonTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22575,6 +22897,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 + (NSString * _Nonnull)ICON_RADIO_UNSELECTED SWIFT_WARN_UNUSED_RESULT;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ICON_MULTILEVEL_CHAPTER_DROP_DOWN;)
 + (NSString * _Nonnull)ICON_MULTILEVEL_CHAPTER_DROP_DOWN SWIFT_WARN_UNUSED_RESULT;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _Nonnull ICON_K_AI;)
++ (NSString * _Nonnull)ICON_K_AI SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -22627,9 +22951,9 @@ SWIFT_CLASS_NAMED("SDKUtility")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8SVG_V6_0")
 @interface SVG_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable color;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundHTML;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable color;
+@property (nonatomic, copy) NSString * _Nullable backgroundHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22661,10 +22985,10 @@ typedef SWIFT_ENUM(NSInteger, ScrollDirection, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15ScrollView_V6_0")
 @interface ScrollView_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBg;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22672,10 +22996,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15ScrollView_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SelectedChapter_V6_0")
 @interface SelectedChapter_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterTimeColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable chapterTimeColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22683,14 +23007,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SelectedChapter_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16SelectedToc_V6_0")
 @interface SelectedToc_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable divider;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable arrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sideTabBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable levelBackground;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable divider;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable arrowColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable sideTabBackground;
+@property (nonatomic, copy) NSString * _Nullable levelBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22698,14 +23022,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16SelectedToc_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15SettingsV6_V6_0")
 @interface SettingsV6_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkColor;
-@property (nonatomic, readonly, strong) ActionButton_V6_V6_0 * _Nullable actionButton;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable sectionTitleColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable checkColor;
+@property (nonatomic, strong) ActionButton_V6_V6_0 * _Nullable actionButton;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22713,22 +23037,22 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15SettingsV6_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ShareFeedback_V6_0")
 @interface ShareFeedback_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable emojiBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable feedbackRespBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable activeFeedbackBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable existingFeedbackBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable editFeedbackBtnColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteFeedbackBtnColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable topbarDECColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable topbarProfileColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable feedbackQtnColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable feedbackImproveColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable feedbackRespColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable submitBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable editFeedbackColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteCancelBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteOkBackground;
+@property (nonatomic, copy) NSString * _Nullable emojiBackground;
+@property (nonatomic, copy) NSString * _Nullable feedbackRespBorder;
+@property (nonatomic, copy) NSString * _Nullable activeFeedbackBackground;
+@property (nonatomic, copy) NSString * _Nullable existingFeedbackBackground;
+@property (nonatomic, copy) NSString * _Nullable editFeedbackBtnColor;
+@property (nonatomic, copy) NSString * _Nullable deleteFeedbackBtnColor;
+@property (nonatomic, copy) NSString * _Nullable topbarDECColor;
+@property (nonatomic, copy) NSString * _Nullable topbarProfileColor;
+@property (nonatomic, copy) NSString * _Nullable dividerBackground;
+@property (nonatomic, copy) NSString * _Nullable feedbackQtnColor;
+@property (nonatomic, copy) NSString * _Nullable feedbackImproveColor;
+@property (nonatomic, copy) NSString * _Nullable feedbackRespColor;
+@property (nonatomic, copy) NSString * _Nullable submitBackground;
+@property (nonatomic, copy) NSString * _Nullable editFeedbackColor;
+@property (nonatomic, copy) NSString * _Nullable deleteCancelBorder;
+@property (nonatomic, copy) NSString * _Nullable deleteOkBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22763,13 +23087,13 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23ShareSettingsController")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ShareSettings_V6_0")
 @interface ShareSettings_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable sectionTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable allBoxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable bottomBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable mainActionColor;
+@property (nonatomic, copy) NSString * _Nullable sectionTitleColor;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable allBoxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable checkColor;
+@property (nonatomic, copy) NSString * _Nullable bottomBackground;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable mainActionColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22777,9 +23101,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18ShareSettings_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK10Share_V6_0")
 @interface Share_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable sharePopupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, strong) ShareSettings_V6_0 * _Nullable shareSettings;
+@property (nonatomic, copy) NSString * _Nullable sharePopupBackground;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, strong) ShareSettings_V6_0 * _Nullable shareSettings;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22793,11 +23117,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14SharedUserInfo")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15SideBottom_V6_0")
 @interface SideBottom_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22805,19 +23129,19 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK15SideBottom_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14Sidepanel_V6_0")
 @interface Sidepanel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, strong) SelectedChapter_V6_0 * _Nullable selectedChapter;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable timeColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable deleteIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, strong) SelectedChapter_V6_0 * _Nullable selectedChapter;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable timeColor;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable deleteIconColor;
+@property (nonatomic, copy) NSString * _Nullable dividerColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22825,7 +23149,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14Sidepanel_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11SignIn_V6_0")
 @interface SignIn_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable loginLeftBgcolor;
+@property (nonatomic, copy) NSString * _Nullable loginLeftBgcolor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22833,36 +23157,36 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11SignIn_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Signin_V6_0")
 @interface Signin_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable leftBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelected;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabDeselected;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputLabel;
-@property (nonatomic, readonly, copy) NSString * _Nullable inputUsernamepassword;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinText;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinTextDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinDisabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable signinEnabled;
-@property (nonatomic, readonly, copy) NSString * _Nullable remebermeRecoverPassword;
-@property (nonatomic, readonly, copy) NSString * _Nullable errorMessage;
-@property (nonatomic, readonly, copy) NSString * _Nullable downloadappText;
-@property (nonatomic, readonly, copy) NSString * _Nullable autofillbackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable leftHeadingTextcolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable spinner;
-@property (nonatomic, readonly, copy) NSString * _Nullable termconditiontext;
-@property (nonatomic, readonly, copy) NSString * _Nullable linkText;
-@property (nonatomic, readonly, copy) NSString * _Nullable validationtext;
-@property (nonatomic, readonly, copy) NSString * _Nullable Selected_Tab_Text;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signin_Remeberme;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signin_Remeberme_checkbox_bgColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signin_RecoverPassword;
-@property (nonatomic, readonly, copy) NSString * _Nullable freetrial_text;
-@property (nonatomic, readonly, copy) NSString * _Nullable freetrial_btn_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signup_Input_border;
-@property (nonatomic, readonly, copy) NSString * _Nullable Signup_Input_Focus_border;
-@property (nonatomic, readonly, strong) ForgotPassword_V6_0 * _Nullable forgotPassword;
+@property (nonatomic, copy) NSString * _Nullable leftBackground;
+@property (nonatomic, copy) NSString * _Nullable signinBackground;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable tabSelected;
+@property (nonatomic, copy) NSString * _Nullable tabDeselected;
+@property (nonatomic, copy) NSString * _Nullable inputOutline;
+@property (nonatomic, copy) NSString * _Nullable inputLabel;
+@property (nonatomic, copy) NSString * _Nullable inputUsernamepassword;
+@property (nonatomic, copy) NSString * _Nullable signinText;
+@property (nonatomic, copy) NSString * _Nullable signinTextDisabled;
+@property (nonatomic, copy) NSString * _Nullable signinDisabled;
+@property (nonatomic, copy) NSString * _Nullable signinEnabled;
+@property (nonatomic, copy) NSString * _Nullable remebermeRecoverPassword;
+@property (nonatomic, copy) NSString * _Nullable errorMessage;
+@property (nonatomic, copy) NSString * _Nullable downloadappText;
+@property (nonatomic, copy) NSString * _Nullable autofillbackground;
+@property (nonatomic, copy) NSString * _Nullable leftHeadingTextcolor;
+@property (nonatomic, copy) NSString * _Nullable spinner;
+@property (nonatomic, copy) NSString * _Nullable termconditiontext;
+@property (nonatomic, copy) NSString * _Nullable linkText;
+@property (nonatomic, copy) NSString * _Nullable validationtext;
+@property (nonatomic, copy) NSString * _Nullable Selected_Tab_Text;
+@property (nonatomic, copy) NSString * _Nullable Signin_Remeberme;
+@property (nonatomic, copy) NSString * _Nullable Signin_Remeberme_checkbox_bgColor;
+@property (nonatomic, copy) NSString * _Nullable Signin_RecoverPassword;
+@property (nonatomic, copy) NSString * _Nullable freetrial_text;
+@property (nonatomic, copy) NSString * _Nullable freetrial_btn_border;
+@property (nonatomic, copy) NSString * _Nullable Signup_Input_border;
+@property (nonatomic, copy) NSString * _Nullable Signup_Input_Focus_border;
+@property (nonatomic, strong) ForgotPassword_V6_0 * _Nullable forgotPassword;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22870,9 +23194,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK11Signin_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18SignoutButton_V6_0")
 @interface SignoutButton_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable icons_color;
-@property (nonatomic, readonly, copy) NSString * _Nullable text_color;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable icons_color;
+@property (nonatomic, copy) NSString * _Nullable text_color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22880,9 +23204,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18SignoutButton_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK12Signout_V6_0")
 @interface Signout_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22898,9 +23222,9 @@ typedef SWIFT_ENUM(NSInteger, SleepAction, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SlideController_V6_0")
 @interface SlideController_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable controllerColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable opacity;
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundHTML;
+@property (nonatomic, copy) NSString * _Nullable controllerColor;
+@property (nonatomic, copy) NSString * _Nullable opacity;
+@property (nonatomic, copy) NSString * _Nullable backgroundHTML;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22908,7 +23232,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SlideController_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20SlideshowMarkup_V6_0")
 @interface SlideshowMarkup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable boxShadow;
+@property (nonatomic, copy) NSString * _Nullable boxShadow;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -22968,8 +23292,8 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK28StickyNoteControllerDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14SubButton_V6_0")
 @interface SubButton_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable textIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable disabledTextIconColor;
+@property (nonatomic, copy) NSString * _Nullable textIconColor;
+@property (nonatomic, copy) NSString * _Nullable disabledTextIconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23077,24 +23401,24 @@ typedef SWIFT_ENUM(NSInteger, TOOL_TYPE, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20Tableofcontents_V6_0")
 @interface Tableofcontents_V6_0 : NSObject
-@property (nonatomic, readonly, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorderWrapper;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chlabelFontweight;
-@property (nonatomic, readonly, strong) SelectedToc_V6_0 * _Nullable selectedToc;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable descriptionColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pagenoColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable moreIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dividerColor;
-@property (nonatomic, readonly, strong) CloseSlider_V6_0 * _Nullable closeSlider;
+@property (nonatomic, strong) OverlayPanel_V6_V6_0 * _Nullable overlayPanel;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable tabBg;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabBorderWrapper;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTabBorder;
+@property (nonatomic, copy) NSString * _Nullable selectedTextColor;
+@property (nonatomic, copy) NSString * _Nullable chlabelFontweight;
+@property (nonatomic, strong) SelectedToc_V6_0 * _Nullable selectedToc;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable descriptionColor;
+@property (nonatomic, copy) NSString * _Nullable pagenoColor;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable moreIconColor;
+@property (nonatomic, copy) NSString * _Nullable dividerColor;
+@property (nonatomic, strong) CloseSlider_V6_0 * _Nullable closeSlider;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23256,17 +23580,17 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20TeacherReviewFibView")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20TeacherSettings_V6_0")
 @interface TeacherSettings_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable mainIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable pen1Color;
-@property (nonatomic, readonly, copy) NSString * _Nullable pen2Color;
-@property (nonatomic, readonly, copy) NSString * _Nullable boxBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable checkColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable mainIconColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable pen1Color;
+@property (nonatomic, copy) NSString * _Nullable pen2Color;
+@property (nonatomic, copy) NSString * _Nullable boxBorderColor;
+@property (nonatomic, copy) NSString * _Nullable checkColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23274,19 +23598,19 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20TeacherSettings_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23TeacherStudentlist_V6_0")
 @interface TeacherStudentlist_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable hintTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabSelectedBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable tabTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable nameColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable dataAddedColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable nodataAddedColor;
-@property (nonatomic, readonly, strong) Refresh_V6_0 * _Nullable refresh;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable hintTextColor;
+@property (nonatomic, copy) NSString * _Nullable tabBorder;
+@property (nonatomic, copy) NSString * _Nullable tabSelectedBar;
+@property (nonatomic, copy) NSString * _Nullable tabTextColor;
+@property (nonatomic, copy) NSString * _Nullable nameColor;
+@property (nonatomic, copy) NSString * _Nullable dataAddedColor;
+@property (nonatomic, copy) NSString * _Nullable nodataAddedColor;
+@property (nonatomic, strong) Refresh_V6_0 * _Nullable refresh;
+@property (nonatomic, copy) NSString * _Nullable selectedColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23300,14 +23624,14 @@ typedef SWIFT_ENUM(NSInteger, TextAnnotationAlignment, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK19TextAnnotation_V6_0")
 @interface TextAnnotation_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable lineColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, strong) AlignPopup_V6_0 * _Nullable alignPopup;
-@property (nonatomic, readonly, strong) ColorPopup_V6_0 * _Nullable colorPopup;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable lineColor;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, strong) DisabledIcon_V6_0 * _Nullable disabledIcon;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, strong) AlignPopup_V6_0 * _Nullable alignPopup;
+@property (nonatomic, strong) ColorPopup_V6_0 * _Nullable colorPopup;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23401,11 +23725,11 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17TextSelectionView")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK14Thickness_V6_0")
 @interface Thickness_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBorder;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderFilledColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable popupBorder;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable sliderFilledColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23442,19 +23766,19 @@ SWIFT_PROTOCOL("_TtP18Kitaboo_Reader_SDK17ThumbnailDelegate_")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK20ThumbnailSlider_V6_0")
 @interface ThumbnailSlider_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable chapterIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderFilledColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable defaultThumbnailColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedThumbnailColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable thumbnailTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedTitleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable textColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageSubmittedBorderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable pageNotSubmittedBorderColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable chapterIconColor;
+@property (nonatomic, copy) NSString * _Nullable sliderFilledColor;
+@property (nonatomic, copy) NSString * _Nullable defaultThumbnailColor;
+@property (nonatomic, copy) NSString * _Nullable selectedThumbnailColor;
+@property (nonatomic, copy) NSString * _Nullable thumbnailTextColor;
+@property (nonatomic, copy) NSString * _Nullable selectedTitleColor;
+@property (nonatomic, copy) NSString * _Nullable titleColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable textColor;
+@property (nonatomic, copy) NSString * _Nullable pageSubmittedBorderColor;
+@property (nonatomic, copy) NSString * _Nullable pageNotSubmittedBorderColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23484,8 +23808,8 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK23ThumbnailViewController")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Toastmessage_V6_0")
 @interface Toastmessage_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable backgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable color;
+@property (nonatomic, copy) NSString * _Nullable backgroundColor;
+@property (nonatomic, copy) NSString * _Nullable color;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23493,14 +23817,14 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK17Toastmessage_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Top_V6_0")
 @interface Top_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable shadow;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable selectedIconBg;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable navigationArrowColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable profileBorder;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable shadow;
+@property (nonatomic, copy) NSString * _Nullable selectedIconColor;
+@property (nonatomic, copy) NSString * _Nullable selectedIconBg;
+@property (nonatomic, copy) NSString * _Nullable titleTextColor;
+@property (nonatomic, copy) NSString * _Nullable navigationArrowColor;
+@property (nonatomic, copy) NSString * _Nullable profileBorder;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23508,10 +23832,10 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK8Top_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK13Toppanel_V6_0")
 @interface Toppanel_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconsColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable bookTitleTextColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable bottomLine;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable iconsColor;
+@property (nonatomic, copy) NSString * _Nullable bookTitleTextColor;
+@property (nonatomic, copy) NSString * _Nullable bottomLine;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23809,6 +24133,8 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 
 
 
+
+
 @interface UIView (SWIFT_EXTENSION(Kitaboo_Reader_SDK))
 - (void)setAccessibilityForElementID:(NSString * _Nonnull)elementID WithFile:(NSString * _Nonnull)file argument:(NSString * _Nonnull)text;
 - (void)setAccessibilityForElementID:(NSString * _Nonnull)elementID WithFile:(NSString * _Nonnull)file argument:(NSString * _Nonnull)text value:(NSString * _Nonnull)val altText:(NSString * _Nonnull)alttxt;
@@ -23816,7 +24142,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly, copy) NSString * _No
 - (void)setAccessibilityWithElementID:(NSString * _Nonnull)elementID WithFile:(NSString * _Nonnull)file withArgument:(NSString * _Nonnull)text withValue:(NSString * _Nonnull)desc altText:(NSString * _Nonnull)alttxt;
 - (void)disableAccessibilityOnView:(UIView * _Nonnull)view;
 @end
-
 
 
 @interface UIView (SWIFT_EXTENSION(Kitaboo_Reader_SDK))
@@ -23854,9 +24179,9 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21VerticalThumbnailCell")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18VideoControls_V6_0")
 @interface VideoControls_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable playPauseIconBackgroundColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable playerBackground;
+@property (nonatomic, copy) NSString * _Nullable playPauseIconBackgroundColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable playerBackground;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23864,7 +24189,7 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18VideoControls_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16VideoMarkup_V6_0")
 @interface VideoMarkup_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable plyr;
+@property (nonatomic, copy) NSString * _Nullable plyr;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23886,7 +24211,7 @@ typedef SWIFT_ENUM(NSInteger, VideoPlayerViewStateUpdate_V6, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK16VideoPlayer_V6_0")
 @interface VideoPlayer_V6_0 : NSObject
-@property (nonatomic, readonly, strong) VideoControls_V6_0 * _Nullable videoControls;
+@property (nonatomic, strong) VideoControls_V6_0 * _Nullable videoControls;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23943,13 +24268,13 @@ typedef SWIFT_ENUM(NSInteger, WatermarkPosition, open) {
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK32WelcomeAudioVideoBookPlayer_V6_0")
 @interface WelcomeAudioVideoBookPlayer_V6_0 : NSObject
-@property (nonatomic, readonly, strong) Toppanel_V6_0 * _Nullable toppanel;
-@property (nonatomic, readonly, strong) Sidepanel_V6_0 * _Nullable sidepanel;
-@property (nonatomic, readonly, strong) AudioBookCover_V6_0 * _Nullable audioBookCover;
-@property (nonatomic, readonly, strong) AudioVideoSlider_V6_0 * _Nullable audioVideoSlider;
-@property (nonatomic, readonly, strong) AllPopups_V6_0 * _Nullable allPopups;
-@property (nonatomic, readonly, strong) Toastmessage_V6_0 * _Nullable toastmessage;
-@property (nonatomic, readonly, strong) VideoPlayer_V6_0 * _Nullable videoPlayer;
+@property (nonatomic, strong) Toppanel_V6_0 * _Nullable toppanel;
+@property (nonatomic, strong) Sidepanel_V6_0 * _Nullable sidepanel;
+@property (nonatomic, strong) AudioBookCover_V6_0 * _Nullable audioBookCover;
+@property (nonatomic, strong) AudioVideoSlider_V6_0 * _Nullable audioVideoSlider;
+@property (nonatomic, strong) AllPopups_V6_0 * _Nullable allPopups;
+@property (nonatomic, strong) Toastmessage_V6_0 * _Nullable toastmessage;
+@property (nonatomic, strong) VideoPlayer_V6_0 * _Nullable videoPlayer;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23957,34 +24282,34 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK32WelcomeAudioVideoBookPlayer_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21WelcomeBookshelf_V6_0")
 @interface WelcomeBookshelf_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable header;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchOutline;
-@property (nonatomic, readonly, copy) NSString * _Nullable searchText;
-@property (nonatomic, readonly, copy) NSString * _Nullable icons;
-@property (nonatomic, readonly, copy) NSString * _Nullable Header_icons;
-@property (nonatomic, readonly, copy) NSString * _Nullable horizontalDivider;
-@property (nonatomic, readonly, copy) NSString * _Nullable background;
-@property (nonatomic, readonly, copy) NSString * _Nullable titleText;
-@property (nonatomic, readonly, copy) NSString * _Nullable contentTitle;
-@property (nonatomic, readonly, copy) NSString * _Nullable viewAllText;
-@property (nonatomic, readonly, copy) NSString * _Nullable type;
-@property (nonatomic, readonly, copy) NSString * _Nullable progressBar;
-@property (nonatomic, readonly, copy) NSString * _Nullable progressBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardProgressbarFillBgcolor;
-@property (nonatomic, readonly, copy) NSString * _Nullable cardProgressbarFillBuffercolor;
-@property (nonatomic, readonly, strong) BookshelfSortby_V6_0 * _Nullable bookshelfSortby;
-@property (nonatomic, readonly, strong) BookshelfInfoPopup_V6_0 * _Nullable bookshelfInfoPopup;
-@property (nonatomic, readonly, strong) BottomBar_V6_0 * _Nullable bottomBar;
-@property (nonatomic, readonly, strong) CategoryLeftPanel_V6_0 * _Nullable categoryLeftPanel;
-@property (nonatomic, readonly, strong) CategoryRightShelf_V6_0 * _Nullable categoryRightShelf;
-@property (nonatomic, readonly, strong) RecentShelf_V6_0 * _Nullable recentShelf;
-@property (nonatomic, readonly, strong) Popup_V6_0 * _Nullable popup;
-@property (nonatomic, readonly, strong) AboutThis_V6_0 * _Nullable aboutThis;
-@property (nonatomic, readonly, strong) BookshelfProfile_V6_0 * _Nullable profile;
-@property (nonatomic, readonly, strong) BookshelfSearch_V6_V6_0 * _Nullable search;
-@property (nonatomic, readonly, strong) AboutUs_V6_0 * _Nullable aboutUs;
-@property (nonatomic, readonly, strong) Analytics_V6_V6_0 * _Nullable analytics;
-@property (nonatomic, readonly, strong) Footer_V6_0 * _Nullable footer;
+@property (nonatomic, copy) NSString * _Nullable header;
+@property (nonatomic, copy) NSString * _Nullable searchOutline;
+@property (nonatomic, copy) NSString * _Nullable searchText;
+@property (nonatomic, copy) NSString * _Nullable icons;
+@property (nonatomic, copy) NSString * _Nullable Header_icons;
+@property (nonatomic, copy) NSString * _Nullable horizontalDivider;
+@property (nonatomic, copy) NSString * _Nullable background;
+@property (nonatomic, copy) NSString * _Nullable titleText;
+@property (nonatomic, copy) NSString * _Nullable contentTitle;
+@property (nonatomic, copy) NSString * _Nullable viewAllText;
+@property (nonatomic, copy) NSString * _Nullable type;
+@property (nonatomic, copy) NSString * _Nullable progressBar;
+@property (nonatomic, copy) NSString * _Nullable progressBackground;
+@property (nonatomic, copy) NSString * _Nullable cardProgressbarFillBgcolor;
+@property (nonatomic, copy) NSString * _Nullable cardProgressbarFillBuffercolor;
+@property (nonatomic, strong) BookshelfSortby_V6_0 * _Nullable bookshelfSortby;
+@property (nonatomic, strong) BookshelfInfoPopup_V6_0 * _Nullable bookshelfInfoPopup;
+@property (nonatomic, strong) BottomBar_V6_0 * _Nullable bottomBar;
+@property (nonatomic, strong) CategoryLeftPanel_V6_0 * _Nullable categoryLeftPanel;
+@property (nonatomic, strong) CategoryRightShelf_V6_0 * _Nullable categoryRightShelf;
+@property (nonatomic, strong) RecentShelf_V6_0 * _Nullable recentShelf;
+@property (nonatomic, strong) Popup_V6_0 * _Nullable popup;
+@property (nonatomic, strong) AboutThis_V6_0 * _Nullable aboutThis;
+@property (nonatomic, strong) BookshelfProfile_V6_0 * _Nullable profile;
+@property (nonatomic, strong) BookshelfSearch_V6_V6_0 * _Nullable search;
+@property (nonatomic, strong) AboutUs_V6_0 * _Nullable aboutUs;
+@property (nonatomic, strong) Analytics_V6_V6_0 * _Nullable analytics;
+@property (nonatomic, strong) Footer_V6_0 * _Nullable footer;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -23993,45 +24318,54 @@ SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21WelcomeBookshelf_V6_0")
 
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK18WelcomeReader_V6_0")
 @interface WelcomeReader_V6_0 : NSObject
-@property (nonatomic, readonly, strong) Main_V6_0 * _Nullable main;
-@property (nonatomic, readonly, strong) Tableofcontents_V6_0 * _Nullable tableofcontents;
-@property (nonatomic, readonly, strong) MyData_V6_0 * _Nullable myData;
-@property (nonatomic, readonly, strong) Bookmark_V6_0 * _Nullable bookmark;
-@property (nonatomic, readonly, strong) ReaderSearch_V6_0 * _Nullable search;
-@property (nonatomic, readonly, strong) Pentool_V6_0 * _Nullable pentool;
-@property (nonatomic, readonly, strong) ThumbnailSlider_V6_0 * _Nullable thumbnailSlider;
-@property (nonatomic, readonly, strong) AudioBar_V6_0 * _Nullable audioBar;
-@property (nonatomic, readonly, strong) Note_V6_0 * _Nullable note;
-@property (nonatomic, readonly, strong) Share_V6_0 * _Nullable share;
-@property (nonatomic, readonly, strong) Comments_V6_0 * _Nullable comments;
-@property (nonatomic, readonly, strong) Zoom_V6_0 * _Nullable zoom;
-@property (nonatomic, readonly, strong) FontSettings_V6_0 * _Nullable fontSettings;
-@property (nonatomic, readonly, strong) TeacherSettings_V6_0 * _Nullable teacherSettings;
-@property (nonatomic, readonly, strong) TeacherStudentlist_V6_0 * _Nullable teacherStudentlist;
-@property (nonatomic, readonly, strong) Highlight_V6_V6_0 * _Nullable highlight;
-@property (nonatomic, readonly, strong) HighlightOnScreen_V6_0 * _Nullable highlightOnScreen;
-@property (nonatomic, readonly, strong) ReaderProfile_V6_0 * _Nullable profile;
-@property (nonatomic, readonly, strong) ReflowableReader_V6_0 * _Nullable reflowableReader;
-@property (nonatomic, readonly, strong) TextAnnotation_V6_0 * _Nullable textAnnotation;
-@property (nonatomic, readonly, strong) Markup_V6_0 * _Nullable markup;
-@property (nonatomic, readonly, strong) MarkupGlossary_V6_0 * _Nullable markupGlossary;
-@property (nonatomic, readonly, strong) ImageMarkup_V6_0 * _Nullable imageMarkup;
-@property (nonatomic, readonly, strong) SlideshowMarkup_V6_0 * _Nullable slideshowMarkup;
-@property (nonatomic, readonly, strong) AudioMarkup_V6_0 * _Nullable audioMarkup;
-@property (nonatomic, readonly, strong) Help_V6_0 * _Nullable help;
-@property (nonatomic, readonly, strong) VideoMarkup_V6_0 * _Nullable videoMarkup;
-@property (nonatomic, readonly, strong) ShareFeedback_V6_0 * _Nullable shareFeedback;
+@property (nonatomic, strong) Main_V6_0 * _Nullable main;
+@property (nonatomic, strong) Tableofcontents_V6_0 * _Nullable tableofcontents;
+@property (nonatomic, strong) MyData_V6_0 * _Nullable myData;
+@property (nonatomic, strong) Bookmark_V6_0 * _Nullable bookmark;
+@property (nonatomic, strong) ReaderSearch_V6_0 * _Nullable search;
+@property (nonatomic, strong) Pentool_V6_0 * _Nullable pentool;
+@property (nonatomic, strong) ThumbnailSlider_V6_0 * _Nullable thumbnailSlider;
+@property (nonatomic, strong) AudioBar_V6_0 * _Nullable audioBar;
+@property (nonatomic, strong) Note_V6_0 * _Nullable note;
+@property (nonatomic, strong) Share_V6_0 * _Nullable share;
+@property (nonatomic, strong) Comments_V6_0 * _Nullable comments;
+@property (nonatomic, strong) Zoom_V6_0 * _Nullable zoom;
+@property (nonatomic, strong) FontSettings_V6_0 * _Nullable fontSettings;
+@property (nonatomic, strong) TeacherSettings_V6_0 * _Nullable teacherSettings;
+@property (nonatomic, strong) TeacherStudentlist_V6_0 * _Nullable teacherStudentlist;
+@property (nonatomic, strong) Highlight_V6_V6_0 * _Nullable highlight;
+@property (nonatomic, strong) HighlightOnScreen_V6_0 * _Nullable highlightOnScreen;
+@property (nonatomic, strong) ReaderProfile_V6_0 * _Nullable profile;
+@property (nonatomic, strong) ReflowableReader_V6_0 * _Nullable reflowableReader;
+@property (nonatomic, strong) TextAnnotation_V6_0 * _Nullable textAnnotation;
+@property (nonatomic, strong) Markup_V6_0 * _Nullable markup;
+@property (nonatomic, strong) MarkupGlossary_V6_0 * _Nullable markupGlossary;
+@property (nonatomic, strong) ImageMarkup_V6_0 * _Nullable imageMarkup;
+@property (nonatomic, strong) SlideshowMarkup_V6_0 * _Nullable slideshowMarkup;
+@property (nonatomic, strong) AudioMarkup_V6_0 * _Nullable audioMarkup;
+@property (nonatomic, strong) Help_V6_0 * _Nullable help;
+@property (nonatomic, strong) VideoMarkup_V6_0 * _Nullable videoMarkup;
+@property (nonatomic, strong) ShareFeedback_V6_0 * _Nullable shareFeedback;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
+SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK21XMLToDictionaryParser")
+@interface XMLToDictionaryParser : NSObject <NSXMLParserDelegate>
+- (void)parser:(NSXMLParser * _Nonnull)parser didStartElement:(NSString * _Nonnull)elementName namespaceURI:(NSString * _Nullable)namespaceURI qualifiedName:(NSString * _Nullable)qName attributes:(NSDictionary<NSString *, NSString *> * _Nonnull)attributeDict;
+- (void)parser:(NSXMLParser * _Nonnull)parser foundCharacters:(NSString * _Nonnull)string;
+- (void)parser:(NSXMLParser * _Nonnull)parser didEndElement:(NSString * _Nonnull)elementName namespaceURI:(NSString * _Nullable)namespaceURI qualifiedName:(NSString * _Nullable)qName;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
 SWIFT_CLASS("_TtC18Kitaboo_Reader_SDK9Zoom_V6_0")
 @interface Zoom_V6_0 : NSObject
-@property (nonatomic, readonly, copy) NSString * _Nullable popupBackground;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable sliderFilledColor;
-@property (nonatomic, readonly, copy) NSString * _Nullable iconColor;
+@property (nonatomic, copy) NSString * _Nullable popupBackground;
+@property (nonatomic, copy) NSString * _Nullable sliderColor;
+@property (nonatomic, copy) NSString * _Nullable sliderFilledColor;
+@property (nonatomic, copy) NSString * _Nullable iconColor;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

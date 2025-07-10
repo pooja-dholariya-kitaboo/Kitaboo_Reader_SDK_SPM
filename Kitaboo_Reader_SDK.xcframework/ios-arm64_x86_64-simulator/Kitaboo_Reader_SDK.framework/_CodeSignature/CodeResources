@@ -6,7 +6,7 @@
 	<dict>
 		<key>Arabic_Kitaboo_6_0.ttf</key>
 		<data>
-		cJiXEqE0N2I0wJ0SV0avJUofvQ4=
+		syeR1UfWKXwaFHYlq+GbSF91cK8=
 		</data>
 		<key>Assets.car</key>
 		<data>
@@ -26,27 +26,7 @@
 		</data>
 		<key>Equation-Editor/css/style.css</key>
 		<data>
-		/tTnVFN8rg+fdLfdmb9vimlQPjc=
-		</data>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.eot</key>
-		<data>
-		BEvvB5MwrPRG6R7ui1GBSUvjCRM=
-		</data>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.svg</key>
-		<data>
-		49xWCBjDOUw7gfgtZ7gUXNP+5Jg=
-		</data>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.ttf</key>
-		<data>
-		gt2S7k7cNr5eh2npEwYE63qKUSM=
-		</data>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.woff</key>
-		<data>
-		Y6+ANgKUvX/D+XffhESquAb7cqE=
-		</data>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.woff2</key>
-		<data>
-		CKj97bdj6o9pdbSGSj5UgbQPWHM=
+		Ld+C3jVPT+YsX5vSPOrsgHFUAHQ=
 		</data>
 		<key>Equation-Editor/fonts/OpenSans-Semibold.eot</key>
 		<data>
@@ -98,7 +78,7 @@
 		</data>
 		<key>Equation-Editor/index.html</key>
 		<data>
-		SLebgpRLPgV7orrdiGvp3AiZbzo=
+		+g3QPaknLJs46FIIAK444OdCvC4=
 		</data>
 		<key>Equation-Editor/nbproject/private/private.properties</key>
 		<data>
@@ -118,7 +98,7 @@
 		</data>
 		<key>Equation-Editor/scripts/app.js</key>
 		<data>
-		x8MQN4HATXkw+08qNLLOz2EjeDU=
+		IVN+tMSCLBMddXnkSS3nruPJV8M=
 		</data>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/config/desktop-keyboard.js</key>
 		<data>
@@ -126,19 +106,19 @@
 		</data>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/controllers/desktop-keyboard-controller.js</key>
 		<data>
-		eSXYAGTy1qsNIEsw02ybyKIKLUw=
+		mGRDvxQW2p5LsWTPAQIffWNj+jE=
 		</data>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/css/desktop-keyboard.css</key>
 		<data>
-		P17peWa/xvji8z42+aH/UA3xciE=
+		NwqviWcXDBn5WJqh4lCIr6itkW4=
 		</data>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/data/desktopKeyboardData.js</key>
 		<data>
-		aQYdyUBXa8OQP7DAjRtnbrpoisw=
+		u244X9tb7JOP9XUm7pBK80CqOHU=
 		</data>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/desktop-keyboard.html</key>
 		<data>
-		lNP2keuJyJkQ7WnXd/+PBOqH6HE=
+		204zpZSFcYJiWHOGfpfxN0ubkhU=
 		</data>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/config/mobile-keyboard.js</key>
 		<data>
@@ -146,7 +126,7 @@
 		</data>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/controllers/mobile-keyboard-controller.js</key>
 		<data>
-		j/ad90558K90XRQb1WLs0eFu4X4=
+		HjcabcYL1QrPGczmG6QFjx6BeQE=
 		</data>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/css/mobile-keyboard.css</key>
 		<data>
@@ -154,7 +134,7 @@
 		</data>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/data/mobileKeyboardData.js</key>
 		<data>
-		h27O7uxKOiMr/7LngCyi5gMIVZE=
+		4eqlEoTLd28JN1YvL2c6itnz/YA=
 		</data>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/data/mobileKeyboardData.json</key>
 		<data>
@@ -162,7 +142,7 @@
 		</data>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/mobile-keyboard.html</key>
 		<data>
-		DMic1O60u97dpjSiCUtTXoDtTSM=
+		xBptbs6JtIFgDN9B48+Uz7+Nd9U=
 		</data>
 		<key>Equation-Editor/vendors/angular/angular-animate.min.js</key>
 		<data>
@@ -202,7 +182,7 @@
 		</data>
 		<key>Equation-Editor/vendors/bootstrap/bootstrap.js</key>
 		<data>
-		RbWurf+jCuJgVYCdziMDgdylZuY=
+		JlKQ/yRACJtRkAa25FI5sOceo2Q=
 		</data>
 		<key>Equation-Editor/vendors/bootstrap/bootstrap.min.css</key>
 		<data>
@@ -214,7 +194,7 @@
 		</data>
 		<key>Equation-Editor/vendors/jquery-ui/jquery-ui.css</key>
 		<data>
-		vYBOxJUS6u2fqzrBQZ0CdpbjLLE=
+		7aQcir2VSqUdFKEKXvHN6+j/Z00=
 		</data>
 		<key>Equation-Editor/vendors/jquery-ui/jquery-ui.js</key>
 		<data>
@@ -302,7 +282,7 @@
 		</data>
 		<key>EquationEditor.js</key>
 		<data>
-		9KKcAJt+hT5sNjLc41EWaUaFcuM=
+		rf81VxiFv0IX9A+nqmAgBgJ0kRA=
 		</data>
 		<key>FIBMathEquationView.nib</key>
 		<data>
@@ -314,7 +294,7 @@
 		</data>
 		<key>HDReflowableLayoutSettingsViewController.nib</key>
 		<data>
-		C4ckO8jGI5FAoNVNX4Tg1CtW9Ng=
+		hXobDiXEWyMDYfY0HPpFULl+YT8=
 		</data>
 		<key>HDVideoTOC.nib</key>
 		<data>
@@ -358,7 +338,7 @@
 		</data>
 		<key>Headers/Kitaboo_Reader_SDK-Swift.h</key>
 		<data>
-		7Mztu2waJZDlEuBC15AL4yiuygI=
+		gof8Alz0HrrQCPuB+mqcjenEtUg=
 		</data>
 		<key>Headers/Kitaboo_Reader_SDK.h</key>
 		<data>
@@ -382,11 +362,11 @@
 		</data>
 		<key>KitabooHighlightFixedCss.css</key>
 		<data>
-		8pzOJay8pgLlFmI+bPOkhVmksmM=
+		/kF3uutDDCkXVE9wNtu9PRwJ3ac=
 		</data>
 		<key>KitabooPageController.nib</key>
 		<data>
-		vdfIR/A8xjemBy6Zxxdysjvc4KM=
+		L7ZDO24+e6yfK+UQf4qFhUiUgEY=
 		</data>
 		<key>KitabooVideoPlayer.nib</key>
 		<data>
@@ -400,53 +380,57 @@
 		<data>
 		oBxo8K7PFAYVUBb27FpiW8+6lx8=
 		</data>
+		<key>Kitaboo_6.0_Dark_Theme.json</key>
+		<data>
+		pGsdmzj2Sl5Fnaqk7Yv+Ztr7s18=
+		</data>
 		<key>Kitaboo_6.0_Theme.json</key>
 		<data>
-		cHaBGz8HnIoiRX01C96q2ZSekhw=
+		i3j86DUK7lFDYbz8t2nIBMl9CX0=
 		</data>
 		<key>Kitaboo_6_0.ttf</key>
 		<data>
-		gt2S7k7cNr5eh2npEwYE63qKUSM=
+		tMtNgtN56rCcxzW457ZzkXdOgi4=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		w4hnK1tqknuCRH9L4U/7/+Pg9IM=
+		mGpqv3XTZFGuUeawLsA4+Yxmk20=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		WVDUmS5YRB+5wNhW4KEaTJN/B2A=
+		zE4Q6apPXl8WMGRfWUvIx7qzjX8=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		b4bYBot4jTrpipy4YQLhP2DoKkw=
+		bZTQWM1ClYx3hVdiVy1JxhE3YwY=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		WVDUmS5YRB+5wNhW4KEaTJN/B2A=
+		zE4Q6apPXl8WMGRfWUvIx7qzjX8=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		fNp3hZZwgiFzm+kAloPe2NeJRtA=
+		8wxysl9qORFnhdvySL00QyiYjIw=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		w4hnK1tqknuCRH9L4U/7/+Pg9IM=
+		mGpqv3XTZFGuUeawLsA4+Yxmk20=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		iZ4De1bLoHAEeJPFL+ff1CxY7Do=
+		+7Zejtj77bBbbG1nGbGOL+XL2/4=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		x5uJJo5ia4Nmp3LClM9HLwCOM4Y=
+		vJj8GcOLrJ7iGJVIQaQTdASIzqg=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		iZ4De1bLoHAEeJPFL+ff1CxY7Do=
+		+7Zejtj77bBbbG1nGbGOL+XL2/4=
 		</data>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		s8iJ6lGsUprSzXX3fujNwHEii48=
+		xppV1GCXEC40WrT1AAyV5KExK90=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -510,7 +494,7 @@
 		</data>
 		<key>ReflowableCSS.css</key>
 		<data>
-		SDZFCgu1deEdEIakUzFSvgS8adc=
+		e8kyN7d0usnJM3xMaGlHLnySShk=
 		</data>
 		<key>SDKReaderCoreDataModel.momd/SDKReaderCoreDataModel.mom</key>
 		<data>
@@ -546,7 +530,7 @@
 		</data>
 		<key>Style.css</key>
 		<data>
-		92cp7/Ho+rupqdcctl9eaDS7njE=
+		3+tRyRcRbPwMjxXiXH2170CBxZo=
 		</data>
 		<key>TOCController.nib</key>
 		<data>
@@ -562,13 +546,17 @@
 		</data>
 		<key>YTPlayerView-iframe-player.html</key>
 		<data>
-		H86dzRpyJHw6Z9l8YR+RThNoAXM=
+		igE5jtZV01l530AGFZRXOUhFInU=
+		</data>
+		<key>audio-video-theme.json</key>
+		<data>
+		CMKbAMDGjcXaPJUOkl0/lXxkOp8=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			cL5AxYZXpNq/3Ftb04RK2CKQx4A=
+			0EyF3eVSbflasZidlytQNAN3P9Y=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -577,7 +565,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lihZ5SdjmI8GB4krRzcMLOKh1gI=
+			o3LsI6M4Tl97wZF0owa3TPY5vWM=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -605,11 +593,11 @@
 		</data>
 		<key>kitabooCss.css</key>
 		<data>
-		Gq3AwrKaEaozB+qkYW4rzeT7AAQ=
+		1vX+i5lxdlh5OJLmA314pAqy/q4=
 		</data>
 		<key>kitabooEpub.js</key>
 		<data>
-		0Bu9cLWqKOmWhc9CLhAe9F8HpsM=
+		LjTCIjuOol8LRc6xcSbw/m7zQ4g=
 		</data>
 		<key>kitabooFixedLayout.js</key>
 		<data>
@@ -617,11 +605,11 @@
 		</data>
 		<key>kitabooHighlight.js</key>
 		<data>
-		p08DmvcDIioXn2Xf0CbWsurNdzE=
+		cePdlxM94j2Qi9tzPz431WvpQV0=
 		</data>
 		<key>kitabooHighlightCss.css</key>
 		<data>
-		y0vmHt3+Kqz/R2bQ3R2dt6n+oyw=
+		8cybJqPxpmy7+rzlM8g8p/qRFzE=
 		</data>
 		<key>kitabooMarkup.js</key>
 		<data>
@@ -645,11 +633,11 @@
 		</data>
 		<key>kitabooscormplayer.html</key>
 		<data>
-		S7cvwLmq43xByAoZQIqPjZdfGNk=
+		/gV1ja1x5lbnp8mxF8xfiQWdo4Y=
 		</data>
 		<key>position.js</key>
 		<data>
-		Vv03zxhv82Wo09bEYcao4AL34iY=
+		4ZQnLkZC41a63Tnptm/Pl3JgBjg=
 		</data>
 		<key>profile_pic.png</key>
 		<data>
@@ -661,7 +649,7 @@
 		</data>
 		<key>protractor-tool/css/style.css</key>
 		<data>
-		mr0JnfakhLIsMlQyVVvulSGER6Q=
+		AwdyGVuSsuDInNvHJHjHOOoa6P8=
 		</data>
 		<key>protractor-tool/fonts/OpenSans-Semibold.eot</key>
 		<data>
@@ -709,15 +697,15 @@
 		</data>
 		<key>protractor-tool/index.html</key>
 		<data>
-		KTFUEn0RgQJdhf7ZEKaU8Kh3vDA=
+		P8LIyh6YvPmeP1Gd6EeiU5jVU6s=
 		</data>
 		<key>protractor-tool/scripts/protractor.js</key>
 		<data>
-		OWRyPescdQJdUe2Z/LU7vaYQH3A=
+		LzqNvojkUgaRFh4YfYRxbBnlbL8=
 		</data>
 		<key>protractor-tool/vendors/bootstrap/bootstrap.js</key>
 		<data>
-		xZpQbxA3H7MhzslGKOG6rPkStA4=
+		gmBcYpiUH6xgU5gm4fwnsmuzI5s=
 		</data>
 		<key>protractor-tool/vendors/bootstrap/bootstrap.min.css</key>
 		<data>
@@ -778,7 +766,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			qDs3ToFh/god0g8ZETjUxGJLcPGnIej10AbZdMsf0Sw=
+			zCRJCv3spuTFHsWtiJeRnQmbIUCjn0KR4799RWXyLOc=
 			</data>
 		</dict>
 		<key>Assets.car</key>
@@ -813,42 +801,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CG5G0AotPuYKRhiW0C5yG4FYWtiyEsXnM37BJM6Y+QM=
-			</data>
-		</dict>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.eot</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			KGwt1+Zml7CvSJ3XsiYza026LnUqjEyY/ssbEHfWgVs=
-			</data>
-		</dict>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.svg</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			DhZz2xi+HWmNx/y8+MCx7zUrCKQZwIwQlC/mI//CzFk=
-			</data>
-		</dict>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.ttf</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			g8dHQIIP86soYhg6FhQyG8/xDsokKebRZVWiJQ/eCZc=
-			</data>
-		</dict>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.woff</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			DnCVWV9YrCLhyHgg0Mdb1mUV9NJifgz6RKgrsm8UabQ=
-			</data>
-		</dict>
-		<key>Equation-Editor/fonts/Kitaboo_6_0.woff2</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			SgBlhIicYM/NR8RQe2Gsmt18HE+vnx95QkH48wvlu4U=
+			aueT23IkR/ETX6BM8mhQ6pqoMFs4yJXkqM73lJtT29Q=
 			</data>
 		</dict>
 		<key>Equation-Editor/fonts/OpenSans-Semibold.eot</key>
@@ -939,7 +892,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ucxKI89us5+JfXhqL8+GTQYak8B0u2E1HEAdne+WtZ4=
+			54GLr0f8BLSis2fErWNhsZj6QpdCt7u3cpicBETuGHk=
 			</data>
 		</dict>
 		<key>Equation-Editor/nbproject/private/private.properties</key>
@@ -974,7 +927,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			I5IzKTn4hHIxN/SDpp5EujAlIQkyzCF34z4jZiSWbkk=
+			60g1dVBF+WqTEXvXsvUVh86v2aA4rqVy7dooo00xXQY=
 			</data>
 		</dict>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/config/desktop-keyboard.js</key>
@@ -988,28 +941,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1aNuQZutLMvzuuH/n9rfXOfb4jZV3dQMX3fgVBiZZu0=
+			KOjeWRbCimFO/VDlr9Te+wloQvuMwR1IgiHBiH7AVfU=
 			</data>
 		</dict>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/css/desktop-keyboard.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LGvGKLVj4ekqu1D8fKTyV9kw/lMR0j9CPmck3Kt8Q7Y=
+			NJWwG0MwNGTXRUzkEAAEltgncK4fU/5la0ZdoxVlrUI=
 			</data>
 		</dict>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/data/desktopKeyboardData.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HazLLduLjEpUScF/X0uABkBIpDeeEqfBeZCj5bxujbY=
+			RRXUgDOBKkT2OIju/3QD1KHjqXOjHjDlDzKe0KXqli4=
 			</data>
 		</dict>
 		<key>Equation-Editor/scripts/desktop-keyboard-holder/desktop-keyboard.html</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rRUG8FYhp+gRzJJZfJLkKh+WbEjoTJ5Odk+6Z9HLl+0=
+			/PXJgzag7xxv64Fgnh+Ht5yxMxdeizDLdukkk5EphMo=
 			</data>
 		</dict>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/config/mobile-keyboard.js</key>
@@ -1023,7 +976,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			zBaKted4Qi3XSXn4wUOznoWIqjhoK/MSRem5hFrrQdE=
+			g+yoT9JaMDzmZx7f19VkBltv921Wz6r3lPO7LN+BdOE=
 			</data>
 		</dict>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/css/mobile-keyboard.css</key>
@@ -1037,7 +990,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CkEgFT8KPpW0ZO/UegAM6IVg4KRiQ/uQtIgK7AZjhSw=
+			2ipqqO5ma7ni3eDObeF5PG3JoYGriDtzLenepDYo1ZU=
 			</data>
 		</dict>
 		<key>Equation-Editor/scripts/mobile-keyboard-holder/data/mobileKeyboardData.json</key>
@@ -1051,7 +1004,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dhDqaznaV0mFwz2yZQOGFSe0JsdxTj92pQhNRkgukFM=
+			7NSfoLtMb9UQMOLHcwFAnxRhbhNJXZ+R2mqjhi8t15M=
 			</data>
 		</dict>
 		<key>Equation-Editor/vendors/angular/angular-animate.min.js</key>
@@ -1121,7 +1074,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			tT7AJzZdVt/IDNRCHKU3tbc9pp/+bAZA2EdNb6us3ns=
+			pD5zXBxsIptdvE0m/NSWDJ7QfGEvCNICj1ibgfbJbDQ=
 			</data>
 		</dict>
 		<key>Equation-Editor/vendors/bootstrap/bootstrap.min.css</key>
@@ -1142,7 +1095,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			85YwN1wxbBHpKw/lq+5s5G0jfsqcfZ6IjRGLuVtKHSg=
+			Aux1kF6uw/hzVX5k+vO2YI73xkxu419AT6kRQZO+rvo=
 			</data>
 		</dict>
 		<key>Equation-Editor/vendors/jquery-ui/jquery-ui.js</key>
@@ -1296,7 +1249,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			lTTeUYHrH7mUGKGjUzGaK4aC/WaegWc/84aOkjAyeew=
+			5vtsToVeKi8ArsYyr+UjDRRvShL4pzPqc33xvsSBiUY=
 			</data>
 		</dict>
 		<key>FIBMathEquationView.nib</key>
@@ -1317,7 +1270,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gdkirOLf35WC/L2YJdP1o9HDFwS0Jm721lAhWopRs90=
+			+UQVDeOYjZwep2E8ZnEYknbv6LGM76shIWAriNMAF+A=
 			</data>
 		</dict>
 		<key>HDVideoTOC.nib</key>
@@ -1394,7 +1347,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5PDmDS9ox4Nvo9QPiw+xNhyIpsPdJYEhGTyoaPZmQHw=
+			UqbOWDTsZDObMW8rJES4cqjwiryHq67vxSnT/xdOdNQ=
 			</data>
 		</dict>
 		<key>Headers/Kitaboo_Reader_SDK.h</key>
@@ -1429,14 +1382,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			10v3/92k2uPMYsxxwxwtjCrX6hdlLInQYJbh/QLBWRw=
+			cwQ2IcsX+d/etVFRcUN4mDYz8PcfQcNmrefclUjncVA=
 			</data>
 		</dict>
 		<key>KitabooPageController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			V/V/iHHQD90AbJFcF0+HMzHSzsYPXCBaNW3liKZqBUE=
+			+e1o7FUcssLDKz/vNXFdfk44srCOZQkGocB0HOcevwQ=
 			</data>
 		</dict>
 		<key>KitabooVideoPlayer.nib</key>
@@ -1460,88 +1413,95 @@
 			76x2B1IJ1OmFyq8q0mwKlC7KXOhcsFc3oOugi/4HNHA=
 			</data>
 		</dict>
+		<key>Kitaboo_6.0_Dark_Theme.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7qkAOF0igPsUNbrJSo/tAbnW7TTQdieamyP4gdeAHhU=
+			</data>
+		</dict>
 		<key>Kitaboo_6.0_Theme.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Uc/8eeLIWG4xE5pBpBWEeBB4OjDyph23iASAefZqGlg=
+			+tb0ZalMI9U7LiEaP5u31ONQuWum+p5hrCi6ggUC+94=
 			</data>
 		</dict>
 		<key>Kitaboo_6_0.ttf</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			g8dHQIIP86soYhg6FhQyG8/xDsokKebRZVWiJQ/eCZc=
+			UQVeDt0y6/0cxfo2EXFFVL9YowqbYcnnxXZM1cuSYIk=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Uj8ZlCcsxyw38Qyig0p75kKSVGvpdwv/fgx5TwWd/Lo=
+			odUXppaMRTy6mW6D0LFtf1TMnT38385k577Y2ztsjVk=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/ixaa48oETFhf74h7Pr/HZoppWQZ+KchURO4v3etdnM=
+			o/eEoR/rN/68GfGA51e6SZdJyuEIOjwuJ2rpH0I8KqA=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CINdKvz3QDiBtWY+4otykcLE5zMUFG3oNjcauTXHasM=
+			3gaX5RFbYfCZSe3hFODkC9KxjTaCqT9LA6UL0RPvdV0=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/ixaa48oETFhf74h7Pr/HZoppWQZ+KchURO4v3etdnM=
+			o/eEoR/rN/68GfGA51e6SZdJyuEIOjwuJ2rpH0I8KqA=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			xzW+SFAmZZz1C7qRibhuDXdXM9O2CemVVCO6P+4zf0w=
+			yLZzDeXOT4mIIaH2U/OBtOznMdh7uhE4dU185RhF4vo=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Uj8ZlCcsxyw38Qyig0p75kKSVGvpdwv/fgx5TwWd/Lo=
+			odUXppaMRTy6mW6D0LFtf1TMnT38385k577Y2ztsjVk=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E1FRQm13kceRxqFEZsw7fxDkYaksxJS7qwhFN28guCc=
+			jyD1dRWer5D9IzuALSXA1qISFBWzpcCUEh47yfB+qSE=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			A8K58msb4iVORc10ekw9g7ehB9h8kc4GnrF9y0Elnd4=
+			HuM5aWh7n4aQImOgLgISm+jnCnTkakzWkT2cSR+JdXE=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			E1FRQm13kceRxqFEZsw7fxDkYaksxJS7qwhFN28guCc=
+			jyD1dRWer5D9IzuALSXA1qISFBWzpcCUEh47yfB+qSE=
 			</data>
 		</dict>
 		<key>Modules/Kitaboo_Reader_SDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9tH1HgQbYQRXyYASpFcd2n0xB89FoT88j152KJyM8Yk=
+			hWLME0+Hjrgiqwy91KMrAOiIcq7lEHTSBwkTFqBZQ4A=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1653,7 +1613,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZqaTrh4fI92hRZHLFmlo6gbQDxh8ZnZoKY6iGQpfbX4=
+			OjXndczXPlUs9G6DFDbttySDtnDekWtat+0NbHeOVTs=
 			</data>
 		</dict>
 		<key>SDKReaderCoreDataModel.momd/SDKReaderCoreDataModel.mom</key>
@@ -1716,7 +1676,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YYFgDW/VaKSRwOlWXBzLZ4z8HTOmHXgeR7PanKLqz+s=
+			+VCQn/Als1ebnETvZ9r5fHQR9L087Qm8/Ll1MV6sjgM=
 			</data>
 		</dict>
 		<key>TOCController.nib</key>
@@ -1744,14 +1704,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			55BGrwK7QNEcfkR2nNmaF5NdN0gI410Jn7JBZlMXxBc=
+			3Af2Acljqg3OvauE8GeWR6ZYTWbi4I1GNYn1kjfhW2Y=
+			</data>
+		</dict>
+		<key>audio-video-theme.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nu57cdTekWZ0hHnAUXagPsqnf5Km6jnQ/NOSo5q3coE=
 			</data>
 		</dict>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bALs6vhSe3T6bUYIJM1vn4laECY2YzTb20t8qTspIOE=
+			05T5srzDSSTy9wA9Q5nnxAYzwzZNLLqXyBdEHwvWFBo=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1760,7 +1727,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Rpwqzh3wO0/gla+U9nRT4xpHfiyj79eD4TabQFcd4hE=
+			ipnCwA58EmoyxXtv4VA2H4YA+o2rqVsLfPYt2ItfkJ4=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1799,14 +1766,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			VoE2RMW2okoG5kMvTgILGmIBj+j1P9whCoISfAwZ080=
+			4IyzXRMC4KvqKEpZNcbFH3kZKZQJEtLVO5fLvYlPNJM=
 			</data>
 		</dict>
 		<key>kitabooEpub.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			MbJwGNJCKiLjnlbzwTApx6JoMYZmyTFC0+VznfeLDoI=
+			+nei3vFOTvsLnavhfC6dEdw1dn77Tw27osKoL+eXSRo=
 			</data>
 		</dict>
 		<key>kitabooFixedLayout.js</key>
@@ -1820,14 +1787,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4usSQDsL7kObByBRJW38In2WcRBRj15XbFyEYqaxNgc=
+			g0Jmmoqt0BH86YP5vW7ZmjmeIDnmEvM/TpObvWJx92k=
 			</data>
 		</dict>
 		<key>kitabooHighlightCss.css</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			A+lNZbKkKJu34dfBJtyYNSYsxeXsx+xQMC3Yc1HxRBA=
+			U7h7y1vRVM+PnzLg5X3VFQQRppaYhYkl71wUxj7ahdw=
 			</data>
 		</dict>
 		<key>kitabooMarkup.js</key>
@@ -1869,14 +1836,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3M7HX3+cPiZBGYgM34Jkhtk9mZCWY7Tz6MgpjBApRHY=
+			xCmeweQ7ZMs+ik6B3GQYXNi+xXZsZxMqrPaUB3syQrQ=
 			</data>
 		</dict>
 		<key>position.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			UQH7z8UaFo7z++wZdn9VttaPBne1+vGXyq4AKhUNtaU=
+			7Touaw1YY+yBTrStzQ4Sn9NIxJEDZ/LCHRuD+cBwLak=
 			</data>
 		</dict>
 		<key>profile_pic.png</key>
@@ -1897,7 +1864,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			b9HTWGQq6VuS33yqzrfzTmAIGgBFNRVL4KJ3oDHpPLI=
+			czcBtqe+kfgkq9YJAtoLTtELp7aDTmt4vfsAQkrY+yc=
 			</data>
 		</dict>
 		<key>protractor-tool/fonts/OpenSans-Semibold.eot</key>
@@ -1981,21 +1948,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OULJCgTWc8ECbFW26jxiuN+ucjBj00UsN17XK4UGrns=
+			c0yqLkdagrXuKkCt1wIf6KuyhKUHKrJda2RnuTySiN0=
 			</data>
 		</dict>
 		<key>protractor-tool/scripts/protractor.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9BtQuYNGZazFUnlVjlY61nVPlXHSE7LWIsPxonGKoeE=
+			admV0wklKZ11sghX9twTNFnLEyXTNuyxZCFuW1z4mWY=
 			</data>
 		</dict>
 		<key>protractor-tool/vendors/bootstrap/bootstrap.js</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FVotEg+8mr+BylYPqcNnt7IHHL2j3mTKkBvk5bpaDC0=
+			8XrAnQgiy/y9V4nhQPEhShzng3EHj8nfiFCnLXNSRcQ=
 			</data>
 		</dict>
 		<key>protractor-tool/vendors/bootstrap/bootstrap.min.css</key>

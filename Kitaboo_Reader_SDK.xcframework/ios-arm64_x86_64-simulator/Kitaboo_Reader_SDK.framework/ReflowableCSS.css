@@ -1,6 +1,4 @@
-:root {
-  --bgcolor: #1e90ff;
-}
+
 
 /* CSS Reset */
 html, body, div, span, applet, object, iframe,
@@ -15,7 +13,7 @@ table, caption, tbody, tfoot, thead, tr, th, td,
 article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
-time, mark, audio, video, kitabooNote {
+time, mark, audio, video, .kitabooNote {
     vertical-align: baseline;
 }
 
@@ -33,19 +31,15 @@ footer, header, hgroup, menu, nav, section {
 html {
     -webkit-text-size-adjust: none; /* Never autoresize text */
     padding: 0 0 !important;
-/*    overflow-x: hidden;*/
 }
 
 body {
-/*    overflow-x: hidden !important;*/
     position:unset !important;
     -webkit-overflow-scrolling:unset !important;
 }
 
 @media only screen and (min-device-width: 600px) {
     div {
-        /*        font-size: 1em;*/
-        /*        line-height: 1.438em !important;*/
     }
     
     body {
@@ -63,7 +57,6 @@ img, svg, audio, video {
     box-sizing: border-box;
     object-fit: contain;
     page-break-inside: avoid;
-/*    display: block;*/         /*As image has set this property we cannot change image alignment as of text alignment, this property makes it as center align only.*/
     margin-left: auto;
     margin-right: auto;
     -webkit-user-drag: none;
@@ -97,7 +90,7 @@ img, svg, audio, video {
     text-indent: 0px !important;
     font-size: 14px !important;
     background: #dad6d6 !important;
-    font-family: 'Open Sans' !important;
+    font-family: 'Open Sans' !important, sans-serif;
     font-weight: bold !important;
     border-radius: 15px !important;
     position: absolute;
@@ -131,7 +124,7 @@ img, svg, audio, video {
     text-indent: 0px !important;
     font-size: 14px !important;
     background: #dad6d6 !important;
-    font-family: 'Open Sans' !important;
+    font-family: 'Open Sans' !important, sans-serif;
     font-weight: bold !important;
     border-radius: 15px !important;
     position: absolute;
@@ -140,7 +133,7 @@ img, svg, audio, video {
 }
 
 
-reflowScrollView{
+.reflowScrollView{
     width: 100%;
     float: left;
     padding-top: 0px !important;
@@ -163,7 +156,7 @@ reflowScrollView{
     text-indent: 0px !important;
     font-size: 14px !important;
     background: #dad6d6 !important;
-    font-family: 'Open Sans' !important;
+    font-family: 'Open Sans' !important, sans-serif;
     font-weight: bold !important;
     border-radius: 15px !important;
     left: 10px;
@@ -184,7 +177,7 @@ reflowScrollView{
 
 .reflowScrollViewAR>p {
    color: #232121 !important;
-       font-family: 'Open Sans' !important;
+   font-family: 'Open Sans' !important, sans-serif;
        font-size: 14px !important;
        background: #dad6d6 !important;
        font-weight: bold !important;
@@ -206,13 +199,13 @@ reflowScrollView{
  *
  */
 
-highlight {
+.highlight {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
 }
 
 /* Remove tap highlight */
-input, textarea, button, highlight, select, a {
+input, textarea, button, .highlight, select, a {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 

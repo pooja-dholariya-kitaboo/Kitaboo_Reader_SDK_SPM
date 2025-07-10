@@ -1,7 +1,6 @@
-angular.module('desktopKeyboard-holder').controller('DesktopKeyboardCtrl', function DesktopKeyboardCtrl($state, $filter, $scope, $timeout) { 
-	   
-       $scope.desktopKeyboardData = desktopKeyboardData;	   
-    //    $scope.hideKeyBoard = (sessionStorage.getItem('hideKeyBoard') == 1 || sessionStorage.getItem('hideKeyBoard') == "1") ? true : false;
+angular.module('desktopKeyboard-holder').controller('DesktopKeyboardCtrl', function DesktopKeyboardCtrl($state, $filter, $scope, $timeout) {
+       
+       $scope.desktopKeyboardData = desktopKeyboardData;
        sessionStorage.removeItem('hideKeyBoard');
        
     $timeout(function() {
@@ -14,15 +13,13 @@ angular.module('desktopKeyboard-holder').controller('DesktopKeyboardCtrl', funct
         $('.equation-holder').on('touchstart click',$scope.onMathquillTap);
         $('.keys').on('touchstart click',$scope.onKeyTap);
 
-        var containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('.equation-holder').height();
-
-        // $('#bar').draggable({axis: 'y', containment : [0,0,0,containmentBottom] });
+        let containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('.equation-holder').height();
 
 
-        var answerMathField = $('#math-equation-holder', '.haseqnEditor');
+        let answerMathField = $('#math-equation-holder', '.haseqnEditor');
         answerMathField.focus();
 
-        $('.equation-holder').draggable({ 
+        $('.equation-holder').draggable({
             handle: ".drag-this",
             scroll : false,
             containment : [0,0,$('body').width() - $('.equation-holder').width(),containmentBottom]
@@ -35,9 +32,9 @@ angular.module('desktopKeyboard-holder').controller('DesktopKeyboardCtrl', funct
         $(window).on('resize', function(event) {
             $('.math-holder').css('margin-top', '0px');
 
-            var containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('.equation-holder').height();
+            let containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('.equation-holder').height();
 
-            $('.equation-holder').draggable({ 
+            $('.equation-holder').draggable({
                 handle: ".drag-this",
                 scroll : false,
                 containment : [0,0,$('body').width() - $('.equation-holder').width(),containmentBottom]
@@ -65,9 +62,6 @@ angular.module('desktopKeyboard-holder').controller('DesktopKeyboardCtrl', funct
             {
                 $('.navPanel').css('left','60.5%');
             }
-            // $('.overlay-modal').show();
-            // $('.navPanel').show();
-            // $('.relativeDiv').css('position','relative');
         }
         else
         {
@@ -104,9 +98,9 @@ angular.module('desktopKeyboard-holder').controller('DesktopKeyboardCtrl', funct
         $scope.answerMathField.focus();
     };
 
-    $scope.onKeyTap = function(event) {    	
+    $scope.onKeyTap = function(event) {
         event.preventDefault();
-        var arrDataLatex = $(event.currentTarget).attr('data-latex-val').split('-'),
+        let arrDataLatex = $(event.currentTarget).attr('data-latex-val').split('-'),
             split1 = arrDataLatex[0],
             split2 = arrDataLatex[1],
             split3 = arrDataLatex[2],
@@ -133,8 +127,8 @@ angular.module('desktopKeyboard-holder').controller('DesktopKeyboardCtrl', funct
 
     $scope.onDoneBtnClick = function(event) {
         //try{
-        var textdata = $('.mq-root-block').text();
-        var metaString = {
+        let textdata = $('.mq-root-block').text();
+        let metaString = {
             'latex' : $scope.answerMathField.latex(),
             'height' : $(answerSpan).height(),
             'width' : $(answerSpan).width(),
@@ -143,75 +137,34 @@ angular.module('desktopKeyboard-holder').controller('DesktopKeyboardCtrl', funct
         
         //$scope.saveEqn(textdata);
         var encodedString = encodeURIComponent(JSON.stringify(metaString));
-       // activityData.ugcData = textdata;
         
         $scope.nativeCallback(encodedString,textdata);
-        $scope.nativeCallback = function(encodedString,textdata) {      
-        var userAgent = window.navigator.userAgent;
-
-        // if(userAgent.indexOf('Android') !== -1)
-        // {
-        //   window.android.getEquationData(encodedString);
-        // }
-        // else if((userAgent.indexOf('iPad')!==-1 || userAgent.indexOf('iPhone')!==-1))
-        // {
-        //   window.location ="getEquationData:"+encodedString;
-        // }
+        $scope.nativeCallback = function(encodedString,textdata) {
+        
              
             window.top.getEquationData(encodedString,textdata);
-          // if(window.external.notify)
-          // {
             window.external.notify(encodedString);
-          // }
     
     };
-        
-       // }
-        // catch(err) {
-        //     console.dir(err);
-        // }
                
     };
 
-    // $scope.saveEqn = function(textdata) {
-    //     var obj = {};
-    //     obj.data = textdata;
-    //     obj.created = $filter('date')(new Date().getTime(), 'yyyy-MM-dd HH:mm:ss');
-
-    //     if (StateService.panelOpen == 'reviewPanel' && StateService.reviewStart) {
-    //         // Connection.saveTeacherAnnotations(obj, fttId ? (value ?'update' : 'delete') : 'new');
-    //     } else { debugger
-    //         //Connection.addFFT(obj, data ? 'textdata' : 'new');
-    //     }
-    // };
 
     $scope.onAbcBtnClick = function(event) {
-        var metaString = {
+        let metaString = {
             'changeKeyboard' : true,
             'latex' : $scope.answerMathField.latex()
         };
 
-        var encodedString = encodeURIComponent(JSON.stringify(metaString));
-        $scope.nativeCallback(encodedString,'nothing');   
+        let encodedString = encodeURIComponent(JSON.stringify(metaString));
+        $scope.nativeCallback(encodedString,'nothing');
     }
 
-    $scope.nativeCallback = function(encodedString,textdata) {    	
-        var userAgent = window.navigator.userAgent;
+    $scope.nativeCallback = function(encodedString,textdata) {
 
-        // if(userAgent.indexOf('Android') !== -1)
-        // {
-        //   window.android.getEquationData(encodedString);
-        // }
-        // else if((userAgent.indexOf('iPad')!==-1 || userAgent.indexOf('iPhone')!==-1))
-        // {
-        //   window.location ="getEquationData:"+encodedString;
-        // }
-         {        	
+                
             window.top.getEquationData(encodedString,textdata);
-          // if(window.external.notify)
-          // {
             window.external.notify(encodedString);
-          // }
         }
     };
 

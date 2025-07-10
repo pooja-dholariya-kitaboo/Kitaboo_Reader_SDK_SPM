@@ -32,6 +32,21 @@
         "label":"Font size slider",
         "isAccessiblityEnabled":true
     },
+    "ReaderFontIncrease": {
+        "hint":"Double tap to increase the font size",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderDefaultFontSize": {
+        "hint":"Double tap to set the default font size",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
+    "ReaderFontDecrease": {
+        "hint":"Double tap to decrease the font size",
+        "label":"%@",
+        "isAccessiblityEnabled":true
+    },
     "ReaderFontSettingsAlignment": {
         "hint":"Double tap to select",
         "label":"%@",

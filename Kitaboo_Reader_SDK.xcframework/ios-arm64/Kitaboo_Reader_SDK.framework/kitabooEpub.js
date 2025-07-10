@@ -9,7 +9,7 @@ var wordsPerMinute = 180;
 var _isTTSPlay = false;
 var elements;
 // Set font size
-function setFontSize(classes) {
+/*function setFontSize(classes) {
     //alert("FontSize");
     var elm = document.getElementsByTagName( 'html' )[0];
     removeClass(elm, "mediumFont");
@@ -20,7 +20,67 @@ function setFontSize(classes) {
     addClass(elm, classes);
     //updateAllsticks();
     //updatefonts(document,classes);
+}*/
+
+function applyFontSizes(fontSize) {
+    if(fontSize !== "initial") {
+        this.parseEleSizes(document.body, fontSize);
+        document.body.style.fontSize = fontSize + "%";
+        document.body.setAttribute("data-attribute-size", fontSize);
+        this.viewer.manager.settings.fontSize = fontSize;
+    }
 }
+
+function parseEleSizes(ele, diffVal) {
+       let childEle = ele;
+       
+       // Skip Kitaboo note elements
+       if(childEle.nodeType === Node.ELEMENT_NODE && 
+          (childEle.classList && childEle.classList.contains("kitaboonote") || 
+           childEle.tagName && childEle.tagName.toLowerCase() === "kitaboonote")) {
+           return; // Skip processing for Kitaboo note elements
+       }
+       
+       if(childEle.nodeType === Node.TEXT_NODE && childEle.parentNode.childNodes.length === 1
+           || (childEle.nodeType === Node.ELEMENT_NODE && childEle.getAttribute("data-original-font-size") !== null)
+       ) {
+           let parentNode = childEle.parentNode;
+           
+           // Skip if parent is a Kitaboo note element
+           if(parentNode && parentNode.nodeType === Node.ELEMENT_NODE && 
+              (parentNode.classList && parentNode.classList.contains("kitaboonote") || 
+               parentNode.tagName && parentNode.tagName.toLowerCase() === "kitaboonote")) {
+               return;
+           }
+           
+           if(childEle.nodeType !== Node.TEXT_NODE && childEle.getAttribute("data-original-font-size") !== null) {
+               parentNode = childEle;
+           }
+           if(!parentNode.getAttribute('data-original-font-size')) {
+               let fontVal = window.getComputedStyle(parentNode).fontSize;
+               let lineVal = window.getComputedStyle(parentNode).lineHeight;
+               if(fontVal)
+                   parentNode.setAttribute('data-original-font-size', parseInt(fontVal));
+               if(lineVal)
+                   parentNode.setAttribute('data-original-line-height', parseInt(lineVal));
+           }
+           let originalFontSize = parentNode.getAttribute('data-original-font-size') ? Number(parentNode.getAttribute('data-original-font-size')) : 0,
+           originalLineHeight = parentNode.getAttribute('data-original-line-height'),
+           updatedFontSize = originalFontSize * (diffVal/100),
+           updatedLineHeight = originalLineHeight * (diffVal/100);
+           updatedFontSize = isNaN(updatedFontSize) ? '' : updatedFontSize + "px !important";
+           updatedLineHeight = isNaN(updatedLineHeight) ? '' : updatedLineHeight + "px !important";
+           
+           // For regular elements (not Kitaboo notes), apply the style changes
+           parentNode.setAttribute("style", "font-size: "+ updatedFontSize + ";line-height: " + updatedLineHeight);
+
+       } else if(childEle.nodeType === Node.ELEMENT_NODE) {
+           const childNodes = Array.from(childEle.childNodes);
+           childNodes.forEach((childNode) => {
+               this.parseEleSizes(childNode, diffVal);
+           });
+       }
+   }
 
 function updatefont(root,fontType)
 {
@@ -108,6 +168,22 @@ function setReaderMode(classes) {
         setBackgroundColorForPageBreak(false);
     }
 }
+// Toggle Reader mode
+function setReaderModeAuthorReflow(mode) {
+       var modeValue = "default";
+       try
+       {
+           if (mode != ""){
+               modeValue = mode
+           }
+           window.kitabooSwitchDayNightMode(modeValue);
+       }
+       catch(err)
+       {
+           
+       }
+   }
+
 
 // Change Textalignment
 function setTextAlignment(classes){
@@ -118,6 +194,22 @@ function setTextAlignment(classes){
     removeClass(elm, "justifyAlign");
     addClass(elm, classes);
 }
+// Change Textalignment
+function setTextAlignmentForAuthorReflow(align){
+    var alignValue = "default";
+    try
+    {
+        if (align != ""){
+            alignValue = align
+        }
+        window.kitabooTextAlignChange(alignValue);
+    }
+    catch(err)
+    {
+        
+    }
+}
+
 
 function setLineSpacing(classes){
     var elm = document.documentElement;
@@ -476,11 +568,11 @@ function resizeAllTheImages(coverImage)
  }
                          
  function resizeElement(element){
-    if(!isIPAD()) {
+//    if(!isIPAD()) {
         element.setAttribute('style','max-height:' + (window.innerHeight - (getPadding()+30)) +'px !important;height:auto !important;');
-    }else {
-        element.setAttribute('style','max-height:' + (window.innerHeight - (getPadding()+30)) +'px !important;height:auto !important;');
-    }
+//    }else {
+//        element.setAttribute('style','max-height:' + (window.innerHeight - (getPadding()+30)) +'px !important;height:auto !important;');
+//    }
  }
   
  function isCoverImage(imageElement,coverImage){
@@ -659,10 +751,14 @@ function getCFINodeString() {
       //window.onscroll = null; // remove listener
      }
     function checkCurrentTTSVisibility(){
-          if (currentIndex != -1 && !isElementInViewports(elements[currentIndex])){
-            return false
+          if(getLayout() != "FixedLayout") {
+            if (currentIndex != -1 && !isElementInViewports(elements[currentIndex])){
+              return false;
+            }else{
+              return true;
+            }
           }else{
-            return true
+            return true;
           }
     }
     function isElementInViewportNew (el)
@@ -1036,76 +1132,82 @@ function elementClicked(event)
     prevItem = event.currentTarget;
 }
                                   
-function openModalPopup(elementBackGroundColor,popupBackgroundColor)
-{
-    if(doubleTappedElement)
-    {
-        var captionText="";
-        var modalPopup = document.getElementById("modalPopup");
-        if(modalPopup != undefined)
-        {
-            modalPopup.parentElement.removeChild(modalPopup);
-        }
-        modalPopup = document.createElement("div");
-        modalPopup.className = "modalPopup";
-        modalPopup.setAttribute('id',"modalPopup");
-        modalPopup.setAttribute('style','background-color:'+ popupBackgroundColor +' !important;');
-        var modalChild = document.createElement("div");
-        modalChild.className = "modalChild";
-        var closeSpan = document.createElement("span");
-        closeSpan.className = "modalCloseSpan";
-        closeSpan.textContent = "2";
-        closeSpan.setAttribute('onclick',"closeModalPopup(event)");
-        var elementDiv = document.createElement("div");
-        var elementCopy = doubleTappedElement.cloneNode(true);
-        elementCopy.removeAttribute("onclick");
-        elementCopy.style.height = "";
-        elementCopy.style.width = "";
-        elementCopy.id = "modalElement";
-        if(elementCopy.tagName.toLowerCase() == "table")
-        {
-            elementCopy.classList.add("modalChild");
-            var highlights = elementCopy.getElementsByTagName("highlightmark");
-            var highlightsLength=highlights.length;
-            for (var i = 0; i < highlightsLength; i++)
-            {
-                var highlightElement = highlights[0];
-                var parentElement = highlightElement.parentElement;
-                while (highlightElement.firstChild){
-                    parentElement.insertBefore(highlightElement.firstChild, highlightElement);
-                    parentElement.removeChild(highlightElement);
-                    parentElement.normalize();
-                }
-            }
-        }
-        else
-        {
-            elementCopy.className = "modalChild";
-        }
-        var modalCaptionText = document.createElement("p");
-        modalCaptionText.textContent = captionText;
-        modalCaptionText.className = "modalCaptionClass";
-                                  
-        modalPopup.appendChild(modalChild);
-        modalChild.appendChild(closeSpan);
-        modalChild.appendChild(elementDiv);
-        if(captionText == "")
-        {
-            elementDiv.className = "modalElementDiv";
-        }
-        else
-        {
-            elementDiv.className = "modalElementDivWithCaption";
-            modalChild.appendChild(modalCaptionText);
-        }
-        elementDiv.appendChild(elementCopy);
-        document.body.appendChild(modalPopup);
-        modalChild.setAttribute('style','background-color:'+popupBackgroundColor+' !important;');
-        elementDiv.setAttribute('style','background-color:'+elementBackGroundColor+' !important;');
-        modalPopup.style.display= "block";
-        window.location = "modalPopupOpened"
-    }
-}
+  function openModalPopup(elementBackGroundColor,popupBackgroundColor)
+  {
+      if(doubleTappedElement)
+      {
+          var captionText="";
+          var modalPopup = document.getElementById("modalPopup");
+          if(modalPopup != undefined)
+          {
+              modalPopup.parentElement.removeChild(modalPopup);
+          }
+          modalPopup = document.createElement("div");
+          modalPopup.className = "modalPopup";
+          modalPopup.setAttribute('id',"modalPopup");
+          modalPopup.setAttribute('style','background-color:'+ popupBackgroundColor +' !important;');
+          var modalChild = document.createElement("div");
+          modalChild.className = "modalChild";
+          var closeSpan = document.createElement("span");
+          closeSpan.className = "modalCloseSpan";
+          closeSpan.textContent = "2";
+          closeSpan.setAttribute('onclick',"closeModalPopup(event)");
+          var elementDiv = document.createElement("div");
+          var elementCopy = doubleTappedElement.cloneNode(true);
+          elementCopy.removeAttribute("onclick");
+          elementCopy.style.height = "";
+          elementCopy.style.width = "";
+          elementCopy.id = "modalElement";
+          if(elementCopy.tagName.toLowerCase() == "table")
+          {
+              elementCopy.classList.add("modalChild");
+              elementCopy.style.overflowX = "auto";
+              elementCopy.style.overflowY = "auto";
+              elementCopy.style.display = "block";
+              var highlights = elementCopy.getElementsByTagName("highlightmark");
+              var highlightsLength=highlights.length;
+              for (var i = 0; i < highlightsLength; i++)
+              {
+                  var highlightElement = highlights[0];
+                  var parentElement = highlightElement.parentElement;
+                  while (highlightElement.firstChild){
+                      parentElement.insertBefore(highlightElement.firstChild, highlightElement);
+                      parentElement.removeChild(highlightElement);
+                      parentElement.normalize();
+                  }
+              }
+          }
+          else
+          {
+              elementCopy.className = "modalChild";
+          }
+          var modalCaptionText = document.createElement("p");
+          modalCaptionText.textContent = captionText;
+          modalCaptionText.className = "modalCaptionClass";
+          modalPopup.appendChild(modalChild);
+          modalChild.appendChild(closeSpan);
+          modalChild.appendChild(elementDiv);
+
+          // Ensure modalPopup's height is less than the viewport
+          modalPopup.style.maxHeight = window.innerHeight - 40 + 'px';
+          if(captionText == "")
+          {
+              elementDiv.className = "modalElementDiv";
+          }
+          else
+          {
+              elementDiv.className = "modalElementDivWithCaption";
+              modalChild.appendChild(modalCaptionText);
+          }
+          elementDiv.appendChild(elementCopy);
+          document.body.appendChild(modalPopup);
+          modalChild.setAttribute('style','background-color:'+popupBackgroundColor+' !important;');
+          elementDiv.setAttribute('style','background-color:'+elementBackGroundColor+' !important;');
+          modalPopup.style.display= "block";
+          window.location = "modalPopupOpened"
+      }
+  }
+
                                   
 function getCaptionForElement(ele, doc){
     var _eleParent = ele;
@@ -1189,8 +1291,8 @@ function jumpToBookCFI(bookCFI)
     }
 }
                           
-                          function addWatermark(watermarktext,textColor)
-                          {
+          function addWatermark(watermarktext,textColor)
+          {
             removeWatermark();
             var topValue = 500;
             var areaPerPage = 600000;
@@ -1499,8 +1601,11 @@ function setClassForPageBreak(className) {
             return false;
         }
     });
-    
-    return pageBreak.title;
+        if (pageBreak != null){
+            return pageBreak.title;
+        }else{
+            return "";
+        }
 }
                           
 function isElementInViewport(el, parent, isHrMode) {
@@ -1623,17 +1728,16 @@ function isElementInViewport(el, parent, isHrMode) {
             if (node.nodeType === Node.TEXT_NODE) {
                 
               // Text node: Split the inner text into sentences using regular expressions
-              var sentences = node.textContent.split(/([.!?])/).reduce((acc, val, i, arr) => {
-                if (i % 2 === 0 && i < arr.length - 1) {
-                  acc.push(val + arr[i + 1]);
-                } else if (i === arr.length - 1 && val !== '') {
-                  // Handle the case where the last element might not have a trailing delimiter
-                  acc.push(val);
-                }
-                return acc;
-              }, []);
-              // (/(?<=[.!?])/)
-
+//              var sentences = node.textContent.split(/([.!?])/).reduce((acc, val, i, arr) => {
+//                if (i % 2 === 0 && i < arr.length - 1) {
+//                  acc.push(val + arr[i + 1]);
+//                } else if (i === arr.length - 1 && val !== '') {
+//                  // Handle the case where the last element might not have a trailing delimiter
+//                  acc.push(val);
+//                }
+//                return acc;
+//              }, []);
+                var sentences = node.textContent.split(/(?:[.!?])(?=[A-Z])/);
                     // Create a document fragment to hold the modified content
                 const fragment = document.createDocumentFragment();
                 
@@ -1644,13 +1748,13 @@ function isElementInViewport(el, parent, isHrMode) {
                     const span = document.createElement('span');
                     span.classList.add('sentence');
                     
-//                    if (index !== 0) {
-//                            // If it's not the first sentence, append a space before the sentence
-//                        span.appendChild(document.createTextNode(' '));
-//                    }
-//                    if (index != sentences.length - 1) {
-//                        sentence = sentence + '.';
-//                    }
+                    if (index !== 0) {
+                            // If it's not the first sentence, append a space before the sentence
+                        span.appendChild(document.createTextNode(' '));
+                    }
+                    if (index != sentences.length - 1) {
+                        sentence = sentence + '.';
+                    }
                     
                         // Create a text node for the sentence
                     const sentenceNode = document.createTextNode(sentence);
@@ -1678,21 +1782,50 @@ function isElementInViewport(el, parent, isHrMode) {
                 });
             }
         }
-  function setOnClickOnTTSTexts(){
-    var lnk = document.querySelectorAll("span.sentence");
-    for (var i=0; i<lnk.length; i++) {
-        lnk[i].setAttribute("onclick", "onTTSTextClicked(this,'" + i + "')");
+function setOnClickOnTTSTexts(isFixedEpub){
+    if(isFixedEpub == true) {
+      let sentences = elements;
+      for(var i = 0, len = sentences.length; i < len; i++){
+        var elms = document.getElementsByClassName("sentence-" +  parseInt(i+1));
+        for(var j = 0, leng = elms.length; j < leng; j++) {
+          elms[j].setAttribute("onclick", "onTTSTextClicked(this,'" + parseInt(i+1) + "')");
+        }
+      }
+    }else{
+      var lnk = document.querySelectorAll("span.sentence");
+      for (var i=0; i<lnk.length; i++) {
+          lnk[i].setAttribute("onclick", "onTTSTextClicked(this,'" + i + "')");
+      }
     }
-    return lnk.length;
+   
   //    ReflowablePageFragment.setTTSSentenceCount(lnk.length);
   }
 //
-  function onTTSTextClicked(event, data){
-        if(_isTTSPlay){
-              var pos = parseInt(data);
-             // ReflowablePageFragment.currentTTSTapPos(pos);
-              var className = "epub-media-overlay-playing";
-              currentIndex = data ;
+//
+function onTTSTextClicked(event, data){
+    if(_isTTSPlay){
+      var pos = parseInt(data);
+         // ReflowablePageFragment.currentTTSTapPos(pos);
+      var className = "epub-media-overlay-playing";
+      currentIndex = pos;
+
+      if(getLayout() == "FixedLayout") {
+        removeOLDTTSHighlight()
+        var elms = document.getElementsByClassName("sentence-" + currentIndex);
+        var text = '';
+        audioMarkClass = className;
+        if (audioMarkClass){
+          removeAllClasses(audioMarkClass);
+        }
+        for(var i = 0, len = elms.length; i < len; i++) {
+          elms[i].classList.add(className);
+          text = text + elms[i].textContent;
+        }
+        window.webkit.messageHandlers.playSelectedTapText.postMessage({
+          'message':{text:text,currentIndex:currentIndex}
+        });
+      }
+         else{
               //var elements = document.querySelectorAll("span.sentence");
               var sentence = elements[currentIndex] ;
               var text = sentence.innerText || sentence.textContent;
@@ -1707,79 +1840,104 @@ function isElementInViewport(el, parent, isHrMode) {
               sentence.classList.add(className)
               //ReflowablePageFragment.playSelectedTapText(text);
             window.webkit.messageHandlers.playSelectedTapText.postMessage({
-                'message': text
+                'message':{text:text,currentIndex:currentIndex}
             });
+      }
 
-        }
-  }
+    }
+}
   function stopTTSPlay(){
     _isTTSPlay = false
   }
 //
 
-  function getSentenceWithIndex(className , value) {
-      _isTTSPlay = value;
-
-      var sentence;
-      var sel = window.getSelection();
-      var node = null;
-      elements = document.querySelectorAll("span.sentence");
-
-      // Check for a selected text, if found start reading from it
-      if (sel.toString() != "") {
-          node = sel.anchorNode.parentNode;
-
-          if (node.className == "sentence") {
-              sentence = node
-
-              for(var i = 0, len = elements.length; i < len; i++) {
-                  if (elements[i] === sentence) {
-                      currentIndex = i;
-                      break;
-                  }
-              }
-          } else {
-              sentence = findSentenceWithIDInView(elements);
-          }
-      } else if (currentIndex < 0) {
-          currentIndex = 0;
-          sentence = findSentenceWithIDInView(elements);
-      } else {
-          sentence = findNextSentenceInArray(elements);
-      }
-     while ((sentence == null) || (sentence.innerText.trim() == '' || sentence.textContent.trim() == '')) {
-        sentence = findNextSentenceInArray(elements);
-        if (currentIndex >= elements.length){
-          return null;
+                          function getSentenceWithIndex(className , value) {
+            _isTTSPlay = value;
+            
+            var sentence;
+            var sel = window.getSelection();
+            var node = null;
+            if(getLayout() == "FixedLayout") {
+                if (currentIndex < 0) {
+                    currentIndex = 0;
+                }
+                var elms = document.getElementsByClassName("sentence-" +  parseInt(currentIndex+1));
+                
+                if (currentIndex  >= elements.length) {
+                    console.log('All over');
+                    return null;
+                }
+                var text = '';
+                audioMarkClass = className;
+                if (audioMarkClass){
+                    removeAllClasses(audioMarkClass);
+                }
+                for(var i = 0, len = elms.length; i < len; i++) {
+                    elms[i].classList.add(className);
+                    text = text + elms[i].textContent;
+                }
+                currentIndex++;
+                return {text:text,currentIndex:currentIndex};
+            }else{
+                elements = document.querySelectorAll("span.sentence");
+            }
+            
+            // Check for a selected text, if found start reading from it
+            if (sel.toString() != "") {
+                node = sel.anchorNode.parentNode;
+                
+                if (node.className == "sentence") {
+                    sentence = node
+                    
+                    for(var i = 0, len = elements.length; i < len; i++) {
+                        if (elements[i] === sentence) {
+                            currentIndex = i;
+                            break;
+                        }
+                    }
+                } else {
+                    sentence = findSentenceWithIDInView(elements);
+                }
+            } else if (currentIndex < 0) {
+                currentIndex = 0;
+                sentence = findSentenceWithIDInView(elements);
+            } else {
+                sentence = findNextSentenceInArray(elements);
+            }
+            while ((sentence == null) || (sentence.innerText.trim() == '' || sentence.textContent.trim() == '')) {
+                sentence = findNextSentenceInArray(elements);
+                if (currentIndex >= elements.length){
+                    return null;
+                }
+            }
+            
+            if (sentence != null){
+                if (sentence.innerText.trim() == '' && sentence.textContent.trim() == '')
+                {
+                    sentence = findNextSentenceInArray(elements);
+                }
+                var text = sentence.innerText || sentence.textContent;
+                goToEl(sentence);
+                
+                if (audioMarkClass){
+                    removeAllClasses(audioMarkClass);
+                }
+                
+                audioMarkClass = className;
+                sentence.classList.add(className);
+                return { text: text, currentIndex: currentIndex };
+            }else{
+                if (currentIndex >= elements.length){
+                    if(getLayout() != "FixedLayout") {
+                        window.webkit.messageHandlers.gotoNextChapter.postMessage("success");
+                    }
+                }
+                return { text: '', currentIndex: currentIndex };
+                
+            }
+            //    ReflowablePageFragment.selectedTextToPlay(text , currentIndex);
+            
         }
-      }
-    
-    if (sentence != null){
-        if (sentence.innerText.trim() == '' && sentence.textContent.trim() == '')
-        {
-            sentence = findNextSentenceInArray(elements);
-        }
-        var text = sentence.innerText || sentence.textContent;
-        goToEl(sentence);
-        
-        if (audioMarkClass){
-            removeAllClasses(audioMarkClass);
-        }
-        
-        audioMarkClass = className;
-        sentence.classList.add(className);
-        return text;
-    }else{
-       
-        if (currentIndex >= elements.length){
-            window.webkit.messageHandlers.gotoNextChapter.postMessage("success");
-        }
-        return '';
-       
-    }
-  //    ReflowablePageFragment.selectedTextToPlay(text , currentIndex);
-
-  }
 //
   function findSentenceWithIDInView(els) {
       // @NOTE: is `span` too limiting?
@@ -1819,6 +1977,18 @@ function isElementInViewport(el, parent, isHrMode) {
   function resetCurrentSentenceIndex() {
       currentIndex = -1;
       _isTTSPlay = false;
+  }
+    function setCurrentSentenceIndex(index) {
+        currentIndex = index;
+        var className = "epub-media-overlay-playing";
+         var elms = document.getElementsByClassName("sentence-" +  (parseInt(currentIndex)));
+         audioMarkClass = className;
+         if (audioMarkClass){
+             removeAllClasses(audioMarkClass);
+         }
+         for(var i = 0, len = elms.length; i < len; i++) {
+           elms[i].classList.add(className);
+         }
   }
 
   function rewindCurrentIndex() {
@@ -1871,13 +2041,13 @@ function isElementInViewport(el, parent, isHrMode) {
    Remove All Classes - removes the given class from all elements in the DOM
    */
   function removeAllClasses(className) {
-      var els = document.body.getElementsByClassName(className)
-      if( els.length > 0 )
-        for( i = 0; i <= els.length; i++) {
-          if (els[i] !== null && els[i] !== undefined) {
-            els[i].classList.remove(className);
-          }
-        }
+      let elements = document.getElementsByClassName(className);
+      let len = elements.length;
+      while (len--) {
+          //console.log(elements[0], 'toggle');
+          elements[len].classList.remove(className);
+      }
+      return;
   }
 
   /**
@@ -1900,6 +2070,10 @@ function isElementInViewport(el, parent, isHrMode) {
       currentIndex = -1 ;
       removeAllClasses(className);
   }
+    function removeOLDTTSHighlight(){
+        var className = "epub-media-overlay-playing";
+        removeAllClasses(className);
+    }
   function playTTS(value){
         _isTTSPlay = value;
    }
@@ -1961,218 +2135,248 @@ function isElementInViewport(el, parent, isHrMode) {
 //
 //  }
 
-  function playNextTTSSentence(){
-      currentIndex ++;
-      playCurrentTTSPosition(true);
-  }
+function playNextTTSSentence(){
+  currentIndex ++;
+  playCurrentTTSPosition(true);
+}
 
-  function playPreviousTTSSentence(){
-       currentIndex --;
-      playCurrentTTSPosition(false);
+function playPreviousTTSSentence(){
+    if(getLayout() == "FixedLayout" && currentIndex == 1) {
+            window.webkit.messageHandlers.gotoPreviousChapter.postMessage("success");
+            return;
+        }
+  currentIndex --;
+  playCurrentTTSPosition(false);
 
-  }
+}
 
-  function playCurrentTTSPosition(isNext){
-          if(_isTTSPlay){
-            var pos = currentIndex;
-              // ReflowablePageFragment.currentTTSTapPos(pos);
-            var className = "epub-media-overlay-playing";
-              //elements = document.querySelectorAll("span.sentence");
-            var sentence = elements[currentIndex] ;
-            var text = sentence.textContent;
-              if(!isInViewRect(sentence)){
-                goToEl(sentence);
+function playCurrentTTSPosition(isNext){
+    if(_isTTSPlay){
+      var pos = currentIndex;
+        // ReflowablePageFragment.currentTTSTapPos(pos);
+      var className = "epub-media-overlay-playing";
+        //elements = document.querySelectorAll("span.sentence");
+         if(getLayout() == "FixedLayout") {
+              if (currentIndex < 0) {
+                currentIndex = 0;
               }
-             
-                if (text.trim() == ''){
-                    isNext ? playNextTTSSentence() : playPreviousTTSSentence();
-                    return;
-                }
-                if (audioMarkClass){
-                    removeAllClasses(audioMarkClass);
-                }
-                
-                audioMarkClass = className;
-                sentence.classList.add(className)
-                window.webkit.messageHandlers.playSelectedTapText.postMessage({
-                    'message': text
-                });
-                
-            }
-      }
-                          
+              var elms = document.getElementsByClassName("sentence-" +  parseInt(currentIndex));
+
+              if (currentIndex > elements.length) {
+                console.log('All over');
+                window.webkit.messageHandlers.gotoNextChapter.postMessage("success");
+                return null;
+              }
+              var text = '';
+              audioMarkClass = className;
+              if (audioMarkClass){
+                  removeAllClasses(audioMarkClass);
+              }
+              for(var i = 0, len = elms.length; i < len; i++) {
+                elms[i].classList.add(className);
+                text = text + elms[i].textContent;
+              }
+              window.webkit.messageHandlers.playSelectedTapText.postMessage({
+                  'message':{text:text,currentIndex:currentIndex}
+                  });
+            }else{
+              var sentence = elements[currentIndex] ;
+              var text = sentence.textContent;
+                  if(!isInViewRect(sentence)){
+                      goToEl(sentence);
+                   }
+
+                  if (text.trim() == ''){
+                      isNext ? playNextTTSSentence() : playPreviousTTSSentence();
+                      return;
+                  }
+                  if (audioMarkClass){
+                      removeAllClasses(audioMarkClass);
+                  }
+
+                  audioMarkClass = className;
+                  sentence.classList.add(className)
+                  window.webkit.messageHandlers.playSelectedTapText.postMessage({
+                      'message':{text:text,currentIndex:currentIndex}
+                  });
+
+          }
+    }
+}
+                      
 ////For Fixed Epub TTS
 //
 //var prevElement;
 //var zIndexVal;
 //sentence=[];
-//                        
-//function wrappingSentencesWithinPTagsFixedEpub(){
-//    //renderDocFixedLayout(document.body);
 //
-//}
-//                          
-//function renderDocFixedLayout(body) {
-// sentence = getAllNodesGroupedIntoSentencesByHeight(body);
-// console.log('formed current page sentence',sentence);
-//}
+function wrappingSentencesWithinPTagsFixedEpub(){
+    renderDocFixedLayout(document.body);
+}
 //
-//function getAllNodesGroupedIntoSentencesByHeight (){
-//var sentenceGroups = [];
-//  var currentGroup = { height: [], width: [], x: [], y: [], nodes: [], top: [], text: "", right: 0 };
-//  groupNodesToFormSentencesByHeight(rootNode, sentenceGroups, currentGroup);
-//  if (currentGroup.height && currentGroup.nodes.length > 0) {
-//    sentenceGroups.push({ height: currentGroup.height, width: currentGroup.width, x: currentGroup.x, y: currentGroup.y, top: currentGroup.top, nodes: currentGroup.nodes, text: currentGroup.text, right: currentGroup.right });
-//  }
-//  return sentenceGroups;
-//
-//}
-//
-//function groupNodesToFormSentencesByHeight(node, sentenceGroups, currentGroup) {
-//  if (node) {
-//    var zIndexV = window.getComputedStyle(node.parentElement).getPropertyValue('z-index');
-//    if (zIndexV !== '' && Number(zIndexV) > -1 && node.tagName === 'IMG') {
-//      zIndexVal = zIndexV;
-//    }
-//  }
-//  if (isNonEmptyTextNode(node)) {
-//    var textContent = node.nodeValue.trim();
-//    var height = getNodeHeight(node.parentNode);
-//
-//    if (currentGroup.height.length === 0) {
-//      currentGroup.height.push(height);
-//    }
-//    if (currentGroup.height.length === 0) {
-//      currentGroup.width.push(node.parentNode.offsetWidth || node.parentNode.clientWidth);
-//    }
-//
-//    if (height === currentGroup.height[currentGroup.height.length - 1]) {
-//      var currentNodeRects = node.parentNode.getBoundingClientRect();
-//      if (currentGroup.nodes.length === 0) {
-//        currentGroup.x.push(currentNodeRects.x);
-//        currentGroup.y.push(currentNodeRects.y);
-//        currentGroup.top.push(currentNodeRects.top);
-//      }
-//      if (currentNodeRects.top !== currentGroup.top[currentGroup.top.length - 1]) {
-//        var widthVal = Math.abs(prevElement.parentNode.getBoundingClientRect().right - currentGroup.x[currentGroup.x.length - 1]);
-//        currentGroup.width.push(widthVal);
-//        currentGroup.top.push(currentNodeRects.top);
-//        currentGroup.x.push(currentNodeRects.x);
-//        currentGroup.y.push(currentNodeRects.y);
-//
-//      } else {
-//        prevElement = node;
-//      }
-//      currentGroup.text += node.textContent + " ";
-//      if (node.parentNode.classList.contains('sentence-' + (sentenceGroups.length))) {
-//        node.parentNode.classList.remove('sentence-' + (sentenceGroups.length))
-//        node.parentNode.classList.add('sentence-' + (sentenceGroups.length + 1));
-//      }
-//      else {
-//        var classList = [...node.parentNode.classList].filter(ele => {if(ele.indexOf('sentence-') > -1) {return ele}});
-//        if(classList.length > 0) {
-//          classList.forEach((className) => {
-//            node.parentNode.classList.remove(className);
-//          });
-//        }
-//        node.parentNode.classList.add('sentence-' + (sentenceGroups.length + 1));
-//      }
-//      currentGroup.right = currentGroup.right > currentNodeRects.right ? currentGroup.right : currentNodeRects.right;
-//      currentGroup.nodes.push(node);
-//
-//      if (isSentence(textContent)) {
-//        var grpWidth = currentNodeRects.top !== currentGroup.top[currentGroup.top.length - 1] ? currentNodeRects.width : prevElement.parentNode.getBoundingClientRect().right - currentGroup.x[currentGroup.x.length - 1];
-//        var flag = 0;
-//        currentGroup.nodes.forEach((ele) => {
-//          if (ele.parentElement.getBoundingClientRect().top === currentGroup.top[currentGroup.top.length - 1]) {
-//            ++flag;
-//          }
-//        });
-//        grpWidth = flag > 1 ? grpWidth : currentNodeRects.width;
-//        currentGroup.width.push(Math.abs(grpWidth));
-//        sentenceGroups.push({ height: currentGroup.height, nodes: currentGroup.nodes, x: currentGroup.x, y: currentGroup.y, width: currentGroup.width, text: currentGroup.text, right: currentGroup.right });
-//        currentGroup.height = [];
-//        currentGroup.width = [];
-//        currentGroup.x = [];
-//        currentGroup.y = [];
-//        currentGroup.top = [];
-//        currentGroup.right = 0;
-//        currentGroup.nodes = [];
-//        currentGroup.text = "";
-//      }
-//    } else {
-//      var currentNodeRects = node.parentNode.getBoundingClientRect();
-//      var grpWidth = prevElement.parentNode.getBoundingClientRect().right - currentGroup.x[currentGroup.x.length - 1];
-//      currentGroup.width.push(Math.abs(grpWidth));
-//      sentenceGroups.push({ height: currentGroup.height, nodes: currentGroup.nodes, x: currentGroup.x, y: currentGroup.y, width: currentGroup.width, text: currentGroup.text, right: currentGroup.right });
-//      prevElement = node;
-//      currentGroup.height = [];
-//      currentGroup.width = [];
-//      currentGroup.x = [];
-//      currentGroup.y = [];
-//      currentGroup.top = [];
-//      currentGroup.nodes = [];
-//      currentGroup.text = node.textContent + " ";
-//      currentGroup.height.push(height);
-//      currentGroup.x.push(currentNodeRects.x);
-//      currentGroup.y.push(currentNodeRects.y);
-//      currentGroup.top.push(currentNodeRects.top);
-//      if (node.parentNode.classList.contains('sentence-' + (sentenceGroups.length))) {
-//        node.parentNode.classList.remove('sentence-' + (sentenceGroups.length))
-//        node.parentNode.classList.add('sentence-' + (sentenceGroups.length + 1));
-//      }
-//      else {
-//        var classList = [...node.parentNode.classList].filter(ele => {if(ele.indexOf('sentence-') > -1) {return ele}});
-//        if(classList.length > 0) {
-//          classList.forEach((className) => {
-//            node.parentNode.classList.remove(className);
-//          });
-//        }
-//        node.parentNode.classList.add('sentence-' + (sentenceGroups.length + 1));
-//      }
-//      currentGroup.nodes = [node];
-//    }
-//  } else if (node.nodeType === Node.ELEMENT_NODE) {
-//    var nodeCollection = reorderElements(node.childNodes), childNodes;
-//    childNodes = nodeCollection;
-//    childNodes.forEach((childNode) => {
-//      groupNodesToFormSentencesByHeight(childNode, sentenceGroups, currentGroup);
-//    });
-//  }
-//}
-//
-//
-//function isNonEmptyTextNode(node) {
-//  return node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '';
-//}
+function renderDocFixedLayout(body) {
+  elements = getAllNodesGroupedIntoSentencesByHeight(body);
+}
+
+function getAllNodesGroupedIntoSentencesByHeight (body){
+  var sentenceGroups = [];
+  var currentGroup = { height: [], width: [], x: [], y: [], nodes: [], top: [], text: "", right: 0 };
+  var rootNode = document.body.getRootNode();
+  groupNodesToFormSentencesByHeight(document.body, sentenceGroups, currentGroup);
+  if (currentGroup.height && currentGroup.nodes.length > 0) {
+    sentenceGroups.push({ height: currentGroup.height, width: currentGroup.width, x: currentGroup.x, y: currentGroup.y, top: currentGroup.top, nodes: currentGroup.nodes, text: currentGroup.text, right: currentGroup.right });
+  }
+  return sentenceGroups;
+
+}
+
+function groupNodesToFormSentencesByHeight(node, sentenceGroups, currentGroup) {
+  if (node) {
+    var zIndexV = window.getComputedStyle(node.parentElement).getPropertyValue('z-index');
+    if (zIndexV !== '' && Number(zIndexV) > -1 && node.tagName === 'IMG') {
+      zIndexVal = zIndexV;
+    }
+  }
+  if (isNonEmptyTextNode(node)) {
+    var textContent = node.nodeValue.trim();
+    var height = getNodeHeight(node.parentNode);
+
+    if (currentGroup.height.length === 0) {
+      currentGroup.height.push(height);
+    }
+    if (currentGroup.height.length === 0) {
+      currentGroup.width.push(node.parentNode.offsetWidth || node.parentNode.clientWidth);
+    }
+
+    if (height === currentGroup.height[currentGroup.height.length - 1]) {
+      var currentNodeRects = node.parentNode.getBoundingClientRect();
+      if (currentGroup.nodes.length === 0) {
+        currentGroup.x.push(currentNodeRects.x);
+        currentGroup.y.push(currentNodeRects.y);
+        currentGroup.top.push(currentNodeRects.top);
+      }
+      if (currentNodeRects.top !== currentGroup.top[currentGroup.top.length - 1]) {
+        var widthVal = Math.abs(prevElement.parentNode.getBoundingClientRect().right - currentGroup.x[currentGroup.x.length - 1]);
+        currentGroup.width.push(widthVal);
+        currentGroup.top.push(currentNodeRects.top);
+        currentGroup.x.push(currentNodeRects.x);
+        currentGroup.y.push(currentNodeRects.y);
+
+      } else {
+        prevElement = node;
+      }
+      currentGroup.text += node.textContent + " ";
+      if (node.parentNode.classList.contains('sentence-' + (sentenceGroups.length))) {
+        node.parentNode.classList.remove('sentence-' + (sentenceGroups.length))
+        node.parentNode.classList.add('sentence-' + (sentenceGroups.length + 1));
+        node.parentNode.classList.add('ttsSentence');
+
+      }
+      else {
+        var classList = [...node.parentNode.classList].filter(ele => {if(ele.indexOf('sentence-') > -1) {return ele}});
+        if(classList.length > 0) {
+          classList.forEach((className) => {
+            node.parentNode.classList.remove(className);
+          });
+        }
+        node.parentNode.classList.add('sentence-' + (sentenceGroups.length + 1));
+        node.parentNode.classList.add('ttsSentence');
+      }
+      currentGroup.right = currentGroup.right > currentNodeRects.right ? currentGroup.right : currentNodeRects.right;
+      currentGroup.nodes.push(node);
+
+      if (isSentence(textContent)) {
+        var grpWidth = currentNodeRects.top !== currentGroup.top[currentGroup.top.length - 1] ? currentNodeRects.width : prevElement.parentNode.getBoundingClientRect().right - currentGroup.x[currentGroup.x.length - 1];
+        var flag = 0;
+        currentGroup.nodes.forEach((ele) => {
+          if (ele.parentElement.getBoundingClientRect().top === currentGroup.top[currentGroup.top.length - 1]) {
+            ++flag;
+          }
+        });
+        grpWidth = flag > 1 ? grpWidth : currentNodeRects.width;
+        currentGroup.width.push(Math.abs(grpWidth));
+        sentenceGroups.push({ height: currentGroup.height, nodes: currentGroup.nodes, x: currentGroup.x, y: currentGroup.y, width: currentGroup.width, text: currentGroup.text, right: currentGroup.right });
+        currentGroup.height = [];
+        currentGroup.width = [];
+        currentGroup.x = [];
+        currentGroup.y = [];
+        currentGroup.top = [];
+        currentGroup.right = 0;
+        currentGroup.nodes = [];
+        currentGroup.text = "";
+      }
+    } else {
+      var currentNodeRects = node.parentNode.getBoundingClientRect();
+      var grpWidth = prevElement.parentNode.getBoundingClientRect().right - currentGroup.x[currentGroup.x.length - 1];
+      currentGroup.width.push(Math.abs(grpWidth));
+      sentenceGroups.push({ height: currentGroup.height, nodes: currentGroup.nodes, x: currentGroup.x, y: currentGroup.y, width: currentGroup.width, text: currentGroup.text, right: currentGroup.right });
+      prevElement = node;
+      currentGroup.height = [];
+      currentGroup.width = [];
+      currentGroup.x = [];
+      currentGroup.y = [];
+      currentGroup.top = [];
+      currentGroup.nodes = [];
+      currentGroup.text = node.textContent + " ";
+      currentGroup.height.push(height);
+      currentGroup.x.push(currentNodeRects.x);
+      currentGroup.y.push(currentNodeRects.y);
+      currentGroup.top.push(currentNodeRects.top);
+      if (node.parentNode.classList.contains('sentence-' + (sentenceGroups.length))) {
+        node.parentNode.classList.remove('sentence-' + (sentenceGroups.length))
+        node.parentNode.classList.add('sentence-' + (sentenceGroups.length + 1));
+        node.parentNode.classList.add('ttsSentence');
+      }
+      else {
+        var classList = [...node.parentNode.classList].filter(ele => {if(ele.indexOf('sentence-') > -1) {return ele}});
+        if(classList.length > 0) {
+          classList.forEach((className) => {
+            node.parentNode.classList.remove(className);
+          });
+        }
+        node.parentNode.classList.add('sentence-' + (sentenceGroups.length + 1));
+      }
+      currentGroup.nodes = [node];
+    }
+  } else if (node.nodeType === Node.ELEMENT_NODE) {
+    var nodeCollection = reorderElements(node.childNodes), childNodes;
+    childNodes = nodeCollection;
+    childNodes.forEach((childNode) => {
+      groupNodesToFormSentencesByHeight(childNode, sentenceGroups, currentGroup);
+    });
+  }
+}
 //
 //
-//function  getNodeHeight(node) {
-//  return node.getBoundingClientRect().height; //node.offsetHeight || node.clientHeight;
-//}
-//
-//function isSentence(text) {
-//  // Implement your sentence validation logic here
-//  // For simplicity, let's assume a sentence is anything ending with a period (.)
-//  return /[.!?]/.test(text);
-//}
+function isNonEmptyTextNode(node) {
+  return node.nodeType === Node.TEXT_NODE && node.nodeValue.trim() !== '';
+}
 //
 //
-//function  reorderElements(childElements) {
-//  var elements = Array.from(childElements).filter((ele ) => {
-//    return ele.nodeType !== Node.COMMENT_NODE;
-//  });
-//  var orderedEle = Array.from(elements).sort((a:HTMLElement, b: HTMLElement) => {
-//    var bNode: HTMLElement = b.nodeType === Node.TEXT_NODE ? b.parentElement : b;
-//    var aNode: HTMLElement = a.nodeType === Node.TEXT_NODE ? a.parentElement : a;
-//    var aTop = Number(aNode.offsetTop);
-//    var bTop = Number(bNode.offsetTop);
-//    var aLeft = Number(aNode.offsetLeft);
-//    var bLeft = Number(bNode.offsetLeft);
+function  getNodeHeight(node) {
+  return node.getBoundingClientRect().height; //node.offsetHeight || node.clientHeight;
+}
 //
-//    return aTop - bTop;
-//  });
-//  return orderedEle;
-//}
-//                          
-//                          
+function isSentence(text) {
+  // Implement your sentence validation logic here
+  // For simplicity, let's assume a sentence is anything ending with a period (.)
+  return /[.!?]/.test(text);
+}
+function reorderElements(childElements) {
+ var elements = Array.from(childElements).filter((ele) => {
+   return ele.nodeType !== Node.COMMENT_NODE;
+ });
+
+ var orderedEle = Array.from(elements).sort((a, b) => {
+   var bNode = b.nodeType === Node.TEXT_NODE ? b.parentElement : b;
+   var aNode = a.nodeType === Node.TEXT_NODE ? a.parentElement : a;
+   var aTop = Number(aNode.offsetTop);
+   var bTop = Number(bNode.offsetTop);
+   var aLeft = Number(aNode.offsetLeft);
+   var bLeft = Number(bNode.offsetLeft);
+
+   return aTop - bTop || aLeft - bLeft; // Added secondary sort by left position
+ });
+
+ return orderedEle;
+}

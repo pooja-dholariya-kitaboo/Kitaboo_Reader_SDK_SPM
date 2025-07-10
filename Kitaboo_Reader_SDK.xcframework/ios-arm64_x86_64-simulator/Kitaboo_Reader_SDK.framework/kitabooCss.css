@@ -334,7 +334,9 @@ input, textarea, button, highlight, select, a {
 kitaboowatermark{
     position: absolute;
     color:grey;
+    opacity: 0.5;
     font-size:20px;
+    opacity:0.5;
     -webkit-transform:rotate(330deg);
     font-family:Arial !important;
     -webkit-line-clamp:4;
@@ -347,7 +349,7 @@ kitaboowatermark{
 kitaboowatermarkImage{
     position: fixed;
     color:grey;
-    opacity:1.0;
+    opacity:0.5;
     background:lightgreen;
     background-image:url(https://i.pinimg.com/originals/bb/8a/bf/bb8abf1a043b398b3);
     top:0px;

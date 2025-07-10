@@ -1,18 +1,18 @@
 function addEventHandlerOnCancelButton() {
-    var cancelButton = document.getElementsByClassName('cancelBtn')[0];
+    let cancelButton = document.getElementsByClassName('cancelBtn')[0];
     if(cancelButton!=null) {
         cancelButton.addEventListener('click', function() {
-            var messageToPost = "cancelBtn";
+            let messageToPost = "cancelBtn";
             webkit.messageHandlers.cancelButtonClicked.postMessage(messageToPost);
         });
     }
 
 }
 function addEventHandlerOnHideKeyBoardButton() {
-    var cancelButton = document.getElementsByClassName('abcIcon')[0];
+    let cancelButton = document.getElementsByClassName('abcIcon')[0];
     if(cancelButton!=null) {
         cancelButton.addEventListener('click', function() {
-            var messageToPost = "cancelBtn";
+            let messageToPost = "cancelBtn";
             webkit.messageHandlers.cancelButtonClicked.postMessage(messageToPost);
         });
     }
@@ -20,10 +20,10 @@ function addEventHandlerOnHideKeyBoardButton() {
 
 
 function addEventHandlerOnGotItButton() {
-    var gotItButton = document.getElementsByClassName('gotItBtn')[0];
+    let gotItButton = document.getElementsByClassName('gotItBtn')[0];
     if(gotItButton!=null) {
         gotItButton.addEventListener('click', function() {
-            var messageToPost = "gotItBtn";
+            let messageToPost = "gotItBtn";
             webkit.messageHandlers.gotItButtonClicked.postMessage(messageToPost);
         });
     }

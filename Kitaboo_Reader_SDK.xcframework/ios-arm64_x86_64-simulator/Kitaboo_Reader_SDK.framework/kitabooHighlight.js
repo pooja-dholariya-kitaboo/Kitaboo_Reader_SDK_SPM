@@ -416,6 +416,9 @@ function elementThatHasIndex(elements,index)
 
 function scrollElementInToView(element)
 {
+    if(element.innerText.trim() == "" && element.tagName != 'img'){
+        return;
+    }
     var topOffSet;
     try
     {
@@ -433,7 +436,12 @@ function scrollElementInToView(element)
     var topMargin;
     if(pageNumber == parseInt(highlightOffSet)/docHeight)
     {
-        leftMargin = ((pageNumber)*docWidth) + leftOffSet;
+        if(IsTwoPageModeEnable)
+            {
+                leftMargin = ((pageNumber)*(docWidth/2)) + leftOffSet;
+            }else{
+                leftMargin = ((pageNumber)*docWidth) + leftOffSet;
+            }
     }
     else
     {
@@ -690,7 +698,7 @@ function restoreSelection(savedSel) {
     range.setStart(document.body, 0);
     range.collapse(true);
     var nodeStack = [document.body], node, foundStart = false, stop = false;
-    savedSel.end = savedSel.end;
+//    savedSel.end = savedSel.end;
     while (!stop && (node = nodeStack.pop())) {
         if (node.nodeType == 3) {
             var nextCharIndex = charIndex + node.length;
@@ -711,8 +719,8 @@ function restoreSelection(savedSel) {
         }
     }
     return range;
-    var sel = window.getSelection();
-    sel.removeAllRanges();
+//    var sel = window.getSelection();
+//    sel.removeAllRanges();
     //    sel.addRange(range);
 }
 
@@ -1198,7 +1206,7 @@ function addNoteOnHighlight(name, color,txtColor,iconFont)
     }
     var mycolor = hexToRgb(color,0.85);
     kitabooNote.setAttribute('style',"text-align:center;vertical-align:middle;font-family:"+iconFont+";position: absolute;margin-left: "+highlightLeft +"px;font-size:27px;background-color:"
-                             + mycolor + ";display: block;top:"
+                             + mycolor + ";display: flex;justify-content: center; align-items: center;top:"
                              + highlightTop + "px");
     
     if(isRTL == true){
@@ -1265,7 +1273,7 @@ function addNoteOnHighlightForFixedLayout(name, color,txtColor,iconFont){
     
     kitabooNote.setAttribute('style',"text-align:center;vertical-align:middle;font-family:"+iconFont+";position: absolute;margin-left:"+highlightLeft+"px;font-size:27px;-webkit-user-select: none;background-color:"
                              + color
-                             + ";display: block;top:"
+                             + ";display: flex;justify-content: center; align-items: center;top:"
                              + highlightTop + "px");
 
 //    kitabooNote.setAttribute('style',"z-index:222;text-align:center;vertical-align:middle;font-family:kitabooread;position: absolute;margin-left:"+highlightLeft+"px;font-size:27px;background-color:"
@@ -2691,20 +2699,20 @@ function removeSelectionFromText() {
 }
                                    
 function checkIfTappedOnNoteOrHighlight(leftValue,topValue){
-            var tapLimitOffset = 30;
-            var noteElements = document.getElementsByTagName("kitabooNote");
-            for(var i = 0; i < noteElements.length; i++){
-                var noteElement = noteElements[i];
-                var rect = noteElement.getBoundingClientRect();
-                var noteLeft = rect.left + window.scrollX - (tapLimitOffset / 2);
-                var noteTop = rect.top + window.scrollY - (tapLimitOffset / 2);
-                var noteRight = noteLeft + rect.width + tapLimitOffset;
-                var noteBottom = noteTop + rect.height + tapLimitOffset;
-                if(leftValue >= noteLeft && leftValue <= noteRight && topValue >= noteTop && topValue <= noteBottom){
-                    return true;
-                }
-            }
-            return false;
+    var tapLimitOffset = 30;
+    var noteElements = document.getElementsByTagName("kitabooNote");
+    for(var i = 0; i < noteElements.length; i++){
+        var noteElement = noteElements[i];
+        var rect = noteElement.getBoundingClientRect();
+        var noteLeft = rect.left + window.scrollX - (tapLimitOffset / 2);
+        var noteTop = rect.top + window.scrollY - (tapLimitOffset / 2);
+        var noteRight = noteLeft + rect.width + tapLimitOffset;
+        var noteBottom = noteTop + rect.height + tapLimitOffset;
+        if(leftValue >= noteLeft && leftValue <= noteRight && topValue >= noteTop && topValue <= noteBottom){
+            return true;
+        }
+    }
+    return false;
 }
 function checkIfTappedOnSentence(leftValue,topValue){
         var tapLimitOffset = 30;
@@ -2721,6 +2729,22 @@ function checkIfTappedOnSentence(leftValue,topValue){
             }
         }
         return false;
+}
+function checkIfTappedOnSentenceForFixedEpub(leftValue,topValue){
+    var tapLimitOffset = 30;
+    var noteElements = document.getElementsByClassName("ttsSentence");
+    for(var i = 0; i < noteElements.length; i++){
+        var noteElement = noteElements[i];
+        var rect = noteElement.getBoundingClientRect();
+        var noteLeft = rect.left + window.scrollX - (tapLimitOffset / 2);
+        var noteTop = rect.top + window.scrollY - (tapLimitOffset / 2);
+        var noteRight = noteLeft + rect.width + tapLimitOffset;
+        var noteBottom = noteTop + rect.height + tapLimitOffset;
+        if(leftValue >= noteLeft && leftValue <= noteRight && topValue >= noteTop && topValue <= noteBottom){
+            return true;
+        }
+    }
+    return false;
 }
                                                            
 function highlightWordByWordId(wordId,color)

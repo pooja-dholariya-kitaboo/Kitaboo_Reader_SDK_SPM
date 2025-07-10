@@ -1,18 +1,20 @@
 
-kitabooNote {
+.kitabooNote {
     
     text-indent: 0em;
     /*padding: 0px;
     margin: 0px;*/
-    font-family: kitabooread;
+    font-family: kitabooread, sans-serif;
     text-align: center;
     position:absolute;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     opacity : 0.9;
     filter : alpha(opacity = 90);
 }
 
-kitabooNote, mark.yellowColor, mark.redColor, mark.blueColor{
+.kitabooNote, mark.yellowColor, mark.redColor, mark.blueColor{
     -webkit-touch-callout: none;
     -webkit-user-select: none;
 }
@@ -23,7 +25,7 @@ html { -webkit-touch-callout: none; }
 and (min-device-width : 375px)
 and (max-device-width : 667px){
     
-    kitabooNote {
+    .kitabooNote {
         
         /*left: 5px;*/
         font-size:15px;
@@ -37,7 +39,7 @@ and (max-device-width : 667px){
 and (min-device-width : 320px)
 and (max-device-width : 480px){
     
-    kitabooNote {
+    .kitabooNote {
         
         /*left: 5px;*/
         font-size:15px;
@@ -51,7 +53,7 @@ and (max-device-width : 480px){
 and (min-device-width : 320px)
 and (max-device-width : 568px){
     
-    kitabooNote {
+    .kitabooNote {
         
         /*left: 5px;*/
         font-size:15px;
@@ -67,7 +69,7 @@ and (max-device-width : 568px){
 and (min-device-width : 768px)
 and (max-device-width : 1024px){
     
-    kitabooNote {        
+    .kitabooNote {
         /*left: 5px;*/
         font-size:30px;
         width: 40px;
@@ -81,7 +83,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (-webkit-min-device-pixel-ratio: 2){
     
-    kitabooNote {
+    .kitabooNote {
         
         /*left: 5px;*/
         font-size:30px;
@@ -96,7 +98,7 @@ and (min-device-width : 768px)
 and (max-device-width : 1024px)
 and (-webkit-min-device-pixel-ratio: 1)  {
     
-   kitabooNote {
+   .kitabooNote {
         
         /*left: 5px;*/
         font-size:30px;

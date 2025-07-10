@@ -388,7 +388,7 @@ function Protractor(toolDefaults) {
 
 	var updateProtractorImg = function(cnv,ctx,ang,left,top) {
 		ctx.clearRect(0, 0, cnv.width, cnv.height);
-        cnv.width = cnv.width;
+//        cnv.width = cnv.width;
         
         protractorData.offX = cnv.offsetLeft;
         protractorData.offY = cnv.offsetTop;
@@ -422,7 +422,7 @@ function Protractor(toolDefaults) {
 
 	var drawLines = function(cnv,ctx,static) {
 		ctx.clearRect(0, 0, cnv.width, cnv.height);
-        cnv.width = cnv.width;
+//        cnv.width = cnv.width;
 
 	    var top = topData.angle * (180 / Math.PI),
 	    	hori = linesData.angle * (180 / Math.PI),

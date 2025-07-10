@@ -22,7 +22,7 @@ html {
 body {
 	height: 100vh;
 	width: 100vw;
-    font-family: OpenSans;
+    font-family: OpenSans, sans-serif;
     overflow: hidden;
 }
 
@@ -97,7 +97,7 @@ body {
     left: 10px;
     top: 20px;
     z-index: 4;
-    font-family: OpenSans;
+    font-family: OpenSans, sans-serif;
     background-color: rgba(128,128,128,0.7);
     line-height: 50px;
     text-align: center;

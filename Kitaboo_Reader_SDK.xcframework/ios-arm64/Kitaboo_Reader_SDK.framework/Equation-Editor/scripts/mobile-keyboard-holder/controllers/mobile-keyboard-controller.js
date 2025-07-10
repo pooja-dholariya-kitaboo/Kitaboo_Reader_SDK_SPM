@@ -1,8 +1,8 @@
 angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', function MobileKeyboardCtrl($scope, $timeout) {
     $scope.mobileKeyboardData = mobileKeyboardData;
-    $scope.hideKeyBoard = (sessionStorage.getItem('hideKeyBoard') == 1 || sessionStorage.getItem('hideKeyBoard') == "1") ? true : false;
+    $scope.hideKeyBoard = (sessionStorage.getItem('hideKeyBoard') == 1 || sessionStorage.getItem('hideKeyBoard') == "1");
     sessionStorage.removeItem('hideKeyBoard');
-    var timeout = null;
+    let timeout = null;
 
     timeout = $timeout(function () {
         $('.number').on('touchstart click', onNumberBtnClick);
@@ -24,8 +24,6 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         $('.enterclick').on('touchstart click', onenterbuttonclick);
         $('.done-btn').on('touchstart click', onDoneBtnClick);
         $('.txt-abc').on('touchstart click', onAbcBtnClick);
-        //$('.abcIcon').on('touchstart click', onAbcBtnClick);
-        // $scope.answerMathField.focus();
        
 
         if ($scope.hideKeyBoard) {
@@ -36,7 +34,7 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
             $('#math-equation-holder').focus();
         }
 
-        var containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('#draggable-element').height();
+        let containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('#draggable-element').height();
 
         $('#draggable-element').draggable({
             handle: ".drag-this",
@@ -45,7 +43,7 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         });
 
         window.addEventListener("resize", function () {
-            var containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('#draggable-element').height();
+            let containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('#draggable-element').height();
 
             $('#draggable-element').draggable({
                 handle: ".drag-this",
@@ -69,26 +67,26 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         });
     });
 
-    var onenterbuttonclick = function () {
+    let onenterbuttonclick = function () {
         window.enterPress();
     };
 
-    var onNumberBtnClick = function () {
+    let onNumberBtnClick = function () {
         $('.math').hide();
         $('.numberPanel').show();
     };
 
-    var oncapitalnumbersClick = function () {
+    let oncapitalnumbersClick = function () {
         $('.alfabetDiv').hide();
         $('.choosePanelUpperCase').show();
     };
 
-    var onMathBtnClick = function () {
+    let onMathBtnClick = function () {
         $('.math').show();
         $('.numberPanel').hide();
     };
 
-    var onArrowClick = function () {
+    let onArrowClick = function () {
         if ($('.overlay-modal').css('display') == 'none') {
             if ($('.numberPanel').css('display') == 'none') {
                 $('.navPanel').css('left', '16.5%');
@@ -105,11 +103,10 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         }
     };
 
-    var onChooseClick = function () {
+    let onChooseClick = function () {
         if ($('.overlay-modal').css('display') == 'none') {
             $('.overlay-modal').show();
             $('.choosePanel').show();
-            //$('.choosePanel3').show();
             $('.alfabetDiv').css('position', 'relative');
         } else {
             $('.overlay-modal').hide();
@@ -119,7 +116,7 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         }
     };
 
-    var onChooseClick1 = function () {
+    let onChooseClick1 = function () {
         if ($('.overlay-modal').css('display') == 'none') {
             $('.overlay-modal').show();
             $('.symbolPanel').show();
@@ -131,7 +128,7 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         }
     };
 
-    var onChooseClick2 = function () {
+    let onChooseClick2 = function () {
         if ($('.overlay-modal').css('display') == 'none') {
             $('.overlay-modal').show();
             $('.choosePanel2').show();
@@ -143,12 +140,10 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         }
     };
 
-    var onhideKeyBoardClick = function () {
-        //$scope.showkeboard = true;
-        //$('.mobile-keyboard').hide();
+    let onhideKeyBoardClick = function () {
         $('.math').hide();
         $('.showkeyboard').show();
-        var containmentBottom = $('body').height() - $('#draggable-element').height();
+        let containmentBottom = $('body').height() - $('#draggable-element').height();
         $('#draggable-element').draggable({
             handle: ".drag-this",
             scroll: false,
@@ -156,14 +151,14 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         });
     };
 
-    var onshowkeyboardClick = function () {
+    let onshowkeyboardClick = function () {
         $('#draggable-element').css("top", "");
         $('#draggable-element').css("left", "");
         
         window.setTimeout(function () {
             $('.math').show();
             $('.showkeyboard').hide();
-            var containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('#draggable-element').height();
+            let containmentBottom = $('body').height() - $(".mobile-keyboard").height() - $('#draggable-element').height();
 
             $('#draggable-element').draggable({
                 handle: ".drag-this",
@@ -173,27 +168,22 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         }, 200);
     };
 
-    // $scope.onshowkeboard =function(){
-    //     $('.math').show();
-    //     $('.showkeboard').hide();
-    // };
 
-    var onChooseClick3 = function () {
+    let onChooseClick3 = function () {
         $('.overlay-modal').show();
         $('.choosePanel3').show();
         $('.choosePanel').hide();
         $('.chooseDiv3').css('position', 'relative');
     };
 
-    var onChooseClick4 = function () {
+    let onChooseClick4 = function () {
         $('.overlay-modal').show();
         $('.choosePanel3').hide();
         $('.choosePanel').show();
-        //$('.math').show();
         $('.chooseDiv4').css('position', 'relative');
     };
 
-    var onOverlayClick = function () {
+    let onOverlayClick = function () {
         $('.overlay-modal').hide();
         $('.choosePanel').hide();
         $('.symbolPanel').hide();
@@ -210,11 +200,11 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
     $('.mq-root-block').focus();
     $('.text-area').focus();
 
-    var onMathquillTap = function () {
+    let onMathquillTap = function () {
         $scope.answerMathField.focus();
     };
 
-    var onKeyup = function () {
+    let onKeyup = function () {
         if ($('.errormsgtext')[0].style.display == 'block') {
             $('.equation-holder').css("border-color", "#b0b0b0");
             $('.errormsgtext').css("display", "none");
@@ -223,16 +213,14 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         }
     };
 
-    var onKeyTap = function (event) {
+    let onKeyTap = function (event) {
         event.preventDefault();
-        var arrDataLatex = $(event.currentTarget).attr('data-latex-val').split('-'),
+        let arrDataLatex = $(event.currentTarget).attr('data-latex-val').split('-'),
             split1 = arrDataLatex[0],
             split2 = arrDataLatex[1],
             split3 = arrDataLatex[2],
             latex = mobileKeyboardData[split1][split2][Number(split3) - 1].latex;
-        // spec = mobileKeyboardData[split1][split2][Number(split3)-1].spec,
-        // keyCodeData = mobileKeyboardData[split1][split2][Number(split3)-1].keyCodes;
-
+      
         if (latex !== undefined) {
             $.each(latex, function (index, obj) {
                 if (obj.indexOf('key') >= 0) {
@@ -250,19 +238,18 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
         }
     };
 
-    var onDoneBtnClick = function () {
+    let onDoneBtnClick = function () {
         window.setTimeout(function () {
-            var textdata = $('.mq-root-block').text();
+            let textdata = $('.mq-root-block').text();
 
             if (!textdata) {
                 $('.equation-holder').css("border-color", "red");
                 $('.errormsgtext').css("display", "block");
                 $('.hidemathkeyboardtext').css("top", "122px");
 
-                // document.getElementsByClassName('addBtn').style.pointerEvents = 'none';
             } else {
-                var answerSpan = $('.mq-root-block');
-                var metaString = {
+                let answerSpan = $('.mq-root-block');
+                let metaString = {
                     LinkID: $scope.LinkID,
                     editorData: {
                         'latex': $scope.answerMathField.latex(),
@@ -274,59 +261,37 @@ angular.module('mobileKeyboard-holder').controller('MobileKeyboardCtrl', functio
                 };
 
                 textdata = $scope.answerMathField.latex();
-                var encodedString = encodeURIComponent(JSON.stringify(metaString));
-//                window.top.getEquationData(encodedString, textdata);
+                let encodedString = encodeURIComponent(JSON.stringify(metaString));
                 $scope.nativeCallback(encodedString, textdata);
             }
         }, 200);
     };
   
-//    $scope.onDoneBtnClick = function(event) {
-//        var metaString = {
-//            'latex' : answerMathField.latex(),
-//            'height' : $(answerSpan).height(),
-//            'width' : $(answerSpan).width(),
-//            'fontSize' : $(answerSpan).css('font-size')
-//        };
-//
-//        var encodedString = encodeURIComponent(JSON.stringify(metaString));
-//        $scope.nativeCallback(encodedString);
-//    };
 
 
    
-    var onAbcBtnClick = function () {
-        var metaString = {
+    let onAbcBtnClick = function () {
+        let metaString = {
             'changeKeyboard': true,
             'latex': $scope.answerMathField.latex()
         };
-        var encodedString = encodeURIComponent(JSON.stringify(metaString));
+        let encodedString = encodeURIComponent(JSON.stringify(metaString));
         $scope.nativeCallback(encodedString, 'nothing');
     };
 
-//    $scope.nativeCallback = function (encodedString, answerMathField, data) {
-//        // var userAgent = window.navigator.userAgent;
-//        // this will set equation data inside equationEditor.js
-//        window.top.getEquationData(encodedString, answerMathField);
-//        // window.external.notify(encodedString);
-//    };
     $scope.nativeCallback = function(encodedString,textdata) {
-        var userAgent = window.navigator.userAgent;
+        let userAgent = window.navigator.userAgent;
 
         if(userAgent.indexOf('Android') !== -1)
         {
           window.android.getEquationData(encodedString);
         }
-        else if((userAgent.indexOf('iPad')!==-1 || userAgent.indexOf('iPhone')!==-1 | ((navigator.platform === 'MacIntel') && (navigator.maxTouchPoints > 1))))
+        else if((userAgent.indexOf('iPad')!==-1 || userAgent.indexOf('iPhone')!==-1 || ((navigator.platform === 'MacIntel') && (navigator.maxTouchPoints > 1))))
         {
           window.location ="getEquationData:"+encodedString;
         }
         else {
-          // if(window.external.notify)
-          // {
-//            window.top.getEquationData(encodedString, answerMathField);
             window.top.getEquationData(encodedString, textdata);
-          // }
         }
     };
     $scope.$on('$destroy', function () {

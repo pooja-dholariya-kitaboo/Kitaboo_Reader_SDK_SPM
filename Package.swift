@@ -25,7 +25,7 @@ let package = Package(
         ),
         .binaryTarget(
                     name: "KitabooSDK_SPM",
-                    path: "./Kitaboo_Reader_SDK.xcframework" // Adjust the path to your .xcframework
+                    path: "Kitaboo_Reader_SDK.xcframework" // Adjust the path to your .xcframework
                 )
     ]
 )

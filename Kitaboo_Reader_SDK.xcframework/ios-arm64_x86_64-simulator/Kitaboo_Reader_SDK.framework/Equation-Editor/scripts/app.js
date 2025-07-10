@@ -1,11 +1,10 @@
 angular.module('virtual-keyboard', ['ui.router', 'mobileKeyboard-holder']).controller('EquationMainController', function EquationMainController($scope, $state) {
-    $scope.hideKeyBoard = (sessionStorage.getItem('hideKeyBoard') == 1 || sessionStorage.getItem('hideKeyBoard') == "1") ? true : false;
-    //$scope.hideKeyBoard = true;
-	window.top.hidekeyboard = function(data) {
+    $scope.hideKeyBoard = (sessionStorage.getItem('hideKeyBoard') == 1 || sessionStorage.getItem('hideKeyBoard') == "1");
+    window.top.hidekeyboard = function(data) {
             console.log("hidekeyboard called")
             $scope.hideKeyBoard = data;
         }
-    var answerSpan = document.getElementById('math-equation-holder');
+    let answerSpan = document.getElementById('math-equation-holder');
     var MQ = MathQuill.getInterface(2); // keeps the API stable
     
     $scope.answerMathField = MQ.MathField(answerSpan, {
@@ -27,50 +26,10 @@ angular.module('virtual-keyboard', ['ui.router', 'mobileKeyboard-holder']).contr
         $scope.answerMathField.focus();
     };
     
-    //    window.top.dataCallback = function (data) {
-    //        if (data) {
-    //            var obj = data.activityVO;
-    //            var decodedLatex = JSON.parse(decodeURIComponent(obj.metadata));
-    //            $scope.LinkID = decodedLatex.LinkID;
-    //            if (decodedLatex.editorData && decodedLatex.editorData.latex) {
-    //                $scope.answerMathField.latex(decodedLatex.editorData.latex);
-    //            }
-    //
-    //            if (obj.submitted) {
-    //                // $scope.$evalAsync(function ($scope) {
-    //                //     $scope.hideKeyBoard = true;
-    //                // });
-    //
-    //                $('.equation-holder').addClass('disabledEqn');
-    //                $(".cancelBtn").css("left", "40%");
-    //            } else {
-    //                // $scope.$evalAsync(function ($scope) {
-    //                //     $scope.hideKeyBoard = false;
-    //                //     $scope.answerMathField.focus();
-    //                // });
-    //                $scope.answerMathField.focus();
-    //            }
-    //        } else {
-    //            // $scope.$evalAsync(function ($scope) {
-    //            //     $scope.hideKeyBoard = false;
-    //            //     $scope.answerMathField.focus();
-    //            // });
-    //            $scope.answerMathField.focus();
-    //        }
-    //    };
-    
-    
-    
-    
-    
-    
-    var incorrectAnswerSpan = document.getElementById('incorrect-ans-holder');
-    var correctAnswerSpan = document.getElementById('correct-ans-holder');
+    let incorrectAnswerSpan = document.getElementById('incorrect-ans-holder');
+    let correctAnswerSpan = document.getElementById('correct-ans-holder');
     var MQ = MathQuill.getInterface(2); // keeps the API stable
     $('#correctAnsView').hide();
-    //$('#answer-main-container').css({'width':'50%','left':'50%'});
-    //$('.incorrectfd').css({'width':'100%'});;
-    //$('.gotItBtn').css({'margin-right': '15px','margin-bottom': '7px'});
     
     $scope.incorrectAnswerMathField = MQ.MathField(incorrectAnswerSpan, {
     spaceBehavesLikeTab: false,
@@ -104,31 +63,19 @@ angular.module('virtual-keyboard', ['ui.router', 'mobileKeyboard-holder']).contr
         console.log("hidekeyboard called")
         $scope.hideKeyBoard = data;
     }
-  // $('#correctAnsView').show();
-//	 //$('#answer-main-container').css({'width': '80%'});
-//                        //$('.incorrectfd').css({'width': '50%','margin-right':'20px'});
-//    $scope.correctAnswerMathField.latex('√√√√√√√√√√√√√√√√√√√√√√√nxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmk');
-//   	$scope.incorrectAnswerMathField.latex("√√√√√√√√√√√√√√√√√√√√√√√nxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmknxsxnsksnxksnxxmskxmk");
-//    if($("#correctAnsView").is(":visible") == false){
-//        $('#answer-main-container').css({'width': '60%'});
-//        $('.incorrectfd').css({'width': '100%','margin-right':'20px','margin-bottom':'20px'});
-//        
-//    } 
   
     window.top.dataCallback = function (data,deviceType) {
-		console.log("hidekeyboard "+ atob(data))
+        console.log("hidekeyboard "+ atob(data))
 
 
-		var isHideKeyBoard = JSON.parse(atob(data)).hideKeyboard
-		console.log("hidekeyboard "+ atob(data))
+        let isHideKeyBoard = JSON.parse(atob(data)).hideKeyboard
+        console.log("hidekeyboard "+ atob(data))
         if(isHideKeyBoard){
             console.log("hidekeyboard called 1")
             
             if(deviceType == 'online'){
                 if (data) {
                     if(data.answer){
-                      //  $('#answer-main-container').css({'width': '80%'});
-                        //$('.incorrectfd').css({'width': '50%','margin-right':'20px'});
                         $('#correctAnsView').show();
                         
                         $scope.correctAnswerMathField.latex(data.answer);
@@ -137,9 +84,9 @@ angular.module('virtual-keyboard', ['ui.router', 'mobileKeyboard-holder']).contr
                     }
                     
                     
-                    var decodedLatex = JSON.parse(decodeURIComponent(data.activityVO.metadata));
+                    let decodedLatex = JSON.parse(decodeURIComponent(data.activityVO.metadata));
                     $scope.LinkID = decodedLatex.LinkID;
-                    if (decodedLatex.editorData && decodedLatex.editorData.latex) {
+                    if (decodedLatex.editorData?.latex) {
                         $scope.incorrectAnswerMathField.latex(decodedLatex.editorData.latex);
                         
                     }
@@ -150,12 +97,12 @@ angular.module('virtual-keyboard', ['ui.router', 'mobileKeyboard-holder']).contr
                 
                 $scope.incorrectAnswerMathField.latex(decodedLatex);
                 console.log("hidekeyboard "+ atob(data))
-                var decodedAnswer = JSON.parse(atob(data)).answer
+                let decodedAnswer = JSON.parse(atob(data)).answer
                 if(decodedAnswer){
                     $('#correctAnsView').show();
                    $scope.correctAnswerMathField.latex(decodedAnswer);
                 }else{
-                    var isNotInstantFeedBack = JSON.parse(atob(data)).isNotInstantFeedBack
+                    let isNotInstantFeedBack = JSON.parse(atob(data)).isNotInstantFeedBack
                     if(isNotInstantFeedBack){
                         $('.incorrect-ans-containerPara').text('');
                     }
@@ -172,7 +119,7 @@ angular.module('virtual-keyboard', ['ui.router', 'mobileKeyboard-holder']).contr
         $('#answer-main-container').css({'width': '60%'});
         $('.incorrectfd').css({'width': '100%','margin-right':'20px','margin-bottom':'20px'});
         
-    } 
+    }
             
             
             
@@ -180,16 +127,13 @@ angular.module('virtual-keyboard', ['ui.router', 'mobileKeyboard-holder']).contr
             
             
             
-        } else{
+        } else {
             if (data) {
-                        var decodedLatex = JSON.parse(atob(data)).latex;
+                let decodedLatex = JSON.parse(atob(data)).latex;
                 $scope.answerMathField.latex(decodedLatex);
-                  $scope.answerMathField.focus();
-                                } else {
-                     
-                        $scope.answerMathField.focus();
-                    }
-                            }
+            }
+            $scope.answerMathField.focus();
+        }
                             
                             
                             

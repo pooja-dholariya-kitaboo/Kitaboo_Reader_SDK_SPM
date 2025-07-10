@@ -153,6 +153,7 @@ public enum AssetType {
   @_Concurrency.MainActor @preconcurrency public var isHighlightEnabled: Swift.Bool
   @_Concurrency.MainActor @preconcurrency public var bookThumbnailImage: Swift.String?
   @_Concurrency.MainActor @preconcurrency public var isTTSEnabled: Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public var isThumbnailForReflowableEnabled: Swift.Bool
   @_Concurrency.MainActor @preconcurrency public var setWebViewTextSelectionHandleColor: UIKit.UIColor
   @_Concurrency.MainActor @preconcurrency public init(bookPath: Swift.String, assetType: Kitaboo_Reader_SDK.AssetType, delegate: any Kitaboo_Reader_SDK.RendererViewControllerDelegate)
   @_Concurrency.MainActor @preconcurrency public init?(bookPath: Swift.String, delegate: any Kitaboo_Reader_SDK.RendererViewControllerDelegate)
@@ -256,6 +257,9 @@ public enum AssetType {
   @_Concurrency.MainActor @preconcurrency @objc public func moveToPreviousSelectedSearch(for searchResult: Kitaboo_Reader_SDK.TextSearchResult)
   @_Concurrency.MainActor @preconcurrency @objc public func isNextSearchResultAvailable(for searchResult: Kitaboo_Reader_SDK.TextSearchResult) -> Swift.Bool
   @_Concurrency.MainActor @preconcurrency @objc public func isPreviousSearchResultAvailable(for searchResult: Kitaboo_Reader_SDK.TextSearchResult) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func isPreviousPageInLandScapeCase(for searchResult: Kitaboo_Reader_SDK.TextSearchResult) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func isNextPageInLandScapeCase(for searchResult: Kitaboo_Reader_SDK.TextSearchResult) -> Swift.Bool
+  @_Concurrency.MainActor @preconcurrency public func resetCurrentIndex()
   @_Concurrency.MainActor @preconcurrency public func getFirstVisibleWordForScreen(withCallBack callback: @escaping ([Swift.AnyHashable : Any]?) -> Swift.Void)
   @_Concurrency.MainActor @preconcurrency public func enableFurthestPage(_ isEnable: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency public func isFurthestPageEnabled() -> Swift.Bool
@@ -996,13 +1000,18 @@ extension Kitaboo_Reader_SDK.SDKHLSDownloadInfo {
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc open class HDThemeManager_6_0 : ObjectiveC.NSObject {
   @objc public static let shared: Kitaboo_Reader_SDK.HDThemeManager_6_0
   @objc public var mediaTheme: Kitaboo_Reader_SDK.BookShelfThemeFor_V6_0?
+  @objc open func updateTheme()
   @objc deinit
 }
 @_inheritsConvenienceInitializers @objc open class HDThemeReferer : ObjectiveC.NSObject {
+  @objc open func getMediaThemeNameForReader() -> Swift.String
+  @objc open func getInverseThemeNameforReader() -> Swift.String
+  @objc public func isDarkModeOn() -> Swift.Bool
   @objc override dynamic public init()
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency public class KitabooReader : UIKit.UIViewController, UIKit.UIPageViewControllerDelegate, UIKit.UIPageViewControllerDataSource, UIKit.UIGestureRecognizerDelegate {
+  @_Concurrency.MainActor @preconcurrency public var currentSearchResultIndex: Swift.Int
   @_Concurrency.MainActor @preconcurrency @objc dynamic public init()
   @_Concurrency.MainActor @preconcurrency public init(assetPath: Swift.String)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
@@ -1394,6 +1403,7 @@ public enum MultiLevelExpandStatus : Swift.Int {
   @objc open func getPrintData(userToken: Swift.String, bookId: Swift.String) -> Foundation.URLRequest
   @objc open func savePrintData(userToken: Swift.String, lastPageData: [Swift.String : Swift.AnyObject], bookID: Swift.String) -> Foundation.URLRequest
   @objc open func getCustomePDFPages(userToken: Swift.String, lastPageData: [Swift.String : Swift.AnyObject], bookID: Swift.String) -> Foundation.URLRequest
+  @objc open func getKAIStatus(userToken: Swift.String) -> Foundation.URLRequest
   @objc deinit
 }
 extension Kitaboo_Reader_SDK.SCORMData {
@@ -2794,6 +2804,7 @@ extension Kitaboo_Reader_SDK.InfomationPopOverContentViewController {
   @objc public static let ICON_RADIO_SELECTED: Swift.String
   @objc public static let ICON_RADIO_UNSELECTED: Swift.String
   @objc public static let ICON_MULTILEVEL_CHAPTER_DROP_DOWN: Swift.String
+  @objc public static let ICON_K_AI: Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -3280,6 +3291,7 @@ public enum kTextSearchCaseType : Swift.Int {
   @objc public func getUserPrintData(userToken: Swift.String, bookID: Swift.String, successHandler: @escaping (_ json: Swift.Dictionary<Swift.String, Any>) -> (), failureHandler: @escaping (_ error: any Swift.Error) -> ())
   @objc public func saveUserPrintData(_ userToken: Swift.String, lastPageData: Foundation.NSMutableDictionary, bookID: Swift.String, successHandler: @escaping (_ json: Swift.Dictionary<Swift.String, Any>) -> (), failureHandler: @escaping (_ error: any Swift.Error) -> ())
   @objc public func getCustomePDFPages(_ userToken: Swift.String, pagesData: Foundation.NSMutableDictionary, bookID: Swift.String, successHandler: @escaping (_ json: Swift.Dictionary<Swift.String, Any>) -> (), failureHandler: @escaping (_ error: any Swift.Error) -> ())
+  @objc public func getKAIStatus(microServiceUrl: Swift.String, userToken: Swift.String, successHandler: @escaping (_ json: Swift.Dictionary<Swift.String, Any>) -> (), failureHandler: @escaping (_ error: any Swift.Error) -> ())
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class HDMoviePlayerController : MediaPlayer.MPMoviePlayerController, UIKit.UIGestureRecognizerDelegate {
@@ -3440,302 +3452,304 @@ extension Kitaboo_Reader_SDK.LinkDropDownViewController : UIKit.UITableViewDataS
   @_Concurrency.MainActor @preconcurrency @objc public func webView(_ webView: WebKit.WKWebView, createWebViewWith configuration: WebKit.WKWebViewConfiguration, for navigationAction: WebKit.WKNavigationAction, windowFeatures: WebKit.WKWindowFeatures) -> WebKit.WKWebView?
 }
 @_hasMissingDesignatedInitializers @objc open class BookShelfThemeFor_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let kitaboo6_0: Kitaboo_Reader_SDK.Kitaboo6_0_V6_0?
-  @objc final public let signin: Kitaboo_Reader_SDK.Signin_V6_0?
-  @objc final public let bookshelf: Kitaboo_Reader_SDK.WelcomeBookshelf_V6_0?
-  @objc final public let reader: Kitaboo_Reader_SDK.WelcomeReader_V6_0?
-  @objc final public let audioVideoBookPlayer: Kitaboo_Reader_SDK.WelcomeAudioVideoBookPlayer_V6_0?
-  @objc final public let darkMode: Kitaboo_Reader_SDK.DarkMode_V6_0?
+  @objc public var kitaboo6_0: Kitaboo_Reader_SDK.Kitaboo6_0_V6_0?
+  @objc public var signin: Kitaboo_Reader_SDK.Signin_V6_0?
+  @objc public var bookshelf: Kitaboo_Reader_SDK.WelcomeBookshelf_V6_0?
+  @objc public var reader: Kitaboo_Reader_SDK.WelcomeReader_V6_0?
+  @objc public var audioVideoBookPlayer: Kitaboo_Reader_SDK.WelcomeAudioVideoBookPlayer_V6_0?
+  @objc public var darkMode: Kitaboo_Reader_SDK.DarkMode_V6_0?
+  @objc public var kai: Kitaboo_Reader_SDK.KAI_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class WelcomeAudioVideoBookPlayer_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let toppanel: Kitaboo_Reader_SDK.Toppanel_V6_0?
-  @objc final public let sidepanel: Kitaboo_Reader_SDK.Sidepanel_V6_0?
-  @objc final public let audioBookCover: Kitaboo_Reader_SDK.AudioBookCover_V6_0?
-  @objc final public let audioVideoSlider: Kitaboo_Reader_SDK.AudioVideoSlider_V6_0?
-  @objc final public let allPopups: Kitaboo_Reader_SDK.AllPopups_V6_0?
-  @objc final public let toastmessage: Kitaboo_Reader_SDK.Toastmessage_V6_0?
-  @objc final public let videoPlayer: Kitaboo_Reader_SDK.VideoPlayer_V6_0?
+  @objc public var toppanel: Kitaboo_Reader_SDK.Toppanel_V6_0?
+  @objc public var sidepanel: Kitaboo_Reader_SDK.Sidepanel_V6_0?
+  @objc public var audioBookCover: Kitaboo_Reader_SDK.AudioBookCover_V6_0?
+  @objc public var audioVideoSlider: Kitaboo_Reader_SDK.AudioVideoSlider_V6_0?
+  @objc public var allPopups: Kitaboo_Reader_SDK.AllPopups_V6_0?
+  @objc public var toastmessage: Kitaboo_Reader_SDK.Toastmessage_V6_0?
+  @objc public var videoPlayer: Kitaboo_Reader_SDK.VideoPlayer_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AllPopups_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
-  @objc final public let popup: Kitaboo_Reader_SDK.AllPopupsPopup_V6_0?
+  @objc public var overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
+  @objc public var popup: Kitaboo_Reader_SDK.AllPopupsPopup_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class OverlayPanel_V6_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, opacity: Swift.String?, backgroundHTML: Swift.String?
+  @objc public var background: Swift.String?, opacity: Swift.String?, backgroundHTML: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AllPopupsPopup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let border: Swift.String?, titleTextColor: Swift.String?, hintTextColor: Swift.String?, inputTextColor: Swift.String?
-  @objc final public let lineColor: Swift.String?, selectedLineColour: Swift.String?, timeTextColor: Swift.String?, speedTextColor: Swift.String?
-  @objc final public let selectedSpeedTextColor: Swift.String?, selectedSleepTextColor: Swift.String?, checkIconColor: Swift.String?
-  @objc final public let actionButton: Kitaboo_Reader_SDK.ActionButton_V6_V6_0?
-  @objc final public let descriptionTextColor: Swift.String?
-  @objc final public let deleteButton: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
+  @objc public var background: Swift.String?
+  @objc public var border: Swift.String?, titleTextColor: Swift.String?, hintTextColor: Swift.String?, inputTextColor: Swift.String?
+  @objc public var lineColor: Swift.String?, selectedLineColour: Swift.String?, timeTextColor: Swift.String?, speedTextColor: Swift.String?
+  @objc public var selectedSpeedTextColor: Swift.String?, selectedSleepTextColor: Swift.String?, checkIconColor: Swift.String?
+  @objc public var actionButton: Kitaboo_Reader_SDK.ActionButton_V6_V6_0?
+  @objc public var descriptionTextColor: Swift.String?
+  @objc public var deleteButton: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ActionButton_V6_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let main: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
-  @objc final public let cancel: Kitaboo_Reader_SDK.Cancel_V6_0?
+  @objc public var main: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
+  @objc public var cancel: Kitaboo_Reader_SDK.Cancel_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Cancel_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let borderColor: Swift.String?, textColor: Swift.String?
+  @objc public var borderColor: Swift.String?, textColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class DeSelectedButton_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let textColor: Swift.String?
+  @objc public var background: Swift.String?
+  @objc public var textColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AudioBookCover_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let shadowColor: Swift.String?, opacity: Swift.String?, boxShadow: Swift.String?, rgba: Swift.String?
-  @objc final public let backgroundColor: Swift.String?
+  @objc public var shadowColor: Swift.String?, opacity: Swift.String?, boxShadow: Swift.String?, rgba: Swift.String?
+  @objc public var backgroundColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AudioVideoSlider_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let sliderColor: Swift.String?, chapterIconColor: Swift.String?, sliderFilledColor: Swift.String?
-  @objc final public let slideController: Kitaboo_Reader_SDK.SlideController_V6_0?
-  @objc final public let defaultTimetextColor: Swift.String?, currentTimetextColor: Swift.String?
-  @objc final public let chapterTitleColor: Swift.String?
-  @objc final public let chapterCountTextColor: Swift.String?
-  @objc final public let navigationArrowColor: Swift.String?
-  @objc final public let disabledNavigationArrowColor: Swift.String?
-  @objc final public let iconColor: Swift.String?
-  @objc final public let selectedIconColor: Swift.String?
-  @objc final public let selectedIconBg: Swift.String?
-  @objc final public let chapterThumbnailProgressBarColor: Swift.String?
+  @objc public var sliderColor: Swift.String?, chapterIconColor: Swift.String?, sliderFilledColor: Swift.String?
+  @objc public var slideController: Kitaboo_Reader_SDK.SlideController_V6_0?
+  @objc public var defaultTimetextColor: Swift.String?, currentTimetextColor: Swift.String?
+  @objc public var chapterTitleColor: Swift.String?
+  @objc public var chapterCountTextColor: Swift.String?
+  @objc public var navigationArrowColor: Swift.String?
+  @objc public var disabledNavigationArrowColor: Swift.String?
+  @objc public var iconColor: Swift.String?
+  @objc public var selectedIconColor: Swift.String?
+  @objc public var selectedIconBg: Swift.String?
+  @objc public var chapterThumbnailProgressBarColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SlideController_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let controllerColor: Swift.String?, opacity: Swift.String?, backgroundHTML: Swift.String?
+  @objc public var controllerColor: Swift.String?, opacity: Swift.String?, backgroundHTML: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Sidepanel_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, tabBg: Swift.String?
-  @objc final public let tabBorder: Swift.String?, tabTextColor: Swift.String?, selectedTabBorder: Swift.String?, selectedTextColor: Swift.String?
-  @objc final public let selectedChapter: Kitaboo_Reader_SDK.SelectedChapter_V6_0?
-  @objc final public let titleColor: Swift.String?, descriptionColor: Swift.String?, timeColor: Swift.String?, iconsColor: Swift.String?
-  @objc final public let deleteIconColor: Swift.String?, dividerColor: Swift.String?
+  @objc public var background: Swift.String?, tabBg: Swift.String?
+  @objc public var tabBorder: Swift.String?, tabTextColor: Swift.String?, selectedTabBorder: Swift.String?, selectedTextColor: Swift.String?
+  @objc public var selectedChapter: Kitaboo_Reader_SDK.SelectedChapter_V6_0?
+  @objc public var titleColor: Swift.String?, descriptionColor: Swift.String?, timeColor: Swift.String?, iconsColor: Swift.String?
+  @objc public var deleteIconColor: Swift.String?, dividerColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SelectedChapter_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, titleColor: Swift.String?, chapterTimeColor: Swift.String?, iconColor: Swift.String?
+  @objc public var background: Swift.String?, titleColor: Swift.String?, chapterTimeColor: Swift.String?, iconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Toastmessage_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let backgroundColor: Swift.String?, color: Swift.String?
+  @objc public var backgroundColor: Swift.String?, color: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Toppanel_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let iconsColor: Swift.String?, bookTitleTextColor: Swift.String?, bottomLine: Swift.String?
+  @objc public var background: Swift.String?
+  @objc public var iconsColor: Swift.String?, bookTitleTextColor: Swift.String?, bottomLine: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class VideoPlayer_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let videoControls: Kitaboo_Reader_SDK.VideoControls_V6_0?
+  @objc public var videoControls: Kitaboo_Reader_SDK.VideoControls_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class VideoControls_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let playPauseIconBackgroundColor: Swift.String?, iconColor: Swift.String?, playerBackground: Swift.String?
+  @objc public var playPauseIconBackgroundColor: Swift.String?, iconColor: Swift.String?, playerBackground: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class WelcomeBookshelf_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let header: Swift.String?, searchOutline: Swift.String?, searchText: Swift.String?, icons: Swift.String?, Header_icons: Swift.String?
-  @objc final public let horizontalDivider: Swift.String?, background: Swift.String?, titleText: Swift.String?, contentTitle: Swift.String?
-  @objc final public let viewAllText: Swift.String?, type: Swift.String?, progressBar: Swift.String?, progressBackground: Swift.String?
-  @objc final public let cardProgressbarFillBgcolor: Swift.String?, cardProgressbarFillBuffercolor: Swift.String?
-  @objc final public let bookshelfSortby: Kitaboo_Reader_SDK.BookshelfSortby_V6_0?
-  @objc final public let bookshelfInfoPopup: Kitaboo_Reader_SDK.BookshelfInfoPopup_V6_0?
-  @objc final public let bottomBar: Kitaboo_Reader_SDK.BottomBar_V6_0?
-  @objc final public let categoryLeftPanel: Kitaboo_Reader_SDK.CategoryLeftPanel_V6_0?
-  @objc final public let categoryRightShelf: Kitaboo_Reader_SDK.CategoryRightShelf_V6_0?
-  @objc final public let recentShelf: Kitaboo_Reader_SDK.RecentShelf_V6_0?
-  @objc final public let popup: Kitaboo_Reader_SDK.Popup_V6_0?
-  @objc final public let aboutThis: Kitaboo_Reader_SDK.AboutThis_V6_0?
-  @objc final public let profile: Kitaboo_Reader_SDK.BookshelfProfile_V6_0?
-  @objc final public let search: Kitaboo_Reader_SDK.BookshelfSearch_V6_V6_0?
-  @objc final public let aboutUs: Kitaboo_Reader_SDK.AboutUs_V6_0?
-  @objc final public let analytics: Kitaboo_Reader_SDK.Analytics_V6_V6_0?
-  @objc final public let footer: Kitaboo_Reader_SDK.Footer_V6_0?
+  @objc public var header: Swift.String?, searchOutline: Swift.String?, searchText: Swift.String?, icons: Swift.String?, Header_icons: Swift.String?
+  @objc public var horizontalDivider: Swift.String?, background: Swift.String?, titleText: Swift.String?, contentTitle: Swift.String?
+  @objc public var viewAllText: Swift.String?, type: Swift.String?, progressBar: Swift.String?, progressBackground: Swift.String?
+  @objc public var cardProgressbarFillBgcolor: Swift.String?, cardProgressbarFillBuffercolor: Swift.String?
+  @objc public var bookshelfSortby: Kitaboo_Reader_SDK.BookshelfSortby_V6_0?
+  @objc public var bookshelfInfoPopup: Kitaboo_Reader_SDK.BookshelfInfoPopup_V6_0?
+  @objc public var bottomBar: Kitaboo_Reader_SDK.BottomBar_V6_0?
+  @objc public var categoryLeftPanel: Kitaboo_Reader_SDK.CategoryLeftPanel_V6_0?
+  @objc public var categoryRightShelf: Kitaboo_Reader_SDK.CategoryRightShelf_V6_0?
+  @objc public var recentShelf: Kitaboo_Reader_SDK.RecentShelf_V6_0?
+  @objc public var popup: Kitaboo_Reader_SDK.Popup_V6_0?
+  @objc public var aboutThis: Kitaboo_Reader_SDK.AboutThis_V6_0?
+  @objc public var profile: Kitaboo_Reader_SDK.BookshelfProfile_V6_0?
+  @objc public var search: Kitaboo_Reader_SDK.BookshelfSearch_V6_V6_0?
+  @objc public var aboutUs: Kitaboo_Reader_SDK.AboutUs_V6_0?
+  @objc public var analytics: Kitaboo_Reader_SDK.Analytics_V6_V6_0?
+  @objc public var footer: Kitaboo_Reader_SDK.Footer_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AboutThis_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let header: Swift.String?, background: Swift.String?, horizontalDivider: Swift.String?, readProgressBar: Swift.String?
-  @objc final public let chapterNumber: Swift.String?, collectionSingleSelect: Swift.String?, favouriteNonselected: Swift.String?, favouriteSelected: Swift.String?
-  @objc final public let favouriteBackground: Swift.String?, readNowBackground: Swift.String?, readNowText: Swift.String?, analytics: Swift.String?
-  @objc final public let analyticsOutline: Swift.String?, analyticsText: Swift.String?, title: Swift.String?, format: Swift.String?
-  @objc final public let tabSelected: Swift.String?, tabDeselected: Swift.String?, descriptionV6: Swift.String?, categoryLabel: Swift.String?
-  @objc final public let iconsColor: Swift.String?, downloadingButtonProgress: Swift.String?, Selected_Tab_Text: Swift.String?, Selected_collection_background: Swift.String?
+  @objc public var header: Swift.String?, background: Swift.String?, horizontalDivider: Swift.String?, readProgressBar: Swift.String?
+  @objc public var chapterNumber: Swift.String?, collectionSingleSelect: Swift.String?, favouriteNonselected: Swift.String?, favouriteSelected: Swift.String?
+  @objc public var favouriteBackground: Swift.String?, readNowBackground: Swift.String?, readNowText: Swift.String?, analytics: Swift.String?
+  @objc public var analyticsOutline: Swift.String?, analyticsText: Swift.String?, title: Swift.String?, format: Swift.String?
+  @objc public var tabSelected: Swift.String?, tabDeselected: Swift.String?, descriptionV6: Swift.String?, categoryLabel: Swift.String?
+  @objc public var iconsColor: Swift.String?, downloadingButtonProgress: Swift.String?, Selected_Tab_Text: Swift.String?, Selected_collection_background: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AboutUs_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let backgroundColor: Swift.String?, backgroundImage: Swift.String?, closeIconColor: Swift.String?, textColor: Swift.String?, descriptionTextColor: Swift.String?, iconsColor: Swift.String?
-  @objc final public let gradientColor: Kitaboo_Reader_SDK.GradientColor_V6_0?
-  @objc final public let svg: Kitaboo_Reader_SDK.SVG_V6_0?
+  @objc public var backgroundColor: Swift.String?, backgroundImage: Swift.String?, closeIconColor: Swift.String?, textColor: Swift.String?, descriptionTextColor: Swift.String?, iconsColor: Swift.String?
+  @objc public var gradientColor: Kitaboo_Reader_SDK.GradientColor_V6_0?
+  @objc public var svg: Kitaboo_Reader_SDK.SVG_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class GradientColor_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let color: Swift.String?
-  @objc final public let opacity: [Swift.String]?
+  @objc public var color: Swift.String?
+  @objc public var opacity: [Swift.String]?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SVG_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let opacity: Swift.String?, color: Swift.String?, backgroundHTML: Swift.String?
+  @objc public var opacity: Swift.String?, color: Swift.String?, backgroundHTML: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Analytics_V6_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let headerBackground: Swift.String?, backArrowHeader: Swift.String?, horizontalDivider: Swift.String?, background: Swift.String?
-  @objc final public let title: Swift.String?, format: Swift.String?, icons: Swift.String?, divider: Swift.String?
-  @objc final public let sectionBackground: Swift.String?, sectionSelected: Swift.String?, sectionNonselected: Swift.String?, boxShadow: Swift.String?
-  @objc final public let cardText: Swift.String?, tabSelected: Swift.String?, dropdownIconColor: Swift.String?, classLabel: Swift.String?
-  @objc final public let cardProgressbarFillBgcolor: Swift.String?, cardProgressbarFillBuffercolor: Swift.String?, back_arrow: Swift.String?, header: Swift.String?, selected_Tab_Background: Swift.String?, selected_Tab_Left_Border: Swift.String?, selected_Tab_Icon: Swift.String?
+  @objc public var headerBackground: Swift.String?, backArrowHeader: Swift.String?, horizontalDivider: Swift.String?, background: Swift.String?
+  @objc public var title: Swift.String?, format: Swift.String?, icons: Swift.String?, divider: Swift.String?
+  @objc public var sectionBackground: Swift.String?, sectionSelected: Swift.String?, sectionNonselected: Swift.String?, boxShadow: Swift.String?
+  @objc public var cardText: Swift.String?, tabSelected: Swift.String?, dropdownIconColor: Swift.String?, classLabel: Swift.String?
+  @objc public var cardProgressbarFillBgcolor: Swift.String?, cardProgressbarFillBuffercolor: Swift.String?, back_arrow: Swift.String?, header: Swift.String?, selected_Tab_Background: Swift.String?, selected_Tab_Left_Border: Swift.String?, selected_Tab_Icon: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class BookshelfInfoPopup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, contentTitle: Swift.String?, divider: Swift.String?, optionText: Swift.String?
-  @objc final public let optionIcon: Swift.String?
+  @objc public var background: Swift.String?, contentTitle: Swift.String?, divider: Swift.String?, optionText: Swift.String?
+  @objc public var optionIcon: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class BookshelfSortby_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let titleText: Swift.String?, sectionHeader: Swift.String?, sectionBackground: Swift.String?, sectionOptionText: Swift.String?
-  @objc final public let selectedTextColour: Swift.String?, selectTextTick: Swift.String?, background: Swift.String?, mouseHover: Swift.String?
+  @objc public var titleText: Swift.String?, sectionHeader: Swift.String?, sectionBackground: Swift.String?, sectionOptionText: Swift.String?
+  @objc public var selectedTextColour: Swift.String?, selectTextTick: Swift.String?, background: Swift.String?, mouseHover: Swift.String?
+  @objc public var panelBackground: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class BottomBar_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let iconsColor: Swift.String?, selectedIconColor: Swift.String?, recentIconColour: Swift.String?, selectedRecentIcon: Swift.String?
-  @objc final public let selectedRecentButtonBg: Swift.String?
+  @objc public var background: Swift.String?
+  @objc public var iconsColor: Swift.String?, selectedIconColor: Swift.String?, recentIconColour: Swift.String?, selectedRecentIcon: Swift.String?
+  @objc public var selectedRecentButtonBg: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class CategoryLeftPanel_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, verticalDivider: Swift.String?, categoriesTextColor: Swift.String?, categoriesTextSelectedColorLine: Swift.String?, Categories_text_selected_color: Swift.String?, Categories_selected_icon_color: Swift.String?, Search_Categories_input_border: Swift.String?, Search_Categories_input_color: Swift.String?, Search_Categories_icon_color: Swift.String?
-  @objc final public let categoriesTextSelectedBar: Swift.String?, title: Swift.String?, close: Swift.String?
+  @objc public var background: Swift.String?, verticalDivider: Swift.String?, categoriesTextColor: Swift.String?, categoriesTextSelectedColorLine: Swift.String?, Categories_text_selected_color: Swift.String?, Categories_selected_icon_color: Swift.String?, Search_Categories_input_border: Swift.String?, Search_Categories_input_color: Swift.String?, Search_Categories_icon_color: Swift.String?
+  @objc public var categoriesTextSelectedBar: Swift.String?, title: Swift.String?, close: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class CategoryRightShelf_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, hamburgerMenu: Swift.String?, categoriesTextColor: Swift.String?, viewAll: Swift.String?
-  @objc final public let readProgressBar: Swift.String?, coverEmptyBackgroound: Swift.String?, title: Swift.String?, format: Swift.String?
-  @objc final public let moreIcon: Swift.String?, tooltipBackground: Swift.String?, tooltipText: Swift.String?, arrowColorDisabled: Swift.String?
-  @objc final public let arrowColor: Swift.String?
+  @objc public var background: Swift.String?, hamburgerMenu: Swift.String?, categoriesTextColor: Swift.String?, viewAll: Swift.String?
+  @objc public var readProgressBar: Swift.String?, coverEmptyBackgroound: Swift.String?, title: Swift.String?, format: Swift.String?
+  @objc public var moreIcon: Swift.String?, tooltipBackground: Swift.String?, tooltipText: Swift.String?, arrowColorDisabled: Swift.String?
+  @objc public var arrowColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Footer_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let boxShadow: Swift.String?, boarder: Swift.String?, text: Swift.String?, icon: Swift.String?
-  @objc final public let active: Swift.String?
-  @objc final public let color: Swift.String?
+  @objc public var boxShadow: Swift.String?, boarder: Swift.String?, text: Swift.String?, icon: Swift.String?
+  @objc public var active: Swift.String?
+  @objc public var color: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Popup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, header: Swift.String?, contentTitle: Swift.String?, divider: Swift.String?
-  @objc final public let optionTextIcon: Swift.String?, outlineTextButton: Swift.String?, fillButton: Swift.String?, fillButtonTextIcon: Swift.String?
-  @objc final public let deleteButton: Swift.String?, deleteButtonTextIcon: Swift.String?, selectTextTick: Swift.String?, sectionClassHeader: Swift.String?
-  @objc final public let nonSelect: Swift.String?, boxShadow: Swift.String?, bookmarkPopupInstructionText: Swift.String?, sortByBackground: Swift.String?
-  @objc final public let titleAuthorPublishedDate: Swift.String?, innerBackground: Swift.String?
+  @objc public var background: Swift.String?, header: Swift.String?, contentTitle: Swift.String?, divider: Swift.String?
+  @objc public var optionTextIcon: Swift.String?, outlineTextButton: Swift.String?, fillButton: Swift.String?, fillButtonTextIcon: Swift.String?
+  @objc public var deleteButton: Swift.String?, deleteButtonTextIcon: Swift.String?, selectTextTick: Swift.String?, sectionClassHeader: Swift.String?
+  @objc public var nonSelect: Swift.String?, boxShadow: Swift.String?, bookmarkPopupInstructionText: Swift.String?, sortByBackground: Swift.String?
+  @objc public var titleAuthorPublishedDate: Swift.String?, innerBackground: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class BookshelfProfile_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let title: Swift.String?, leftBackground: Swift.String?, label: Swift.String?, sectionBackground: Swift.String?
-  @objc final public let selectedSectionText: Swift.String?, sectionHeaderPersonalinfoGeneralLegal: Swift.String?, sectionCardBackground: Swift.String?, profilerightBackground: Swift.String?
-  @objc final public let contentTitle: Swift.String?, inputOutline: Swift.String?, inputText: Swift.String?, inputTextLabel: Swift.String?
-  @objc final public let editProfile: Swift.String?, editIcon: Swift.String?, profileOutline: Swift.String?, saveDisabled: Swift.String?
-  @objc final public let saveEnabled: Swift.String?, saveText: Swift.String?, cancelDisabled: Swift.String?, cancelOutlineText: Swift.String?, Cancel_Outline: Swift.String?
-  @objc final public let cancelBackground: Swift.String?, errorMessage: Swift.String?, signOut: Swift.String?, aboutusCard: Swift.String?
-  @objc final public let emailidColor: Swift.String?, divider: Swift.String?, iconColor: Swift.String?, selectedLanguage: Swift.String?, Cancel_Text: Swift.String?
-  @objc final public let langaugeArrow: Swift.String?, topbar_background: Swift.String?, back_icon_color: Swift.String?, Selected_tab_icon: Swift.String?, Selected_tab_left_border: Swift.String?
-  @objc final public let shareFeedback: Kitaboo_Reader_SDK.ShareFeedback_V6_0?
-  @objc final public let signoutButton: Kitaboo_Reader_SDK.SignoutButton_V6_0?
+  @objc public var title: Swift.String?, leftBackground: Swift.String?, label: Swift.String?, sectionBackground: Swift.String?
+  @objc public var selectedSectionText: Swift.String?, sectionHeaderPersonalinfoGeneralLegal: Swift.String?, sectionCardBackground: Swift.String?, profilerightBackground: Swift.String?
+  @objc public var contentTitle: Swift.String?, inputOutline: Swift.String?, inputText: Swift.String?, inputTextLabel: Swift.String?
+  @objc public var editProfile: Swift.String?, editIcon: Swift.String?, profileOutline: Swift.String?, saveDisabled: Swift.String?
+  @objc public var saveEnabled: Swift.String?, saveText: Swift.String?, cancelDisabled: Swift.String?, cancelOutlineText: Swift.String?, Cancel_Outline: Swift.String?
+  @objc public var cancelBackground: Swift.String?, errorMessage: Swift.String?, signOut: Swift.String?, aboutusCard: Swift.String?
+  @objc public var emailidColor: Swift.String?, divider: Swift.String?, iconColor: Swift.String?, selectedLanguage: Swift.String?, Cancel_Text: Swift.String?
+  @objc public var langaugeArrow: Swift.String?, topbar_background: Swift.String?, back_icon_color: Swift.String?, Selected_tab_icon: Swift.String?, Selected_tab_left_border: Swift.String?
+  @objc public var shareFeedback: Kitaboo_Reader_SDK.ShareFeedback_V6_0?
+  @objc public var signoutButton: Kitaboo_Reader_SDK.SignoutButton_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class RecentShelf_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, categoriesTextColor: Swift.String?, viewAll: Swift.String?, readProgressBar: Swift.String?
-  @objc final public let title: Swift.String?, format: Swift.String?, moreIcon: Swift.String?
+  @objc public var background: Swift.String?, categoriesTextColor: Swift.String?, viewAll: Swift.String?, readProgressBar: Swift.String?
+  @objc public var title: Swift.String?, format: Swift.String?, moreIcon: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class BookshelfSearch_V6_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let headerBackground: Swift.String?, searchOutline: Swift.String?, searchHintTextLabel: Swift.String?, searchTextLabel: Swift.String?
-  @objc final public let searchIconColour: Swift.String?, iconsColor: Swift.String?, searchResult: Swift.String?, title: Swift.String?
-  @objc final public let horizontalDivider: Swift.String?, elasticSearchIcon: Swift.String?, thumbnailSelectionBackground: Swift.String?, descriptionV6: Swift.String?
-  @objc final public let searchedWord: Swift.String?, downloadShowButton: Swift.String?, buttonText: Swift.String?, cancelButtonTextOutline: Swift.String?
-  @objc final public let tabSelected: Swift.String?, tabDeselected: Swift.String?, checkboxbackground: Swift.String?, contentTypeFormat: Swift.String?
-  @objc final public let selectCategoryText: Swift.String?
-  @objc final public let Search_mobile_bgColor: Swift.String?, Search_mobile_border: Swift.String?, Sortby_mobile_icon_color: Swift.String?, Selected_Tab_Text: Swift.String?, Search_history_icon_color: Swift.String?, Search_history_text_color: Swift.String?
+  @objc public var headerBackground: Swift.String?, searchOutline: Swift.String?, searchHintTextLabel: Swift.String?, searchTextLabel: Swift.String?
+  @objc public var searchIconColour: Swift.String?, iconsColor: Swift.String?, searchResult: Swift.String?, title: Swift.String?
+  @objc public var horizontalDivider: Swift.String?, elasticSearchIcon: Swift.String?, thumbnailSelectionBackground: Swift.String?, descriptionV6: Swift.String?
+  @objc public var searchedWord: Swift.String?, downloadShowButton: Swift.String?, buttonText: Swift.String?, cancelButtonTextOutline: Swift.String?
+  @objc public var tabSelected: Swift.String?, tabDeselected: Swift.String?, checkboxbackground: Swift.String?, contentTypeFormat: Swift.String?
+  @objc public var selectCategoryText: Swift.String?
+  @objc public var Search_mobile_bgColor: Swift.String?, Search_mobile_border: Swift.String?, Sortby_mobile_icon_color: Swift.String?, Selected_Tab_Text: Swift.String?, Search_history_icon_color: Swift.String?, Search_history_text_color: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class DarkMode_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let signIn: Kitaboo_Reader_SDK.SignIn_V6_0?
-  @objc final public let bookshelf: Kitaboo_Reader_SDK.DarkModeBookshelf_V6_0?
-  @objc final public let reader: Kitaboo_Reader_SDK.DarkModeReader_V6_0?
-  @objc final public let audioVideoBookPlayer: Kitaboo_Reader_SDK.DarkModeAudioVideoBookPlayer_V6_0?
+  @objc public var signIn: Kitaboo_Reader_SDK.SignIn_V6_0?
+  @objc public var bookshelf: Kitaboo_Reader_SDK.DarkModeBookshelf_V6_0?
+  @objc public var reader: Kitaboo_Reader_SDK.DarkModeReader_V6_0?
+  @objc public var audioVideoBookPlayer: Kitaboo_Reader_SDK.DarkModeAudioVideoBookPlayer_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -3746,556 +3760,670 @@ extension Kitaboo_Reader_SDK.LinkDropDownViewController : UIKit.UITableViewDataS
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class DarkModeBookshelf_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let mainBgcolor: Swift.String?, textColor: Swift.String?
-  @objc final public let iconColor: Swift.String?
-  @objc final public let passwordStrengthCheckColor: Swift.String?, editprofile: Swift.String?, devicename: Swift.String?
+  @objc public var mainBgcolor: Swift.String?, textColor: Swift.String?
+  @objc public var iconColor: Swift.String?
+  @objc public var passwordStrengthCheckColor: Swift.String?, editprofile: Swift.String?, devicename: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class DarkModeReader_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let mainBackgroundColor: Swift.String?, navigationBtn: Swift.String?
+  @objc public var mainBackgroundColor: Swift.String?, navigationBtn: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SignIn_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let loginLeftBgcolor: Swift.String?
+  @objc public var loginLeftBgcolor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Kitaboo6_0_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let fontFace: Swift.String?, clientName: Swift.String?, bookshelfFontfamily: Swift.String?, bookshelfFontfamilySemiBold: Swift.String?, bookshelf_fontfamily_italic: Swift.String?, font_face_Arabic: Swift.String?
-  @objc final public let bookshelfFontfamilyMedium: Swift.String?, loginFontfamily: Swift.String?, loginFontfamilyBold: Swift.String?, readerFontfamily: Swift.String?
-  @objc final public let readerFontfamilyHeader: Swift.String?, readerFontfamilyMedium: Swift.String?, fontFaceIconColor: Swift.String?, scrollbarShadow: Swift.String?, deselected_checkbox_border: Swift.String?, selected_checkbox_background: Swift.String?, active_icon: Swift.String?
+  @objc public var fontFace: Swift.String?, clientName: Swift.String?, bookshelfFontfamily: Swift.String?, bookshelfFontfamilySemiBold: Swift.String?, bookshelf_fontfamily_italic: Swift.String?, font_face_Arabic: Swift.String?
+  @objc public var bookshelfFontfamilyMedium: Swift.String?, loginFontfamily: Swift.String?, loginFontfamilyBold: Swift.String?, readerFontfamily: Swift.String?
+  @objc public var readerFontfamilyHeader: Swift.String?, readerFontfamilyMedium: Swift.String?, fontFaceIconColor: Swift.String?, scrollbarShadow: Swift.String?, deselected_checkbox_border: Swift.String?, selected_checkbox_background: Swift.String?, active_icon: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class WelcomeReader_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let main: Kitaboo_Reader_SDK.Main_V6_0?
-  @objc final public let tableofcontents: Kitaboo_Reader_SDK.Tableofcontents_V6_0?
-  @objc final public let myData: Kitaboo_Reader_SDK.MyData_V6_0?
-  @objc final public let bookmark: Kitaboo_Reader_SDK.Bookmark_V6_0?
-  @objc final public let search: Kitaboo_Reader_SDK.ReaderSearch_V6_0?
-  @objc final public let pentool: Kitaboo_Reader_SDK.Pentool_V6_0?
-  @objc final public let thumbnailSlider: Kitaboo_Reader_SDK.ThumbnailSlider_V6_0?
-  @objc final public let audioBar: Kitaboo_Reader_SDK.AudioBar_V6_0?
-  @objc final public let note: Kitaboo_Reader_SDK.Note_V6_0?
-  @objc final public let share: Kitaboo_Reader_SDK.Share_V6_0?
-  @objc final public let comments: Kitaboo_Reader_SDK.Comments_V6_0?
-  @objc final public let zoom: Kitaboo_Reader_SDK.Zoom_V6_0?
-  @objc final public let fontSettings: Kitaboo_Reader_SDK.FontSettings_V6_0?
-  @objc final public let teacherSettings: Kitaboo_Reader_SDK.TeacherSettings_V6_0?
-  @objc final public let teacherStudentlist: Kitaboo_Reader_SDK.TeacherStudentlist_V6_0?
-  @objc final public let highlight: Kitaboo_Reader_SDK.Highlight_V6_V6_0?
-  @objc final public let highlightOnScreen: Kitaboo_Reader_SDK.HighlightOnScreen_V6_0?
-  @objc final public let profile: Kitaboo_Reader_SDK.ReaderProfile_V6_0?
-  @objc final public let reflowableReader: Kitaboo_Reader_SDK.ReflowableReader_V6_0?
-  @objc final public let textAnnotation: Kitaboo_Reader_SDK.TextAnnotation_V6_0?
-  @objc final public let markup: Kitaboo_Reader_SDK.Markup_V6_0?
-  @objc final public let markupGlossary: Kitaboo_Reader_SDK.MarkupGlossary_V6_0?
-  @objc final public let imageMarkup: Kitaboo_Reader_SDK.ImageMarkup_V6_0?
-  @objc final public let slideshowMarkup: Kitaboo_Reader_SDK.SlideshowMarkup_V6_0?
-  @objc final public let audioMarkup: Kitaboo_Reader_SDK.AudioMarkup_V6_0?
-  @objc final public let help: Kitaboo_Reader_SDK.Help_V6_0?
-  @objc final public let videoMarkup: Kitaboo_Reader_SDK.VideoMarkup_V6_0?
-  @objc final public let shareFeedback: Kitaboo_Reader_SDK.ShareFeedback_V6_0?
+  @objc public var main: Kitaboo_Reader_SDK.Main_V6_0?
+  @objc public var tableofcontents: Kitaboo_Reader_SDK.Tableofcontents_V6_0?
+  @objc public var myData: Kitaboo_Reader_SDK.MyData_V6_0?
+  @objc public var bookmark: Kitaboo_Reader_SDK.Bookmark_V6_0?
+  @objc public var search: Kitaboo_Reader_SDK.ReaderSearch_V6_0?
+  @objc public var pentool: Kitaboo_Reader_SDK.Pentool_V6_0?
+  @objc public var thumbnailSlider: Kitaboo_Reader_SDK.ThumbnailSlider_V6_0?
+  @objc public var audioBar: Kitaboo_Reader_SDK.AudioBar_V6_0?
+  @objc public var note: Kitaboo_Reader_SDK.Note_V6_0?
+  @objc public var share: Kitaboo_Reader_SDK.Share_V6_0?
+  @objc public var comments: Kitaboo_Reader_SDK.Comments_V6_0?
+  @objc public var zoom: Kitaboo_Reader_SDK.Zoom_V6_0?
+  @objc public var fontSettings: Kitaboo_Reader_SDK.FontSettings_V6_0?
+  @objc public var teacherSettings: Kitaboo_Reader_SDK.TeacherSettings_V6_0?
+  @objc public var teacherStudentlist: Kitaboo_Reader_SDK.TeacherStudentlist_V6_0?
+  @objc public var highlight: Kitaboo_Reader_SDK.Highlight_V6_V6_0?
+  @objc public var highlightOnScreen: Kitaboo_Reader_SDK.HighlightOnScreen_V6_0?
+  @objc public var profile: Kitaboo_Reader_SDK.ReaderProfile_V6_0?
+  @objc public var reflowableReader: Kitaboo_Reader_SDK.ReflowableReader_V6_0?
+  @objc public var textAnnotation: Kitaboo_Reader_SDK.TextAnnotation_V6_0?
+  @objc public var markup: Kitaboo_Reader_SDK.Markup_V6_0?
+  @objc public var markupGlossary: Kitaboo_Reader_SDK.MarkupGlossary_V6_0?
+  @objc public var imageMarkup: Kitaboo_Reader_SDK.ImageMarkup_V6_0?
+  @objc public var slideshowMarkup: Kitaboo_Reader_SDK.SlideshowMarkup_V6_0?
+  @objc public var audioMarkup: Kitaboo_Reader_SDK.AudioMarkup_V6_0?
+  @objc public var help: Kitaboo_Reader_SDK.Help_V6_0?
+  @objc public var videoMarkup: Kitaboo_Reader_SDK.VideoMarkup_V6_0?
+  @objc public var shareFeedback: Kitaboo_Reader_SDK.ShareFeedback_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AudioBar_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let backgroundColor: Swift.String?, audioDragIcon: Swift.String?
-  @objc final public let audioDragBackgroundColor: Swift.String?, playPauseIcon: Swift.String?, muteIcon: Swift.String?, currentTime: Swift.String?
-  @objc final public let closeAudio: Swift.String?
+  @objc public var backgroundColor: Swift.String?, audioDragIcon: Swift.String?
+  @objc public var audioDragBackgroundColor: Swift.String?, playPauseIcon: Swift.String?, muteIcon: Swift.String?, currentTime: Swift.String?
+  @objc public var closeAudio: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AudioMarkup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let iconColor: Swift.String?, iconBackgroundColor: Swift.String?, audioContainerBorderColor: Swift.String?, boxShadow: Swift.String?
+  @objc public var iconColor: Swift.String?, iconBackgroundColor: Swift.String?, audioContainerBorderColor: Swift.String?, boxShadow: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Bookmark_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let iconColor: Swift.String?, selectedIconColor: Swift.String?, popupBackground: Swift.String?, popupBorder: Swift.String?
-  @objc final public let inputPanelBg: Swift.String?, hintTextColor: Swift.String?, textColor: Swift.String?, buttonBackground: Swift.String?
-  @objc final public let buttonTextColor: Swift.String?
-  @objc final public let crossIconColor: Swift.String?
+  @objc public var iconColor: Swift.String?, selectedIconColor: Swift.String?, popupBackground: Swift.String?, popupBorder: Swift.String?
+  @objc public var inputPanelBg: Swift.String?, hintTextColor: Swift.String?, textColor: Swift.String?, buttonBackground: Swift.String?
+  @objc public var buttonTextColor: Swift.String?
+  @objc public var crossIconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Comments_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let backIconColor: Swift.String?
-  @objc final public let tabTextColor: Swift.String?
-  @objc final public let dividerColor: Swift.String?
-  @objc final public let otherMessage: Kitaboo_Reader_SDK.Message_V6_0?, myMessage: Kitaboo_Reader_SDK.Message_V6_0?
-  @objc final public let bottomPanel: Kitaboo_Reader_SDK.BottomPanel_V6_0?
+  @objc public var backIconColor: Swift.String?
+  @objc public var tabTextColor: Swift.String?
+  @objc public var dividerColor: Swift.String?
+  @objc public var otherMessage: Kitaboo_Reader_SDK.Message_V6_0?, myMessage: Kitaboo_Reader_SDK.Message_V6_0?
+  @objc public var bottomPanel: Kitaboo_Reader_SDK.BottomPanel_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class BottomPanel_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let borderColor: Swift.String?, hintTextColor: Swift.String?, textColor: Swift.String?, iconColorDisabled: Swift.String?
-  @objc final public let iconColor: Swift.String?
+  @objc public var background: Swift.String?
+  @objc public var borderColor: Swift.String?, hintTextColor: Swift.String?, textColor: Swift.String?, iconColorDisabled: Swift.String?
+  @objc public var iconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Message_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, borderColor: Swift.String?, nameColor: Swift.String?, descriptionColor: Swift.String?
-  @objc final public let timeTextColor: Swift.String?
+  @objc public var background: Swift.String?, borderColor: Swift.String?, nameColor: Swift.String?, descriptionColor: Swift.String?
+  @objc public var timeTextColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class FontSettings_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
-  @objc final public let popupBackground: Swift.String?
-  @objc final public let popupBorder: Swift.String?, tabBorder: Swift.String?, tabTextColor: Swift.String?, selectedTabBorder: Swift.String?
-  @objc final public let selectedTextColor: Swift.String?, resetColor: Swift.String?
-  @objc final public let font: Kitaboo_Reader_SDK.Font_V6_0?
-  @objc final public let other: Kitaboo_Reader_SDK.Other_V6_0?
+  @objc public var overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
+  @objc public var popupBackground: Swift.String?
+  @objc public var popupBorder: Swift.String?, tabBorder: Swift.String?, tabTextColor: Swift.String?, selectedTabBorder: Swift.String?
+  @objc public var selectedTextColor: Swift.String?, resetColor: Swift.String?
+  @objc public var font: Kitaboo_Reader_SDK.Font_V6_0?
+  @objc public var other: Kitaboo_Reader_SDK.Other_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Font_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let textColor: Swift.String?
-  @objc final public let dividerColor: Swift.String?, pointerBg: Swift.String?
-  @objc final public let iconColor: Swift.String?
-  @objc final public let boxBorderColor: Swift.String?
-  @objc final public let selectedIconBg: Swift.String?
-  @objc final public let selectedIconBorder: Swift.String?, dropdownBg: Swift.String?, dropdownTextColor: Swift.String?, moreIconColor: Swift.String?
+  @objc public var textColor: Swift.String?
+  @objc public var dividerColor: Swift.String?, pointerBg: Swift.String?
+  @objc public var iconColor: Swift.String?
+  @objc public var boxBorderColor: Swift.String?
+  @objc public var selectedIconBg: Swift.String?
+  @objc public var selectedIconBorder: Swift.String?, dropdownBg: Swift.String?, dropdownTextColor: Swift.String?, moreIconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Other_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let textColor: Swift.String?, iconColor: Swift.String?
-  @objc final public let selectedIconColor: Swift.String?
-  @objc final public let brightness: Kitaboo_Reader_SDK.Brightness_V6_0?
-  @objc final public let mode: Kitaboo_Reader_SDK.Mode_V6_0?
-  @objc final public let scrollView: Kitaboo_Reader_SDK.ScrollView_V6_0?
+  @objc public var textColor: Swift.String?, iconColor: Swift.String?
+  @objc public var selectedIconColor: Swift.String?
+  @objc public var brightness: Kitaboo_Reader_SDK.Brightness_V6_0?
+  @objc public var mode: Kitaboo_Reader_SDK.Mode_V6_0?
+  @objc public var scrollView: Kitaboo_Reader_SDK.ScrollView_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Brightness_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let sliderColor: Swift.String?, sliderSelectedColor: Swift.String?, iconFaded: Swift.String?, iconBright: Swift.String?
+  @objc public var sliderColor: Swift.String?, sliderSelectedColor: Swift.String?, iconFaded: Swift.String?, iconBright: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Mode_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let selectedTabBorder: Swift.String?
-  @objc final public let day: Kitaboo_Reader_SDK.Day_V6_0?, night: Kitaboo_Reader_SDK.Day_V6_0?, sepia: Kitaboo_Reader_SDK.Day_V6_0?
+  @objc public var selectedTabBorder: Swift.String?
+  @objc public var day: Kitaboo_Reader_SDK.Day_V6_0?, night: Kitaboo_Reader_SDK.Day_V6_0?, sepia: Kitaboo_Reader_SDK.Day_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Day_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let tabBg: Swift.String?, textColor: Swift.String?
+  @objc public var tabBg: Swift.String?, textColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ScrollView_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let tabBg: Swift.String?, textColor: Swift.String?, selectedTabBg: Swift.String?
-  @objc final public let selectedTextColor: Swift.String?
+  @objc public var tabBg: Swift.String?, textColor: Swift.String?, selectedTabBg: Swift.String?
+  @objc public var selectedTextColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Help_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
-  @objc final public let textColor: Swift.String?
-  @objc final public let descriptionTextColor: Swift.String?
-  @objc final public let lineColor: Swift.String?
-  @objc final public let pointerColor: Swift.String?
-  @objc final public let iconColor: Swift.String?
+  @objc public var overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
+  @objc public var textColor: Swift.String?
+  @objc public var descriptionTextColor: Swift.String?
+  @objc public var lineColor: Swift.String?
+  @objc public var pointerColor: Swift.String?
+  @objc public var iconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Highlight_V6_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popup: Kitaboo_Reader_SDK.HighlightPopup_V6_0?
-  @objc final public let iconColor: Swift.String?, selectedBorderColor: Swift.String?
-  @objc final public let highlightColor: [Swift.String]?
-  @objc final public let highlightColorHTML: Kitaboo_Reader_SDK.HighlightColorHTML_V6_0?
+  @objc public var popup: Kitaboo_Reader_SDK.HighlightPopup_V6_0?
+  @objc public var iconColor: Swift.String?, selectedBorderColor: Swift.String?
+  @objc public var highlightColor: [Swift.String]?
+  @objc public var highlightColorHTML: Kitaboo_Reader_SDK.HighlightColorHTML_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class HighlightColorHTML_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let orange: Swift.String?, pink: Swift.String?, purple: Swift.String?, green: Swift.String?
-  @objc final public let blue: Swift.String?
+  @objc public var orange: Swift.String?, pink: Swift.String?, purple: Swift.String?, green: Swift.String?
+  @objc public var blue: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class HighlightPopup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, border: Swift.String?
+  @objc public var background: Swift.String?, border: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class HighlightOnScreen_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let highlightColor: [Swift.String]?
-  @objc final public let highlightColorHTML: Kitaboo_Reader_SDK.ColorHTML_V6_0?
+  @objc public var highlightColor: [Swift.String]?
+  @objc public var highlightColorHTML: Kitaboo_Reader_SDK.ColorHTML_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ColorHTML_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let yellow: Swift.String?, red: Swift.String?, purple: Swift.String?, green: Swift.String?
-  @objc final public let blue: Swift.String?
-  @objc final public let black: Swift.String?
+  @objc public var yellow: Swift.String?, red: Swift.String?, purple: Swift.String?, green: Swift.String?
+  @objc public var blue: Swift.String?
+  @objc public var black: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ImageMarkup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let topBarBackground: Swift.String?
+  @objc public var topBarBackground: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Main_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let canvasBackground: Swift.String?
-  @objc final public let navigationArrows: Swift.String?
-  @objc final public let toolbar: Kitaboo_Reader_SDK.MainToolbar_V6_0?
+  @objc public var canvasBackground: Swift.String?
+  @objc public var navigationArrows: Swift.String?
+  @objc public var toolbar: Kitaboo_Reader_SDK.MainToolbar_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class MainToolbar_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let top: Kitaboo_Reader_SDK.Top_V6_0?
-  @objc final public let sideBottom: Kitaboo_Reader_SDK.SideBottom_V6_0?
+  @objc public var top: Kitaboo_Reader_SDK.Top_V6_0?
+  @objc public var sideBottom: Kitaboo_Reader_SDK.SideBottom_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SideBottom_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, iconsColor: Swift.String?, shadow: Swift.String?
-  @objc final public let selectedIconColor: Swift.String?
-  @objc final public let selectedIconBg: Swift.String?
+  @objc public var background: Swift.String?, iconsColor: Swift.String?, shadow: Swift.String?
+  @objc public var selectedIconColor: Swift.String?
+  @objc public var selectedIconBg: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Top_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, iconsColor: Swift.String?, shadow: Swift.String?
-  @objc final public let selectedIconColor: Swift.String?
-  @objc final public let selectedIconBg: Swift.String?, titleTextColor: Swift.String?, navigationArrowColor: Swift.String?, profileBorder: Swift.String?
+  @objc public var background: Swift.String?, iconsColor: Swift.String?, shadow: Swift.String?
+  @objc public var selectedIconColor: Swift.String?
+  @objc public var selectedIconBg: Swift.String?, titleTextColor: Swift.String?, navigationArrowColor: Swift.String?, profileBorder: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Markup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let markupIconColor: Swift.String?
-  @objc final public let bookMarkupIconBorderColor: Swift.String?
+  @objc public var markupIconColor: Swift.String?
+  @objc public var bookMarkupIconBorderColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class MarkupGlossary_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let linkLineColor: Swift.String?, popupBackground: Swift.String?
-  @objc final public let iconBorderColor: Swift.String?, iconColor: Swift.String?
-  @objc final public let titleColor: Swift.String?, languageTextColor: Swift.String?, descriptionTextColor: Swift.String?, synonymTextColor: Swift.String?
+  @objc public var linkLineColor: Swift.String?, popupBackground: Swift.String?
+  @objc public var iconBorderColor: Swift.String?, iconColor: Swift.String?
+  @objc public var titleColor: Swift.String?, languageTextColor: Swift.String?, descriptionTextColor: Swift.String?, synonymTextColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class MyData_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
-  @objc final public let popupBackground: Swift.String?
-  @objc final public let popupBorder: Swift.String?
-  @objc final public let tabBg: Swift.String?
-  @objc final public let tabBorder: Swift.String?, tabTextColor: Swift.String?, selectedTabBorder: Swift.String?, selectedTextColor: Swift.String?
-  @objc final public let selectedButton: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, deSelectedButton: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
-  @objc final public let iconColor: Swift.String?
-  @objc final public let disabledIcon: Kitaboo_Reader_SDK.DisabledIcon_V6_0?
-  @objc final public let textColor: Swift.String?, metadataColor: Swift.String?, contextualtextColor: Swift.String?, descriptionColor: Swift.String?
-  @objc final public let subButton: Kitaboo_Reader_SDK.SubButton_V6_0?
-  @objc final public let filterPopup: Kitaboo_Reader_SDK.FilterPopup_V6_0?
-  @objc final public let settings: Kitaboo_Reader_SDK.SettingsV6_V6_0?
-  @objc final public let notificationCircleColor: Swift.String?
+  @objc public var overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
+  @objc public var popupBackground: Swift.String?
+  @objc public var popupBorder: Swift.String?
+  @objc public var tabBg: Swift.String?
+  @objc public var tabBorder: Swift.String?, tabTextColor: Swift.String?, selectedTabBorder: Swift.String?, selectedTextColor: Swift.String?
+  @objc public var selectedButton: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, deSelectedButton: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
+  @objc public var iconColor: Swift.String?
+  @objc public var disabledIcon: Kitaboo_Reader_SDK.DisabledIcon_V6_0?
+  @objc public var textColor: Swift.String?, metadataColor: Swift.String?, contextualtextColor: Swift.String?, descriptionColor: Swift.String?
+  @objc public var subButton: Kitaboo_Reader_SDK.SubButton_V6_0?
+  @objc public var filterPopup: Kitaboo_Reader_SDK.FilterPopup_V6_0?
+  @objc public var settings: Kitaboo_Reader_SDK.SettingsV6_V6_0?
+  @objc public var notificationCircleColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class DisabledIcon_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let iconColor: Swift.String?, opacity: Swift.String?, backgroundHTML: Swift.String?
+  @objc public var iconColor: Swift.String?, opacity: Swift.String?, backgroundHTML: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class FilterPopup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let borderColor: Swift.String?, allBoxBorderColor: Swift.String?, boxBorderColor: Swift.String?, checkColor: Swift.String?
-  @objc final public let textColor: Swift.String?, arrowColor: Swift.String?, actionTextColor: Swift.String?
+  @objc public var background: Swift.String?
+  @objc public var borderColor: Swift.String?, allBoxBorderColor: Swift.String?, boxBorderColor: Swift.String?, checkColor: Swift.String?
+  @objc public var textColor: Swift.String?, arrowColor: Swift.String?, actionTextColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SettingsV6_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, titleColor: Swift.String?, iconColor: Swift.String?, boxBorderColor: Swift.String?
-  @objc final public let sectionTitleColor: Swift.String?, textColor: Swift.String?, checkColor: Swift.String?
-  @objc final public let actionButton: Kitaboo_Reader_SDK.ActionButton_V6_V6_0?
+  @objc public var background: Swift.String?, titleColor: Swift.String?, iconColor: Swift.String?, boxBorderColor: Swift.String?
+  @objc public var sectionTitleColor: Swift.String?, textColor: Swift.String?, checkColor: Swift.String?
+  @objc public var actionButton: Kitaboo_Reader_SDK.ActionButton_V6_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SubButton_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let textIconColor: Swift.String?, disabledTextIconColor: Swift.String?
+  @objc public var textIconColor: Swift.String?, disabledTextIconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Note_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popupBackground: Swift.String?
-  @objc final public let popupBorder: Swift.String?, titleColor: Swift.String?, backIconColor: Swift.String?, selectedIconBorder: Swift.String?
-  @objc final public let contextualtextColor: Swift.String?, hintTextColor: Swift.String?, descriptionColor: Swift.String?, actionButtonColor: Swift.String?
-  @objc final public let actionButtonColorDisabled: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
-  @objc final public let metadataColor: Swift.String?
+  @objc public var popupBackground: Swift.String?
+  @objc public var popupBorder: Swift.String?, titleColor: Swift.String?, backIconColor: Swift.String?, selectedIconBorder: Swift.String?
+  @objc public var contextualtextColor: Swift.String?, hintTextColor: Swift.String?, descriptionColor: Swift.String?, actionButtonColor: Swift.String?
+  @objc public var actionButtonColorDisabled: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
+  @objc public var metadataColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Pentool_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let toolbar: Kitaboo_Reader_SDK.PentoolToolbar_V6_0?
-  @objc final public let pen: Kitaboo_Reader_SDK.Pen_V6_0?
-  @objc final public let penColor: [Swift.String]?
-  @objc final public let penColorHTML: Kitaboo_Reader_SDK.ColorHTML_V6_0?
-  @objc final public let thickness: Kitaboo_Reader_SDK.Thickness_V6_0?
+  @objc public var toolbar: Kitaboo_Reader_SDK.PentoolToolbar_V6_0?
+  @objc public var pen: Kitaboo_Reader_SDK.Pen_V6_0?
+  @objc public var penColor: [Swift.String]?
+  @objc public var penColorHTML: Kitaboo_Reader_SDK.ColorHTML_V6_0?
+  @objc public var thickness: Kitaboo_Reader_SDK.Thickness_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Pen_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popupBackground: Swift.String?, popupBorder: Swift.String?, shadow: Swift.String?, selectedBorderColor: Swift.String?
+  @objc public var popupBackground: Swift.String?, popupBorder: Swift.String?, shadow: Swift.String?, selectedBorderColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Thickness_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popupBackground: Swift.String?, popupBorder: Swift.String?, shadow: Swift.String?, sliderColor: Swift.String?
-  @objc final public let sliderFilledColor: Swift.String?
+  @objc public var popupBackground: Swift.String?, popupBorder: Swift.String?, shadow: Swift.String?, sliderColor: Swift.String?
+  @objc public var sliderFilledColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class PentoolToolbar_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, iconsColor: Swift.String?
-  @objc final public let disabledIcon: Kitaboo_Reader_SDK.DisabledIcon_V6_0?
-  @objc final public let selectedIconBackground: Swift.String?
-  @objc final public let selectedIconColor: Swift.String?
+  @objc public var background: Swift.String?, iconsColor: Swift.String?
+  @objc public var disabledIcon: Kitaboo_Reader_SDK.DisabledIcon_V6_0?
+  @objc public var selectedIconBackground: Swift.String?
+  @objc public var selectedIconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ReaderProfile_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let profileBorder: Swift.String?
-  @objc final public let popupBackground: Swift.String?
-  @objc final public let textColor: Swift.String?, actionTextColor: Swift.String?
-  @objc final public let signout: Kitaboo_Reader_SDK.Signout_V6_0?
-  @objc final public let linkColorSelected: Swift.String?, profileTextColor: Swift.String?
+  @objc public var profileBorder: Swift.String?
+  @objc public var popupBackground: Swift.String?
+  @objc public var textColor: Swift.String?, actionTextColor: Swift.String?
+  @objc public var signout: Kitaboo_Reader_SDK.Signout_V6_0?
+  @objc public var linkColorSelected: Swift.String?, profileTextColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Signout_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let iconsColor: Swift.String?, textColor: Swift.String?
+  @objc public var background: Swift.String?
+  @objc public var iconsColor: Swift.String?, textColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ReflowableReader_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let dayMode: Kitaboo_Reader_SDK.DayModeClass_V6_0?, sepiaMode: Kitaboo_Reader_SDK.DayModeClass_V6_0?, nightMode: Kitaboo_Reader_SDK.DayModeClass_V6_0?
+  @objc public var dayMode: Kitaboo_Reader_SDK.DayModeClass_V6_0?, sepiaMode: Kitaboo_Reader_SDK.DayModeClass_V6_0?, nightMode: Kitaboo_Reader_SDK.DayModeClass_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class DayModeClass_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let canvasBackground: Swift.String?, defaultTextColor: Swift.String?
+  @objc public var canvasBackground: Swift.String?, defaultTextColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ReaderSearch_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popupBackground: Swift.String?
-  @objc final public let inputPanelBg: Swift.String?
-  @objc final public let popupBorder: Swift.String?, mainIconColor: Swift.String?, hintTextColor: Swift.String?, titleColor: Swift.String?
-  @objc final public let tabBorder: Swift.String?, selectedTextColor: Swift.String?, selectedBgColor: Swift.String?, seperationBackground: Swift.String?
-  @objc final public let crossIconColor: Swift.String?, descriptionColor: Swift.String?, subtextColor: Swift.String?, selectionTextColorBg: Swift.String?
-  @objc final public let selectedTextColorBg: Swift.String?
+  @objc public var popupBackground: Swift.String?
+  @objc public var inputPanelBg: Swift.String?
+  @objc public var popupBorder: Swift.String?, mainIconColor: Swift.String?, hintTextColor: Swift.String?, titleColor: Swift.String?
+  @objc public var tabBorder: Swift.String?, selectedTextColor: Swift.String?, selectedBgColor: Swift.String?, seperationBackground: Swift.String?
+  @objc public var crossIconColor: Swift.String?, descriptionColor: Swift.String?, subtextColor: Swift.String?, selectionTextColorBg: Swift.String?
+  @objc public var selectedTextColorBg: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Share_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let sharePopupBackground: Swift.String?, iconColor: Swift.String?
-  @objc final public let shareSettings: Kitaboo_Reader_SDK.ShareSettings_V6_0?
+  @objc public var sharePopupBackground: Swift.String?, iconColor: Swift.String?
+  @objc public var shareSettings: Kitaboo_Reader_SDK.ShareSettings_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ShareSettings_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let sectionTitleColor: Swift.String?, boxBorderColor: Swift.String?, allBoxBorderColor: Swift.String?, checkColor: Swift.String?
-  @objc final public let bottomBackground: Swift.String?, textColor: Swift.String?, mainActionColor: Swift.String?
+  @objc public var sectionTitleColor: Swift.String?, boxBorderColor: Swift.String?, allBoxBorderColor: Swift.String?, checkColor: Swift.String?
+  @objc public var bottomBackground: Swift.String?, textColor: Swift.String?, mainActionColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SignoutButton_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, icons_color: Swift.String?, text_color: Swift.String?
+  @objc public var background: Swift.String?, icons_color: Swift.String?, text_color: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ShareFeedback_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let emojiBackground: Swift.String?, feedbackRespBorder: Swift.String?, activeFeedbackBackground: Swift.String?, existingFeedbackBackground: Swift.String?
-  @objc final public let editFeedbackBtnColor: Swift.String?, deleteFeedbackBtnColor: Swift.String?, topbarDECColor: Swift.String?, topbarProfileColor: Swift.String?
-  @objc final public let dividerBackground: Swift.String?, feedbackQtnColor: Swift.String?, feedbackImproveColor: Swift.String?, feedbackRespColor: Swift.String?
-  @objc final public let submitBackground: Swift.String?, editFeedbackColor: Swift.String?, deleteCancelBorder: Swift.String?, deleteOkBackground: Swift.String?
+  @objc public var emojiBackground: Swift.String?, feedbackRespBorder: Swift.String?, activeFeedbackBackground: Swift.String?, existingFeedbackBackground: Swift.String?
+  @objc public var editFeedbackBtnColor: Swift.String?, deleteFeedbackBtnColor: Swift.String?, topbarDECColor: Swift.String?, topbarProfileColor: Swift.String?
+  @objc public var dividerBackground: Swift.String?, feedbackQtnColor: Swift.String?, feedbackImproveColor: Swift.String?, feedbackRespColor: Swift.String?
+  @objc public var submitBackground: Swift.String?, editFeedbackColor: Swift.String?, deleteCancelBorder: Swift.String?, deleteOkBackground: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SlideshowMarkup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let boxShadow: Swift.String?
+  @objc public var boxShadow: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Tableofcontents_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
-  @objc final public let popupBackground: Swift.String?, popupBorder: Swift.String?, tabBg: Swift.String?, tabBorder: Swift.String?
-  @objc final public let tabBorderWrapper: Swift.String?, tabTextColor: Swift.String?, selectedTabBorder: Swift.String?, selectedTextColor: Swift.String?
-  @objc final public let chlabelFontweight: Swift.String?
-  @objc final public let selectedToc: Kitaboo_Reader_SDK.SelectedToc_V6_0?
-  @objc final public let titleColor: Swift.String?, descriptionColor: Swift.String?, pagenoColor: Swift.String?, iconsColor: Swift.String?
-  @objc final public let moreIconColor: Swift.String?, dividerColor: Swift.String?
-  @objc final public let closeSlider: Kitaboo_Reader_SDK.CloseSlider_V6_0?
+  @objc public var overlayPanel: Kitaboo_Reader_SDK.OverlayPanel_V6_V6_0?
+  @objc public var popupBackground: Swift.String?, popupBorder: Swift.String?, tabBg: Swift.String?, tabBorder: Swift.String?
+  @objc public var tabBorderWrapper: Swift.String?, tabTextColor: Swift.String?, selectedTabBorder: Swift.String?, selectedTextColor: Swift.String?
+  @objc public var chlabelFontweight: Swift.String?
+  @objc public var selectedToc: Kitaboo_Reader_SDK.SelectedToc_V6_0?
+  @objc public var titleColor: Swift.String?, descriptionColor: Swift.String?, pagenoColor: Swift.String?, iconsColor: Swift.String?
+  @objc public var moreIconColor: Swift.String?, dividerColor: Swift.String?
+  @objc public var closeSlider: Kitaboo_Reader_SDK.CloseSlider_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class CloseSlider_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let iconColor: Swift.String?
+  @objc public var background: Swift.String?
+  @objc public var iconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class SelectedToc_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, divider: Swift.String?, titleColor: Swift.String?, descriptionColor: Swift.String?
-  @objc final public let arrowColor: Swift.String?, iconColor: Swift.String?, sideTabBackground: Swift.String?, levelBackground: Swift.String?
+  @objc public var background: Swift.String?, divider: Swift.String?, titleColor: Swift.String?, descriptionColor: Swift.String?
+  @objc public var arrowColor: Swift.String?, iconColor: Swift.String?, sideTabBackground: Swift.String?, levelBackground: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class TeacherSettings_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popupBackground: Swift.String?, popupBorder: Swift.String?, titleColor: Swift.String?, mainIconColor: Swift.String?
-  @objc final public let textColor: Swift.String?
-  @objc final public let selectedIconColor: Swift.String?
-  @objc final public let selectedIconBg: Swift.String?, pen1Color: Swift.String?, pen2Color: Swift.String?, boxBorderColor: Swift.String?
-  @objc final public let checkColor: Swift.String?
+  @objc public var popupBackground: Swift.String?, popupBorder: Swift.String?, titleColor: Swift.String?, mainIconColor: Swift.String?
+  @objc public var textColor: Swift.String?
+  @objc public var selectedIconColor: Swift.String?
+  @objc public var selectedIconBg: Swift.String?, pen1Color: Swift.String?, pen2Color: Swift.String?, boxBorderColor: Swift.String?
+  @objc public var checkColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class TeacherStudentlist_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popupBackground: Swift.String?, popupBorder: Swift.String?, shadow: Swift.String?, titleColor: Swift.String?
-  @objc final public let hintTextColor: Swift.String?, tabBorder: Swift.String?, tabSelectedBar: Swift.String?, tabTextColor: Swift.String?
-  @objc final public let nameColor: Swift.String?, dataAddedColor: Swift.String?, nodataAddedColor: Swift.String?
-  @objc final public let refresh: Kitaboo_Reader_SDK.Refresh_V6_0?
-  @objc final public let selectedColor: Swift.String?
+  @objc public var popupBackground: Swift.String?, popupBorder: Swift.String?, shadow: Swift.String?, titleColor: Swift.String?
+  @objc public var hintTextColor: Swift.String?, tabBorder: Swift.String?, tabSelectedBar: Swift.String?, tabTextColor: Swift.String?
+  @objc public var nameColor: Swift.String?, dataAddedColor: Swift.String?, nodataAddedColor: Swift.String?
+  @objc public var refresh: Kitaboo_Reader_SDK.Refresh_V6_0?
+  @objc public var selectedColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Refresh_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let boxBorderColor: Swift.String?, buttonTextColor: Swift.String?
+  @objc public var boxBorderColor: Swift.String?, buttonTextColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class TextAnnotation_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?
-  @objc final public let lineColor: Swift.String?, iconsColor: Swift.String?
-  @objc final public let disabledIcon: Kitaboo_Reader_SDK.DisabledIcon_V6_0?
-  @objc final public let selectedIconBg: Swift.String?
-  @objc final public let selectedIconColor: Swift.String?
-  @objc final public let alignPopup: Kitaboo_Reader_SDK.AlignPopup_V6_0?
-  @objc final public let colorPopup: Kitaboo_Reader_SDK.ColorPopup_V6_0?
+  @objc public var background: Swift.String?
+  @objc public var lineColor: Swift.String?, iconsColor: Swift.String?
+  @objc public var disabledIcon: Kitaboo_Reader_SDK.DisabledIcon_V6_0?
+  @objc public var selectedIconBg: Swift.String?
+  @objc public var selectedIconColor: Swift.String?
+  @objc public var alignPopup: Kitaboo_Reader_SDK.AlignPopup_V6_0?
+  @objc public var colorPopup: Kitaboo_Reader_SDK.ColorPopup_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class AlignPopup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, iconColor: Swift.String?, selectedBorderColor: Swift.String?
+  @objc public var background: Swift.String?, iconColor: Swift.String?, selectedBorderColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ColorPopup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let background: Swift.String?, selectedBorderColor: Swift.String?
-  @objc final public let color1: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color2: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color3: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color4: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
-  @objc final public let color5: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color6: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color7: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color8: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
-  @objc final public let color9: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color10: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
+  @objc public var background: Swift.String?, selectedBorderColor: Swift.String?
+  @objc public var color1: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color2: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color3: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color4: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
+  @objc public var color5: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color6: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color7: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color8: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
+  @objc public var color9: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?, color10: Kitaboo_Reader_SDK.DeSelectedButton_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ThumbnailSlider_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popupBackground: Swift.String?, sliderColor: Swift.String?, chapterIconColor: Swift.String?, sliderFilledColor: Swift.String?
-  @objc final public let defaultThumbnailColor: Swift.String?, selectedThumbnailColor: Swift.String?
-  @objc final public let thumbnailTextColor: Swift.String?
-  @objc final public let selectedTitleColor: Swift.String?, titleColor: Swift.String?, iconColor: Swift.String?, textColor: Swift.String?
-  @objc final public let pageSubmittedBorderColor: Swift.String?, pageNotSubmittedBorderColor: Swift.String?
+  @objc public var popupBackground: Swift.String?, sliderColor: Swift.String?, chapterIconColor: Swift.String?, sliderFilledColor: Swift.String?
+  @objc public var defaultThumbnailColor: Swift.String?, selectedThumbnailColor: Swift.String?
+  @objc public var thumbnailTextColor: Swift.String?
+  @objc public var selectedTitleColor: Swift.String?, titleColor: Swift.String?, iconColor: Swift.String?, textColor: Swift.String?
+  @objc public var pageSubmittedBorderColor: Swift.String?, pageNotSubmittedBorderColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class VideoMarkup_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let plyr: Swift.String?
+  @objc public var plyr: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Zoom_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let popupBackground: Swift.String?, sliderColor: Swift.String?, sliderFilledColor: Swift.String?, iconColor: Swift.String?
+  @objc public var popupBackground: Swift.String?, sliderColor: Swift.String?, sliderFilledColor: Swift.String?, iconColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class Signin_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let leftBackground: Swift.String?, signinBackground: Swift.String?, horizontalDivider: Swift.String?, tabSelected: Swift.String?
-  @objc final public let tabDeselected: Swift.String?, inputOutline: Swift.String?, inputLabel: Swift.String?, inputUsernamepassword: Swift.String?
-  @objc final public let signinText: Swift.String?, signinTextDisabled: Swift.String?, signinDisabled: Swift.String?, signinEnabled: Swift.String?
-  @objc final public let remebermeRecoverPassword: Swift.String?, errorMessage: Swift.String?, downloadappText: Swift.String?, autofillbackground: Swift.String?
-  @objc final public let leftHeadingTextcolor: Swift.String?, spinner: Swift.String?, termconditiontext: Swift.String?, linkText: Swift.String?
-  @objc final public let validationtext: Swift.String?
-  @objc final public let Selected_Tab_Text: Swift.String?
-  @objc final public let Signin_Remeberme: Swift.String?
-  @objc final public let Signin_Remeberme_checkbox_bgColor: Swift.String?
-  @objc final public let Signin_RecoverPassword: Swift.String?, freetrial_text: Swift.String?, freetrial_btn_border: Swift.String?, Signup_Input_border: Swift.String?, Signup_Input_Focus_border: Swift.String?
-  @objc final public let forgotPassword: Kitaboo_Reader_SDK.ForgotPassword_V6_0?
+  @objc public var leftBackground: Swift.String?, signinBackground: Swift.String?, horizontalDivider: Swift.String?, tabSelected: Swift.String?
+  @objc public var tabDeselected: Swift.String?, inputOutline: Swift.String?, inputLabel: Swift.String?, inputUsernamepassword: Swift.String?
+  @objc public var signinText: Swift.String?, signinTextDisabled: Swift.String?, signinDisabled: Swift.String?, signinEnabled: Swift.String?
+  @objc public var remebermeRecoverPassword: Swift.String?, errorMessage: Swift.String?, downloadappText: Swift.String?, autofillbackground: Swift.String?
+  @objc public var leftHeadingTextcolor: Swift.String?, spinner: Swift.String?, termconditiontext: Swift.String?, linkText: Swift.String?
+  @objc public var validationtext: Swift.String?
+  @objc public var Selected_Tab_Text: Swift.String?
+  @objc public var Signin_Remeberme: Swift.String?
+  @objc public var Signin_Remeberme_checkbox_bgColor: Swift.String?
+  @objc public var Signin_RecoverPassword: Swift.String?, freetrial_text: Swift.String?, freetrial_btn_border: Swift.String?, Signup_Input_border: Swift.String?, Signup_Input_Focus_border: Swift.String?
+  @objc public var forgotPassword: Kitaboo_Reader_SDK.ForgotPassword_V6_0?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers @objc open class ForgotPassword_V6_0 : ObjectiveC.NSObject, Swift.Codable {
-  @objc final public let leftBackground: Swift.String?, signinBackground: Swift.String?, signinDisabled: Swift.String?, signinEnabled: Swift.String?
-  @objc final public let cancelDisabled: Swift.String?, cancelOutline: Swift.String?, errorMessage: Swift.String?, Invalid_email_input_border: Swift.String?, Cancel_Text: Swift.String?
+  @objc public var leftBackground: Swift.String?, signinBackground: Swift.String?, signinDisabled: Swift.String?, signinEnabled: Swift.String?
+  @objc public var cancelDisabled: Swift.String?, cancelOutline: Swift.String?, errorMessage: Swift.String?, Invalid_email_input_border: Swift.String?, Cancel_Text: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAI_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var floatingIconBackground: Swift.String?
+  @objc public var kaiIcon: Swift.String?
+  @objc public var canvasBackground: Swift.String?
+  @objc public var panelBackground: Swift.String?
+  @objc public var header: Kitaboo_Reader_SDK.KAIHeader_V6_0?
+  @objc public var headingText: Swift.String?
+  @objc public var subtext: Swift.String?
+  @objc public var checkboxDefault: Swift.String?
+  @objc public var checkboxSelected: Swift.String?
+  @objc public var activityIcon: Swift.String?
+  @objc public var activityTitleText: Swift.String?
+  @objc public var activityTypeText: Swift.String?
+  @objc public var divider: Swift.String?
+  @objc public var inputDropdown: Kitaboo_Reader_SDK.KAIInputDropdown_V6_0?
+  @objc public var questionComplexity: Kitaboo_Reader_SDK.KAIQuestionComplexity_V6_0?
+  @objc public var actionButton: Kitaboo_Reader_SDK.KAIActionButton_V6_0?
+  @objc public var loadingHeadingText: Swift.String?
+  @objc public var loadingSubtext: Swift.String?
+  @objc public var mcq: Kitaboo_Reader_SDK.KAIMCQ_V6_0?
+  @objc public var flashCard: Kitaboo_Reader_SDK.KAIFlashCard_V6_0?
+  @objc public var fib: Kitaboo_Reader_SDK.KAIFIB_V6_0?
+  @objc public var learningObjectiveSummary: Kitaboo_Reader_SDK.KAILearningObjectiveSummary_V6_0?
+  @objc public var disclaimer: Swift.String?
+  @objc public var bookCoverBorder: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIHeader_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var textColor: Swift.String?
+  @objc public var iconColor: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIInputDropdown_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var outline: Swift.String?
+  @objc public var icon: Swift.String?
+  @objc public var text: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIQuestionComplexity_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var defaultButtonOutline: Swift.String?
+  @objc public var defaultButtonText: Swift.String?
+  @objc public var selectedButtonBG: Swift.String?
+  @objc public var selectedButtonTextOutline: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIActionButton_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var main: Kitaboo_Reader_SDK.KAIActionButtonMain_V6_0?
+  @objc public var secondary: Kitaboo_Reader_SDK.KAIActionButtonSecondary_V6_0?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIActionButtonMain_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var background: Swift.String?
+  @objc public var textColor: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIActionButtonSecondary_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var borderColor: Swift.String?
+  @objc public var textColor: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIMCQ_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var textColor: Swift.String?
+  @objc public var defaultIcon: Swift.String?
+  @objc public var selectedIcon: Swift.String?
+  @objc public var correctAnswer: Swift.String?
+  @objc public var incorrectAnswer: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIFlashCard_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var cardBackground: Swift.String?
+  @objc public var cardOutline: Swift.String?
+  @objc public var textColor: Swift.String?
+  @objc public var navigationIcon: Swift.String?
+  @objc public var navigationIconDisable: Swift.String?
+  @objc public var navigationText: Swift.String?
+  @objc public var bottomFlipBG: Swift.String?
+  @objc public var bottomFlipText: Swift.String?
+  @objc public var boxShadow: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAIFIB_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var textColor: Swift.String?
+  @objc public var blankOutline: Swift.String?
+  @objc public var correctAnswer: Swift.String?
+  @objc public var incorrectAnswer: Swift.String?
+  @objc deinit
+  open func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers @objc open class KAILearningObjectiveSummary_V6_0 : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var cardOutline: Swift.String?
+  @objc public var textColor: Swift.String?
   @objc deinit
   open func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
@@ -4319,6 +4447,7 @@ extension Kitaboo_Reader_SDK.LinkDropDownViewController : UIKit.UITableViewDataS
 }
 @objc @_inheritsConvenienceInitializers public class TextSearchResult : ObjectiveC.NSObject {
   public var searchResultAttributedString: Foundation.NSAttributedString?
+  public var displayString: Swift.String
   public var href: Swift.String
   public var pageIndex: Swift.String
   public var displayNumber: Swift.String
@@ -4435,6 +4564,8 @@ public protocol ShareSettingsControllerDelegate : AnyObject {
 public let EQUATION_EDITOR_IDENTIFYING_KEY: Swift.String
 public let SAPLING_LEARNING_OPTIONS: Swift.String
 public let EQUATION_EDITOR_IDENTIFYING_VALUE: Swift.String
+public struct ReaderConstants {
+}
 @_inheritsConvenienceInitializers @objc @_Concurrency.MainActor @preconcurrency open class HDReflowableLayoutSettingController : UIKit.UIViewController, UIKit.UIGestureRecognizerDelegate, UIKit.UIPickerViewDelegate, UIKit.UIPickerViewDataSource {
   @objc @_Concurrency.MainActor @preconcurrency public var resetReaderSetting: (() -> ())?
   @objc @_Concurrency.MainActor @preconcurrency public var fontFamilyDidChange: ((Swift.String) -> ())?
@@ -4462,6 +4593,8 @@ public let EQUATION_EDITOR_IDENTIFYING_VALUE: Swift.String
   @objc @_Concurrency.MainActor @preconcurrency public var fontFamilyThemeColor: UIKit.UIColor?
   @objc @_Concurrency.MainActor @preconcurrency public var separationLineColor: UIKit.UIColor?
   @_Concurrency.MainActor @preconcurrency public var customFontName: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var fontSizeText: Swift.String
+  @_Concurrency.MainActor @preconcurrency public var localizationCode: Swift.String
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidLoad()
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewWillAppear(_ animated: Swift.Bool)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public func viewDidAppear(_ animated: Swift.Bool)
@@ -4473,6 +4606,7 @@ public let EQUATION_EDITOR_IDENTIFYING_VALUE: Swift.String
   @objc @_Concurrency.MainActor @preconcurrency public func enableMarginView(_ isEnable: Swift.Bool)
   @objc @_Concurrency.MainActor @preconcurrency public func enableReaderModeView(_ isEnable: Swift.Bool)
   @objc @_Concurrency.MainActor @preconcurrency public func enableScrollModeView(_ isEnable: Swift.Bool)
+  @_Concurrency.MainActor @preconcurrency public func setCurrentFontText(value: Swift.String)
   @objc @_Concurrency.MainActor @preconcurrency public func setCustomFontNameForLayout(fontName: Swift.String)
   @objc @_Concurrency.MainActor @preconcurrency public func setBackgroundColorForView(_ color: UIKit.UIColor)
   @objc @_Concurrency.MainActor @preconcurrency public func setThemeColorToView(_ color: UIKit.UIColor)
@@ -4480,7 +4614,7 @@ public let EQUATION_EDITOR_IDENTIFYING_VALUE: Swift.String
   @objc @_Concurrency.MainActor @preconcurrency public func setLineSpacingOptions(_ options: Foundation.NSArray)
   @objc @_Concurrency.MainActor @preconcurrency public func setReaderMarginOptions(_ options: Foundation.NSArray)
   @objc @_Concurrency.MainActor @preconcurrency public func setReaderModeOptions(_ options: Foundation.NSArray)
-  @objc @_Concurrency.MainActor @preconcurrency public func setFontSize(_ currentFontSize: ObjectiveC.NSInteger)
+  @objc @_Concurrency.MainActor @preconcurrency public func setFontSize(_ currentFontSize: Swift.Int)
   @objc @_Concurrency.MainActor @preconcurrency public func setPaginationEnable(_ enabled: Swift.Bool)
   @objc @_Concurrency.MainActor @preconcurrency public func setReaderModeEnable(_ modeType: Swift.Int)
   @objc @_Concurrency.MainActor @preconcurrency public func setCurrentTextAlignment(_ alignmentType: Swift.Int)
@@ -4519,6 +4653,14 @@ extension Kitaboo_Reader_SDK.HDReflowableLayoutSettingController {
   @objc public static func animatedImageWithAnimatedGIFReleasingImageSource(_ source: ImageIO.CGImageSource?) -> UIKit.UIImage?
   @objc dynamic public class func animatedImage(withAnimatedGIFData data: Foundation.Data) -> UIKit.UIImage?
   @objc dynamic public class func animatedImage(withAnimatedGIFURL url: Foundation.URL) -> UIKit.UIImage?
+}
+@objc @_inheritsConvenienceInitializers open class XMLToDictionaryParser : ObjectiveC.NSObject, Foundation.XMLParserDelegate {
+  public func parse(xmlData: Foundation.Data) -> [Swift.String : Any]?
+  @objc public func parser(_ parser: Foundation.XMLParser, didStartElement elementName: Swift.String, namespaceURI: Swift.String?, qualifiedName qName: Swift.String?, attributes attributeDict: [Swift.String : Swift.String])
+  @objc public func parser(_ parser: Foundation.XMLParser, foundCharacters string: Swift.String)
+  @objc public func parser(_ parser: Foundation.XMLParser, didEndElement elementName: Swift.String, namespaceURI: Swift.String?, qualifiedName qName: Swift.String?)
+  @objc override dynamic public init()
+  @objc deinit
 }
 public protocol HDAVTOCPlayerControllerDelegate : ObjectiveC.NSObjectProtocol {
   func videoTOCPlayerDidStopPlaying()
@@ -4657,6 +4799,10 @@ public protocol KitabooDocumentPlayerDelegate : AnyObject {
   @objc @_Concurrency.MainActor @preconcurrency public var ugcUUID: Swift.String
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @objc deinit
+}
+extension Foundation.NSNotification.Name {
+  public static let instituteChanged: Foundation.Notification.Name
+  public static let changeTheme: Foundation.Notification.Name
 }
 @_inheritsConvenienceInitializers @objc open class HDMediaBookParser : ObjectiveC.NSObject {
   @objc open var bookParsingCompleted: ((Kitaboo_Reader_SDK.HDMediaBookModel) -> ())?
@@ -4893,7 +5039,7 @@ public let kUTF_8: Swift.String
   public static let sharedInstance: Kitaboo_Reader_SDK.HDReflowableReaderConfiguration
   public func setReaderFontSetting(_ defaultFontSetting: Kitaboo_Reader_SDK.ReaderFontSetting)
   public func setReflowableReaderMode(_ readerMode: Kitaboo_Reader_SDK.READER_MODE)
-  public func setReflowableFontSize(_ fontSize: Kitaboo_Reader_SDK.FONT_SIZE)
+  public func setReflowableFontSize(_ fontSize: Swift.Int)
   public func setReflowableTextAlignment(_ textAlignment: Kitaboo_Reader_SDK.TEXT_ALIGNMENT)
   public func setReflowableBrightnessValue(_ brightnessValue: CoreFoundation.CGFloat)
   public func setReflowablePagination(_ pagination: Swift.Bool)
@@ -4902,7 +5048,7 @@ public let kUTF_8: Swift.String
   public func setReflowableFontFamily(_ fontFamily: Swift.String)
   public func getReflowableReaderMode() -> Kitaboo_Reader_SDK.READER_MODE
   public func getReflowableTextAlignment() -> Kitaboo_Reader_SDK.TEXT_ALIGNMENT
-  public func getReflowableFontSize() -> Kitaboo_Reader_SDK.FONT_SIZE
+  public func getReflowableFontSize() -> Swift.Int
   public func getReflowableLineSpacing() -> Kitaboo_Reader_SDK.TEXT_LINESPACING
   public func getReflowableMargin() -> Kitaboo_Reader_SDK.READER_MARGIN
   public func getReflowableBrightnessValue() -> CoreFoundation.CGFloat
@@ -5192,6 +5338,7 @@ public enum EPUBMarkupLinkType : Swift.Int16 {
   }
   override public func getThumbnailData() -> [Any]
   public func isKitabooEpubThumbnailSupported() -> Swift.Bool
+  public func getFileSRCFromName(_ name: Swift.String) -> Swift.String
   @objc override dynamic public init()
   @objc deinit
 }
@@ -5216,7 +5363,7 @@ public enum EPUBMarkupLinkType : Swift.Int16 {
 }
 @_inheritsConvenienceInitializers @objc public class ReaderFontSetting : ObjectiveC.NSObject, Foundation.NSCopying {
   @objc public var fontFamily: Swift.String
-  @objc public var fontSize: Kitaboo_Reader_SDK.FONT_SIZE
+  @objc public var fontSize: Swift.Int
   @objc public var textAlignment: Kitaboo_Reader_SDK.TEXT_ALIGNMENT
   @objc public var margin: Kitaboo_Reader_SDK.READER_MARGIN
   @objc public var lineSpacing: Kitaboo_Reader_SDK.TEXT_LINESPACING
@@ -5656,7 +5803,7 @@ public protocol AudioPlayerDelegate : AnyObject {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor @preconcurrency open class HDMediaTOCBookmarkCell : UIKit.UITableViewCell {
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency open class HDMediaTOCBookmarkCell : UIKit.UITableViewCell {
   @_Concurrency.MainActor @preconcurrency open var timeLabel: UIKit.UILabel {
     get
     set
@@ -5684,10 +5831,6 @@ public protocol AudioPlayerDelegate : AnyObject {
   @_Concurrency.MainActor @preconcurrency @objc override dynamic open func setSelected(_ selected: Swift.Bool, animated: Swift.Bool)
   @objc deinit
 }
-extension Kitaboo_Reader_SDK.HDTBXML {
-  public static func dictionaryWithXMLNode(_ element: Kitaboo_Reader_SDK.TBXMLElement) -> Foundation.NSDictionary
-  public static func dictionaryWithXMLData(_ data: Foundation.Data, error: inout (any Swift.Error)?) -> Foundation.NSDictionary?
-}
 public enum YTVimeoVideoQuality : Swift.Int {
   case YTVimeoVideoQualityLow
   case YTVimeoVideoQualityMedium
@@ -5698,35 +5841,12 @@ public enum YTVimeoVideoQuality : Swift.Int {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class KitabooVimeoExtractor {
-  public class func fetchVideoURL(fromURL videoURL: Swift.String, quality: Kitaboo_Reader_SDK.YTVimeoVideoQuality, completionHandler handler: @escaping (Foundation.URL?, (any Swift.Error)?, Kitaboo_Reader_SDK.YTVimeoVideoQuality) -> Swift.Void)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class KitabooVimeoExtractor : ObjectiveC.NSObject {
+  public static let shared: Kitaboo_Reader_SDK.KitabooVimeoExtractor
+  public func fetchVideoURL(fromURL videoURL: Swift.String, quality: Kitaboo_Reader_SDK.YTVimeoVideoQuality, referer: Swift.String?, completionHandler handler: @escaping (Foundation.URL?, (any Swift.Error)?, Kitaboo_Reader_SDK.YTVimeoVideoQuality) -> Swift.Void)
+  public func fetchVideoURL(fromID videoID: Swift.String, quality: Kitaboo_Reader_SDK.YTVimeoVideoQuality, referer: Swift.String?, completionHandler handler: @escaping (Foundation.URL?, (any Swift.Error)?, Kitaboo_Reader_SDK.YTVimeoVideoQuality) -> Swift.Void)
+  public func fetchVideoURL(fromURL videoURL: Swift.String, quality: Kitaboo_Reader_SDK.YTVimeoVideoQuality, completionHandler handler: @escaping (Foundation.URL?, (any Swift.Error)?, Kitaboo_Reader_SDK.YTVimeoVideoQuality) -> Swift.Void)
   @objc deinit
-}
-extension Kitaboo_Reader_SDK.KitabooVimeoExtractor : Foundation.URLSessionDataDelegate {
-  @objc dynamic public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive response: Foundation.URLResponse, completionHandler: @escaping (Foundation.URLSession.ResponseDisposition) -> Swift.Void)
-  @objc dynamic public func urlSession(_ session: Foundation.URLSession, dataTask: Foundation.URLSessionDataTask, didReceive data: Foundation.Data)
-}
-extension Kitaboo_Reader_SDK.KitabooVimeoExtractor : Foundation.URLSessionTaskDelegate {
-  @objc dynamic public func isEqual(_ object: Any?) -> Swift.Bool
-  @objc dynamic public var hash: Swift.Int {
-    @objc get
-  }
-  @objc dynamic public var superclass: Swift.AnyClass? {
-    @objc get
-  }
-  @objc dynamic public func `self`() -> Self
-  @objc dynamic public func perform(_ aSelector: ObjectiveC.Selector!) -> Swift.Unmanaged<Swift.AnyObject>!
-  @objc dynamic public func perform(_ aSelector: ObjectiveC.Selector!, with object: Any!) -> Swift.Unmanaged<Swift.AnyObject>!
-  @objc dynamic public func perform(_ aSelector: ObjectiveC.Selector!, with object1: Any!, with object2: Any!) -> Swift.Unmanaged<Swift.AnyObject>!
-  @objc dynamic public func isProxy() -> Swift.Bool
-  @objc dynamic public func isKind(of aClass: Swift.AnyClass) -> Swift.Bool
-  @objc dynamic public func isMember(of aClass: Swift.AnyClass) -> Swift.Bool
-  @objc dynamic public func conforms(to aProtocol: ObjectiveC.`Protocol`) -> Swift.Bool
-  @objc dynamic public func responds(to aSelector: ObjectiveC.Selector!) -> Swift.Bool
-  @objc dynamic public var description: Swift.String {
-    @objc get
-  }
-  @objc dynamic public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
 }
 @objc public protocol GenerateReportViewControllerDelegate {
   @objc func didTapOnCancelForGenerateReport()
@@ -5952,46 +6072,6 @@ extension Kitaboo_Reader_SDK.KitabooVimeoExtractor : Foundation.URLSessionTaskDe
 }
 extension Kitaboo_Reader_SDK.HDMediaBookBookmarkController_V6 : UIKit.UITextFieldDelegate {
 }
-public enum TBXMLErrorCodes : Swift.Int {
-  case D_TBXML_SUCCESS
-  case D_TBXML_DATA_NIL
-  case D_TBXML_DECODE_FAILURE
-  case D_TBXML_MEMORY_ALLOC_FAILURE
-  case D_TBXML_FILE_NOT_FOUND_IN_BUNDLE
-  case D_TBXML_ELEMENT_IS_NIL
-  case D_TBXML_ELEMENT_NAME_IS_NIL
-  case D_TBXML_ELEMENT_NOT_FOUND
-  case D_TBXML_ELEMENT_TEXT_IS_NIL
-  case D_TBXML_ATTRIBUTE_IS_NIL
-  case D_TBXML_ATTRIBUTE_NAME_IS_NIL
-  case D_TBXML_ATTRIBUTE_NOT_FOUND
-  case D_TBXML_PARAM_NAME_IS_NIL
-  public init?(rawValue: Swift.Int)
-  public typealias RawValue = Swift.Int
-  public var rawValue: Swift.Int {
-    get
-  }
-}
-@_hasMissingDesignatedInitializers public class TBXMLAttribute {
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class TBXMLElement {
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class TBXMLElementBuffer {
-  @objc deinit
-}
-@_hasMissingDesignatedInitializers public class TBXMLAttributeBuffer {
-  @objc deinit
-}
-open class HDTBXML {
-  public init()
-  convenience public init(xmlString aXMLString: Swift.String) throws
-  convenience public init(xmlData aData: Foundation.Data) throws
-  convenience public init(xmlFile aXMLFile: Swift.String) throws
-  convenience public init(xmlFile aXMLFile: Swift.String, fileExtension aFileExtension: Swift.String) throws
-  @objc deinit
-}
 @objc(KitabooLogType) public enum KitabooLogType : Swift.Int32 {
   case Error, Information, Warning
   public init?(rawValue: Swift.Int32)
@@ -6150,6 +6230,7 @@ extension Kitaboo_Reader_SDK.SDKBookClassInfo {
   public var shareList: [Foundation.NSNumber]
   public var userId: Foundation.NSNumber?
   public var roleID: Foundation.NSNumber?
+  public var shareNoteConfiguration: Kitaboo_Reader_SDK.BookClassSharingConfiguration?
   public var shareHighlightConfiguration: Kitaboo_Reader_SDK.BookClassSharingConfiguration?
   @objc override dynamic public init()
   public init(bookClassInfoDic: [Swift.String : Any], index: Swift.Int, userID: Foundation.NSNumber)
@@ -6322,6 +6403,7 @@ extension Swift.String {
 @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @objc @_Concurrency.MainActor @preconcurrency public class HDWKWebView : WebKit.WKWebView {
   @objc @_Concurrency.MainActor @preconcurrency public var isFixedLayout: Swift.Bool
   @objc @_Concurrency.MainActor @preconcurrency public var chapter: Kitaboo_Reader_SDK.EPUBChapter?
+  @objc @_Concurrency.MainActor @preconcurrency public var localPath: Swift.String
   @_Concurrency.MainActor @preconcurrency @objc dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor @preconcurrency @objc override dynamic public init(frame: CoreFoundation.CGRect, configuration: WebKit.WKWebViewConfiguration = WKWebViewConfiguration())
   @objc @_Concurrency.MainActor @preconcurrency public func enablePagination(isPaginationEnabled: Swift.Bool)
@@ -6349,6 +6431,7 @@ extension Swift.String {
   @objc public func pause()
   @objc public func togglePlay()
   @objc public func resume()
+  @objc public func clearHighlights()
   @objc public func play()
   @objc public func playNextSentenceInTTS()
   @objc public func playPreviousSentenceInTTS()
@@ -6356,6 +6439,7 @@ extension Swift.String {
   @objc public func setTTSSpeed(rate: Swift.Float)
   @objc public func isPlaying() -> Swift.Bool
   @objc public func setPage(sentences: [[Kitaboo_Reader_SDK.PdfWordExtractVO]])
+  @objc public func setCurrentTTSIndex()
   @objc public func resetCurrentIndex()
   @objc public func checkForWordInSentences(wordRect: CoreFoundation.CGRect, withWordText: Swift.String, pageSentences: [[Kitaboo_Reader_SDK.PdfWordExtractVO]]) -> Swift.Bool
   @objc public func playPDFTTSFromPoint(wordRect: CoreFoundation.CGRect, withWordText: Swift.String, withPageNumber: Swift.Int)
@@ -6724,9 +6808,6 @@ extension Kitaboo_Reader_SDK.HIGHLIGHT_VIEW_TYPE : Swift.RawRepresentable {}
 extension Kitaboo_Reader_SDK.AUDIO_SYNC_TYPE : Swift.Equatable {}
 extension Kitaboo_Reader_SDK.AUDIO_SYNC_TYPE : Swift.Hashable {}
 extension Kitaboo_Reader_SDK.AUDIO_SYNC_TYPE : Swift.RawRepresentable {}
-extension Kitaboo_Reader_SDK.TBXMLErrorCodes : Swift.Equatable {}
-extension Kitaboo_Reader_SDK.TBXMLErrorCodes : Swift.Hashable {}
-extension Kitaboo_Reader_SDK.TBXMLErrorCodes : Swift.RawRepresentable {}
 extension Kitaboo_Reader_SDK.KitabooLogType : Swift.Equatable {}
 extension Kitaboo_Reader_SDK.KitabooLogType : Swift.Hashable {}
 extension Kitaboo_Reader_SDK.KitabooLogType : Swift.RawRepresentable {}

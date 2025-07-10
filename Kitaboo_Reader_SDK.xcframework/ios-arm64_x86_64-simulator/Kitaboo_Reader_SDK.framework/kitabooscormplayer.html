@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="mainhtml">
+<html id="mainhtml" lang="en" xml:lang="en">
 
 <head>
 	<meta charset="utf-8" />
@@ -210,23 +210,13 @@
 
         API.LMSSetValue = function (inkey, invalue) {
             console.log("LMSSetValue :" + inkey + " : " + invalue);
-
-            if (scormdatamodels.hasOwnProperty(inkey)) {
                 scormdatamodels[inkey] = invalue;
-            } else {
-                scormdatamodels[inkey] = invalue;
-            }
             return "true";
         }
 
         API.SetValue = function (inkey, invalue) {
             // console.log("LMSSetValue :" + inkey + " : " + invalue);
-
-            if (scormdatamodels.hasOwnProperty(inkey)) {
                 scormdatamodels[inkey] = invalue;
-            } else {
-                scormdatamodels[inkey] = invalue;
-            }
             return "true";
         }
 
@@ -272,13 +262,13 @@
 
         API.LMSFinish = function (result) {
             // console.log("LMSFinish");
-            close();
+            //close();
             return "";
         }
 
         API.Finish = function (result) {
             // console.log("LMSFinish");
-            close();
+            //close();
             return "";
         }
     //Scorm 2004 Object
@@ -300,12 +290,8 @@
 
           // called after every activity implicitly to set scrom data
           window.API_1484_11.SetValue = function (inkey, invalue) {
-              if (scormdatamodels.hasOwnProperty(inkey)) {
-                  scormdatamodels[inkey] = invalue;
-              } else {
-                  scormdatamodels[inkey] = invalue;
-              }
-              return "true";
+                scormdatamodels[inkey] = invalue;
+                return "true";
           }
 
           // called on back to bookshelf click or scorm close and calls close() to submit data to server

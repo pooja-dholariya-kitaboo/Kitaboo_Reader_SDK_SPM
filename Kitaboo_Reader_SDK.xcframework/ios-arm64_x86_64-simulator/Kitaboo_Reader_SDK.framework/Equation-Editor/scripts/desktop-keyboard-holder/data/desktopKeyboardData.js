@@ -1,4 +1,4 @@
-var desktopKeyboardData = {
+let desktopKeyboardData = {
 	math : {
 		first : [
 			{

@@ -16,7 +16,26 @@
         "scrollbar_shadow":"inset 0 0 6px rgba(0,0,0,0.3)",
         "deselected_checkbox_border": "#84889F",
         "selected_checkbox_background": "#003D99",
-        "active_icon": "#008000"
+        "active_icon": "#008000",
+        "Focus_Background":"#E6E6E6",
+        "Mouse_hover":"#EAF2FC",
+        "Panel-Background":"rgba(255, 255, 255, 0.6)",
+        "Delete-button-bg":"#A80000",
+        "Delete_button_text": "#FFFFFF",
+        "Switch-Track_Disable": "#84889F",
+        "Switch-Thumb_Disable":"#FFFFFF",
+        "Switch-Track_enable":"#A8CBFF",
+        "Switch-Thumb_enable":"#003D99",
+        "Scroll-Thumb":"#BFBFBF",
+        "Scroll-Thumb_Hover":"#858585",
+        "Scroll-Track":"#E3E0E0",
+        "Markup-Header-Text":"#030303",
+        "Markup-Header-Icon":"#012863",
+        "Selection_Background":"#EAF2FC",
+        "Primary-Fill-Button_Focus":"#003079",
+        "Primary-Button-Text_Focus":"#FFFFFF",
+        "Delete-Button_Focus": "#6E030A",
+        "Delete-Button-Text_Focus":"#FFFFFF"
     },
     "Signin": {
         "Left_Background": "#f5f5f5",
@@ -41,7 +60,7 @@
         "left_heading_textcolor":"#202020",
         "spinner":"2px solid #003D99",
         "termconditiontext":"#444444",
-        "Link-text": "#003D99",
+        "Link-text": "#1153B6",
         "validationtext":"#6F6F6F",
         "freetrial_text": "#003D99",
         "freetrial_btn_border": "#003D99",
@@ -52,12 +71,13 @@
               "Signin_Enabled": "#003D99",
               "Cancel_Disabled": "#FFFFFF",
               "Cancel_Outline": "#003D99",
-              "Cancel_Text": "#2D2D2D",
+              "Cancel_Text": "#003D99",
               "Error_Message": "#A80000",
               "Invalid_email_input_border": "#A80000"
         },
         "Signup_Input_border": "#BFBFBF",
-        "Signup_Input_Focus_border": "#003D99"
+        "Signup_Input_Focus_border": "#003D99",
+        "Download-link-Button":"#525252"
     },
     "Bookshelf": {
           "Header": "#FFFFFF",
@@ -84,7 +104,8 @@
             "Selected_Text_colour": "#2D2D2D",
             "Select_text_tick": "#003D99",
             "Background": "#F5F5F5",
-            "Mouse_hover":"#EAF2FC"
+            "Mouse_hover":"#EAF2FC",
+            "Panel-Background":"rgba(255, 255, 255, 0.6)"
         },
         
         "Bookshelf_Info_popup": {
@@ -175,7 +196,7 @@
               "Chapter_Number": "#003D99",
               "Collection_Single_Select": "#EAF2FC",
               "Favourite_Nonselected": "#84889F",
-              "Favourite_Selected": "#FF725E",
+              "Favourite_Selected": "#C4123C",
               "Favourite_background": "#FFFFFF",
               "ReadNow_background": "#003D99",
               "ReadNow_text": "#FFFFFF",
@@ -191,7 +212,8 @@
               "Icons_color": "#272C55",
               "Downloading_Button_Progress": "#0A9E7B",
               "Selected_Tab_Text": "#003D99",
-              "Selected_collection_background": "#EAF2FC"
+              "Selected_collection_background": "#EAF2FC",
+              "box-shadow": "0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12)"
           },
  
           "Profile": {
@@ -225,6 +247,7 @@
               "Icon-color":"#272C55",
               "Selected_Language": "#6f6f6f",
               "Langauge_arrow": "#272C55",
+              "Disabled_input_background": "#F5F5F5",
               "share_feedback": {
                 "emoji_background": "#FFFFFF",
                 "feedback_resp_border": "#BFBFBF",
@@ -241,7 +264,8 @@
                 "submit_background": "#0F4AA3",
                 "edit_feedback_color": "#272C55",
                 "delete_cancel_border": "#1153B6",
-                "delete_ok_background": "#992600"
+                "delete_ok_background": "#992600",
+                "box-shadow":"0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgb(0 0 0 / 20%), 0px 1px 10px 0px rgb(3 3 3 / 12%)"
               },
               "topbar_background": "#FFFFFF",
               "back_icon_color": "#2D2D2D",
@@ -294,7 +318,8 @@
               "Readnow_button_text": "#FFFFFF",
               "Search_history_icon_color": "#000000",
               "Search_history_text_color": "#000000",
-              "Category_text": "#2D2D2D"
+              "Category_text": "#2D2D2D",
+              "Recent_Searches_Text": "#84889F"
           },
  
  
@@ -348,26 +373,41 @@
             "icon":"#5c6685",
             "active":"#0032A7",
             "color":"#FFFFFF"
+          },
+          
+           "Whats-new":{
+            "Header-text":"#2D2D2D",
+            "Subheader-text": "#6F6F6F",
+            "icon":"#2D2D2D",
+            "Description-text": "#2D2D2D",
+            "action-Button_Text":"#FFFFFF",
+            "action_button_background":"#0032A7",
+            "Version-text": "#FFFFFF",
+            "WhatsNew_Image_gradient": [
+                                        "#AF00CC",
+                                        "#1C0CDA",
+                                        "#00BAD0"
+                                        ]
           }
     },
     "Reader": {
             "main": {
                 "canvas_background": "#f5f8fc",
-                "navigation_arrows": "#000000",
+                "navigation_arrows": "#272C55",
                 "toolbar": {
                     "top":{
                         "background": "#fdfdfd",
-                        "icons-color": "#003D99",
+                        "icons-color": "#272C55",
                         "shadow": "rgba(142,142,142,0.5)",
                         "selected_icon-color": "#FFFFFF",
                         "selected_icon_bg": "#003D99",
                         "Title_text_color": "#444444",
-                        "navigation_arrow_color": "#003D99",
+                        "navigation_arrow_color": "#272C55",
                         "profile_border": "#003D99"
                     },
                     "side_bottom":{
                         "background": "#fdfdfd",
-                        "icons-color": "#003D99",
+                        "icons-color": "#272C55",
                         "shadow": "rgba(142,142,142,0.5)",
                         "selected_icon-color": "#FFFFFF",
                         "selected_icon_bg": "#003D99"
@@ -437,7 +477,7 @@
                     "opacity": "0.70",
                     "background_HTML": "rgba(0,61,153,0.70)"
                 },
-                "text-color": "#003D99",
+                "text-color": "#2D2D2D",
                 "metadata-color": "#545454",
                 "contextualtext-color": "#6b420b",
                 "description-color": "#444444",
@@ -474,16 +514,17 @@
                             }
                     }
                 },
-                "notification_circle_color": "#E21D1D"
+                "notification_circle_color": "#E21D1D",
+                "Shared-by_text": "#003079"
                 },
             "Bookmark": {
-                "icon_color": "#707070",
+                "icon_color": "#575757",
                 "selected_icon-color":"#003D99",
                 "popup_background": "#FFFFFF",
                 "popup_border": "#003D99",
                 "input_panel-bg": "#ececec",
-                "hint_text-color": "#444444",
-                "text-color": "#444444",
+                "hint_text-color": "#666666",
+                "text-color": "#2D2D2D",
                 "button_background": "#003D99",
                 "button_text-color": "#FFFFFF",
                 "cross_icon-color": "#003D99"
@@ -512,7 +553,7 @@
                     "disabled_icon": {
                         "icon_color": "#003D99",
                         "opacity": "0.40",
-                        "background_HTML": "rgba(89,89,89,0.40)"
+                        "background_HTML": "rgba(0,61,153,0.40)"
                         },
                     "selected_icon_background": "#003D99",
                     "selected_icon_color": "#FFFFFF"
@@ -548,7 +589,7 @@
                 "selected_thumbnail_color": "#003D99",
                 "thumbnail_text-color": "#FFFFFF",
                 "selected_title_color": "#003D99",
-                "title-color": "#444444",
+                "title-color": "#2D2D2D",
                 "icon_color": "#003D99",
                 "text-color": "#003D99",
                 "page-submitted-border-color": "#106605",
@@ -695,7 +736,9 @@
                 "pen1-color": "#e60000",
                 "pen2-color": "#25850a",
                 "box_border-color": "#8b8b8b",
-                "check_color": "#003D99"
+                "check_color": "#003D99",
+                "Stepper_Default_bg":"#BFBFBF",
+                "Stepper_Default_Text":"#202020"
             },
             "Teacher_studentlist": {
                 "popup_background": "#FFFFFF",
@@ -840,7 +883,7 @@
                         }
             },
             "Markup": {
-                "markup_icon_color":"#000000",
+                "markup_icon_color":"#ffffff",
                 "book_markup_icon_border_color":"#ffffff",
                 "book_markup_icon_background_color":"#000000"
             },
@@ -861,7 +904,7 @@
                     "box-shadow": "0px -4px 15px #cfdff9"
                 },
                 "Audio_Markup": {
-                    "icon_color":"#FFFFFF",
+                    "icon_color":"#003D99",
                     "icon_background_color":"#095e8e",
                     "audio_container_border_color":"#DCEAFF",
                     "box-shadow":" 0px 10px 10px #cfdff9"
@@ -915,8 +958,27 @@
                         "background": "transparent"
                     }
                 }
-            }
-       
+            },
+            "Popups": {
+              "Background": "#FFFFFF",
+              "Header": "#2D2D2D",
+              "Divider": "#BFBFBF",
+              "Content_Title": "#2D2D2D",
+              "Option_text_icon": "#6f6f6f",
+              "Outline_button_border": "#003D99",
+              "Outline_button_Text": "#003D99",
+              "Fill_button": "#003D99",
+              "Fill_button_text_icon": "#FFFFFF",
+              "Delete_button": "#A80000",
+              "Delete_button_text_icon": "#FFFFFF",
+              "Select_text_tick": "#003D99",
+              "Radio_Checkbox_Button": "#84889F",
+              "Selected_Radio_Checkbox_Button": "#003D99",
+              "icon_colour": "#272C55",
+              "Input_Box": "#BFBFBF",
+              "Hint_Text": "#6F6F6F"
+              
+          }
     },
     "AudioVideoBookPlayer": {
         "toppanel": {
@@ -1019,8 +1081,34 @@
                 "icon_color" : "#FFFFFF",
                 "player_background" : "#000000"
             }
+        },
+        "Mouse-Hover-BG":"#333746"
+    },
+    
+    "Download" : {
+            "download-manager":{
+            "panel-background":"transparent",
+            "text-color":"#595959",
+            "delete-icon-color":"#A80000",
+            "dropdown-icon-color":"#272C55",
+            "book-size-color":"#595959",
+            "selection-bg":"",
+            "border-bottom":"#d7d7f3",
+            "box-shadow": "0px 1px 2px 0px rgba(0, 0, 0, 0.25)"
+        },
+        "download-toggler":{
+            "panel-background":"transparent",
+            "text-color":"#595959",
+            "delete-icon-color":"#A80000",
+            "download-icon-color":"#272C55",
+            "dropdown-icon-color":"#595959",
+            "book-size-color":"#595959",
+            "selection-bg":"",
+            "border-bottom":"#d7d7f3",
+            "stroke-color":"#3db041"
         }
     },
+    
     "Dark-mode" :{
         "SignIn":{
             "login_left_bgcolor":"#000000"
@@ -1036,7 +1124,80 @@
         "Reader":{
             "main_background_color":"#202124",
             "navigation_btn":"#ebebeb"
-        }
-    }
+        },
+        "AudioVideoBookPlayer":{
 
-  }
+        }
+    },
+    "K-AI": {
+            "Floating-icon-Background": "#2A2CEA",
+            "K-AI_Icon":"#FFFFFF",
+            "canvas_background": "#f5f8fc",
+            "Panel-Background":"#FCFEFF",
+            "Header":{
+                "Text_color":"#2A2CEA",
+                "Icon_colour":"#272C55"
+            },
+            "Heading_text":"#2D2D2D",
+            "Subtext":"#666666",
+            "Check-box_Default":"#84889F",
+            "Check-box_Selected":"#003D99",
+            "Activity-icon":"#272C55",
+            "Activity-Title-text":"#2D2D2D",
+            "Activity-type-text":"#333333",
+            "Divider":"#E6E6E6",
+            "Input_Dropdown":{
+                "Outline":"#D4D5FB",
+                "Icon":"#272C55",
+                "Text":"#2D2D2D"
+            },
+            "Question_complexity":{
+                "Default-Button_Outline":"#272C55",
+                "Default-Button_Text":"#272C55",
+                "Selected_Button_BG":"#EAF2FC",
+                "Selected_button_Text-outline":"#2A2CEA"
+            },
+            "action_button": {
+                    "main": {
+                        "background": "#003D99",
+                        "text-color": "#FFFFFF"
+                    },
+                    "Secondary": {
+                        "border_color": "#003D99",
+                        "text-color": "#003D99"
+                    }
+            },
+            "Loading-Heading-Text":"#003D99",
+            "Loading-subtext":"#6F6F6F",
+            "MCQ": {
+                "Text-color":"2D2D2D",
+                "Default-icon":"#84889F",
+                "Selected-icon":"#003D99",
+                "Correct-answer":"#0B600B",
+                "Incorrect-answer":"#A80000"
+            },
+            "Flash-Card": {
+                "Card-Background":"#ffffff",
+                "Card-Outline":"#D8D8D8",
+                "Text-color":"2D2D2D",
+                "Navigation-icon":"#272C55",
+                "Navigation-icon-Disable": "#9295AA",
+                "Navigation-Text":"#333333",
+                "Bottom-Flip-BG":"#EAF2FC",
+                "Bottom-Flip-text":"#2A2CEA",
+                "box-shadow": "0px 2px 20px 0px rgba(0, 0, 0, 0.15)"
+            },
+            "FIB": {
+                "Text-color":"#2d2d2d",
+                "Blank-outline": "#84889F",
+                "Correct-answer":"#0B600B",
+                "Incorrect-answer":"#A80000"
+            },
+            "Learning-objective_Summary":{
+                "Card-outline":"#D8D8D8",
+                "Text-color": "#2D2D2D"
+            },
+            "Disclaimer":"#6F6F6F",
+            "Book-cover_Border":"E6E6E6"
+    }
+}

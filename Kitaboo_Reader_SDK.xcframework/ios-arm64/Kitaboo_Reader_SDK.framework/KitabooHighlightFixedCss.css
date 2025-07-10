@@ -17,14 +17,8 @@ html, body {margin: 0; overflow: hidden}
 .searchhighlight {
     background-color: #fff34d;
     -moz-border-radius: 5px;
-    /* -webkit-border-radius: 5px; */
-    /* border-radius: 5px; */
     -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-    /* -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7); */
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
-}
-
-.searchhighlight {
     padding:1px 4px;
     margin:0 -4px;
 }
@@ -73,9 +67,6 @@ mark {
     background-color: #bba3d0 !important;
 }
 
-.audiosyncHighlightClass {
-
-}
 html .highlight-yellow, html .highlight-green, html .highlight-blue, html .highlight-pink, span.epub-media-overlay-playing {
     border-radius: 3px;
     padding: 0 2px;

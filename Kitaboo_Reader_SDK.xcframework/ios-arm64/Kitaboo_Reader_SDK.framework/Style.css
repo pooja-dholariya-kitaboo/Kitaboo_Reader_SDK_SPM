@@ -116,7 +116,7 @@ sup {
 a { text-decoration: none; }
 pre { white-space: pre-wrap; }
 @page { margin: 0 0 !important; }
-table, ol, il { text-align: -webkit-auto; }
+table, ol, ul { text-align: -webkit-auto; }
 h1 ,h2 ,h3 ,h4 ,h5 ,h6 {
     text-align: -webkit-auto;
     text-rendering: optimizelegibility;
@@ -154,13 +154,13 @@ ruby > rt, ruby > rp { -webkit-user-select: none; }
  *
  */
 
-highlight {
+.highlight {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
 }
 
 /* Remove tap highlight */
-input, textarea, button, highlight, select, a {
+input, textarea, button, .highlight, select, a {
     -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 
